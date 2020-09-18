@@ -92,13 +92,6 @@ Please describe the tests that you ran to verify your changes. Provide instructi
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings
 
-
-### Setup the project
-
-Make a new Unity project then drag and drop the all of the files in the repository into the Assets folder of the new unity project
-
-
-
 ### Debugging
 
 When in the unity IDE you can press the play button to be able to play the game in a debug game.
