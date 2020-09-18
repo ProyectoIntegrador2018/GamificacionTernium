@@ -1,0 +1,148 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "username": "test",
+      "password": "pass",
+      "tutorial": false,
+      "niveles": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700
+      ],
+      "achivements": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 1,
+      "username": "prueba",
+      "password": "pass",
+      "tutorial": false,
+      "niveles": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700
+      ],
+      "achivements": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 2,
+      "username": "id3",
+      "password": "contra",
+      "tutorial": true,
+      "niveles": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "achivements": [
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 3,
+      "username": "Nuevo",
+      "password": "1234",
+      "tutorial": true,
+      "niveles": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "achivements": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 4,
+      "username": "Master",
+      "password": "1234",
+      "tutorial": true,
+      "niveles": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "achivements": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "id": 5,
+      "username": "Separado",
+      "password": "1234",
+      "tutorial": true,
+      "niveles": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "achivements": [
+        true,
+        false,
+        true,
+        false,
+        true,
+        false,
+        false
+      ]
+    }
+  ]
+}

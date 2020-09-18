@@ -1,0 +1,350 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Overlay/OV3/Scenes/login.unity
+    guid: d6227ea42640b64459d5bfdbaf423a5f
+  - enabled: 1
+    path: Assets/Overlay/OV3/Scenes/createUser.unity
+    guid: ca8893ab73bd9464d9897bd9e05e4af1
+  - enabled: 1
+    path: Assets/Overlay/OV4/Scenes/Historial.unity
+    guid: f70925e095a731341913c00e728ab680
+  - enabled: 1
+    path: Assets/Overlay/OV2/Scenes/Instrucciones-1.unity
+    guid: 1ac3ebf89175f4ca4b39b542cd0cf3d6
+  - enabled: 1
+    path: Assets/Overlay/OV2/Scenes/Instrucciones-2.unity
+    guid: 341439fe933a84f269ee4b51eec4dee5
+  - enabled: 1
+    path: Assets/Overlay/OV2/Scenes/Instrucciones-3.unity
+    guid: 4796c7c685419451db70d03463530fc9
+  - enabled: 1
+    path: Assets/Overlay/OV2/Scenes/Instrucciones-4.unity
+    guid: e44c4f080c25c41988cd5b9e72e087b9
+  - enabled: 1
+    path: Assets/Overlay/OV1/Scenes/createUser.unity
+    guid: db74dd7cd6832de48803a8c9cfbc896e
+  - enabled: 1
+    path: Assets/Overlay/OV1/Scenes/login.unity
+    guid: f05aef2c7a11ead4da2cadef0de0421f
+  - enabled: 1
+    path: Assets/Overlay/OV1/Scenes/Menu.unity
+    guid: d2e8ee3307f25d34d93033ccf1df487f
+  - enabled: 1
+    path: Assets/Overlay/OV1/Scenes/PauseTes.unity
+    guid: 37264dcfc2954a54087e781171d17604
+  - enabled: 1
+    path: Assets/Escenarios/ES1/Scenes/Preguntas/Achivements.unity
+    guid: c56b8323d2082b545af72026e75ba63e
+  - enabled: 1
+    path: Assets/Escenarios/ES1/Scenes/Preguntas/Lose.unity
+    guid: ea50ef57951fb494082a125c41d15e6e
+  - enabled: 1
+    path: Assets/Escenarios/ES1/Scenes/Preguntas/P1.unity
+    guid: c6c99d0916e5ecf4fa39030909184447
+  - enabled: 1
+    path: Assets/Escenarios/ES1/Scenes/Preguntas/P2.unity
+    guid: ab9268d61d71e4af5b15ad7c26b258a8
+  - enabled: 1
+    path: Assets/Escenarios/ES1/Scenes/Preguntas/P3.unity
+    guid: 5cc882d55b7e9e043b6c52d2db0ba632
+  - enabled: 1
+    path: Assets/Escenarios/ES1/Scenes/Preguntas/P4.unity
+    guid: efbe2c0bb80da8c4390c6453b7243e5a
+  - enabled: 1
+    path: Assets/Escenarios/ES1/Scenes/Preguntas/P5.unity
+    guid: d86cbf82a1082f943ab5602fbed0465a
+  - enabled: 1
+    path: Assets/Escenarios/ES1/Scenes/Preguntas/P6.5.unity
+    guid: d862f5cbcdd5a49bb8237bcc824dae1d
+  - enabled: 1
+    path: Assets/Escenarios/ES1/Scenes/Preguntas/P6.unity
+    guid: 08596a2ec94164fbcb80fecac5972b24
+  - enabled: 1
+    path: Assets/Escenarios/ES1/Scenes/Preguntas/P7.unity
+    guid: 55ca09de067bc43ed9f09d0c20fae8a2
+  - enabled: 1
+    path: Assets/Escenarios/ES1/Scenes/Preguntas/P8.unity
+    guid: 60c961df2b3dc684397da37372df0229
+  - enabled: 1
+    path: Assets/Escenarios/ES1/Scenes/Preguntas/Win.unity
+    guid: a6f8747e26fe89a40961be7526845b69
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2Lose.unity
+    guid: 234ac4aa38233d341a76bec8f89131ba
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2P1.unity
+    guid: 9990e1bc2e3785c41969185ad1b4aa38
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2P2.unity
+    guid: 2bab536f280732e48887a6e8231f3104
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2P3.unity
+    guid: 6e1e5546eee6b374cab97688a320cb72
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2P4.unity
+    guid: 71b47d89dbe9d9f4e97ef5eb57c00164
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2P5.unity
+    guid: 36df73d02366f9745a0a91761704b2df
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2P6.unity
+    guid: b358d5f97c0b56a47860f397c56e2cb3
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2P7.unity
+    guid: f150b12fd9734bf47b1a55ffefb04ade
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2P8.unity
+    guid: f7ad348a086928144a7492a08611d1e3
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2P9.unity
+    guid: 3feeef1249ed04e45967ac42dd57838b
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2P10.unity
+    guid: b11efcff3e5a99e48b1bf6ea4fd0846e
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2P11.unity
+    guid: 9c9da56f0ac2b3f4282f746b412db7ae
+  - enabled: 1
+    path: Assets/Escenarios/ES2/Scenes/ES2Win.unity
+    guid: 4ddc8440b205d804d8dc835fe3159d42
+  - enabled: 1
+    path: Assets/Escenarios/ES3/Preguntas/ES3Lose.unity
+    guid: c9c38bb3e1a276648aaa6f61bfb9d5bb
+  - enabled: 1
+    path: Assets/Escenarios/ES3/Preguntas/ES3P1.unity
+    guid: d3bb97853ddb9f7488e7c5895dc01e0b
+  - enabled: 1
+    path: Assets/Escenarios/ES3/Preguntas/ES3P2.unity
+    guid: 952997ee3222a88428279d67dd85af7b
+  - enabled: 1
+    path: Assets/Escenarios/ES3/Preguntas/ES3P3.1.unity
+    guid: ff682c4edf74d6443b90d997ecc5f73d
+  - enabled: 1
+    path: Assets/Escenarios/ES3/Preguntas/ES3P4.unity
+    guid: 66347903543209b48860a9ec0aa4395a
+  - enabled: 1
+    path: Assets/Escenarios/ES3/Preguntas/ES3P5.unity
+    guid: 268fdc3693cdf444d819f25b654a170a
+  - enabled: 1
+    path: Assets/Escenarios/ES3/Preguntas/ES3P6.unity
+    guid: fa7ceee975f56114e8b4a70fa5b7a327
+  - enabled: 1
+    path: Assets/Escenarios/ES3/Preguntas/ES3Win.unity
+    guid: 0dc78c29c03b3e043b5d779349b8b24b
+  - enabled: 1
+    path: Assets/Escenarios/ES4/Scenes/ES4Lose.unity
+    guid: 39386ad149d9d474fa3f09b8c1ceffcf
+  - enabled: 1
+    path: Assets/Escenarios/ES4/Scenes/ES4P1.unity
+    guid: 0c7eac3b4eddb4a0ebc0723a90851907
+  - enabled: 1
+    path: Assets/Escenarios/ES4/Scenes/ES4P2.unity
+    guid: ea027016d3ba6441e9fcc30914916fc4
+  - enabled: 1
+    path: Assets/Escenarios/ES4/Scenes/ES4P3.unity
+    guid: 35f6452727aa640e0934846201556f21
+  - enabled: 1
+    path: Assets/Escenarios/ES4/Scenes/ES4P4.unity
+    guid: f31a7b307583247be92613aef63b0ea3
+  - enabled: 1
+    path: Assets/Escenarios/ES4/Scenes/ES4P5.unity
+    guid: b8ce13a99bc1f42248591014720d154b
+  - enabled: 1
+    path: Assets/Escenarios/ES4/Scenes/ES4P6.unity
+    guid: 8c428451662b040a2a76a6778cbbe217
+  - enabled: 1
+    path: Assets/Escenarios/ES4/Scenes/ES4P7.unity
+    guid: 59935e1023f7b4db3a942bd626794c60
+  - enabled: 1
+    path: Assets/Escenarios/ES4/Scenes/ES4P8.unity
+    guid: 8bf20e6af1871450f8f353909bfcc921
+  - enabled: 1
+    path: Assets/Escenarios/ES4/Scenes/ES4P9.unity
+    guid: e0b9900ba9e1a475f869e93c68d64aa9
+  - enabled: 1
+    path: Assets/Escenarios/ES4/Scenes/ES4Win.unity
+    guid: 013dc308c5b274dc6a510804260d8f47
+  - enabled: 1
+    path: Assets/Escenarios/ES5/Scenes/ES5Lose.unity
+    guid: df7af963b396f404ba0691253e8c2818
+  - enabled: 1
+    path: Assets/Escenarios/ES5/Scenes/ES5P1.unity
+    guid: 5c90f8bce4bc24e428e66d6c245dd287
+  - enabled: 1
+    path: Assets/Escenarios/ES5/Scenes/ES5P2.unity
+    guid: 7bd97819fb67c67449c047d0a5abe97c
+  - enabled: 1
+    path: Assets/Escenarios/ES5/Scenes/ES5P3.unity
+    guid: a110a87e6aa427d4dac4d904a9ce1767
+  - enabled: 1
+    path: Assets/Escenarios/ES5/Scenes/ES5P4.unity
+    guid: a8d75fbca5c334f47bbef7072daa16a1
+  - enabled: 1
+    path: Assets/Escenarios/ES5/Scenes/ES5P5.unity
+    guid: ce2ee32d41f73454fb657e83af63a6c7
+  - enabled: 1
+    path: Assets/Escenarios/ES5/Scenes/ES5P6.unity
+    guid: 4ed86caa7d4b112429a1e5d421069fa2
+  - enabled: 1
+    path: Assets/Escenarios/ES5/Scenes/ES5P7.unity
+    guid: 8e3c8d5722b5a374f97e8fd20fcc506b
+  - enabled: 1
+    path: Assets/Escenarios/ES5/Scenes/ES5Win.unity
+    guid: 4329e71152509874c90e86bd1afd0e51
+  - enabled: 1
+    path: Assets/Escenarios/ES6/Scenes/ES6Lose.unity
+    guid: 9400fa6771d960e489f8bbd3d2f7f11b
+  - enabled: 1
+    path: Assets/Escenarios/ES6/Scenes/ES6P1.unity
+    guid: 9da02e19b0ad21b40a65a89311e73d6e
+  - enabled: 1
+    path: Assets/Escenarios/ES6/Scenes/ES6P2.unity
+    guid: 3d4303eacebf06349973be140f0d6c58
+  - enabled: 1
+    path: Assets/Escenarios/ES6/Scenes/ES6P3.unity
+    guid: 166d7bbf4d094d74b9bb7d184f81c61c
+  - enabled: 1
+    path: Assets/Escenarios/ES6/Scenes/ES6P4.unity
+    guid: 462218385cacf2e40986fa1b2a5fdcd0
+  - enabled: 1
+    path: Assets/Escenarios/ES6/Scenes/ES6P5.unity
+    guid: 54517084f2e88e741a18124c4ca8dece
+  - enabled: 1
+    path: Assets/Escenarios/ES6/Scenes/ES6P6.unity
+    guid: 34b36bb4a7b28e945a1b5a5474709d1c
+  - enabled: 1
+    path: Assets/Escenarios/ES6/Scenes/ES6P7.unity
+    guid: dd644bbc9b1fc5f41a78b1fed085587e
+  - enabled: 1
+    path: Assets/Escenarios/ES6/Scenes/ES6P8.unity
+    guid: 418f3db2873d2d143bf8cf593c1646bc
+  - enabled: 1
+    path: Assets/Escenarios/ES6/Scenes/ES6Win.unity
+    guid: 3db93538e525511479ae36506f979fc4
+  - enabled: 1
+    path: Assets/Escenarios/ES7/Scenes/ES7Lose.unity
+    guid: 5eaf43c0a87ca09488a7075bcb61c474
+  - enabled: 1
+    path: Assets/Escenarios/ES7/Scenes/ES7P1.unity
+    guid: ac919d7bbf6b0944aa2ae86673fd4c0c
+  - enabled: 1
+    path: Assets/Escenarios/ES7/Scenes/ES7P2.unity
+    guid: 45d8b36dd4e1e4847b83a38f4fe84971
+  - enabled: 1
+    path: Assets/Escenarios/ES7/Scenes/ES7P3.unity
+    guid: 8cc05a9a41bee5744b781fa380f24cf1
+  - enabled: 1
+    path: Assets/Escenarios/ES7/Scenes/ES7P4.unity
+    guid: f80c03476e51b0a48bd29c9a31a2fc78
+  - enabled: 1
+    path: Assets/Escenarios/ES7/Scenes/ES7P5.unity
+    guid: ae189e24d15ca0a418fe001833270147
+  - enabled: 1
+    path: Assets/Escenarios/ES7/Scenes/ES7P6.unity
+    guid: 4cf1fd41e87f90f4ba327108027074a4
+  - enabled: 1
+    path: Assets/Escenarios/ES7/Scenes/ES7P7.unity
+    guid: 23dfc1b8383d8be49a2b88b4b9365557
+  - enabled: 1
+    path: Assets/Escenarios/ES7/Scenes/ES7P8.unity
+    guid: 0e4cdb3dc029f504c9d83b7b53fe27e0
+  - enabled: 1
+    path: Assets/Escenarios/ES7/Scenes/ES7Win.unity
+    guid: f84f88d45eb09f643a4de874582c8d96
+  - enabled: 1
+    path: Assets/Escenarios/ES8/Scenes/ES8Lose.unity
+    guid: 76437afc4feca4d9480c34dbe55ab0dd
+  - enabled: 1
+    path: Assets/Escenarios/ES8/Scenes/ES8P1.unity
+    guid: bc68d69c6927346f48883cc38de8020f
+  - enabled: 1
+    path: Assets/Escenarios/ES8/Scenes/ES8P2.unity
+    guid: 17ad890563e1e4227a6bb721a6dda5c0
+  - enabled: 1
+    path: Assets/Escenarios/ES8/Scenes/ES8P3.unity
+    guid: dee6eef505ac641469c4daaeeff6d378
+  - enabled: 1
+    path: Assets/Escenarios/ES8/Scenes/ES8P4.unity
+    guid: 58810013740524d009a5880f7def950c
+  - enabled: 1
+    path: Assets/Escenarios/ES8/Scenes/ES8P5.unity
+    guid: 6585399e3ba5f4c0ba572029433cd1ac
+  - enabled: 1
+    path: Assets/Escenarios/ES8/Scenes/ES8Win.unity
+    guid: c78db0b9678fa4ad6a77afb6eb4734ad
+  - enabled: 1
+    path: Assets/Escenarios/ES9/Scenes/ES9Lose.unity
+    guid: 3fd1b662cfecfe34b80e1e3af3d65fc4
+  - enabled: 1
+    path: Assets/Escenarios/ES9/Scenes/ES9P1.unity
+    guid: e5f69e44e81514e43ac1aeb685cf9099
+  - enabled: 1
+    path: Assets/Escenarios/ES9/Scenes/ES9P2.unity
+    guid: e16435e56f30ae445a3c14b0ff6030b8
+  - enabled: 1
+    path: Assets/Escenarios/ES9/Scenes/ES9P3.unity
+    guid: cde8d34679ab5004d87942b18a2ef6e8
+  - enabled: 1
+    path: Assets/Escenarios/ES9/Scenes/ES9Win.unity
+    guid: 153d1c49dede5784f87a2c90f5002418
+  - enabled: 1
+    path: Assets/Escenarios/ES10/Scenes/ES10Lose.unity
+    guid: e2f913552dc8ccf41ab11078b85d567f
+  - enabled: 1
+    path: Assets/Escenarios/ES10/Scenes/ES10P1.unity
+    guid: 1de045c2787983f49b4d146829063c3a
+  - enabled: 1
+    path: Assets/Escenarios/ES10/Scenes/ES10P2.unity
+    guid: 6bfd1e65850626f44b49d76ba9e53e75
+  - enabled: 1
+    path: Assets/Escenarios/ES10/Scenes/ES10P3.unity
+    guid: 96f522584643e5f4387712230cec6691
+  - enabled: 1
+    path: Assets/Escenarios/ES10/Scenes/ES10P4.unity
+    guid: f9fcbed693267074e86cb4c5a9beae33
+  - enabled: 1
+    path: Assets/Escenarios/ES10/Scenes/ES10P5.unity
+    guid: f59a0b96e4faa7c43b20db8b6f37de59
+  - enabled: 1
+    path: Assets/Escenarios/ES10/Scenes/ES10Win.unity
+    guid: e3f5ca7427436124c81295fc6c60bf16
+  - enabled: 1
+    path: Assets/Overlay/OV1/Misc/DivES1.unity
+    guid: fcc436d4556fa4a4488cf107bff8969c
+  - enabled: 1
+    path: Assets/Overlay/OV1/Misc/DivES2.unity
+    guid: fe3bab241bfaa9444bf9f0b28661f347
+  - enabled: 1
+    path: Assets/Overlay/OV1/Misc/DivES3.unity
+    guid: c2ba3a6c610309c4b81c0291f1b01551
+  - enabled: 1
+    path: Assets/Overlay/OV1/Misc/DivES4.unity
+    guid: 94489f13d227d1c4abd362b4161b3e7e
+  - enabled: 1
+    path: Assets/Overlay/OV1/Misc/DivES5.unity
+    guid: 2c286789dc063b54ebb9c612e086488e
+  - enabled: 1
+    path: Assets/Overlay/OV1/Misc/DivES6.unity
+    guid: c64559ae6539ce448aaf2a364225ebca
+  - enabled: 1
+    path: Assets/Overlay/OV1/Misc/DivES7.unity
+    guid: aacb67e61f0feb34f9e7c8fd9777d9b9
+  - enabled: 1
+    path: Assets/Overlay/OV1/Misc/DivES8.unity
+    guid: 6504453eaaaf3794eb535fdd2968172f
+  - enabled: 1
+    path: Assets/Overlay/OV1/Misc/DivES9.unity
+    guid: 906261a89cd9a2b4ca47fb02c00666be
+  - enabled: 1
+    path: Assets/Overlay/OV1/Misc/DivES10.unity
+    guid: fe2028db1521812488aba61c9f96e566
+  - enabled: 1
+    path: Assets/Overlay/OV1/Misc/DivOV.unity
+    guid: db10349b06eda524483918cf069d67ec
+  m_configObjects: {}
