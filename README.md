@@ -51,8 +51,7 @@ You should ask for access to this tools if you don't have it already:
  
 
 ### Rules of using Git
-We will have one branch per backlog item and branches will use this name scheme
-{username}/{type of story}-{story number}/{story name}
+We will have one branch per team member in each sprint
 branches will only be merged using pull request and any member can review and approve the pull request.
 
 ## Pull request format
