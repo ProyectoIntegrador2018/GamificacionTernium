@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:ES1/Imagenes/B8.JPG.meta
 guid: 1c92eb08812e1a742b051538cc6ee5db
-=======
-guid: 7cb470805f1ef4b728998491aca2743c
->>>>>>> 79552bb415a23c3172855dafa283073028abf108:ES1/Sprites/B13-2.JPG.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -40,7 +36,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -61,14 +57,26 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
