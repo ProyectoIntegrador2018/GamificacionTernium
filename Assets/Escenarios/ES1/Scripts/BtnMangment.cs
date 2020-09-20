@@ -37,7 +37,8 @@ public class BtnMangment : MonoBehaviour
                 DialogueText.text = "Correcto! El guardia ahora tiene su equipo de seguridad puesto.";
                 // Suma puntos
                 GameMind.addPoints(100);
-                StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrop.statusAnswer() == "Incorrect") {
                     DialogueText.text = "Incorrecto! El guardia debe tener puesto su casco de seguridad con barbiquejo, lentes de seguridad, guantes combinados de carnaza y botines de seguridad con casquillo.";
@@ -45,7 +46,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
             }
             // Si la escena en juego es la P6
@@ -54,7 +56,8 @@ public class BtnMangment : MonoBehaviour
                 DialogueText.text = "Correcto! El guardia siguió el orden adecuado y el rodillo será arreglado.";
                 // Suma puntos
                 GameMind.addPoints(100);
-                StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 7) {
                     DialogueText.text = "Incorrecto! Te faltaron pasos, el orden correcto sería ...";
@@ -62,7 +65,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 7) {
                     DialogueText.text = "Incorrecto! El orden correcto sería ...";
@@ -70,7 +74,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 7) {
                     DialogueText.text = "Incorrecto! Te faltaron pasos y el orden correcto sería ...";
@@ -78,7 +83,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
 
             }
@@ -90,7 +96,8 @@ public class BtnMangment : MonoBehaviour
                     DialogueText.text = "Correcto! Usaste tus sentidos de manera correcta.";
                     // Suma puntos
                     GameMind.addPoints(100);
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
@@ -100,7 +107,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
@@ -109,7 +117,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
@@ -118,7 +127,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
 
             }
@@ -130,7 +140,8 @@ public class BtnMangment : MonoBehaviour
                     DialogueText.text = "Correcto! Seguiste el orden óptimo para el bloqueo";
                     // Suma puntos
                     GameMind.addPoints(100);
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
@@ -139,7 +150,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 3)
                 {
@@ -148,7 +160,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
@@ -157,7 +170,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
 
             }
@@ -169,7 +183,8 @@ public class BtnMangment : MonoBehaviour
                     DialogueText.text = "Correcto!";
                     // Suma puntos
                     GameMind.addPoints(100);
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect")
                 {
@@ -178,7 +193,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                    // GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else
                 {
@@ -187,7 +203,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
 
             }
@@ -200,7 +217,8 @@ public class BtnMangment : MonoBehaviour
                     DialogueText.text = "Correcto! Esos son los tipos de daño que podrían estar ocurriendo.";
                     // Suma puntos
                     GameMind.addPoints(100);
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
@@ -210,7 +228,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                    // GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
@@ -219,7 +238,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
@@ -228,7 +248,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
 
             }
@@ -240,7 +261,8 @@ public class BtnMangment : MonoBehaviour
                     DialogueText.text = "Correcto! Relacionaste de manera perfecta.";
                     // Suma puntos
                     GameMind.addPoints(100);
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
@@ -250,7 +272,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 3)
                 {
@@ -259,7 +282,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
@@ -268,7 +292,8 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
-                    StartCoroutine(WaitSeconds(5));
+                    //StartCoroutine(WaitSeconds(5));
+                    ChangeCurrentScene();
                 }
 
             }
@@ -276,7 +301,28 @@ public class BtnMangment : MonoBehaviour
         });
     }
 
+    void ChangeCurrentScene() {
+        Boton.GetComponent<Button>().interactable = false;
+        // Si las vidas es 0 o menos se cargara la escena de perder, sino la siguiente escena
+        if (GlobalVariables.lives <= 0) {
+            string Escena = SceneManager.GetActiveScene().name;
+
+            if (Escena.Substring(0, 1) == "P") {
+                SceneManager.LoadScene("Lose");
+            }
+            else {
+                SceneManager.LoadScene(Escena.Substring(0, 3) + "Lose");
+            }
+
+            //SceneManager.LoadScene("Lose");
+        }
+        else {
+            SceneManager.LoadScene(SigEscena);
+        }
+    }
+
     // Coroutine donde se espera 5 segundos para que el usuario pueda leer el feedback
+    /*
     IEnumerator WaitSeconds(int seconds) {
         Boton.GetComponent<Button>().interactable = false;
         yield return new WaitForSeconds(seconds);
@@ -299,6 +345,7 @@ public class BtnMangment : MonoBehaviour
             SceneManager.LoadScene(SigEscena);
         }
     }
+    */
 
     //Ricky
     //Cambiar dew posicion las cosas
