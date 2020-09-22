@@ -164,7 +164,7 @@ public class Database : MonoBehaviour
 
     public static void saveData(){
         string jsonData = JsonUtility.ToJson (userBase, true);
-        File.WriteAllText(path,jsonData);
+        File.WriteAllText(path, jsonData);
         //File.WriteAllText(path2, jsonData);
     }
     
