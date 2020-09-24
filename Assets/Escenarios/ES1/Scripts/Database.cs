@@ -82,9 +82,6 @@ public class Database : MonoBehaviour
     }
 
     public static User[] GetUsers() {
-        var myTextAsset = File.ReadAllText(Application.persistentDataPath + "/database.json");
-        //Debug.Log("hola" + myTextAsset);
-        userBase = JsonUtility.FromJson<Users>(myTextAsset);
         return userBase.users;
     }
 
