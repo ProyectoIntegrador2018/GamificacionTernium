@@ -81,6 +81,13 @@ public class Database : MonoBehaviour
         return -1;
     }
 
+    public static User[] GetUsers() {
+        var myTextAsset = File.ReadAllText(Application.persistentDataPath + "/database.json");
+        //Debug.Log("hola" + myTextAsset);
+        userBase = JsonUtility.FromJson<Users>(myTextAsset);
+        return userBase.users;
+    }
+
     // Check if the user has an achivmenet on "i" scene
     public static bool getAchivement(int i) {
         return userBase.users[GlobalVariables.usernameId].achivements[i];
