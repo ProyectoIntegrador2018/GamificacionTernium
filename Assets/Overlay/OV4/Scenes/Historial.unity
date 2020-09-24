@@ -943,7 +943,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Estas son las misiones que has jugado hasta el momento con tu puntuacion
-    mas alta, intenta sacar la mejor puntuacion en todoas!
+    mas alta, intenta sacar la mejor puntuacion en todas!
 --- !u!222 &712055207
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -39,7 +39,9 @@ public class BtnMangment : MonoBehaviour
                 DialogueText.text = "Correcto! El guardia ahora tiene su equipo de seguridad puesto.";
                 // Suma puntos
                 GameMind.addPoints(100);
+
                 showContinueButton();
+
                 }
                 else if (DragDrop.statusAnswer() == "Incorrect") {
                     DialogueText.text = "Incorrecto! El guardia debe tener puesto su casco de seguridad con barbiquejo, lentes de seguridad, guantes combinados de carnaza y botines de seguridad con casquillo.";
@@ -47,7 +49,9 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
                     Solution();
+
                     showContinueButton();
+
                 }
             }
             // Si la escena en juego es la P6
@@ -57,6 +61,7 @@ public class BtnMangment : MonoBehaviour
                 // Suma puntos
                 GameMind.addPoints(100);
                 showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 7) {
                     DialogueText.text = "Incorrecto! Te faltaron pasos, el orden correcto sería ...";
@@ -65,6 +70,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 7) {
                     DialogueText.text = "Incorrecto! El orden correcto sería ...";
@@ -73,6 +79,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 7) {
                     DialogueText.text = "Incorrecto! Te faltaron pasos y el orden correcto sería ...";
@@ -93,6 +100,7 @@ public class BtnMangment : MonoBehaviour
                     // Suma puntos
                     GameMind.addPoints(100);
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
@@ -103,6 +111,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
@@ -112,6 +121,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
@@ -121,6 +131,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
 
             }
@@ -133,6 +144,7 @@ public class BtnMangment : MonoBehaviour
                     // Suma puntos
                     GameMind.addPoints(100);
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
@@ -142,6 +154,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 3)
                 {
@@ -151,6 +164,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
@@ -160,6 +174,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
 
             }
@@ -171,7 +186,9 @@ public class BtnMangment : MonoBehaviour
                     DialogueText.text = "Correcto!";
                     // Suma puntos
                     GameMind.addPoints(100);
+
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect")
                 {
@@ -181,6 +198,7 @@ public class BtnMangment : MonoBehaviour
                    // GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
                 else
                 {
@@ -190,6 +208,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
 
             }
@@ -203,6 +222,7 @@ public class BtnMangment : MonoBehaviour
                     // Suma puntos
                     GameMind.addPoints(100);
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
@@ -213,6 +233,8 @@ public class BtnMangment : MonoBehaviour
                    // GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
+
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
@@ -222,6 +244,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
@@ -231,6 +254,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
 
             }
@@ -243,6 +267,7 @@ public class BtnMangment : MonoBehaviour
                     // Suma puntos
                     GameMind.addPoints(100);
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
@@ -253,6 +278,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 3)
                 {
@@ -262,6 +288,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
@@ -271,6 +298,7 @@ public class BtnMangment : MonoBehaviour
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
+
                 }
 
             }
@@ -288,25 +316,26 @@ public class BtnMangment : MonoBehaviour
     }
     
     void ChangeCurrentScene() {
+
         // Si las vidas es 0 o menos se cargara la escena de perder, sino la siguiente escena
-        if (GlobalVariables.lives <= 0)
-        {
+        if (GlobalVariables.lives <= 0) {
             string Escena = SceneManager.GetActiveScene().name;
 
-            if (Escena.Substring(0, 1) == "P")
-            {
+            if (Escena.Substring(0, 1) == "P") {
                 SceneManager.LoadScene("Lose");
             }
-            else
-            {
+            else {
                 SceneManager.LoadScene(Escena.Substring(0, 3) + "Lose");
             }
 
             //SceneManager.LoadScene("Lose");
-        } else {
+        }
+        else {
             SceneManager.LoadScene(SigEscena);
         }
     }
+
+   
 
     //Ricky
     //Cambiar dew posicion las cosas

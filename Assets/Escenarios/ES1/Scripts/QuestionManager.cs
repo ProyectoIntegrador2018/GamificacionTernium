@@ -18,7 +18,7 @@ public class QuestionManager : MonoBehaviour {
     public Button continueButton;
     public string Escena;
 
-    public int SegundosEspera;
+    //public int SegundosEspera;
 
     // Las opciones de los botones, esto es para control mas abajo
     bool Opt1;
@@ -897,9 +897,11 @@ public class QuestionManager : MonoBehaviour {
     void Update() {
         // Como siempre esta corriendo esto, hay que mantenerlo simple, asi que solo cambiara states
         if (myState == States.Questions){ Question(); }
+        /*
         else if (myState == States.trueState){ trueState(); }
         else if (myState == States.falseState){ falseState(); }
         else if (myState == States.falseState2) { falseState2(); }
+        */
     }
 
     // Cuando el objeto donde esta el script, es "enabled" comienza a checar esto
@@ -908,6 +910,7 @@ public class QuestionManager : MonoBehaviour {
         Btn1.onClick.AddListener(delegate {Opt1 = true; Question(); showContinueButton(); });
         Btn2.onClick.AddListener(delegate {Opt2 = true; Question(); showContinueButton(); });
         Btn3.onClick.AddListener(delegate {Opt3 = true; Question(); showContinueButton(); });
+
     }
 
     // Desplegar la pregunta actual
@@ -919,17 +922,21 @@ public class QuestionManager : MonoBehaviour {
         Btn2.GetComponentInChildren<Text>().text = QA.Opc2;
         Btn3.GetComponentInChildren<Text>().text = QA.Opc3;
 
+        //Se agrego que se corriera la funcion que lee el estado actual para determinar la siguiente escena porque de lo contrario no se podria cambiar de escena instantaneamente
         if (Opt1 == true) { 
             GameMind.takeAwayLive(QA.Vidas1);
             //GameMind.addPoints(-QA.Points);
-            myState = States.falseState; 
+            myState = States.falseState;
+            falseState();
         } else if (Opt2 == true){
             GameMind.takeAwayLive(QA.Vidas2);
             //GameMind.addPoints(-QA.Points);
             myState = States.falseState2;
+            falseState2();
         } else if (Opt3 == true){
             GameMind.addPoints(QA.Points);
-            myState = States.trueState;  
+            myState = States.trueState;
+            trueState();
         }
     }
 
@@ -950,6 +957,7 @@ public class QuestionManager : MonoBehaviour {
         CanvasText.text = "Incorrecto! " + '\n' + QA.Fail2;
         SigEscena = SigEscenaError2;
     }
+
 
     // Funcion para hacer visible el boton para cambiar a la siguiente pregunta
     void showContinueButton(){
@@ -989,6 +997,8 @@ public class QuestionManager : MonoBehaviour {
     }
 
     // Es la corutina que espera 5 segundos luego cargan la escena que fue asignada
+    //Se comento esta corutina para hacer que el cambio fuera dedicado a un boton en vez de esperar a cierto tiempo
+    /*
     IEnumerator WaitSeconds() {
 
         ColorBlock colors = Btn3.colors;
@@ -1015,6 +1025,7 @@ public class QuestionManager : MonoBehaviour {
             SceneManager.LoadScene(SigEscena);
         }
     }
+    */
 
     // Dado que seria mucho problema randomizar la respuesta y el texto 
     // de fallo especifico sera mas facil mover las posiciones de los botones
