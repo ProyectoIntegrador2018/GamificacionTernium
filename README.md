@@ -1,8 +1,10 @@
-# Gamificación para la capacitación de guardias
+# Gamificación para la capacitación de guardias 2.0
 
 Here lies the source code for the game “Misiones de mantenimiento” for Ternium, its purpose is to educate employees in Ternium's most common and complicated situations in a fun and addictive way.
 
 The game will consist in real life situations where the user will have to select the correct answer to the problem the game will present, fostering self-learning and retaining the information learned. The game has a simple high score and achievement system to encourage the players to do well in the game. The system will be accessed by using the username and password that the administrator provides.
+
+ The first version was elaborated during February-June 2020 semester by the Ol' team and picked up by the Da Team to improve some features and add new functionality proposed by the new team.
 
 
 ## Table of contents
@@ -35,6 +37,15 @@ The game will consist in real life situations where the user will have to select
 | Iván Contreras Rodríguez | A01540379@itesm.mx | Development Team, Project Administrator |
 | Iván Contreras Rodríguez | A01540379@itesm.mx | Development Team, Configuration Administrator |
 | José Napoleón Lazo Celaya | A01176472@itesm.mx | Development Team, Product Owner Proxy |
+
+### Ol' team
+
+| Name           | Email             | Role        |
+| -------------- | ----------------- | ----------- |
+| Fabiana Serangelli Andrade | A01281445@itesm.mx | Development Team, Scrum Master |
+| Oscar Lerma Franco | A01380817@itesm.mx | Development Team, Project Administrator |
+| Raul Flores Gracia | A00820377@itesm.mx | Development Team, Configuration Administrator |
+| Ricardo Reyes Alcalá | 	A01281564@itesm.mx | Development Team, Product Owner Proxy |
 
 ### Technology Stack
 | Technology    | Version      |
