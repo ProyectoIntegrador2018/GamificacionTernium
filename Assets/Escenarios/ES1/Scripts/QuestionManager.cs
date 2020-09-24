@@ -14,6 +14,8 @@ public class QuestionManager : MonoBehaviour {
     public Button Btn1;
     public Button Btn2;
     public Button Btn3;
+    Transform canvasPosition;
+    public Button continueButton;
     public string Escena;
 
     public int SegundosEspera;
@@ -903,9 +905,9 @@ public class QuestionManager : MonoBehaviour {
     // Cuando el objeto donde esta el script, es "enabled" comienza a checar esto
     private void OnEnable() {
         // El checar que los botones sean presionados, y que pasa si lo son
-        Btn1.onClick.AddListener(delegate {Opt1 = true; StartCoroutine(WaitSeconds()); });
-        Btn2.onClick.AddListener(delegate {Opt2 = true; StartCoroutine(WaitSeconds()); });
-        Btn3.onClick.AddListener(delegate {Opt3 = true; StartCoroutine(WaitSeconds()); });
+        Btn1.onClick.AddListener(delegate {Opt1 = true; Question(); showContinueButton(); });
+        Btn2.onClick.AddListener(delegate {Opt2 = true; Question(); showContinueButton(); });
+        Btn3.onClick.AddListener(delegate {Opt3 = true; Question(); showContinueButton(); });
     }
 
     // Desplegar la pregunta actual
@@ -947,6 +949,43 @@ public class QuestionManager : MonoBehaviour {
     void falseState2() {
         CanvasText.text = "Incorrecto! " + '\n' + QA.Fail2;
         SigEscena = SigEscenaError2;
+    }
+
+    // Funcion para hacer visible el boton para cambiar a la siguiente pregunta
+    void showContinueButton(){
+        Btn1.interactable = false;
+        Btn2.interactable = false;
+        Btn3.interactable = false;
+        canvasPosition = GetComponentInParent<Canvas>().transform;
+        Button newButton = Instantiate(continueButton, new Vector3(350,300,0), transform.rotation);
+        newButton.transform.SetParent(canvasPosition);
+        newButton.onClick.AddListener(ChangeCurrentScene);
+    }
+
+    void ChangeCurrentScene() {
+        //Debug.Log("Aprentando boton");
+        //print(SigEscena);
+        ColorBlock colors = Btn3.colors;
+        colors.normalColor = new Color32(0, 179, 81, 255);
+        //colors.highlightedColor = new Color32(0, 179, 81, 255);
+        Btn3.colors = colors;
+
+        //Btn3.colors.normalColor = new Color(225, 225, 225, 255); ;
+        if (GlobalVariables.lives <= 0) {
+
+            //string Escena = SceneManager.GetActiveScene().name;
+
+            if (Escena.Substring(0, 1) == "P") {
+                SceneManager.LoadScene("Lose");
+            }
+            else {
+                SceneManager.LoadScene(Escena.Substring(0, 3) + "Lose");
+            }
+            //SceneManager.LoadScene("Lose");
+        }
+        else {
+            SceneManager.LoadScene(SigEscena);
+        }
     }
 
     // Es la corutina que espera 5 segundos luego cargan la escena que fue asignada
