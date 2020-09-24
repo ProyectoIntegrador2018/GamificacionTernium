@@ -81,6 +81,10 @@ public class Database : MonoBehaviour
         return -1;
     }
 
+    public static User[] GetUsers() {
+        return userBase.users;
+    }
+
     // Check if the user has an achivmenet on "i" scene
     public static bool getAchivement(int i) {
         return userBase.users[GlobalVariables.usernameId].achivements[i];
@@ -164,7 +168,7 @@ public class Database : MonoBehaviour
 
     public static void saveData(){
         string jsonData = JsonUtility.ToJson (userBase, true);
-        File.WriteAllText(path,jsonData);
+        File.WriteAllText(path, jsonData);
         //File.WriteAllText(path2, jsonData);
     }
     
