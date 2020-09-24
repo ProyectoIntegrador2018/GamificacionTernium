@@ -1754,7 +1754,7 @@ PrefabInstance:
     - target: {fileID: 607707399327044964, guid: 64b63e8fd71dea846bdb5590b987dc89,
         type: 3}
       propertyPath: m_Text
-      value: "Haz click en alguna misi\xF3n para ver las 10 puntuaciones mas altas!"
+      value: "Haz click en alguna misi\xF3n para ver sus 10 puntuaciones mas altas!"
       objectReference: {fileID: 0}
     - target: {fileID: 607707399327044964, guid: 64b63e8fd71dea846bdb5590b987dc89,
         type: 3}
