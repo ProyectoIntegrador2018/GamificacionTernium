@@ -1653,7 +1653,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Estos son los jugadores con las puntuaciones mas altas, intenta estar entre
-    ellos!
+    ellas!
 --- !u!222 &2014437470
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1751,6 +1751,16 @@ PrefabInstance:
       propertyPath: m_FontData.m_BestFit
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 607707399327044964, guid: 64b63e8fd71dea846bdb5590b987dc89,
+        type: 3}
+      propertyPath: m_Text
+      value: "Haz click en alguna misi\xF3n para ver las 10 puntuaciones mas altas!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 607707399327044964, guid: 64b63e8fd71dea846bdb5590b987dc89,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 607707399327044965, guid: 64b63e8fd71dea846bdb5590b987dc89,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1814,17 +1824,17 @@ PrefabInstance:
     - target: {fileID: 607707399327044965, guid: 64b63e8fd71dea846bdb5590b987dc89,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -55
+      value: 0.0000038146973
       objectReference: {fileID: 0}
     - target: {fileID: 607707399327044965, guid: 64b63e8fd71dea846bdb5590b987dc89,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 862
+      value: 742.9
       objectReference: {fileID: 0}
     - target: {fileID: 607707399327044965, guid: 64b63e8fd71dea846bdb5590b987dc89,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 77.79999
+      value: 255.3
       objectReference: {fileID: 0}
     - target: {fileID: 607707399327044965, guid: 64b63e8fd71dea846bdb5590b987dc89,
         type: 3}
@@ -1834,7 +1844,7 @@ PrefabInstance:
     - target: {fileID: 607707399327044965, guid: 64b63e8fd71dea846bdb5590b987dc89,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 607707399327044965, guid: 64b63e8fd71dea846bdb5590b987dc89,
         type: 3}
@@ -1844,7 +1854,7 @@ PrefabInstance:
     - target: {fileID: 607707399327044965, guid: 64b63e8fd71dea846bdb5590b987dc89,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 607707399327044965, guid: 64b63e8fd71dea846bdb5590b987dc89,
         type: 3}
@@ -1864,7 +1874,7 @@ PrefabInstance:
     - target: {fileID: 607707399327044966, guid: 64b63e8fd71dea846bdb5590b987dc89,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b63e8fd71dea846bdb5590b987dc89, type: 3}
