@@ -1370,8 +1370,10 @@ MonoBehaviour:
   Btn1: {fileID: 1927014631}
   Btn2: {fileID: 2111580842}
   Btn3: {fileID: 1244405850}
+  canvasPosition: {fileID: 1133049581}
+  continueButton: {fileID: 8587021709101804682, guid: ff9d2a51d3c693a4f8ee850488f306ae,
+    type: 3}
   Escena: 
-  SegundosEspera: 5
   vidasFallo1: 4
   vidasFallo2: 1
   SigEscenaCorrecto: P7
