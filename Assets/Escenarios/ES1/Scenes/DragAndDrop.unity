@@ -506,6 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1308566013}
+  droppedOnSlot: 0
 --- !u!114 &292906447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2122c448da743cd448223d6281813f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 0}
+  Pausado: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -972,7 +975,7 @@ GameObject:
   - component: {fileID: 1268601893}
   - component: {fileID: 1268601892}
   m_Layer: 0
-  m_Name: BtnContinuar
+  m_Name: BotonRevisar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1193,8 +1196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b124968e15fc94e48bc6a77769f4a185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boton: {fileID: 1268601892}
+  BotonRevisar: {fileID: 1268601892}
   SigEscena: 1
+  continueButton: {fileID: 8587021709101804682, guid: ff9d2a51d3c693a4f8ee850488f306ae,
+    type: 3}
+  DialogueText: {fileID: 0}
 --- !u!1 &1651111444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,6 +1357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1308566013}
+  droppedOnSlot: 0
 --- !u!114 &2116539742
 MonoBehaviour:
   m_ObjectHideFlags: 0

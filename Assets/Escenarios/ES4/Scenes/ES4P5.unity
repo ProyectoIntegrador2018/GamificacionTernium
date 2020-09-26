@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 89999785}
   - component: {fileID: 89999784}
   m_Layer: 0
-  m_Name: Button-6
+  m_Name: BtnRevisar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -503,8 +503,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b124968e15fc94e48bc6a77769f4a185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boton: {fileID: 89999784}
+  BotonRevisar: {fileID: 89999784}
   SigEscena: ES4P6
+  continueButton: {fileID: 8587021709101804682, guid: ff9d2a51d3c693a4f8ee850488f306ae,
+    type: 3}
   DialogueText: {fileID: 497216131}
 --- !u!114 &367082417
 MonoBehaviour:

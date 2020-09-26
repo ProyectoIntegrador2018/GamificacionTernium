@@ -1661,8 +1661,9 @@ MonoBehaviour:
   Btn1: {fileID: 1220162632}
   Btn2: {fileID: 576272969}
   Btn3: {fileID: 1586636598}
+  continueButton: {fileID: 8587021709101804682, guid: ff9d2a51d3c693a4f8ee850488f306ae,
+    type: 3}
   Escena: 
-  SegundosEspera: 5
   vidasFallo1: 4
   vidasFallo2: 1
   SigEscenaCorrecto: ES5P6
