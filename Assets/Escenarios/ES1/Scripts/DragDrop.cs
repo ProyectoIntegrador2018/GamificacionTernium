@@ -18,6 +18,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     // Variables publicas
     public bool droppedOnSlot = false;
 
+
+ 
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
@@ -84,5 +86,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             return "Incorrect";
         }
     }
+
+
+ 
+
+
 }
 
