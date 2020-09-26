@@ -107,7 +107,7 @@ public class BtnMangment : MonoBehaviour
                     // Suma puntos
                     GameMind.addPoints(100);
                     //StartCoroutine(WaitSeconds(5));
-                    ChangeCurrentScene();
+                    //ChangeCurrentScene();
 
                     Solution();
 
