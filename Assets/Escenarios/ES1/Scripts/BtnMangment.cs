@@ -123,9 +123,10 @@ public class BtnMangment : MonoBehaviour
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(1);
                     GameMind.addPoints(-100);
-                    Solution(); 
+                    Solution();
+                    showContinueButton();
                     //StartCoroutine(WaitSeconds(10));
-                    ChangeCurrentScene();
+                    //ChangeCurrentScene();
                 }
             }
 
