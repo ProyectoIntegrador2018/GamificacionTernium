@@ -20,6 +20,14 @@ public class BtnMangment : MonoBehaviour
     string ItemSlot;
     static int CH;
 
+    public GameObject item_1;
+    public GameObject item_2;
+    public GameObject item_3;
+    public GameObject item_4;
+
+    public Transform item_1_position;
+
+
     private void Awake()
     {
         ContarItems();
@@ -27,10 +35,36 @@ public class BtnMangment : MonoBehaviour
         Shuffle();
     }
 
+
+    public bool giveAnswer()
+    {
+        if ((item_1.transform.localPosition.y == 67.7f) &&
+            (item_2.transform.localPosition.y == 187.7f)&&
+            (item_3.transform.localPosition.y == -172.3f))
+        
+        {
+       
+            return true;
+        }
+        else
+        {
+            Debug.Log("Item 1 : " + "x:" + item_1.transform.localPosition.x + " y: " + item_1.transform.localPosition.y);
+            Debug.Log("Item 2 : " + "x:" + item_2.transform.position.x + " y: " + item_2.transform.localPosition.y);
+            Debug.Log("Item 3 : " + "x:" + item_3.transform.position.x + " y: " + item_3.transform.localPosition.y);
+            Debug.Log("Item 4 : " + "x:" + item_4.transform.position.x + " y: " + item_4.transform.localPosition.y);
+
+            return false;
+        }
+      
+
+    }
+
+    
     private void OnEnable()
     {
         Boton.onClick.AddListener(delegate 
         {
+            /*
             // Si la escena en juego es la P2
             if (SceneManager.GetActiveScene().name == "P2" || SceneManager.GetActiveScene().name == "ES4P2") {
                 if (DragDrop.statusAnswer() == "Correct") {
@@ -38,18 +72,52 @@ public class BtnMangment : MonoBehaviour
                 // Suma puntos
                 GameMind.addPoints(100);
                     //StartCoroutine(WaitSeconds(5));
-                    ChangeCurrentScene();
+                    // * ChangeCurrentScene()  Cambio aqui;
                 }
                 else if (DragDrop.statusAnswer() == "Incorrect") {
                     DialogueText.text = "Incorrecto! El guardia debe tener puesto su casco de seguridad con barbiquejo, lentes de seguridad, guantes combinados de carnaza y botines de seguridad con casquillo.";
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(1);
                     //GameMind.addPoints(-100);
-                    Solution();
+                    // **   Solution(); cambio aqui
+                    //StartCoroutine(WaitSeconds(5));
+                    //*cambio aqui   ChangeCurrentScene();
+                }
+            }*/
+
+
+
+            // Si la escena en juego es la P2
+            if (SceneManager.GetActiveScene().name == "P2" || SceneManager.GetActiveScene().name == "ES4P2")
+            {
+                if (giveAnswer() == true)
+                {
+                    DialogueText.text = "Correcto! El guardia ahora tiene su equipo de seguridad puesto.";
+                    Debug.Log("correcto");
+                 
+                    // Suma puntos
+                    GameMind.addPoints(100);
                     //StartCoroutine(WaitSeconds(5));
                     ChangeCurrentScene();
                 }
+                else if (giveAnswer() == false)
+                {
+              
+                    DialogueText.text = "Incorrecto! El guardia debe tener puesto su casco de seguridad con barbiquejo, lentes de seguridad, guantes combinados de carnaza y botines de seguridad con casquillo.";
+                    Debug.Log("incorrecto");
+                    // Quita vida y suma puntos
+                    GameMind.takeAwayLive(1);
+                    GameMind.addPoints(-100);
+                    Solution(); 
+                    StartCoroutine(WaitSeconds(10));
+                    ChangeCurrentScene();
+                }
             }
+
+
+
+
+
             // Si la escena en juego es la P6
             if (SceneManager.GetActiveScene().name == "P6") {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 7) {
@@ -322,7 +390,7 @@ public class BtnMangment : MonoBehaviour
     }
 
     // Coroutine donde se espera 5 segundos para que el usuario pueda leer el feedback
-    /*
+    
     IEnumerator WaitSeconds(int seconds) {
         Boton.GetComponent<Button>().interactable = false;
         yield return new WaitForSeconds(seconds);
@@ -345,7 +413,7 @@ public class BtnMangment : MonoBehaviour
             SceneManager.LoadScene(SigEscena);
         }
     }
-    */
+    
 
     //Ricky
     //Cambiar dew posicion las cosas
@@ -424,6 +492,9 @@ public class BtnMangment : MonoBehaviour
             }
         }
     }
+
+
+
 
     public void ContarItems()
     {

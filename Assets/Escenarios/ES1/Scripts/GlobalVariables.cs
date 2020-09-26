@@ -23,6 +23,9 @@ public class GlobalVariables : MonoBehaviour {
     // Variables publicas tipo lista de objetos
     public static List<GameObject> items = new List<GameObject>();
 
+    //Lista de nombres para juego de ordenar el equipo
+    public static string[] itemsGame = { };
+
     // Variables publicas tipo diccionario de enteros
     public static Dictionary<int, int> pairAnswerSlot = new Dictionary<int, int>();
 }
