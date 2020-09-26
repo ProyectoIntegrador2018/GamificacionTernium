@@ -124,7 +124,7 @@ public class BtnMangment : MonoBehaviour
                     GameMind.takeAwayLive(1);
                     GameMind.addPoints(-100);
                     Solution(); 
-                    StartCoroutine(WaitSeconds(10));
+                    //StartCoroutine(WaitSeconds(10));
                     ChangeCurrentScene();
                 }
             }
@@ -416,7 +416,7 @@ public class BtnMangment : MonoBehaviour
 
 
     // Coroutine donde se espera 5 segundos para que el usuario pueda leer el feedback
-    
+    /*
     IEnumerator WaitSeconds(int seconds) {
         Boton.GetComponent<Button>().interactable = false;
         yield return new WaitForSeconds(seconds);
@@ -438,7 +438,7 @@ public class BtnMangment : MonoBehaviour
         } else {
             SceneManager.LoadScene(SigEscena);
         }
-    }
+    }*/
     
 
    
