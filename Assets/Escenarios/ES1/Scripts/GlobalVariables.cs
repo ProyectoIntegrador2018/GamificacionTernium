@@ -10,6 +10,7 @@ public class GlobalVariables : MonoBehaviour {
     public static int currentTagItem = 0;
     public static int lives = 5;
     public static int score = 0;
+    public static int accumulatedExp = 0;
     public static string username;
     public static int usernameId;
     public static bool instructions = false;

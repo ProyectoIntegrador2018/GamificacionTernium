@@ -5,6 +5,9 @@
       "username": "Master",
       "password": "1234",
       "tutorial": false,
+      "expMax": 500,
+      "expMin": 0,
+      "expCurrent": 0,
       "niveles": [
         800,
         900,
@@ -48,6 +51,9 @@
       "username": "Ricardo",
       "password": "1234",
       "tutorial": false,
+      "expMax": 500,
+      "expMin": 0,
+      "expCurrent": 0,
       "niveles": [
         0,
         0,
@@ -91,6 +97,9 @@
       "username": "Fabi",
       "password": "1234",
       "tutorial": false,
+      "expMax": 500,
+      "expMin": 0
+      "expCurrent": 0,
       "niveles": [
         0,
         0,
@@ -134,6 +143,9 @@
       "username": "Oscar",
       "password": "1234",
       "tutorial": false,
+      "expMax": 500,
+      "expMin": 0,
+      "expCurrent": 0,
       "niveles": [
         0,
         0,
@@ -177,6 +189,9 @@
       "username": "Raul",
       "password": "1234",
       "tutorial": false,
+      "expMax": 500,
+      "expMin": 0,
+      "expCurrent": 0,
       "niveles": [
         0,
         0,
@@ -220,6 +235,9 @@
       "username": "Ivi",
       "password": "1234",
       "tutorial": true,
+      "expMax": 500,
+      "expMin": 0,
+      "expCurrent": 0,
       "niveles": [
         0,
         0,
@@ -263,6 +281,9 @@
       "username": "Tutorial",
       "password": "1234",
       "tutorial": true,
+      "expMax": 500,
+      "expMin": 0,
+      "expCurrent": 0,
       "niveles": [
         0,
         0,
