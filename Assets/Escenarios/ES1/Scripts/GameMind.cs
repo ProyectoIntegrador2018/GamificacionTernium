@@ -20,9 +20,8 @@ public class GameMind : MonoBehaviour {
     string Escena;
 
     MonoBehaviour[] comps;
-
-
     // Start is called before the first frame update
+
     void Start()
     {
         Escena = SceneManager.GetActiveScene().name;
@@ -208,4 +207,9 @@ public class GameMind : MonoBehaviour {
     {
         Database.saveData();
     }
+
+    public static int getMScore(){
+        return Database.getMorningScore();
+    }
+
 }

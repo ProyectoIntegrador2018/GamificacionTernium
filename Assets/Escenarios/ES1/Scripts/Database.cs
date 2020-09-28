@@ -15,6 +15,7 @@ public class User
     public string username;
     public string password;
     public bool tutorial;
+    public string turno;
     public int[] niveles;
     public bool[] achivements;
     public bool[] started;
@@ -147,6 +148,7 @@ public class Database : MonoBehaviour
         nUser.username = name;
         nUser.password = password;
         nUser.tutorial = true;
+        nUser.turno = "Matutino";
         int[] niv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         nUser.niveles = niv;
         bool[] ach = {false, false, false, false, false, false, false, false, false, false, false };
@@ -171,5 +173,42 @@ public class Database : MonoBehaviour
         File.WriteAllText(path, jsonData);
         //File.WriteAllText(path2, jsonData);
     }
+
+    public static int getMorningScore(){
+        int morningTurn = 0;
+        foreach (User user in userBase.users) {
+            if(user.turno == "Matutino"){
+                for(int i = 0; i < user.niveles.Length; i++){
+                    //Debug.Log(user.niveles[i]);
+                    morningTurn += user.niveles[i];
+                }
+            }
+        }
+        return morningTurn;
+    }
+
+    public static int getNoonScore(){
+        int noonTurn = 0;
+        foreach (User user in userBase.users) {
+            if(user.turno == "Verspertino"){
+                for(int i = 0; i < user.niveles.Length; i++){
+                    noonTurn += user.niveles[i];
+                }
+            }
+        }
+        return noonTurn;
+    } 
+
+    public static int getNightScore(){
+        int nightTurn = 0;
+        foreach (User user in userBase.users) {
+            if(user.turno == "Nocturno"){
+                for(int i = 0; i < user.niveles.Length; i++){
+                    nightTurn += user.niveles[i];
+                }
+            }
+        }
+        return nightTurn;
+    } 
     
 }
