@@ -15,6 +15,10 @@ public class User
     public string username;
     public string password;
     public bool tutorial;
+    public int expMax;
+    public int expMin;
+    public int expPrevious;
+    public int expCurrent;
     public int[] niveles;
     public bool[] achivements;
     public bool[] started;
@@ -67,6 +71,8 @@ public class Database : MonoBehaviour
         else
         {
             userBase = JsonUtility.FromJson<Users>(jsonFile.text);
+            //Si no existe se crea en local para siempre accesar desde el path 
+            saveData();
         }
     }
 
@@ -83,6 +89,18 @@ public class Database : MonoBehaviour
 
     public static User[] GetUsers() {
         return userBase.users;
+    }
+
+    public static int[] getExpBarData() {
+        int[] aux = {userBase.users[GlobalVariables.usernameId].expMax, userBase.users[GlobalVariables.usernameId].expMin, userBase.users[GlobalVariables.usernameId].expPrevious};
+        return aux;
+    }
+
+    public static void setExpBarData(int expMax, int expMin, int expPrevious) {
+        userBase.users[GlobalVariables.usernameId].expMax = expMax;
+        userBase.users[GlobalVariables.usernameId].expMin = expMin;
+        userBase.users[GlobalVariables.usernameId].expPrevious = expPrevious;
+        userBase.users[GlobalVariables.usernameId].expCurrent = expPrevious;
     }
 
     // Check if the user has an achivmenet on "i" scene
@@ -147,6 +165,10 @@ public class Database : MonoBehaviour
         nUser.username = name;
         nUser.password = password;
         nUser.tutorial = true;
+        nUser.expMax = 0;
+        nUser.expMin = 0;
+        nUser.expPrevious = 0;
+        nUser.expCurrent = 0;
         int[] niv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         nUser.niveles = niv;
         bool[] ach = {false, false, false, false, false, false, false, false, false, false, false };
