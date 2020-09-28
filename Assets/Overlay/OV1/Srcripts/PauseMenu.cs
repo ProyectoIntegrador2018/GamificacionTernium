@@ -29,6 +29,7 @@ public class PauseMenu : MonoBehaviour
         {
             GlobalVariables.lives = 5;
             GlobalVariables.score = 0;
+            GlobalVariables.accumulatedExp = 0;
             GlobalVariables.sumPos = -20;
             GlobalVariables.pairAnswerSlot.Clear();
             GlobalVariables.items.Clear();

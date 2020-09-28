@@ -7,7 +7,6 @@
       "tutorial": false,
       "expMax": 500,
       "expMin": 0,
-      "expPrevious": 0,
       "expCurrent": 0,
       "niveles": [
         800,
@@ -54,7 +53,6 @@
       "tutorial": false,
       "expMax": 500,
       "expMin": 0,
-      "expPrevious": 0,
       "expCurrent": 0,
       "niveles": [
         0,
@@ -100,8 +98,7 @@
       "password": "1234",
       "tutorial": false,
       "expMax": 500,
-      "expMin": 0,
-      "expPrevious": 0,
+      "expMin": 0
       "expCurrent": 0,
       "niveles": [
         0,
@@ -148,7 +145,6 @@
       "tutorial": false,
       "expMax": 500,
       "expMin": 0,
-      "expPrevious": 0,
       "expCurrent": 0,
       "niveles": [
         0,
@@ -195,7 +191,6 @@
       "tutorial": false,
       "expMax": 500,
       "expMin": 0,
-      "expPrevious": 0,
       "expCurrent": 0,
       "niveles": [
         0,
@@ -242,7 +237,6 @@
       "tutorial": true,
       "expMax": 500,
       "expMin": 0,
-      "expPrevious": 0,
       "expCurrent": 0,
       "niveles": [
         0,
@@ -289,7 +283,6 @@
       "tutorial": true,
       "expMax": 500,
       "expMin": 0,
-      "expPrevious": 0,
       "expCurrent": 0,
       "niveles": [
         0,
