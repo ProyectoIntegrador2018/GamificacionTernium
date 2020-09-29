@@ -310,7 +310,7 @@ public class BtnMangment : MonoBehaviour
     void showContinueButton(){
         BotonRevisar.GetComponent<Button>().interactable = false;
         canvasPosition = GetComponent<Canvas>().transform;
-        Button newButton = Instantiate(continueButton, new Vector3(250,300,0), transform.rotation);
+        Button newButton = Instantiate(continueButton, new Vector3(120,200,0), transform.rotation);
         newButton.transform.SetParent(canvasPosition);
         newButton.onClick.AddListener(ChangeCurrentScene);
     }
