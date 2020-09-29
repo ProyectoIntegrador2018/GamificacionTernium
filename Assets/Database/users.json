@@ -101,7 +101,7 @@
       "tutorial": false,
       "turno": "Nocturno",
       "expMax": 500,
-      "expMin": 0
+      "expMin": 0,
       "expCurrent": 0,
       "niveles": [
         0,
