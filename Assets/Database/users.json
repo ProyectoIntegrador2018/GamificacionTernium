@@ -6,6 +6,9 @@
       "password": "1234",
       "tutorial": false,
       "turno": "Matutino",
+      "expMax": 500,
+      "expMin": 0,
+      "expCurrent": 0,
       "niveles": [
         800,
         900,
@@ -50,6 +53,9 @@
       "password": "1234",
       "tutorial": false,
       "turno": "Vespertino",
+      "expMax": 500,
+      "expMin": 0,
+      "expCurrent": 0,
       "niveles": [
         0,
         0,
@@ -94,6 +100,9 @@
       "password": "1234",
       "tutorial": false,
       "turno": "Nocturno",
+      "expMax": 500,
+      "expMin": 0
+      "expCurrent": 0,
       "niveles": [
         0,
         0,
@@ -138,6 +147,9 @@
       "password": "1234",
       "tutorial": false,
       "turno": "Matutino",
+      "expMax": 500,
+      "expMin": 0,
+      "expCurrent": 0,
       "niveles": [
         0,
         0,
@@ -182,6 +194,9 @@
       "password": "1234",
       "tutorial": false,
       "turno": "Nocturno",
+      "expMax": 500,
+      "expMin": 0,
+      "expCurrent": 0,
       "niveles": [
         0,
         0,
@@ -226,6 +241,9 @@
       "password": "1234",
       "tutorial": true,
       "turno": "Vespertino",
+      "expMax": 500,
+      "expMin": 0,
+      "expCurrent": 0,
       "niveles": [
         0,
         0,
@@ -270,6 +288,9 @@
       "password": "1234",
       "tutorial": true,
       "turno": "Matutino",
+      "expMax": 500,
+      "expMin": 0,
+      "expCurrent": 0,
       "niveles": [
         0,
         0,

@@ -1,9 +1,5 @@
-﻿using Packages.Rider.Editor.UnitTesting;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
 using UnityEngine;
-using System;
 using System.Linq;
 
 public class Top10 : MonoBehaviour

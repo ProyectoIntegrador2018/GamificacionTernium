@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -136,11 +137,21 @@ public class GameMind : MonoBehaviour {
         //Debug.Log("Vidas " + GlobalVariables.lives);
     }
 
+    //Metodo para actualizar la experiencia que se dara al final de una mision
+    public static void updateAccumulatedExp(int exp) {
+        if (exp > 0) {
+            GlobalVariables.accumulatedExp += exp;
+        }
+        
+    }
+
     // Función para sumar o restar puntos
     public static void addPoints(int n) {
-    	//Debug.Log(n);
+
     	GlobalVariables.score = GlobalVariables.score+n;
-    	//Debug.Log("Puntaje " + GlobalVariables.score);
+        //De momento la experiencia solo es la mitad de los puntos que se da por cada pregunta pero se puede cambiar la formula facilmente
+        updateAccumulatedExp(n/2);
+
     }
 
     // Función para agregar al usuario
