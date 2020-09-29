@@ -122,6 +122,10 @@ public class Database : MonoBehaviour
         //Debug.Log(userBase.users[GlobalVariables.usernameId].niveles[i - 1]);
     }
 
+    public static string getTurno(){
+        return userBase.users[GlobalVariables.usernameId].turno; 
+    }
+
     public static bool getTutorial() {
         return userBase.users[GlobalVariables.usernameId].tutorial;
     }
@@ -174,41 +178,5 @@ public class Database : MonoBehaviour
         //File.WriteAllText(path2, jsonData);
     }
 
-    public static int getMorningScore(){
-        int morningTurn = 0;
-        foreach (User user in userBase.users) {
-            if(user.turno == "Matutino"){
-                for(int i = 0; i < user.niveles.Length; i++){
-                    //Debug.Log(user.niveles[i]);
-                    morningTurn += user.niveles[i];
-                }
-            }
-        }
-        return morningTurn;
-    }
-
-    public static int getNoonScore(){
-        int noonTurn = 0;
-        foreach (User user in userBase.users) {
-            if(user.turno == "Verspertino"){
-                for(int i = 0; i < user.niveles.Length; i++){
-                    noonTurn += user.niveles[i];
-                }
-            }
-        }
-        return noonTurn;
-    } 
-
-    public static int getNightScore(){
-        int nightTurn = 0;
-        foreach (User user in userBase.users) {
-            if(user.turno == "Nocturno"){
-                for(int i = 0; i < user.niveles.Length; i++){
-                    nightTurn += user.niveles[i];
-                }
-            }
-        }
-        return nightTurn;
-    } 
     
 }

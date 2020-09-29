@@ -153,6 +153,7 @@ public class GameMind : MonoBehaviour {
         if(id!=-1) {
             GlobalVariables.username = u;
             GlobalVariables.usernameId = id;
+            GlobalVariables.turno = getTurno();
     	    //Debug.Log("usuario " + GlobalVariables.username);
             SceneManager.LoadScene("Menu");
         }
@@ -195,6 +196,10 @@ public class GameMind : MonoBehaviour {
 
     }
 
+    public static string getTurno(){
+        return Database.getTurno();
+    }
+
     public static bool getTutorial() {
         return Database.getTutorial();
     }
@@ -206,10 +211,6 @@ public class GameMind : MonoBehaviour {
     public static void saveData()
     {
         Database.saveData();
-    }
-
-    public static int getMScore(){
-        return Database.getMorningScore();
     }
 
 }
