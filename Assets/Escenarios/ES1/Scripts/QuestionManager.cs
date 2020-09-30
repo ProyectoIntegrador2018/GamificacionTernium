@@ -965,7 +965,7 @@ public class QuestionManager : MonoBehaviour {
         Btn2.interactable = false;
         Btn3.interactable = false;
         canvasPosition = GetComponentInParent<Canvas>().transform;
-        Button newButton = Instantiate(continueButton, new Vector3(350,300,0), transform.rotation);
+        Button newButton = Instantiate(continueButton, new Vector3(375,300,0), transform.rotation);
         newButton.transform.SetParent(canvasPosition);
         newButton.onClick.AddListener(ChangeCurrentScene);
     }

@@ -15,6 +15,7 @@ public class User
     public string username;
     public string password;
     public bool tutorial;
+    public string turno;
     public int expMax;
     public int expMin;
     public int expCurrent;
@@ -137,6 +138,10 @@ public class Database : MonoBehaviour
         //Debug.Log(userBase.users[GlobalVariables.usernameId].niveles[i - 1]);
     }
 
+    public static string getTurno(){
+        return userBase.users[GlobalVariables.usernameId].turno; 
+    }
+
     public static bool getTutorial() {
         return userBase.users[GlobalVariables.usernameId].tutorial;
     }
@@ -163,6 +168,7 @@ public class Database : MonoBehaviour
         nUser.username = name;
         nUser.password = password;
         nUser.tutorial = true;
+        nUser.turno = "Matutino";
         nUser.expMax = 500;
         nUser.expMin = 0;
         nUser.expCurrent = 0;
@@ -190,5 +196,6 @@ public class Database : MonoBehaviour
         File.WriteAllText(path, jsonData);
         //File.WriteAllText(path2, jsonData);
     }
+
     
 }
