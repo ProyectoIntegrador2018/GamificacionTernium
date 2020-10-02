@@ -319,7 +319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc71b569ade8845768fce526bc652abc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c92eb08812e1a742b051538cc6ee5db, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1694,8 +1694,10 @@ MonoBehaviour:
   Btn1: {fileID: 2114720973}
   Btn2: {fileID: 1090461657}
   Btn3: {fileID: 1688000528}
+  canvasPosition: {fileID: 829778159}
+  continueButton: {fileID: 8587021709101804682, guid: ff9d2a51d3c693a4f8ee850488f306ae,
+    type: 3}
   Escena: 
-  SegundosEspera: 5
   vidasFallo1: 1
   vidasFallo2: 2
   SigEscenaCorrecto: P6

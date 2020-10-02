@@ -676,6 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2122c448da743cd448223d6281813f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 0}
   Pausado: 0
 --- !u!20 &519420031
 Camera:
@@ -941,7 +942,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Estos son los logros que tienes hasta ahora, \xA1intenta conseguir todos!\r"
+  m_Text: Estas son las misiones que has jugado hasta el momento con tu puntuacion
+    mas alta, intenta sacar la mejor puntuacion en todas!
 --- !u!222 &712055207
 CanvasRenderer:
   m_ObjectHideFlags: 0

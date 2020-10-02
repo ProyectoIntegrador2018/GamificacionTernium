@@ -1926,8 +1926,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b124968e15fc94e48bc6a77769f4a185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boton: {fileID: 2110089798}
+  BotonRevisar: {fileID: 2110089798}
   SigEscena: ES4P3
+  continueButton: {fileID: 8587021709101804682, guid: ff9d2a51d3c693a4f8ee850488f306ae,
+    type: 3}
   DialogueText: {fileID: 881628909}
 --- !u!114 &2014421230
 MonoBehaviour:
@@ -2128,7 +2130,7 @@ GameObject:
   - component: {fileID: 2110089799}
   - component: {fileID: 2110089798}
   m_Layer: 0
-  m_Name: Button-2
+  m_Name: BtnRevisar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

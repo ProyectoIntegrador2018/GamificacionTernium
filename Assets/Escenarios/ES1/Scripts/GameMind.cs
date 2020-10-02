@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,9 +21,8 @@ public class GameMind : MonoBehaviour {
     string Escena;
 
     MonoBehaviour[] comps;
-
-
     // Start is called before the first frame update
+
     void Start()
     {
         Escena = SceneManager.GetActiveScene().name;
@@ -137,11 +137,21 @@ public class GameMind : MonoBehaviour {
         //Debug.Log("Vidas " + GlobalVariables.lives);
     }
 
+    //Metodo para actualizar la experiencia que se dara al final de una mision
+    public static void updateAccumulatedExp(int exp) {
+        if (exp > 0) {
+            GlobalVariables.accumulatedExp += exp;
+        }
+        
+    }
+
     // Función para sumar o restar puntos
     public static void addPoints(int n) {
-    	//Debug.Log(n);
+
     	GlobalVariables.score = GlobalVariables.score+n;
-    	//Debug.Log("Puntaje " + GlobalVariables.score);
+        //De momento la experiencia solo es la mitad de los puntos que se da por cada pregunta pero se puede cambiar la formula facilmente
+        updateAccumulatedExp(n/2);
+
     }
 
     // Función para agregar al usuario
@@ -154,6 +164,7 @@ public class GameMind : MonoBehaviour {
         if(id!=-1) {
             GlobalVariables.username = u;
             GlobalVariables.usernameId = id;
+            GlobalVariables.turno = getTurno();
     	    //Debug.Log("usuario " + GlobalVariables.username);
             SceneManager.LoadScene("Menu");
         }
@@ -196,6 +207,10 @@ public class GameMind : MonoBehaviour {
 
     }
 
+    public static string getTurno(){
+        return Database.getTurno();
+    }
+
     public static bool getTutorial() {
         return Database.getTutorial();
     }
@@ -208,4 +223,5 @@ public class GameMind : MonoBehaviour {
     {
         Database.saveData();
     }
+
 }

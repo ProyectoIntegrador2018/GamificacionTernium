@@ -17,6 +17,8 @@ public class MenuManager : MonoBehaviour
     public static Users userBase;
     public int cont = 0;
     bool FirstClick = true;
+    //public GameObject podium;
+    //public GameObject turno;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +61,8 @@ public class MenuManager : MonoBehaviour
                 FirstClick = false;
                 if (GameMind.getTutorial() == true)
                 {
+                    //podium.SetActive = false;
+                    //turno.SetActive = false;
                     int i = 1;
                     SiguentePregunta.text = "Mision 1: Reparar el rodillo dañado";
                     ProximaMission.SetActive(true);
