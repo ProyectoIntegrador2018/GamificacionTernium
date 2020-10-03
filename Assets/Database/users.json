@@ -9,6 +9,7 @@
       "expMax": 500,
       "expMin": 0,
       "expCurrent": 0,
+      "nivelJugador": 1,
       "niveles": [
         800,
         900,
@@ -56,6 +57,7 @@
       "expMax": 500,
       "expMin": 0,
       "expCurrent": 0,
+      "nivelJugador": 1,
       "niveles": [
         0,
         0,
@@ -103,6 +105,7 @@
       "expMax": 500,
       "expMin": 0,
       "expCurrent": 0,
+      "nivelJugador": 1,
       "niveles": [
         0,
         0,
@@ -150,6 +153,7 @@
       "expMax": 500,
       "expMin": 0,
       "expCurrent": 0,
+      "nivelJugador": 1,
       "niveles": [
         0,
         0,
@@ -197,6 +201,7 @@
       "expMax": 500,
       "expMin": 0,
       "expCurrent": 0,
+      "nivelJugador": 1,
       "niveles": [
         0,
         0,
@@ -244,6 +249,7 @@
       "expMax": 500,
       "expMin": 0,
       "expCurrent": 0,
+      "nivelJugador": 1,
       "niveles": [
         0,
         0,
@@ -291,6 +297,7 @@
       "expMax": 500,
       "expMin": 0,
       "expCurrent": 0,
+      "nivelJugador": 1,
       "niveles": [
         0,
         0,
