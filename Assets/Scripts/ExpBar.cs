@@ -18,6 +18,7 @@ public class ExpBar : MonoBehaviour
     public Transform particles;
     public Text expValues;
     bool shouldAnimate = false;
+    bool pauseAnimate = false;
     int animationRate;
     int skippedFrames = 0;
     double weight;
@@ -27,12 +28,19 @@ public class ExpBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerInfoEventSystem.current.onStartLevelUpAnimation += OnStartLevelUpAnimation;
+        PlayerInfoEventSystem.current.onFinishLevelUpAnimation += OnFinishLevelUpAnimation;
         edge = particles.GetComponent<RectTransform>();
         animationRate = (max - min) - (current - previousCurrent);
         weight = (current - max) / 2;
         getCurrentFill();
         StartCoroutine(WaitBeforeExpGain());
         expValues.text = "Exp: " + previousCurrent.ToString() + "/" + max.ToString();
+    }
+
+    private void OnDestroy() {
+        PlayerInfoEventSystem.current.onStartLevelUpAnimation -= OnStartLevelUpAnimation;
+        PlayerInfoEventSystem.current.onFinishLevelUpAnimation -= OnFinishLevelUpAnimation;
     }
 
     // Update is called once per frame
@@ -46,8 +54,7 @@ public class ExpBar : MonoBehaviour
                 shouldAnimate = false;
                 particles.GetComponent<ParticleSystem>().Stop();
                 Database.setExpBarData(max, min, current);
-                Database.saveData();
-                WinCase.enableButtons();
+                PlayerInfoEventSystem.current.FinishExpGain();
             }
         }
         
@@ -64,6 +71,18 @@ public class ExpBar : MonoBehaviour
         
     }
 
+    private void OnStartLevelUpAnimation() {
+        pauseAnimate = true;
+        particles.GetComponent<ParticleSystem>().Stop();
+    }
+
+    private void OnFinishLevelUpAnimation() {
+        pauseAnimate = false;
+        if (previousCurrent != current) {
+            particles.GetComponent<ParticleSystem>().Play();
+        }
+    }
+
     void getCurrentFill() {
         float currentOffset = previousCurrent - min;
         float maximumOffset = max - min;
@@ -74,35 +93,40 @@ public class ExpBar : MonoBehaviour
 
     void animateFill() {
 
-        //Skips certain amount of frames to make animation more smooth
-        if (skippedFrames < -1 * animationRate / weight) {
-            skippedFrames++;
-            return;
-        }
+        if (!pauseAnimate) {
 
-        if (previousCurrent == max) {
-            //Aqui se ajusta la growth rate de la exp necesaria para subir de nivel
-            max += max + max / 2;
-            min = previousCurrent;
-            animationRate = (max - min) - (current - previousCurrent);
-            weight *= 2;
-        }
+            //Skips certain amount of frames to make animation more smooth
+            if (skippedFrames < -1 * animationRate / weight) {
+                skippedFrames++;
+                return;
+            }
 
-        float currentOffset = previousCurrent - min;
-        float maximumOffset = max - min;
-        float fillAmount = currentOffset / maximumOffset;
+            if (previousCurrent == max) {
+                //Aqui se ajusta la growth rate de la exp necesaria para subir de nivel
+                max += max + max / 2;
+                min = previousCurrent;
+                animationRate = (max - min) - (current - previousCurrent);
+                weight *= 2;
+                //Manda a llamar el evento de expBarFill cuando la barra se llena y se tiene que actualizar el nivel
+                PlayerInfoEventSystem.current.ExpBarFill();
+            }
 
-        bar.fillAmount = fillAmount;
-        particles.gameObject.SetActive(true);
-        expValues.text = "Exp: " + previousCurrent.ToString() + "/" + max.ToString();
-        previousCurrent += 1;
+            float currentOffset = previousCurrent - min;
+            float maximumOffset = max - min;
+            float fillAmount = currentOffset / maximumOffset;
 
-        edge.anchorMin = new Vector2(fillAmount, edge.anchorMin.y);
-        edge.anchorMax = new Vector2(fillAmount, edge.anchorMin.y);
-        edge.anchoredPosition = Vector2.zero;
+            bar.fillAmount = fillAmount;
+            particles.gameObject.SetActive(true);
+            expValues.text = "Exp: " + previousCurrent.ToString() + "/" + max.ToString();
+            previousCurrent += 1;
 
-        if (animationRate < 0) {
-            skippedFrames = 0;
+            edge.anchorMin = new Vector2(fillAmount, edge.anchorMin.y);
+            edge.anchorMax = new Vector2(fillAmount, edge.anchorMin.y);
+            edge.anchoredPosition = Vector2.zero;
+
+            if (animationRate < 0) {
+                skippedFrames = 0;
+            }
         }
 
     }

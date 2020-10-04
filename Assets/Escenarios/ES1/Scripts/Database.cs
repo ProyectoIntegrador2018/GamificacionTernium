@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEditor.PackageManager;
 // [System.Serializable]
 // public class Niveles
 // {
@@ -20,6 +21,7 @@ public class User
     public int expMin;
     public int expCurrent;
     public string avatarImg;
+    public int nivelJugador;
     public int[] niveles;
     public bool[] achivements;
     public bool[] started;
@@ -108,6 +110,14 @@ public class Database : MonoBehaviour
         userBase.users[GlobalVariables.usernameId].avatarImg = avatarName;
     }
 
+    public static int getNivelJugador() {
+        return userBase.users[GlobalVariables.usernameId].nivelJugador;
+    }
+
+    public static void setNivelJugador(int nivelJugador) {
+        userBase.users[GlobalVariables.usernameId].nivelJugador = nivelJugador;
+    }
+
     // Check if the user has an achivmenet on "i" scene
     public static bool getAchivement(int i) {
         return userBase.users[GlobalVariables.usernameId].achivements[i];
@@ -179,6 +189,7 @@ public class Database : MonoBehaviour
         nUser.expMin = 0;
         nUser.avatarImg = "Default";
         nUser.expCurrent = 0;
+        nUser.nivelJugador = 1;
         int[] niv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         nUser.niveles = niv;
         bool[] ach = {false, false, false, false, false, false, false, false, false, false, false };
