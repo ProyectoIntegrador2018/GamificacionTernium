@@ -19,6 +19,7 @@ public class User
     public int expMax;
     public int expMin;
     public int expCurrent;
+    public string avatarImg;
     public int[] niveles;
     public bool[] achivements;
     public bool[] started;
@@ -102,6 +103,11 @@ public class Database : MonoBehaviour
         userBase.users[GlobalVariables.usernameId].expCurrent = expCurrent;
     }
 
+    public static void setAvatar(string avatarName)
+    {
+        userBase.users[GlobalVariables.usernameId].avatarImg = avatarName;
+    }
+
     // Check if the user has an achivmenet on "i" scene
     public static bool getAchivement(int i) {
         return userBase.users[GlobalVariables.usernameId].achivements[i];
@@ -171,6 +177,7 @@ public class Database : MonoBehaviour
         nUser.turno = "Matutino";
         nUser.expMax = 500;
         nUser.expMin = 0;
+        nUser.avatarImg = "Default";
         nUser.expCurrent = 0;
         int[] niv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         nUser.niveles = niv;
@@ -180,6 +187,10 @@ public class Database : MonoBehaviour
         userBase.Push(nUser);
     }
 
+    public static string getAvatar()
+    {
+        return userBase.users[GlobalVariables.usernameId].avatarImg;
+    }
 
     public static int getCurrentAchivements(){
         int current=0;

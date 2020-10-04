@@ -1931,6 +1931,10 @@ MonoBehaviour:
   continueButton: {fileID: 8587021709101804682, guid: ff9d2a51d3c693a4f8ee850488f306ae,
     type: 3}
   DialogueText: {fileID: 881628909}
+  item_1: {fileID: 433069468}
+  item_2: {fileID: 1097430341}
+  item_3: {fileID: 518855266}
+  item_4: {fileID: 317638803}
 --- !u!114 &2014421230
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -350,4 +350,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Top10.unity
     guid: b5d42d7ff9811c747953067a71395337
+  - enabled: 1
+    path: Assets/Scenes/AvatarCustomization.unity
+    guid: 2bcffc11ed446df40a2866f0526da66f
   m_configObjects: {}

@@ -27,7 +27,7 @@ public class BtnMangment : MonoBehaviour
     public GameObject item_3;
     public GameObject item_4;
 
-    public Transform item_1_position;
+  
 
 
     private void Awake()
@@ -39,25 +39,31 @@ public class BtnMangment : MonoBehaviour
 
 
     public bool giveAnswer()
-    {
-        if ((item_1.transform.localPosition.y == 67.7f) &&
-            (item_2.transform.localPosition.y == 187.7f)&&
-            (item_3.transform.localPosition.y == -172.3f))
-        
+    {  if (SceneManager.GetActiveScene().name == "P2")
         {
-       
-            return true;
+            if ((item_1.transform.localPosition.y == 67.7f) &&
+                (item_2.transform.localPosition.y == 187.7f) &&
+                (item_3.transform.localPosition.y == -172.3f))
+
+                return true;
+
+            else
+
+                return false;
         }
         else
         {
-            Debug.Log("Item 1 : " + "x:" + item_1.transform.localPosition.x + " y: " + item_1.transform.localPosition.y);
-            Debug.Log("Item 2 : " + "x:" + item_2.transform.position.x + " y: " + item_2.transform.localPosition.y);
-            Debug.Log("Item 3 : " + "x:" + item_3.transform.position.x + " y: " + item_3.transform.localPosition.y);
-            Debug.Log("Item 4 : " + "x:" + item_4.transform.position.x + " y: " + item_4.transform.localPosition.y);
+            if ((item_1.transform.localPosition.y == 31f) &&
+                (item_2.transform.localPosition.y == 151f) &&
+                (item_3.transform.localPosition.y == -209f))
 
-            return false;
+                return true;
+
+            else
+
+                return false;
         }
-      
+
 
     }
 
@@ -99,7 +105,7 @@ public class BtnMangment : MonoBehaviour
             // Si la escena en juego es la P2
             if (SceneManager.GetActiveScene().name == "P2" || SceneManager.GetActiveScene().name == "ES4P2")
             {
-                if (giveAnswer() == true)
+                if (giveAnswer())
                 {
                     DialogueText.text = "Correcto! El guardia ahora tiene su equipo de seguridad puesto.";
                     Debug.Log("correcto");
@@ -115,7 +121,7 @@ public class BtnMangment : MonoBehaviour
 
 
                 }
-                else if (giveAnswer() == false)
+                else if (!giveAnswer())
                 {
               
                     DialogueText.text = "Incorrecto! El guardia debe tener puesto su casco de seguridad con barbiquejo, lentes de seguridad, guantes combinados de carnaza y botines de seguridad con casquillo.";
