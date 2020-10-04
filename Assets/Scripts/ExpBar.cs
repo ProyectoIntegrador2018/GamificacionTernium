@@ -78,7 +78,9 @@ public class ExpBar : MonoBehaviour
 
     private void OnFinishLevelUpAnimation() {
         pauseAnimate = false;
-        particles.GetComponent<ParticleSystem>().Play();
+        if (previousCurrent != current) {
+            particles.GetComponent<ParticleSystem>().Play();
+        }
     }
 
     void getCurrentFill() {
