@@ -9,6 +9,7 @@ public class PlayerLevel : MonoBehaviour
 
     private Text playerLevelTxt;
     private int aux;
+    private AudioSource levelUpSfx;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class PlayerLevel : MonoBehaviour
         PlayerInfoEventSystem.current.onExpBarFill += OnExpBarFill;
         PlayerInfoEventSystem.current.onFinishExpGain += OnFinishExpGain;
         playerLevelTxt = transform.GetChild(0).GetComponent<Text>();
+        levelUpSfx = GetComponent<AudioSource>();
         //playerLevelTxt.text = Database.getNivelJugador().ToString();
         //aux = Int32.Parse(playerLevelTxt.text);
         aux = 1;
@@ -33,6 +35,7 @@ public class PlayerLevel : MonoBehaviour
 
     private void OnExpBarFill() {
         PlayerInfoEventSystem.current.StartLevelUpAnimation();
+        levelUpSfx.Play();
         LeanTween.move(transform.parent.gameObject.GetComponent<RectTransform>(), new Vector3(109f, 435f, 0), 1f).setEase(LeanTweenType.easeInOutBack).setOnComplete(() => {
             LeanTween.scale(gameObject, new Vector3(1.5f, 1.5f, 0), 0.1f).setOnComplete(IncreaseLevel);
         });
