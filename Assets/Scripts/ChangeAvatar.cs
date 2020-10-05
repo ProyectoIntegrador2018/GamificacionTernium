@@ -12,18 +12,27 @@ public class ChangeAvatar : MonoBehaviour
     public Sprite female_av;
     public Sprite glass_av;
 
+    public Image avatarAnimation;
+    public Image avatar;
+
     // Start is called before the first frame update
     void Start()
     {
-      GetComponent<Button>().onClick.AddListener(() => {
+
+
+        GetComponent<Button>().onClick.AddListener(() => {
+         // 
+          avatar.enabled = true;
+          avatarAnimation.enabled = false;
+
           if (this.name == "Avatar1_Stand")
           {
-              stand.sprite = stdr_av;
+              stand.sprite = stdr_av;       
               AvatarController.avatarName = "Default";
           }
           else if (this.name == "Avatar2_Stand ")
           {
-              stand.sprite = female_av;
+              stand.sprite = female_av;       
               AvatarController.avatarName = "Female_av";
           }
           else if (this.name == "Avatar3_Stand ")
@@ -31,8 +40,11 @@ public class ChangeAvatar : MonoBehaviour
               stand.sprite = glass_av;
               AvatarController.avatarName = "Glass_av";
           }
-      });
 
+
+
+
+      });
         if (Database.getAvatar() == "Default")
         {
             stand.sprite = stdr_av;
@@ -47,6 +59,8 @@ public class ChangeAvatar : MonoBehaviour
         }
 
 
+
+
     }
 
     // Update is called once per frame
@@ -54,4 +68,7 @@ public class ChangeAvatar : MonoBehaviour
     {
         
     }
+
+
+
 }

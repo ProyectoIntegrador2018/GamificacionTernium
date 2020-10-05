@@ -600,9 +600,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b124968e15fc94e48bc6a77769f4a185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boton: {fileID: 0}
+  BotonRevisar: {fileID: 0}
   SigEscena: 1
+  continueButton: {fileID: 0}
   DialogueText: {fileID: 0}
+  item_1: {fileID: 0}
+  item_2: {fileID: 0}
+  item_3: {fileID: 0}
+  item_4: {fileID: 0}
 --- !u!114 &829778162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,6 +659,7 @@ GameObject:
   - component: {fileID: 912804060}
   - component: {fileID: 912804059}
   - component: {fileID: 912804058}
+  - component: {fileID: 912804061}
   m_Layer: 0
   m_Name: mascot
   m_TagString: Untagged
@@ -760,6 +766,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912804056}
   m_CullTransparentMesh: 0
+--- !u!114 &912804061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912804056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaaca1a5928830c4aab216111a46f0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stand: {fileID: 912804059}
+  stdr_av: {fileID: 21300000, guid: 5899514654b082947847a6b7ef03a6cb, type: 3}
+  female_av: {fileID: 21300000, guid: 39bb9a7c10eaef94786cc18bbc57a380, type: 3}
+  glass_av: {fileID: 21300000, guid: 798190c810067bc488910c98a18a382e, type: 3}
 --- !u!1 &1090461655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,7 +1716,6 @@ MonoBehaviour:
   Btn1: {fileID: 2114720973}
   Btn2: {fileID: 1090461657}
   Btn3: {fileID: 1688000528}
-  canvasPosition: {fileID: 829778159}
   continueButton: {fileID: 8587021709101804682, guid: ff9d2a51d3c693a4f8ee850488f306ae,
     type: 3}
   Escena: 

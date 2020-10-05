@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 539585402}
   - component: {fileID: 539585401}
   - component: {fileID: 539585400}
+  - component: {fileID: 539585403}
   m_Layer: 0
   m_Name: mascot
   m_TagString: Untagged
@@ -526,6 +527,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539585398}
   m_CullTransparentMesh: 0
+--- !u!114 &539585403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539585398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaaca1a5928830c4aab216111a46f0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stand: {fileID: 539585401}
+  stdr_av: {fileID: 21300000, guid: 5899514654b082947847a6b7ef03a6cb, type: 3}
+  female_av: {fileID: 21300000, guid: 39bb9a7c10eaef94786cc18bbc57a380, type: 3}
+  glass_av: {fileID: 21300000, guid: 798190c810067bc488910c98a18a382e, type: 3}
 --- !u!1 &745464702
 GameObject:
   m_ObjectHideFlags: 0
