@@ -16,6 +16,9 @@ public class QuestionManager : MonoBehaviour {
     public Button Btn3;
     Transform canvasPosition;
     public Button continueButton;
+    private AudioSource soundEffect;
+    public AudioClip correctAnwser;
+    public AudioClip wrongAnswer;
     public string Escena;
 
     //public int SegundosEspera;
@@ -64,6 +67,7 @@ public class QuestionManager : MonoBehaviour {
 
         }
 
+    
         // Constructor with arguments
         public Preguntas(string pregunta, string opc1, string opc2, int vidas1, int vidas2, string opc3, string fail1, string fail2, int correct, int points) {
             Pregunta = pregunta;
@@ -799,6 +803,8 @@ public class QuestionManager : MonoBehaviour {
 
         //Debug.Log(GlobalVariables.Caso);
 
+        soundEffect = GetComponent<AudioSource>();
+
 
         // Cargar la pregunta correcta
         switch (Escena) {
@@ -943,18 +949,21 @@ public class QuestionManager : MonoBehaviour {
     // El estado cuando le atina
     void trueState() {
         CanvasText.text = "Correcto!";
+        displayCorrectAnswerAudio();
         SigEscena = SigEscenaCorrecto;  
     }
 
     // El estado de error 1
     void falseState() {
         CanvasText.text = "Incorrecto! " +'\n'+ QA.Fail1;
+        displayWrongAnswerAudio();
         SigEscena = SigEscenaError1;
     }
 
     // El estado de error 2
     void falseState2() {
         CanvasText.text = "Incorrecto! " + '\n' + QA.Fail2;
+        displayWrongAnswerAudio();
         SigEscena = SigEscenaError2;
     }
 
@@ -969,6 +978,19 @@ public class QuestionManager : MonoBehaviour {
         newButton.transform.SetParent(canvasPosition);
         newButton.onClick.AddListener(ChangeCurrentScene);
     }
+
+    //Funcion para sonar audio de respuestas correctas
+    void displayCorrectAnswerAudio()
+    {
+        soundEffect.PlayOneShot(correctAnwser);
+    }
+
+    //Funcion para sonar audio de respuestas correctas
+    void displayWrongAnswerAudio()
+    {
+        soundEffect.PlayOneShot(wrongAnswer);
+    }
+
 
     void ChangeCurrentScene() {
         //Debug.Log("Aprentando boton");
