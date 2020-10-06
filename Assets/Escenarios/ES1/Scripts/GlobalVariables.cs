@@ -13,6 +13,7 @@ public class GlobalVariables : MonoBehaviour {
     public static int accumulatedExp = 0;
     public static string username;
     public static string turno = "Turno";
+    public static string avatarImg = "Default";
     public static int usernameId;
     public static bool instructions = false;
     //Estos son para lo colaborativo

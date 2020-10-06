@@ -23,7 +23,7 @@ public class WinCase : MonoBehaviour {
     Text SiguentePregunta;
     int Caso = GlobalVariables.Caso;
 
-    GameObject expBar;
+    GameObject playerInfo;
     static Button btnMenu;
     static Button btnReset;
 
@@ -39,23 +39,24 @@ public class WinCase : MonoBehaviour {
         //Debug.Log("llegue a script");
         Trofeo = GameObject.Find("Trophy");
 
+        //El arreglo de auxExpData tiene los datos de max, min y previous en ese orden
+        int[] auxExpData = Database.getExpBarData();
+        ExpBar auxExpBar;
+        playerInfo = (GameObject)Instantiate(Resources.Load("Prefabs/PlayerLvl&Exp"), new Vector2(253.6f, -434.06f), Quaternion.identity);
+        playerInfo.transform.SetParent(GameObject.Find("Canvas").transform, false);
+        auxExpBar = playerInfo.transform.GetChild(1).GetChild(0).GetComponent<ExpBar>();
+        auxExpBar.max = auxExpData[0];
+        auxExpBar.min = auxExpData[1];
+        auxExpBar.previousCurrent = auxExpData[2];
+        auxExpBar.current = auxExpData[2] + GlobalVariables.accumulatedExp;
+
+
         PM = Resources.Load<GameObject>("Prefabs/LoadingQuestion");
         ProximaMission = Instantiate(PM, new Vector2(0, 0), Quaternion.identity) as GameObject;//280 -450
         ProximaMission.transform.SetParent(GameObject.Find("Canvas").transform, false);
         SiguentePregunta = ProximaMission.GetComponentInChildren<Text>();
         ProximaMission.transform.localScale = new Vector3(1.1f, 1.1f, 1f);
         ProximaMission.SetActive(false);
-
-        //El arreglo de auxExpData tiene los datos de max, min y previous en ese orden
-        int[] auxExpData = Database.getExpBarData();
-        ExpBar auxExpBar;
-        expBar = (GameObject)Instantiate(Resources.Load("Prefabs/ExpBar"), new Vector2(257.48f, -415), Quaternion.identity);
-        expBar.transform.SetParent(GameObject.Find("Canvas").transform, false);
-        auxExpBar = expBar.transform.GetChild(0).GetComponent<ExpBar>();
-        auxExpBar.max = auxExpData[0];
-        auxExpBar.min = auxExpData[1];
-        auxExpBar.previousCurrent = auxExpData[2];
-        auxExpBar.current = auxExpData[2] + GlobalVariables.accumulatedExp;
 
         GlobalVariables.ElFinal = true;
 

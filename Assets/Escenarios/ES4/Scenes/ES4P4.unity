@@ -858,6 +858,10 @@ MonoBehaviour:
   continueButton: {fileID: 8587021709101804682, guid: ff9d2a51d3c693a4f8ee850488f306ae,
     type: 3}
   DialogueText: {fileID: 250050599}
+  item_1: {fileID: 0}
+  item_2: {fileID: 0}
+  item_3: {fileID: 0}
+  item_4: {fileID: 0}
 --- !u!114 &423286835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1162,6 +1166,7 @@ GameObject:
   - component: {fileID: 649931710}
   - component: {fileID: 649931709}
   - component: {fileID: 649931708}
+  - component: {fileID: 649931711}
   m_Layer: 0
   m_Name: mascot
   m_TagString: Untagged
@@ -1268,6 +1273,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649931706}
   m_CullTransparentMesh: 0
+--- !u!114 &649931711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649931706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaaca1a5928830c4aab216111a46f0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stand: {fileID: 649931709}
+  stdr_av: {fileID: 21300000, guid: 5899514654b082947847a6b7ef03a6cb, type: 3}
+  female_av: {fileID: 21300000, guid: 39bb9a7c10eaef94786cc18bbc57a380, type: 3}
+  glass_av: {fileID: 21300000, guid: 798190c810067bc488910c98a18a382e, type: 3}
 --- !u!1 &659374366
 GameObject:
   m_ObjectHideFlags: 0
