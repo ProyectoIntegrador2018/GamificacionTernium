@@ -13,6 +13,7 @@ public class Toast : MonoBehaviour {
 	bool _isToasting = false;
 	bool _isToastShown = false;
 
+	//public GameObject toastObject;
 	public static Toast Instance;
 	[SerializeField] Text toastText = null;
 	[SerializeField] Animator anim = null;
@@ -81,6 +82,10 @@ public class Toast : MonoBehaviour {
 
 
 	//show/hide Toast
-	void toastShow(){anim.SetBool ("isToastUp",true);}
-	void toastHide(){anim.SetBool ("isToastUp",false);}
+	void toastShow(){ 
+		anim.SetBool ("isToastUp",true);
+	}
+	void toastHide(){
+		anim.SetBool ("isToastUp",false);
+	}
 }

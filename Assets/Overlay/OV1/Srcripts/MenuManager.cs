@@ -12,6 +12,7 @@ public class MenuManager : MonoBehaviour
     public Button Trofeos;
     public Button Salir;
     public GameObject ProximaMission;
+    public GameObject toast;
     public Text SiguentePregunta;
     public Text mensajeBienvenida;
     public static Users userBase;
@@ -56,6 +57,7 @@ public class MenuManager : MonoBehaviour
         // El checar que los botones sean presionados, y que pasa si lo son
         Jugar.onClick.AddListener(delegate {
             //Jugar.enabled = false;
+            toast.SetActive(false);
             if(FirstClick)
             {
                 FirstClick = false;
