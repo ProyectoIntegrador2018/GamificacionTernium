@@ -11,7 +11,7 @@ Windows
 
 1.- On the repo screen, click on the "Releases" section.
 2.- Once the list of current releases is open, download the most recent one (the higher number tag).
-3.- Download the .zip file under the "Assets" section.
+3.- Download the "Misiones.de.mantenimiento.zip" file under the "Assets" section.
 4.- Extract the .zip file contents.
 5.- Locate and open the folder containing the extracted .zip file.
 6.- Search for a .exe file, double click it and start playing.
