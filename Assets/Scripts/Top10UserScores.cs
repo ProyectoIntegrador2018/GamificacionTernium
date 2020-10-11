@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,12 +11,16 @@ public class Top10UserScores : MonoBehaviour
     public Text userscoreTextPrefab;
     private User[] users;
     private Userscore[][] userscores;
+    private Userscore[] totalScores;
+    private int numberOfMissions;
+    private bool totalScoresLoaded = false;
+    
 
     private struct Userscore {
         public string username;
-        public string score;
+        public int score;
 
-        public Userscore(string username, string score) {
+        public Userscore(string username, int score) {
             this.username = username;
             this.score = score;
         }
@@ -26,20 +31,20 @@ public class Top10UserScores : MonoBehaviour
         Userscore[] aux = new Userscore[users.Length];
         int i = 0;
         foreach (User user in users) {
-            aux[i] = new Userscore(user.username, user.niveles[missionIndex].ToString());
+            aux[i] = new Userscore(user.username, user.niveles[missionIndex]);
             i++;
         }
-        aux = aux.OrderByDescending(x => x.score).ToArray();
+
         return aux;
     }
 
-    void displayMissionTopScores(string missionName, int missionIndex) {
-        if (userscores[missionIndex] == null) {
-            userscores[missionIndex] = loadMissionScores(missionIndex);
-        }
+    void clearScoreboard() {
         foreach (Transform topscore in GameObject.Find("TopPlayers").transform) {
             Destroy(topscore.gameObject);
         }
+    }
+
+    void listTopScores(string missionName, Userscore[] userscores) {
 
         Text userscoreText = Instantiate(userscoreTextPrefab);
         userscoreText.transform.SetParent(GameObject.Find("TopPlayers").transform);
@@ -47,29 +52,79 @@ public class Top10UserScores : MonoBehaviour
         userscoreText.transform.localPosition = new Vector2(0, 345);
         userscoreText.fontStyle = FontStyle.BoldAndItalic;
         userscoreText.text = missionName;
-        for (int i = 0; i < 10 && i < userscores[missionIndex].Length; i++) {
+        for (int i = 0; i < 10 && i < userscores.Length; i++) {
             userscoreText = Instantiate(userscoreTextPrefab);
             userscoreText.transform.SetParent(GameObject.Find("TopPlayers").transform);
             userscoreText.transform.localScale = new Vector2(1, 1);
             //Offset para cada vez colocar mas abajo los jugadores con su puntuacion
             userscoreText.transform.localPosition = new Vector2(0, 345 - 70 * (i + 1));
-            userscoreText.text = userscores[missionIndex][i].username + " - " + userscores[missionIndex][i].score;
+            userscoreText.text = userscores[i].username + " - " + userscores[i].score;
         }
+    }
+
+    void displayMissionTopScores(string missionName, int missionIndex) {
+
+        Userscore[] aux;
+
+        userscores[missionIndex] = loadMissionScores(missionIndex);
+
+        clearScoreboard();
+
+        aux = userscores[missionIndex].OrderByDescending(x => x.score).ToArray();
+        listTopScores(missionName, aux);
+    }
+
+    void displayTotalTopScores() {
+
+        Userscore[] aux;
+
+        for (int i = 0; i < numberOfMissions; i++) {
+            if (userscores[i] == null) {
+                userscores[i] = loadMissionScores(i);
+            }
+        }
+
+        clearScoreboard();
+
+        if (!totalScoresLoaded) {
+
+            for (int i = 0; i < users.Length; i++) {
+                totalScores[i].score = 0;
+                totalScores[i].username = users[i].username;
+                for (int j = 0; j < numberOfMissions; j++) {
+                    totalScores[i].score += userscores[j][i].score;
+                }
+            }
+            totalScoresLoaded = true;
+        }
+
+        
+        aux = totalScores.OrderByDescending(x => x.score).ToArray();
+        listTopScores("Puntuaciones Totales", aux);
+
     }
 
     void Start()
     {
         Top10EventSystem.current.onMissionClick += OnMissionClick;
+        Top10EventSystem.current.onTotalClick += OnTotalClick;
         users = Database.GetUsers();
         //El numero de niveles es igual al numero de misiones
-        userscores = new Userscore[users[0].niveles.Length][];
+        numberOfMissions = users[0].niveles.Length;
+        userscores = new Userscore[numberOfMissions][];
+        totalScores = new Userscore[users.Length];
     }
 
     private void OnMissionClick(string missionName, int missionIndex) {
         displayMissionTopScores(missionName, missionIndex);
     }
 
+    private void OnTotalClick() {
+        displayTotalTopScores();        
+    }
+
     private void OnDestroy() {
         Top10EventSystem.current.onMissionClick -= OnMissionClick;
+        Top10EventSystem.current.onTotalClick -= OnTotalClick;
     }
 }
