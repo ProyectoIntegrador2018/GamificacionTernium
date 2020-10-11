@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Overlay/OV3/Scenes/login.unity
+    path: Assets/Scenes/login.unity
     guid: d6227ea42640b64459d5bfdbaf423a5f
   - enabled: 1
     path: Assets/Overlay/OV3/Scenes/createUser.unity

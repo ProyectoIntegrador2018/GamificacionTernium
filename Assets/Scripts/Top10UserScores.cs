@@ -1,27 +1,17 @@
-﻿using UnityEngine.UI;
-using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
 
-public class Top10 : MonoBehaviour
+public class Top10UserScores : MonoBehaviour
 {
 
-    public TextAsset MissionNamesTextFile;
-    public GameObject missionPrefab;
     public Text userscoreTextPrefab;
-    private Missions missions;
     private User[] users;
     private Userscore[][] userscores;
 
-    private class Missions {
-
-        public string[] MissionNames;
-
-        Missions() {
-            MissionNames = new string[] { };
-        }
-    }
-
-    private struct Userscore{
+    private struct Userscore {
         public string username;
         public string score;
 
@@ -43,7 +33,7 @@ public class Top10 : MonoBehaviour
         return aux;
     }
 
-    void displayTopScores(int missionIndex) {
+    void displayMissionTopScores(string missionName, int missionIndex) {
         if (userscores[missionIndex] == null) {
             userscores[missionIndex] = loadMissionScores(missionIndex);
         }
@@ -56,7 +46,7 @@ public class Top10 : MonoBehaviour
         userscoreText.transform.localScale = new Vector2(1, 1);
         userscoreText.transform.localPosition = new Vector2(0, 345);
         userscoreText.fontStyle = FontStyle.BoldAndItalic;
-        userscoreText.text = missions.MissionNames[missionIndex];
+        userscoreText.text = missionName;
         for (int i = 0; i < 10 && i < userscores[missionIndex].Length; i++) {
             userscoreText = Instantiate(userscoreTextPrefab);
             userscoreText.transform.SetParent(GameObject.Find("TopPlayers").transform);
@@ -67,32 +57,19 @@ public class Top10 : MonoBehaviour
         }
     }
 
-    void instantiateMissionList() {
-        GameObject mission;
-        int i = 0;
-
-        foreach (string missionName in missions.MissionNames) {
-            mission = Instantiate(missionPrefab);
-            mission.name = i.ToString();
-            mission.transform.SetParent(GameObject.Find("Mision Container").transform);
-            mission.transform.localScale = new Vector2((float)0.73, (float)1.006147);
-            mission.transform.GetChild(1).GetComponent<Text>().text = missionName;
-            //Se necesita caputrar el valor para que el onClickListener sea dinamico
-            int capturedValue = i;
-            mission.GetComponent<Button>().onClick.AddListener(() => {
-                displayTopScores(capturedValue);
-            });
-            i++;
-        }
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
-        missions = JsonUtility.FromJson<Missions>(MissionNamesTextFile.text);
+        Top10EventSystem.current.onMissionClick += OnMissionClick;
         users = Database.GetUsers();
-        userscores = new Userscore[missions.MissionNames.Length][];
-        instantiateMissionList();
+        //El numero de niveles es igual al numero de misiones
+        userscores = new Userscore[users[0].niveles.Length][];
+    }
 
+    private void OnMissionClick(string missionName, int missionIndex) {
+        displayMissionTopScores(missionName, missionIndex);
+    }
+
+    private void OnDestroy() {
+        Top10EventSystem.current.onMissionClick -= OnMissionClick;
     }
 }
