@@ -1009,7 +1009,12 @@ public class QuestionManager : MonoBehaviour {
                 SceneManager.LoadScene("Lose");
             }
             else {
-                SceneManager.LoadScene(Escena.Substring(0, 3) + "Lose");
+                if (Escena.Substring(2, 2) == "10") {
+                    SceneManager.LoadScene(Escena.Substring(0, 4) + "Lose");
+                }
+                else {
+                    SceneManager.LoadScene(Escena.Substring(0, 3) + "Lose");
+                }
             }
             //SceneManager.LoadScene("Lose");
         }
