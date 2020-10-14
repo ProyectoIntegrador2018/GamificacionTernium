@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Overlay/OV3/Scenes/createUser.unity
     guid: ca8893ab73bd9464d9897bd9e05e4af1
   - enabled: 1
-    path: Assets/Overlay/OV4/Scenes/Historial.unity
+    path: Assets/Scenes/Historial.unity
     guid: f70925e095a731341913c00e728ab680
   - enabled: 1
     path: Assets/Overlay/OV2/Scenes/Instrucciones-1.unity
