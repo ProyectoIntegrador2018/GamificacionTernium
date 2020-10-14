@@ -13,9 +13,6 @@ public class HistorialManager : MonoBehaviour
     public GameObject MisionPrefab;
     public GameObject MisionPrefabLose;
 
-    public Text SiguentePregunta;
-    public GameObject ProximaMission;
-
     public Button btnReplay;
 
 
@@ -115,15 +112,6 @@ public class HistorialManager : MonoBehaviour
     public static void AchiveMision(int index)
     {
         misionsArr[index].Achieved = true;
-    }
-    public void GoToMainMenu()
-    {
-        GlobalVariables.lives = 5;
-        // TODO : Cuando tengamos la escena del menu
-        GlobalVariables.score = 0;
-        GlobalVariables.pairAnswerSlot.Clear();
-        GlobalVariables.items.Clear();
-        SceneManager.LoadScene("Menu"); //TODO: Add an option to go back
     }
 
 }

@@ -12,10 +12,15 @@ public class HistorialEventSystem : MonoBehaviour
     }
 
     public event Action<string, int, int> onMissionClick;
+    public event Action<int> onReplayClick;
     public void MissionClick(string description, int score, int escenario) {
         if(onMissionClick != null) {
             onMissionClick(description, score, escenario);
         }
     }
-
+    public void ReplayClick(int index) {
+        if(onReplayClick != null) {
+            onReplayClick(index);
+        }
+    }
 }
