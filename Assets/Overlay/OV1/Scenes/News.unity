@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e388f7ee615c6dc40a54c4a70f36c977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newsText: {fileID: 4900000, guid: f13ac651350bd5b4eae68e41693b9e31, type: 3}
   newsPrefab: {fileID: 1133388641219729391, guid: 31e6307aeb0fb1b4d9581c00c6554287,
     type: 3}
 --- !u!4 &228196114
@@ -166,7 +165,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &228196115
 MonoBehaviour:
@@ -350,7 +349,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &420337279
 GameObject:
@@ -1226,7 +1225,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2068037442
 GameObject:
@@ -1382,7 +1381,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1499675852}
   m_HandleRect: {fileID: 1499675851}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
