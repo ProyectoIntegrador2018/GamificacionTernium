@@ -1,0 +1,1471 @@
+{
+    "misiones": [
+        {
+            "id": 1,
+            "nombre": "¡Avería en el Rodillo!",
+            "descripcion": "Repara correctamente un rodillo antiderrapante.",
+            "puntuacionMax": 800,
+            "preguntas": [
+                {
+                    "id": 1,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Se informa a Guardia de daño en cuerpo de rodillo",
+                    "opciones": [
+                        "Siempre sucede, ya sé que hacer", 
+                        "Solicito me informen todo el detalle por radio", 
+                        "Verifico personalmente en el área, el daño del rodillo, tomando las medidas de seguridad adecuadas"
+                    ],
+                    "vidasPerdidas": [4, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Incorrecta interpretación del problema y provocar preparación inadecuada",
+                        "Minimizar el problema y provocar mayor afectación"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "P2",
+                    "sigEscenasError": ["P6", "P4"]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Drag and Drop",
+                    "pregunta": "Primero que nada, él debe cumplir con las normas de seguridad, así que tiene que seleccionar el equipo necesario para realizar esta prueba. Arrastra todos los objetos necesarios de la derecha hacia el área roja que necesitará el guardia.",
+                    "opciones": [],
+                    "vidasPerdidas": [1],
+                    "correctoTexto": "Correcto! El guardia ahora tiene su equipo de seguridad puesto.",
+                    "falloTexto": ["Incorrecto! El guardia debe tener puesto su casco de seguridad con barbiquejo, lentes de seguridad, guantes combinados de carnaza y botines de seguridad con casquillo."],
+                    "respuestCorrecta": -1,
+                    "puntos": 100,
+                    "SigEscenaCorrecta": "P3",
+                    "sigEscenasError": ["P3"]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Te encuentras en el área, deberas de...",
+                    "opciones": [
+                        "Atender de inmediato, interviniendo el equipo en cuanto deje de moverse",
+                        "No informar la anormalidad y dejar que alguien mas se encargue",
+                        "Llenar el APR, realizar bloqueos efectivos e identificar las actividades necesarias para la solución"
+                    ],
+                    "vidasPerdidas": [3, 2],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Posible daño permanente al equipo al no estar identificando el problema. Se debería revisar detalladamente.",
+                        "El tiempo de demora puede extenderse más de lo estrictamente necesario. Se debería revisar detalladamente."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "P5",
+                    "sigEscenasError": ["P6.5", "P6"]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Te encuentras en el área, deberas de...",
+                    "opciones": [
+                        "None",
+                        "Va directamente a solucionar el problema",
+                        "Va al área afectada"
+                    ],
+                    "vidasPerdidas": [0, 3],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "None",
+                        "El guardia debe evaluar el area y llenar el APR."
+                    ],
+                    "respuestCorrecta": 2,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "P3",
+                    "sigEscenasError": ["P6", "P6"]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Después de la evaluación, deberás de...",
+                    "opciones": [
+                        "Solucionar el problema",
+                        "Ignorar el problema y asumir que no habrá afectación",
+                        "Llenar el APR"
+                    ],
+                    "vidasPerdidas": [1, 2],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Debe de llenar el APR antes de continuar.",
+                        "Minimiza el problema y provoca mayor afectación. Debe llenar el APR y después solucioanr el problema antes de generar el aviso."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "P6",
+                    "sigEscenasError": ["P6", "P6.5"]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Drag and Drop",
+                    "pregunta": "El guardia debe seguir un procedimiento para que el rodillo sea reparado, ¿qué debe hacer? Arrastra todas las acciones EN EL ORDEN que debería de realizar el guardia encargado.",
+                    "opciones": [],
+                    "vidasPerdidas": [1, 1, 1],
+                    "correctoTexto": "Correcto! El guardia siguió el orden adecuado y el rodillo será arreglado.",
+                    "falloTexto": [
+                        "Incorrecto! Te faltaron pasos, el orden correcto sería ...",
+                        "Incorrecto! El orden correcto sería ...",
+                        "Incorrecto! Te faltaron pasos y el orden correcto sería ..."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "P6.5",
+                    "sigEscenasError": ["P6.5", "P6.5", "P6.5"]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Despues de corregir el daño",
+                    "opciones": [
+                        "Informo a Calidad",
+                        "Genero una orden de Mantenimiento",
+                        "Genero un aviso"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Calidad no es responsable de esta parte del proceso. Se debe generar un aviso.",
+                        "Se generaría una orden de mantenimiento sin información completa del problema. Se debe generar un aviso."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "P7",
+                    "sigEscenasError": ["Win", "Win"]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué tipo de aviso debo generar?",
+                    "opciones": [
+                        "Aviso M0",
+                        "Aviso M3",
+                        "Aviso M2"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Este aviso surge sólo de inspecciones, se debe generar el M2.",
+                        "Este aviso se utiliza sólo para guardar información de actividad en el equipo, se debe generar el M2."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "P8",
+                    "sigEscenasError": ["Win", "Win"]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué campos deben ser llenados en el Aviso M2?",
+                    "opciones": [
+                        "Colocar la palabra 'vinculos' en algun campo",
+                        "Agregar multimedia",
+                        "Equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte, objeto, sintoma, avería, causa y sus textos"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Esta palabra no informa el detalle de lo ocurrido. Debe llenar: equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte, objeto, sintoma, avería, causa y sus textos.",
+                        "Es opcional agregar alguna foto al aviso. Es obligatorio llenar: equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte, objeto, sintoma, avería, causa y sus textos."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "Win",
+                    "sigEscenasError": ["Win", "Win"]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "¡Avería en Acoplamiento!",
+            "descripcion": "Repara correctamente una avería de acoplamiento.",
+            "puntuacionMax": 900,
+            "preguntas": [
+                {
+                    "id": 1,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "En un recorrido por el área, el guardia escucha un ruido anormal",
+                    "opciones": [
+                        "Es la hora de la comida y llevo prisa, continuo mi camino sin prestar atención", 
+                        "Alguien debe estar haciendo alguna actividad",
+                        "Tomando las precauciones de seguridad, identifico la fuente del ruido"
+                    ],
+                    "vidasPerdidas": [1, 3],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Minimiza el problema y provoca mayor afectación.", 
+                        "Incorrecta interpretación del posible problema."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES2P2",
+                    "sigEscenasError": ["ES2P10", "ES2P11"]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Al identificar la fuente",
+                    "opciones": [
+                        "Trato de sentir alguna vibración con la mano", 
+                        "No es tan fuerte o raro el ruido, continuo con mi día",
+                        "Evaluó el daño, utilizando los 5 sentidos de forma segura"
+                    ],
+                    "vidasPerdidas": [1, 2],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Riesgo de accidente al tocar equipo en movimiento.", 
+                        "Minimizo el problema y provoco mayor afectación."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES2P3",
+                    "sigEscenasError": ["ES2P3", "ES2P11"]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Drag and Drop",
+                    "pregunta": "Un correcto uso de mis sentidos es",
+                    "opciones": [],
+                    "vidasPerdidas": [1, 1, 1],
+                    "correctoTexto": "Correcto! Usaste tus sentidos de manera correcta.",
+                    "falloTexto": [
+                        "Incorrecto! Te faltaron pasos, lo correcto sería ...",
+                        "Incorrecto! lo correcto sería ...",
+                        "Incorrecto! Te faltaron pasos y lo correcto sería ..."
+                    ],
+                    "respuestCorrecta": -1,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES2P4",
+                    "sigEscenasError": ["ES2P4", "ES2P4", "ES2P4"]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Una vez evaluado el problema",
+                    "opciones": [
+                        "Atender de inmediato, interviniendo el equipo en cuanto deje de moverse", 
+                        "No informar la anormalidad y dejar que alguien más se encargue",
+                        "Llenar el APR, realizar bloqueos efectivos e identificar las actividades necesarias para la solución"
+                    ],
+                    "vidasPerdidas": [1, 2],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Riesgo de accidente al no realizar el bloqueo efectivo.", 
+                        "Minimizo el problema y provoco mayor afectación."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES2P5",
+                    "sigEscenasError": ["ES2P5", "ES2P11"]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Drag and Drop",
+                    "pregunta": "El orden para un bloqueo efectivo es...",
+                    "opciones": [],
+                    "vidasPerdidas": [1, 1, 1],
+                    "correctoTexto": "Correcto! Seguiste el orden óptimo para el bloqueo",
+                    "falloTexto": [
+                        "Incorrecto! Te faltaron pasos, lo correcto sería ...",
+                        "Incorrecto! lo correcto sería ...",
+                        "Incorrecto! Te faltaron pasos y lo correcto sería ..."
+                    ],
+                    "respuestCorrecta": -1,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES2P6",
+                    "sigEscenasError": ["ES2P6", "ES2P6", "ES2P6"]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Después de solucionado el daño",
+                    "opciones": [
+                        "Genero una orden de Mantenimiento", 
+                        "Informo a Programación para que indique el paro de línea",
+                        "Genero un aviso"
+                    ],
+                    "vidasPerdidas": [4, 4],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Orden de mantenimiento sin información completa del problema.", 
+                        "Programación no es responsable de esta parte del proceso."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES2P7",
+                    "sigEscenasError": ["ES2PWin", "ES2PWin"]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué tipo de aviso debo generar?",
+                    "opciones": [
+                        "Aviso MB", 
+                        "Aviso M0",
+                        "Aviso M2, sin tilde de parada"
+                    ],
+                    "vidasPerdidas": [3, 3],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Este aviso se utiliza para solicitar actividades a un sector diferente al propio.", 
+                        "Este aviso lo genera el inspector."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES2P8",
+                    "sigEscenasError": ["ES2PWin", "ES2PWin"]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Que campos deben ser llenados en el aviso M2?",
+                    "opciones": [
+                        "Colocar la palabra 'vínculos' en algún campo", 
+                        "Agregar multimedia",
+                        "Equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte, objeto, síntoma, avería, causa y sus textos"
+                    ],
+                    "vidasPerdidas": [2, 2],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Esta palabra no informa el detalle de lo ocurrido.", 
+                        "Es opcional agregar alguna foto al aviso."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES2P9",
+                    "sigEscenasError": ["ES2PWin", "ES2PWin"]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿En caso de colocar 'otros' como síntoma de avería o causa ¿qué debo colocar en texto?",
+                    "opciones": [
+                        "Colocar palabras clave o abreviadas", 
+                        "Colocar el tag del equipo",
+                        "Agregar el texto con el detalle del problema"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "No todas las personas reconocen el significado de nuestras abreviaciones. Hay que agregar el texto con el detalle del problema.", 
+                        "Puede ser un dato no rastreable en el sistema. Hay que agregar el texto con el detalle del problema."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES2PWin",
+                    "sigEscenasError": ["ES2PWin", "ES2PWin"]
+                },
+                {
+                    "id": 10,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Sigo caminando y me encuentro al lado de una máquina dañada, ¿qué hago?",
+                    "opciones": [
+                        "None", 
+                        "Alguien más se encargará y tengo mucha hambre",
+                        "Dado que no traigo equipo de seguridad, hago una evaluación rápida con mis 5 sentidos"
+                    ],
+                    "vidasPerdidas": [5, 5],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "None", 
+                        "Negligencia de mis actividades como guardia."
+                    ],
+                    "respuestCorrecta": 2,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES2P3",
+                    "sigEscenasError": ["ES2PWin", "ES2PWin"]
+                },
+                {
+                    "id": 11,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Otro guardia está haciendo una reparación y me percato que la máquina sigue operando, ¿qué hago?",
+                    "opciones": [
+                        "None", 
+                        "La actividad no debe tener nada que ver con la máquina",
+                        "Busco que se haga un bloque efectivo de la maquina"
+                    ],
+                    "vidasPerdidas": [4, 4],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "None", 
+                        "Incorrecta interpretación del posible problema y riesgo de accidente al no realizar el bloqueo efectivo."
+                    ],
+                    "respuestCorrecta": 2,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES2P5",
+                    "sigEscenasError": ["ES2PWin", "ES2PWin"]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "nombre": "El Sobrecalentamiento en Bomba.",
+            "descripcion": "Juego de Sobrecalentamiento de Bombas",
+            "puntuacionMax": 500,
+            "preguntas": [
+                {
+                    "id": 1,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Durante la inspección se detecta una bomba con sobrecalentamiento",
+                    "opciones": [
+                        "Hoy hace mucho calor, es por eso que está por encima de su máximo", 
+                        "Está muy poco por arriba del máximo establecido, sí soporta",
+                        "Verifico nuevamente la temperatura con el equipo específico para rectificar el valor"
+                    ],
+                    "vidasPerdidas": [3, 3],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Posible daño por sobrecalentamiento, el valor del punto de medida ya considera la temperatura ambiente.", 
+                        "Minimizo el problema y posible daño irreparable en la bomba."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES3P2",
+                    "sigEscenasError": ["ES3P6", "ES3P6"]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Al identificar el sobrecalentamiento",
+                    "opciones": [
+                        "Toco con la mano para verificar qué tan caliente está", 
+                        "Esta bomba no es importante para el proceso",
+                        "Busco la posible causa del sobrecalentamiento"
+                    ],
+                    "vidasPerdidas": [1, 2],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Riesgo de accidente al tocar equipo en funcionamiento.", 
+                        "Minimizo el problema y provoco mayor afectación."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES3P3.1",
+                    "sigEscenasError": ["ES3P3.1", "ES3P4"]
+                },
+                {
+                    "id": 3.1,
+                    "tipo": "Drag and Drop",
+                    "pregunta": "Al identificar la causa, ¿cómo soluciono el problema?",
+                    "opciones": [],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Incorrecto! Posible daño permanente en el equipo.",
+                        "Incorrecto! Posible daño permanente en el equipo."
+                    ],
+                    "respuestCorrecta": -1,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES3P4",
+                    "sigEscenasError": ["ES3P4", "ES3P4"]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué tipo de aviso debo generar?",
+                    "opciones": [
+                        "M5",
+                        "M6",
+                        "M0"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Este aviso es para Ingeniería de Mantenimiento para mejora en equipo o proceso.", 
+                        "Se utiliza para enviar a reparar a talleres."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES3P5",
+                    "sigEscenasError": ["ES3PWin", "ES3PWin"]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué tipo de orden debo asociar?",
+                    "opciones": [
+                        "PM10", 
+                        "PM12",
+                        "PM11"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Esta orden es para reparación de emergencia.", 
+                        "Esta orden es para reparación por parte de talleres."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES3PWin",
+                    "sigEscenasError": ["ES3PWin", "ES3PWin"]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Lo reportas?",
+                    "opciones": [
+                        "None", 
+                        "No",
+                        "Sí"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "None", 
+                        "Minimizo el problema y posible daño irreparable en la bombas."
+                    ],
+                    "respuestCorrecta": 2,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES3P5",
+                    "sigEscenasError": ["ES3PWin", "ES3PWin"]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "nombre": "El Sensor de Proximidad genera demoras.",
+            "descripcion": "Escenario donde el sensor de proximidad genera demoras.",
+            "puntuacionMax": 900,
+            "preguntas": [
+                {
+                    "id": 1,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Operaciones reporta paro de línea después de un movimiento inusual (golpe a equipo) del material",
+                    "opciones": [
+                        "Forzar mecánica o electrónicamente la línea para que continúe en operación", 
+                        "Operaciones se debe encargar del problema",
+                        "Tomo medidas de seguridad adecuadas e ir a revisar el área donde hubo el movimiento"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Posible daño permanente al equipo al no estar identificando el problema. Se debe tomar medidas de seguridad y luego revisar el área.", 
+                        "Es Mantenimiento el responsable del equipo, puede solicitar apoyo a Operaciones para la solución. Se debe tomar medidas de seguridad y luego revisar el área."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES4P2",
+                    "sigEscenasError": ["ES4P2", "ES4P2"]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Drag and Drop",
+                    "pregunta": "Primero que nada, él debe cumplir con las normas de seguridad, así que tiene que seleccionar el equipo necesario para realizar esta prueba. Arrastra todos los objetos necesarios de la derecha hacia el área roja que necesitará el guardia.",
+                    "opciones": [],
+                    "vidasPerdidas": [1],
+                    "correctoTexto": "Correcto! El guardia ahora tiene su equipo de seguridad puesto.",
+                    "falloTexto": ["Incorrecto! El guardia debe tener puesto su casco de seguridad con barbiquejo, lentes de seguridad, guantes combinados de carnaza y botines de seguridad con casquillo."],
+                    "respuestCorrecta": -1,
+                    "puntos": 100,
+                    "SigEscenaCorrecta": "ES4P3",
+                    "sigEscenasError": ["ES4P3"]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Identificar la causa",
+                    "opciones": [
+                        "Revisar superficialmente y entregar la línea a Operaciones para su arranque sin realizar alguna reparación", 
+                        "Solicitar todos los componentes que pudieran haberse dañado y no intervenir hasta no tenerlos físicamente",
+                        "Revisar detalladamente indicios de objetos golpeados, desacomodados o sueltos"
+                    ],
+                    "vidasPerdidas": [2, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Posible daño permanente al equipo al no estar identificando el problema. Se debería revisar detalladamente.", 
+                        "El tiempo de demora puede extenderse más de lo estrictamente necesario. Se debería revisar detalladamente."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES4P4",
+                    "sigEscenasError": ["ES4P6", "ES4P4"]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Drag and Drop",
+                    "pregunta": "Después de revisar detalladamente, ¿qué tipo de daño podrían existir?",
+                    "opciones": [],
+                    "vidasPerdidas": [1, 1, 1],
+                    "correctoTexto": "Correcto! Esos son los tipos de daño que podrían estar ocurriendo.",
+                    "falloTexto": [
+                        "Incorrecto! Te faltaron pasos, lo correcto sería ...",
+                        "Incorrecto! lo correcto sería ...",
+                        "Incorrecto! Te faltaron pasos y lo correcto sería ..."
+                    ],
+                    "respuestCorrecta": -1,
+                    "puntos": 100,
+                    "SigEscenaCorrecta": "ES4P5",
+                    "sigEscenasError": ["ES4P5", "ES4P5", "ES4P5"]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Drag and Drop",
+                    "pregunta": "Relaciona el daño con su solución. Arrastre el recuadro negro que se relacione al recuadro rojo.",
+                    "opciones": [],
+                    "vidasPerdidas": [1, 1, 1],
+                    "correctoTexto": "Correcto! Relacionaste de manera perfecta.",
+                    "falloTexto": [
+                        "Incorrecto! Te faltaron pasos, lo correcto sería ...",
+                        "Incorrecto! lo correcto sería ...",
+                        "Incorrecto! Te faltaron pasos y lo correcto sería ..."
+                    ],
+                    "respuestCorrecta": -1,
+                    "puntos": 100,
+                    "SigEscenaCorrecta": "ES4P6",
+                    "sigEscenasError": ["ES4P6", "ES4P6", "ES4P6"]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Después de solucionado el daño",
+                    "opciones": [
+                        "Genero una orden de mantenimiento", 
+                        "Informo a Programación para que indique el paro de línea",
+                        "Genero un aviso"
+                    ],
+                    "vidasPerdidas": [2, 2],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Orden de mantenimiento sin información completa del problema. Se debe generar un aviso.", 
+                        "Programación no es responsable de esta parte del proceso. Se debe generar un aviso."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES4P7",
+                    "sigEscenasError": ["ES4PWin", "ES4PWin"]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué tipo de aviso es el correcto en este caso?",
+                    "opciones": [
+                        "Aviso MB", 
+                        "Aviso M0",
+                        "Aviso M2"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Este aviso se utiliza para solicitar actividades a un sector diferente al propio. Debería ser un aviso M2.", 
+                        "Este aviso lo genera el inspector. Debería ser un aviso M2."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES4P8",
+                    "sigEscenasError": ["ES4PWin", "ES4PWin"]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué campos deben ser llenados en el aviso M2?",
+                    "opciones": [
+                        "Colocar la palabra Vínculos en algún campo", 
+                        "Agregar multimedia",
+                        "Equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte del objeto, síntoma de avería y causa"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Esta palabra no informa el detalle de lo ocurrido. Se debe llenar los campos: Equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte del objeto, síntoma de avería y causa.", 
+                        "Es opcional agregar alguna foto al aviso. Se debe llenar los campos: Equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte del objeto, síntoma de avería y causa."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES4P9",
+                    "sigEscenasError": ["ES4PWin", "ES4PWin"]
+                },
+                {
+                    "id": 9,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "En caso de colocar 'OTROS' como Sint.avería o Causa ¿Qué debo colocar en Texto?",
+                    "opciones": [
+                        "Colocar palabras clave o abreviadas", 
+                        "Colocar el tag del equipo",
+                        "Agregar el texto con el detalle del problema"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "No todas las personas reconocen el significado de nuestras abreviaciones. Hay que gregar el texto con el detalle del problema.", 
+                        "Puede ser un dato no rastreable en el sistema. Hay que gregar el texto con el detalle del problema."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES4PWin",
+                    "sigEscenasError": ["ES4PWin", "ES4PWin"]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "nombre": "¡Sobrecarga de Motor hace demoras!",
+            "descripcion": "Escenario donde la sobrecarga de un motor genera demoras!",
+            "puntuacionMax": 600,
+            "preguntas": [
+                {
+                    "id": 1,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "El nivel 2 reporta paro de línea por sobrecarga de motor",
+                    "opciones": [
+                        "Solicito me informen todo el detalle por radio", 
+                        "Restablecer el motor inmediatamente",
+                        "Revisar el motor que indico la falla, tomando las medidas de seguridad adecuadas"
+                    ],
+                    "vidasPerdidas": [1, 4],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Mantenimiento debe revisar la causa y solicitar apoyo a producción en caso de ser necesario.", 
+                        "Se debe revisar la causa de la falla antes de restablecer el equipo."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES5P2",
+                    "sigEscenasError": ["ES5P3", "ES5P2"]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Al identificar la causa",
+                    "opciones": [
+                        "Si está sobrecalentado enfriar con agua", 
+                        "Desarmar el motor para revisarlo por dentro",
+                        "Reestablecer el motor en caso de que no haya sufrido algún daño"
+                    ],
+                    "vidasPerdidas": [4, 2],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Puedes causar posible daño permanente al equipo al no estar identificado el problema.", 
+                        "El tiempo de la demora puede extenderse más de lo estrictamente necesario."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES5P4",
+                    "sigEscenasError": ["ES5P3", "ES5P4"]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¡Oh no! La maquinaria no parece responder, ¿qué sigue?",
+                    "opciones": [
+                        "Declarar un paro general de operaciones", 
+                        "Pedir ayuda en repararlo en ese momento",
+                        "Generar un aviso"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Puedes causar más daño en el área de trabajo si tomas decisiones apresuradas.", 
+                        "Sin instrucciones claras, podrías dañar el equipo o gastar mucho tiempo en su reparo."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES5P5",
+                    "sigEscenasError": ["ES5P5", "ES5P5"]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Después de solucionado el problema",
+                    "opciones": [
+                        "Generar una orden de Mantenimiento", 
+                        "Informar a Programación para que indique el paro de línea",
+                        "Generar un aviso"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Orden de mantenimiento sin información completa del problema.", 
+                        "Programación no es responsable de esta parte del proceso."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES5P5",
+                    "sigEscenasError": ["ES5P5", "ES5P5"]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué tipo de aviso es el correcto en este caso?",
+                    "opciones": [
+                        "Aviso MB", 
+                        "Aviso M0",
+                        "Aviso M2, con tilde de parada"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Este aviso se utiliza para solicitar actividades a un sector diferente al propio.", 
+                        "Este aviso lo genera el inspector."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES5P6",
+                    "sigEscenasError": ["ES5PWin", "ES5PWin"]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué campos deben ser llenados en el Aviso M2?",
+                    "opciones": [
+                        "Colocar la palabra 'vínculos' en algún campo", 
+                        "Agregar multimedia",
+                        "Equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte del objeto, síntoma de avería y causa"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Esta palabra no informa el detalle de lo ocurrido.", 
+                        "Es opcional agregar alguna foto al aviso."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES5P7",
+                    "sigEscenasError": ["ES5P7", "ES5P7"]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "En caso de colocar 'OTROS' como Sint.avería o Causa ¿Qué debo colocar en Texto?",
+                    "opciones": [
+                        "Colocar palabras clave o abreviadas", 
+                        "Colocar el tag del equipo",
+                        "Agregar el texto con el detalle del problema"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "No todas las personas reconocen el significado de nuestras abreviaciones. Hay que gregar el texto con el detalle del problema.", 
+                        "Puede ser un dato no rastreable en el sistema. Hay que gregar el texto con el detalle del problema."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES5PWin",
+                    "sigEscenasError": ["ES5PWin", "ES5PWin"]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "nombre": "¡Avería: Nivel de Aceite!",
+            "descripcion": "Escenario de una sobrecarga de aceite!",
+            "puntuacionMax": 800,
+            "preguntas": [
+                {
+                    "id": 1,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "!Operaciones ha reportado aceite tirado en el carro portarollos!",
+                    "opciones": [
+                        "Acercarme al área con el aceite que tengo disponible y rellenar",
+                        "Solicito me informen todo el detalle por radio",
+                        "Revisar la fuente de la fuga, tomando las medidas de seguridad adecuadas"
+                    ],
+                    "vidasPerdidas": [1, 3],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "El aceite podría ser inadecuado para el equipo",
+                        "Se debe revisar la fuga para tomar las medidas adecuadas"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES6P2",
+                    "sigEscenasError": ["ES6P2", "ES6P2"]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Al identificar la fuente fuga...",
+                    "opciones": [
+                        "Esperar el repuesto",
+                        "Solicito me informen todo el detalle por radio",
+                        "Contener el derrame con los insumos adecuados"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Se debe validar esta opción con Producción",
+                        "El tiempo de la demora puede extenderse más de lo estrictamente necesario"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES6P3",
+                    "sigEscenasError": ["ES6P3", "ES6P3"]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Si la fuga es por alguna manguera dañada...",
+                    "opciones": [
+                        "Colocar un parche",
+                        "Usar alguna manguera que tenga disponible",
+                        "Solicitar y/o conseguir una manguera igual para sustituir la dañada"
+                    ],
+                    "vidasPerdidas": [2, 2],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Se debe validar esta opción con Producción",
+                        "El tiempo de la demora puede extenderse más de lo estrictamente necesario"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES6P4",
+                    "sigEscenasError": ["ES6P4", "ES6P4"]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Si la fuga es por mala sujeción...",
+                    "opciones": [
+                        "Colocar un parche",
+                        "Usar alguna manguera que tenga disponible",
+                        "Solicitar y/o conseguir una manguera igual para sustituir la dañada"
+                    ],
+                    "vidasPerdidas": [2, 2],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Solución no adecuada",
+                        "Esta manguera podría no ser la adecuada para el funcionamiento del equipo"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES6P5",
+                    "sigEscenasError": ["ES6P5", "ES6P5"]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Después de reparada la fuga...",
+                    "opciones": [
+                        "Retirarse de inmediato",
+                        "Dejar la manguera dañada o un lado del equipo que falló para que los demás se enteren",
+                        "Validar que no fugue más y limpiar el área con los insumos adecuados"
+                    ],
+                    "vidasPerdidas": [2, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Se debe verificar que ya no se presente la fuga",
+                        "Incumplimiento al orden y limpieza del área"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES6P6",
+                    "sigEscenasError": ["ES6P6", "ES6P6"]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué tipo de aviso debo generar?",
+                    "opciones": [
+                        "Aviso M1",
+                        "Aviso M0",
+                        "Aviso M2, sin tilde de parada"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Este es un aviso de mantenimiento que solicita actividades a un sector diferente al propio",
+                        "Este aviso se utiliza para cuando se encuentra algo fuera de condiciones en la Inspección"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES6P7",
+                    "sigEscenasError": ["ES6P7", "ES6P7"]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué campos deben ser llenados en el Aviso M2?",
+                    "opciones": [
+                        "Colocar la palabra \"Vínculos\" en algún campo",
+                        "Agregar multimedia",
+                        "Equipo, ¿Qué pasó?, ¿Por Qué pasó?, ¿Qué se hizo?, PARTE OBJETO, SINT.AVERIA y CAUSA"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Esta palabra no informa el detalle de lo ocurrido",
+                        "Es opcional, agregar alguna foto al aviso"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES6P8",
+                    "sigEscenasError": ["ES6P8", "ES6P8"]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "En caso de colocar \"OTROS\" como Sint.avería o Causa ¿Qué debo colocar en Texto?",
+                    "opciones": [
+                        "Colocar palabras clave o abreviadas",
+                        "Colocar el TAG del equipo",
+                        "Agregar el texto con el detalle del problema"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "No todas las personas reconocen el significado de nuestras abreviaciones",
+                        "Puede ser un dato no rastreable en Sistema"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES6PWin",
+                    "sigEscenasError": ["ES6PWin", "ES6PWin"]
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "nombre": "¡Emergencia PM10, Guardia!",
+            "descripcion": "¡Escenario de emergencia PM10!",
+            "puntuacionMax": 800,
+            "preguntas": [
+                {
+                    "id": 1,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Operaciones reporta una fuga de aceite hidráulico en un equipo",
+                    "opciones": [
+                        "Acercarme al área con el aceite que tengo disponible y rellenar", 
+                        "Solicito me informen todo el detalle por radio",
+                        "Revisar la fuente de la fuga, tomando las medidas de seguridad adecuadas"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "El aceite podría ser inadecuado para el equipo", 
+                        "Se debe revisar la fuga para tomar las medidas adecuadas"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES7P2",
+                    "sigEscenasError": ["ES7P2", "ES7P4"]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Al identificar la fuente fuga",
+                    "opciones": [
+                        "Solicitar a producción el paro de línea", 
+                        "Esperar el repuesto ",
+                        "Revisar personalmente tomando en cuenta las medidas  de Seguridad el componente o equipo reportado"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Se debe validar esta opción con Producción", 
+                        "El tiempo de la demora puede extenderse mas de lo estrictamente necesario"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES7P3",
+                    "sigEscenasError": ["ES7P3", "ES7P3"]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Si la fuga es por alguna manguera dañada:",
+                    "opciones": [
+                        "Colocar un parche de manera provisional", 
+                        "Usar alguna manguera que tenga disponible",
+                        "Solicitar y/o conseguir una manguera igual para sustituir la dañada"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Solución no adecuada", 
+                        "Esta manguera podría no ser la adecuada para el funcionamiento del equipo"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES7P4",
+                    "sigEscenasError": ["ES7P4", "ES7P4"]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué tipo de aviso debo generar?",
+                    "opciones": [
+                        "Aviso M1", 
+                        "Aviso M0",
+                        "Aviso M2, sin tilde de Parada"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Este es un aviso de mantenimiento que solicita actividades a un sector diferente al propio", 
+                        "Este aviso se utiliza para cuando se encuentra algo fuera de condiciones en la Inspección"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES7P5",
+                    "sigEscenasError": ["ES7PWin", "ES7PWin"]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Que campos deben ser llenados en el Aviso M2?",
+                    "opciones": [
+                        "Colocar la palabra Vínculos en algún campo", 
+                        "Agregar multimedia",
+                        "Equipo, ¿Qué paso?, ¿Por qué paso?, ¿Qué se hizo?, PARTE OBJETO, SINT.AVERIA y CAUSA"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Esta palabra no informa el detalle de lo ocurrido", 
+                        "Es opcional, agregar alguna foto al aviso."
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES7P6",
+                    "sigEscenasError": ["ES7P6", "ES7P6"]
+                },
+                {
+                    "id": 6,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "En caso de colocar \"OTROS\" como Sint.avería o Causa ¿Qué debo colocar en Texto?",
+                    "opciones": [
+                        "Colocar palabras clave o abreviadas", 
+                        "Colocar el TAG del equipo",
+                        "Agregar el texto con el detalle del problema"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "No todas las personas reconocen el significado de nuestras abreviaciones", 
+                        "Puede ser un dato no rastreable en Sistema"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES7P7",
+                    "sigEscenasError": ["ES7P7", "ES7P7"]
+                },
+                {
+                    "id": 7,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Una vez generado el Aviso M2, ¿Que tipo de orden debo generar para la reparación de emergencia?",
+                    "opciones": [
+                        "Orden PM01", 
+                        "Orden PM12",
+                        "Orden PM10"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Es una orden que se utiliza para mantenimiento preventivo", 
+                        "Es una orden que se utiliza la reparación en Taller"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES7P8",
+                    "sigEscenasError": ["ES7P8", "ES7P8"]
+                },
+                {
+                    "id": 8,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Que se debe agregar a la orden para solicitar el repuesto?",
+                    "opciones": [
+                        "El nombre del Supervisor del Área", 
+                        "El numero de serie del equipo",
+                        "Agregar a la orden el componente"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Dato no requerido en la orden", 
+                        "Dato no requerido en la orden"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES7PWin",
+                    "sigEscenasError": ["ES7PWin", "ES7PWin"]
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "nombre": "Correctivo programado PM11",
+            "descripcion": "Correctivo programado PM11 para Inspector.",
+            "puntuacionMax": 500,
+            "preguntas": [
+                {
+                    "id": 1,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Se informa a Inspector de mantenimiento de un aviso M2 abierto",
+                    "opciones": [
+                        "El aviso debe ser gestionado y respondido por la Guardia", 
+                        "Personal de operaciones debe dar seguimiento al aviso.",
+                        "Revisar el aviso para informarse de lo reportado"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Si el aviso requiere reparación programada debe ser gestionada por el Inspector", 
+                        "Es mantenimiento el área responsable del aviso"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES8P2",
+                    "sigEscenasError": ["ES8P2", "ES8P2"]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Después de revisar el aviso ¿Qué debería hacer el Inspector?",
+                    "opciones": [
+                        "Solicitar inmediatamente el repuesto mediante una orden", 
+                        "Usar algún repuesto que tenga a la mano",
+                        "Revisar personalmente tomando en cuenta las medidas  de Seguridad el componente o equipo reportado"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Se requiere verificar físicamente lo reportado en el aviso", 
+                        "Se requiere validar si el repuesto es el adecuado antes de instalarlo"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES8P3",
+                    "sigEscenasError": ["ES8P3", "ES8P3"]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Una vez revisado físicamente el Aviso M2, ¿Que tipo de orden debo generar para la reparación programada?",
+                    "opciones": [
+                        "Orden PM01",
+                        "Orden PM12",
+                        "Orden PM11"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Es una orden que se utiliza para mantenimiento preventivo", 
+                        "Es una orden que se utiliza la reparación en Taller"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES8P4",
+                    "sigEscenasError": ["ES8P4", "ES8P4"]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Que se debe agregar a la orden para solicitar el repuesto?",
+                    "opciones": [
+                        "El nombre del Supervisor del Área", 
+                        "El numero de serie del equipo",
+                        "Agregar a la orden el componente de ser necesario"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Dato no requerido en la orden", 
+                        "Dato no requerido en la orden"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES8P5",
+                    "sigEscenasError": ["ES8P5", "ES8P5"]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Después de realizar el correctivo programado ¿Qué debe realizar el Inspector?",
+                    "opciones": [
+                        "Nada mas, ya esta corregido el problema", 
+                        "Avisar por radio a Producción que ya esta corregido el problema",
+                        "Cerrar la orden y generar aviso M3 en caso de requerir guardar historial del equipo"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Se debe dejar registro en Sistema del fin de la actividad, cerrando la orden", 
+                        "La forma correcta de informar es cerrando la orden, se puede avisar por radio pero NO omitir el cierre de la orden"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES8PWin",
+                    "sigEscenasError": ["ES8PWin", "ES8PWin"]
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "nombre": "Aviso M3, Inspector",
+            "descripcion": "Aviso M3 Para el inspector!",
+            "puntuacionMax": 300,
+            "preguntas": [
+                {
+                    "id": 1,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Después de ejecutar una orden ¿Qué tipo de aviso se podría generar?",
+                    "opciones": [
+                        "Aviso M1",
+                        "Aviso M0",
+                        "Aviso M3"
+                    ],
+                    "vidasPerdidas": [5, 5],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Este es un aviso de mantenimiento que solicita actividades a un sector diferente al propio",
+                        "Este aviso se utiliza para cuando se encuentra algo fuera de condiciones en la Inspección"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES9P2",
+                    "sigEscenasError": ["ES9PWin", "ES9PWin"]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Cual es la finalidad del aviso M3?",
+                    "opciones": [
+                        "Reportar no conformidades durante una Inspección Programada",
+                        "Es una aviso para ser revisado por el Taller Central",
+                        "Reportar actividades realizadas sobre los equipos que NO son averías"
+                    ],
+                    "vidasPerdidas": [3, 3],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "El aviso que se debe generar en las no conformidades d e Inspección es un M0",
+                        "El aviso que se utiliza para solicitud a talleres es el M6"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES9P3",
+                    "sigEscenasError": ["ES9PWin", "ES9PWin"]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Cuales serian algunas actividades a reportar en el Aviso M3?",
+                    "opciones": [
+                        "Cambio de algún componente",
+                        "Una avería que genero demora",
+                        "Limpieza, regulación, llenado de tanque"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Es una orden que se utiliza para mantenimiento preventivo",
+                        "Es una orden que se utiliza la reparación en Taller"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES9PWin",
+                    "sigEscenasError": ["ES9PWin", "ES9PWin"]
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "nombre": "Aviso M6, Inspector",
+            "descripcion": "Aviso M6 Para el inspector!",
+            "puntuacionMax": 500,
+            "preguntas": [
+                {
+                    "id": 1,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "Durante la ejecución de una Orden PM01, se detecta un equipo que debe ser reparado ¿Qué tipo de aviso se debe generar?",
+                    "opciones": [
+                        "Aviso M1",
+                        "Aviso M0",
+                        "Aviso M6"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Este es un aviso de mantenimiento que solicita actividades a un sector diferente al propio",
+                        "Este aviso se utiliza para cuando se encuentra algo fuera de condiciones en la Inspección"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES10P2",
+                    "sigEscenasError": ["ES10P2", "ES10P2"]
+                },
+                {
+                    "id": 2,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Cual es la finalidad del aviso M6?",
+                    "opciones": [
+                        "Reportar no conformidades durante una Inspección Programada",
+                        "Reportar actividades realizadas sobre los equipos que NO son averías",
+                        "Es una aviso para ser revisado por el Taller Central"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "El aviso que se debe generar en las no conformidades d e Inspección es un M0",
+                        "El aviso que se utiliza para solicitud a talleres es el M6"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES10P3",
+                    "sigEscenasError": ["ES10P3", "ES10P3"]
+                },
+                {
+                    "id": 3,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Que clase de órdenes puede surgir del Aviso M6?",
+                    "opciones": [
+                        "Órdenes PM01 y PM02",
+                        "Órdenes PM10 y PM11",
+                        "Órdenes PM12 y PM13"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Es una orden que se utiliza para correctivo de emergencia",
+                        "Es una orden que se utiliza para correctivo programado por Mantenimiento"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES10P4",
+                    "sigEscenasError": ["ES10P4", "ES10P4"]
+                },
+                {
+                    "id": 4,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Quien genera, gestiona y cierra las órdenes PM12 y PM13?",
+                    "opciones": [
+                        "El Inspector de Mantenimiento",
+                        "El Supervisor de Guardia",
+                        "Personal del Taller Central"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Las órdenes PM12 y PM13 son generadas y gestionadas por personal del Taller Central",
+                        "Las órdenes PM12 y PM13 son generadas y gestionadas por personal del Taller Central"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES10P5",
+                    "sigEscenasError": ["ES10P5", "ES10P5"]
+                },
+                {
+                    "id": 5,
+                    "tipo": "Opcion Multiple",
+                    "pregunta": "¿Qué procede? Una vez cerradas las órdenes PM12 y PM13.",
+                    "opciones": [
+                        "Nada mas, ya esta reparado el equipo",
+                        "Informar al área de Almacén",
+                        "Taller informa a solicitante del aviso del cierre de la orden para que este programe su Instalación"
+                    ],
+                    "vidasPerdidas": [1, 1],
+                    "correctoTexto": "Correcto!",
+                    "falloTexto": [
+                        "Se debe dejar registro en Sistema del fin de la actividad, cerrando la orden",
+                        "La forma correcta de informar es cerrando la orden, se puede avisar por radio pero NO omitir el cierre de la orden"
+                    ],
+                    "respuestCorrecta": 3,
+                    "puntos": 100,
+                    "sigEscenaCorrecto": "ES10PWin",
+                    "sigEscenasError": ["ES10PWin", "ES10PWin"]
+                }
+            ]
+        }
+    ]
+}

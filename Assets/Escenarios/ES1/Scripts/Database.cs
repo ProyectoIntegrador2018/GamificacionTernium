@@ -3,11 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-// [System.Serializable]
-// public class Niveles
-// {
+[System.Serializable]
+public class ListaMisiones
+{
+    public List<Misiones> misiones;
+}
 
-// }
+[System.Serializable]
+public struct Misiones {
+    public int id;
+    public string nombre;
+    public string descripcion;
+    public int puntuacionMax;
+    public List<Preguntas> preguntas;
+}
+
+[System.Serializable]
+public struct Preguntas {
+    public double id;
+    public string tipo;
+    public string pregunta;
+    public string opciones;
+    public int[] vidasPerdidas;
+    public string correctoTexto;
+    public string[] falloTexto;
+    public int respuestaCorrecta;
+    public int puntos;
+    public string sigEscenaCorrecto;
+    public string[] sigEscenasError;
+}
 
 [System.Serializable]
 public class User
@@ -49,7 +73,9 @@ public class Users
 public class Database : MonoBehaviour
 {
     public TextAsset jsonFile;
+    public TextAsset jsonMisiones;
     public static Users userBase;
+    public static ListaMisiones listaDeMisiones;
     public static string path;
 
     // Start is called before the first frame update
@@ -77,6 +103,9 @@ public class Database : MonoBehaviour
             //Si no existe se crea en local para siempre accesar desde el path 
             saveData();
         }
+
+        listaDeMisiones = JsonUtility.FromJson<ListaMisiones>(jsonMisiones.text);
+
     }
 
     public static int login(string username, string pass) {

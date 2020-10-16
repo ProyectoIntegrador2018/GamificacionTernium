@@ -228,7 +228,8 @@ public class QuestionManager : MonoBehaviour {
         100);
     Preguntas ES2Q7 = new Preguntas(
         "¿Qué tipo de aviso debo generar?", 
-        "Aviso MB", "Aviso M0", 
+        "Aviso MB", 
+        "Aviso M0", 
         3, 
         3, 
         "Aviso M2, sin tilde de parada", 
@@ -243,7 +244,8 @@ public class QuestionManager : MonoBehaviour {
         2, 
         2, 
         "Equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte, objeto, síntoma, avería, causa y sus textos", 
-        "Esta palabra no informa el detalle de lo ocurrido.", "Es opcional agregar alguna foto al aviso.", 
+        "Esta palabra no informa el detalle de lo ocurrido.", 
+        "Es opcional agregar alguna foto al aviso.", 
         3, 
         100);
     Preguntas ES2Q9 = new Preguntas(
@@ -420,7 +422,8 @@ public class QuestionManager : MonoBehaviour {
         "Si está sobrecalentado enfriar con agua", 
         "Desarmar el motor para revisarlo por dentro", 
         4, 
-        2, "Reestablecer el motor en caso de que no haya sufrido algún daño", 
+        2, 
+        "Reestablecer el motor en caso de que no haya sufrido algún daño", 
         "Puedes causar posible daño permanente al equipo al no estar identificado el problema.", 
         "El tiempo de la demora puede extenderse más de lo estrictamente necesario.", 
         3, 
@@ -575,59 +578,91 @@ public class QuestionManager : MonoBehaviour {
     Preguntas ES7Q1 = new Preguntas(
         "Operaciones reporta una fuga de aceite hidráulico en un equipo", 
         "Acercarme al área con el aceite que tengo disponible y rellenar", 
-        "Solicito me informen todo el detalle por radio", 1, 1, 
+        "Solicito me informen todo el detalle por radio", 
+        1, 
+        1, 
         "Revisar la fuente de la fuga, tomando las medidas de seguridad adecuadas", 
         "El aceite podría ser inadecuado para el equipo", 
-        "Se debe revisar la fuga para tomar las medidas adecuadas", 3, 100);
+        "Se debe revisar la fuga para tomar las medidas adecuadas", 
+        3, 
+        100);
     Preguntas ES7Q2 = new Preguntas(
         "Al identificar la fuente fuga", 
         "Solicitar a producción el paro de línea", 
-        "Esperar el repuesto ", 1, 1, 
+        "Esperar el repuesto ", 
+        1, 
+        1, 
         "Revisar personalmente tomando en cuenta las medidas  de Seguridad el componente o equipo reportado", 
         "Se debe validar esta opción con Producción", 
-        "El tiempo de la demora puede extenderse mas de lo estrictamente necesario", 3, 100);
+        "El tiempo de la demora puede extenderse mas de lo estrictamente necesario", 
+        3, 
+        100);
     Preguntas ES7Q3 = new Preguntas(
         "Si la fuga es por alguna manguera dañada:", 
         "Colocar un parche de manera provisional", 
-        "Usar alguna manguera que tenga disponible", 1, 1, 
+        "Usar alguna manguera que tenga disponible", 
+        1, 
+        1, 
         "Solicitar y/o conseguir una manguera igual para sustituir la dañada", 
         "Solución no adecuada", 
-        "Esta manguera podría no ser la adecuada para el funcionamiento del equipo", 3, 100);
+        "Esta manguera podría no ser la adecuada para el funcionamiento del equipo", 
+        3, 
+        100);
     Preguntas ES7Q4 = new Preguntas(
         "¿Qué tipo de aviso debo generar?",
         "Aviso M1", 
-        "Aviso M0", 1, 1, 
+        "Aviso M0", 
+        1, 
+        1, 
         "Aviso M2, sin tilde de Parada", 
         "Este es un aviso de mantenimiento que solicita actividades a un sector diferente al propio", 
-        "Este aviso se utiliza para cuando se encuentra algo fuera de condiciones en la Inspección", 3, 100);
+        "Este aviso se utiliza para cuando se encuentra algo fuera de condiciones en la Inspección", 
+        3, 
+        100);
     Preguntas ES7Q5 = new Preguntas(
         "¿Que campos deben ser llenados en el Aviso M2?", 
         "Colocar la palabra Vínculos en algún campo", 
-        "Agregar multimedia", 1, 1, 
+        "Agregar multimedia", 
+        1, 
+        1, 
         "Equipo, ¿Qué paso?, ¿Por qué paso?, ¿Qué se hizo?, PARTE OBJETO, SINT.AVERIA y CAUSA", 
         "Esta palabra no informa el detalle de lo ocurrido", 
-        "Es opcional, agregar alguna foto al aviso.", 3, 100);
+        "Es opcional, agregar alguna foto al aviso.", 
+        3, 
+        100);
     Preguntas ES7Q6 = new Preguntas(
         "En caso de colocar \"OTROS\" como Sint.avería o Causa ¿Qué debo colocar en Texto?", 
         "Colocar palabras clave o abreviadas", 
-        "Colocar el TAG del equipo", 1, 1, 
+        "Colocar el TAG del equipo", 
+        1, 
+        1, 
         "Agregar el texto con el detalle del problema", 
         "No todas las personas reconocen el significado de nuestras abreviaciones", 
-        "Puede ser un dato no rastreable en Sistema", 3, 100);
+        "Puede ser un dato no rastreable en Sistema", 
+        3, 
+        100);
     Preguntas ES7Q7 = new Preguntas(
         "Una vez generado el Aviso M2, ¿Que tipo de orden debo generar para la reparación de emergencia?", 
         "Orden PM01", 
-        "Orden PM12", 1, 1, 
+        "Orden PM12", 
+        1,
+        1, 
         "Orden PM10", 
         "Es una orden que se utiliza para mantenimiento preventivo", 
-        "Es una orden que se utiliza la reparación en Taller", 3, 100);
+        "Es una orden que se utiliza la reparación en Taller", 
+        3,
+        100);
     Preguntas ES7Q8 = new Preguntas(
         "¿Que se debe agregar a la orden para solicitar el repuesto?", 
         "El nombre del Supervisor del Área", 
-        "El numero de serie del equipo", 1, 1, 
+        "El numero de serie del equipo", 
+        1, 
+        1, 
         "Agregar a la orden el componente", 
         "Dato no requerido en la orden", 
-        "Dato no requerido en la orden", 3, 100);
+        "Dato no requerido en la orden", 
+        3, 
+        100);
 
     // ES8
         Preguntas ES8Q1 = new Preguntas(
