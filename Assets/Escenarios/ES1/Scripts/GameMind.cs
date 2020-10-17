@@ -63,7 +63,7 @@ public class GameMind : MonoBehaviour {
 
         pause?.onClick.AddListener(delegate { Pausar(); });
 
-        if ( Input.GetKeyDown(KeyCode.Escape) ) { Pausar(); }
+        if ( Input.GetKeyDown(KeyCode.Escape)){ Pausar(); }
 
         BtnID.onClick.AddListener(delegate {
 
@@ -83,13 +83,21 @@ public class GameMind : MonoBehaviour {
 
     }
 
+
+   
+
+  
+
     public void Pausar()
     {
-        if (SceneManager.GetActiveScene().name == "Menu")
-        {
-
-        }
-        else
+        if (SceneManager.GetActiveScene().name == "login" || SceneManager.GetActiveScene().name == "Menu" || SceneManager.GetActiveScene().name == "AvatarCustomization"||
+          SceneManager.GetActiveScene().name == "Historial" || SceneManager.GetActiveScene().name == "Top10" || SceneManager.GetActiveScene().name == "News" ||
+          SceneManager.GetActiveScene().name == "Achivements")
+        {                                                 
+            Pausado = false;                              
+                                                          
+        }                                                 
+        else                                              
         {
             if (!Pausado)
             {
