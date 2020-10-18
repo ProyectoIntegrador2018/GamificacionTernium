@@ -13,6 +13,10 @@ public class MenuManager : MonoBehaviour
     public Button Salir;
     public GameObject ProximaMission;
     public GameObject toast;
+    public Image turnImage;
+    public Sprite morningImg;
+    public Sprite noonImg;
+    public Sprite nightImg;
     public Text SiguentePregunta;
     public Text mensajeBienvenida;
     public static Users userBase;
@@ -28,6 +32,7 @@ public class MenuManager : MonoBehaviour
         FirstClick = true;
         mensajeBienvenida = GetComponent<Text>();
         //GlobalVariables.Caso = 0;
+        showTurn();
     }
     // Update is called once per frame
     void Update(){
@@ -187,6 +192,18 @@ public class MenuManager : MonoBehaviour
     {
         string caso = "ES" + NumeroDCaso + "P1";
         SceneManager.LoadScene(caso);
+    }
+
+    public void showTurn(){
+        if(GlobalVariables.turno == "Matutino"){
+            turnImage.sprite = morningImg;
+        }
+        else if(GlobalVariables.turno == "Vespertino"){
+            turnImage.sprite = noonImg;
+        }
+        else if(GlobalVariables.turno == "Nocturno"){
+            turnImage.sprite = nightImg;
+        }
     }
 
 }
