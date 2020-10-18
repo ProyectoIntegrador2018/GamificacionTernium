@@ -8,13 +8,18 @@ using UnityEngine.SceneManagement;
 public class HistorialManager : MonoBehaviour
 {
 
-    public const int NUMMISIONS = 10;
+    public int numMissions;
 
     public GameObject MisionPrefab;
     public GameObject MisionPrefabLose;
 
     public Button btnReplay;
 
+    public static Mision[] misionsArr;
+
+    private string[] missionNames;
+    private string[] missionDescriptions; 
+    
 
     public class Mision
     {
@@ -42,19 +47,6 @@ public class HistorialManager : MonoBehaviour
         public bool Achieved;
         public int Score;
     }
-
-    public static Mision[] misionsArr = new Mision[NUMMISIONS] {
-        new Mision("¡Avería en el Rodillo!","Repara correctamente un rodillo antiderrapante.", "???", false, 0),
-        new Mision("¡Avería en Acoplamiento!", "Repara correctamente una avería de acoplamiento.", "???", false, 0),
-        new Mision("El Sobrecalentamiento en Bomba.", "Juego de Sobrecalentamiento de Bombas", "???", false, 0),
-        new Mision("El Sensor de Proximidad genera demoras.", "Escenario donde el sensor de proximidad genera demoras.", "???", false, 0),
-        new Mision("¡Sobrecarga de Motor hace demoras!", "Escenario donde la sobrecarga de un motor genera demoras!", "???", false, 0),
-        new Mision("¡Avería: Nivel de Aceite!", "Escenario de una sobrecarga de aceite!", "???", false, 0),
-        new Mision("¡Emergencia PM10, Guardia!", "¡Escenario de emergencia PM10!", "???", false, 0),
-        new Mision("Correctivo programado PM11, Inspector.", "Correctivo programado PM11 para Inspector.", "???", false, 0),
-        new Mision("Aviso M3, Inspector", "Aviso M3 Para el inspector!", "???", false, 0),
-        new Mision("Aviso M6, Inspector", "Aviso M6 Para el inspector!", "???", false, 0),
-    };
 
     public void CreateMision(int id, string category, string title, string description, string descripcionMala, bool achived, int score) {
 
@@ -91,7 +83,17 @@ public class HistorialManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
-        for (int i = 0; i <NUMMISIONS; i++)
+
+        numMissions = Database.getAmountOfMissions();
+        missionNames = Database.getAllMissionNames();
+        missionDescriptions = Database.getAllMissionDescriptions();
+        misionsArr = new Mision[numMissions];
+
+        for(int i = 0; i < numMissions; i++) {
+            misionsArr[i] = new Mision(missionNames[i], missionDescriptions[i], "???", false, 0);
+        }
+
+        for (int i = 0; i < numMissions; i++)
         {
             // misionsArr[i].Achieved = GameMind.getAchivement(i);
             if (Database.getStarted(i))

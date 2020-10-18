@@ -62,7 +62,7 @@ public class ExpBar : MonoBehaviour
 
     IEnumerator WaitBeforeExpGain() {
         if (current != previousCurrent) {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
             shouldAnimate = true;
         }
         else {
@@ -72,13 +72,15 @@ public class ExpBar : MonoBehaviour
     }
 
     private void OnStartLevelUpAnimation() {
+        shouldAnimate = false;
         pauseAnimate = true;
         particles.GetComponent<ParticleSystem>().Stop();
     }
 
     private void OnFinishLevelUpAnimation() {
+        shouldAnimate = true;
         pauseAnimate = false;
-        if (previousCurrent != current) {
+        if (previousCurrent < current) {
             particles.GetComponent<ParticleSystem>().Play();
         }
     }
