@@ -5,18 +5,8 @@ using System.Linq;
 public class Top10ButtonList : MonoBehaviour
 {
 
-    public TextAsset MissionNamesTextFile;
     public GameObject missionPrefab;
-    private Missions missions;
-
-    private class Missions {
-
-        public string[] MissionNames;
-
-        Missions() {
-            MissionNames = new string[] { };
-        }
-    }
+    private string[] missions; 
 
     GameObject createButtonForList(string buttonText) {
 
@@ -40,12 +30,12 @@ public class Top10ButtonList : MonoBehaviour
             Top10EventSystem.current.TotalClick();
         });
 
-        foreach (string missionName in missions.MissionNames) {
+        foreach (string missionName in missions) {
             mission = createButtonForList(missionName);
             mission.name = i.ToString();
             //Se necesita caputrar el valor para que el onClickListener sea dinamico
             int capturedIndex = i;
-            string capturedName = missions.MissionNames[i]; 
+            string capturedName = missionName; 
             mission.GetComponent<Button>().onClick.AddListener(() => {
                 Top10EventSystem.current.MissionClick(capturedName, capturedIndex);
             });
@@ -56,7 +46,8 @@ public class Top10ButtonList : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        missions = JsonUtility.FromJson<Missions>(MissionNamesTextFile.text);
+
+        missions = Database.getAllMissionNames();
         instantiateMissionList();
     }
 }

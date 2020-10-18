@@ -296,7 +296,7 @@
                     "respuestCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P7",
-                    "sigEscenasError": ["ES2PWin", "ES2PWin"]
+                    "sigEscenasError": ["ES2Win", "ES2Win"]
                 },
                 {
                     "id": 7,
@@ -316,7 +316,7 @@
                     "respuestCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P8",
-                    "sigEscenasError": ["ES2PWin", "ES2PWin"]
+                    "sigEscenasError": ["ES2Win", "ES2Win"]
                 },
                 {
                     "id": 8,
@@ -336,7 +336,7 @@
                     "respuestCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P9",
-                    "sigEscenasError": ["ES2PWin", "ES2PWin"]
+                    "sigEscenasError": ["ES2Win", "ES2Win"]
                 },
                 {
                     "id": 9,
@@ -355,8 +355,8 @@
                     ],
                     "respuestCorrecta": 3,
                     "puntos": 100,
-                    "sigEscenaCorrecto": "ES2PWin",
-                    "sigEscenasError": ["ES2PWin", "ES2PWin"]
+                    "sigEscenaCorrecto": "ES2Win",
+                    "sigEscenasError": ["ES2Win", "ES2Win"]
                 },
                 {
                     "id": 10,
@@ -376,7 +376,7 @@
                     "respuestCorrecta": 2,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P3",
-                    "sigEscenasError": ["ES2PWin", "ES2PWin"]
+                    "sigEscenasError": ["ES2Win", "ES2Win"]
                 },
                 {
                     "id": 11,
@@ -396,7 +396,7 @@
                     "respuestCorrecta": 2,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P5",
-                    "sigEscenasError": ["ES2PWin", "ES2PWin"]
+                    "sigEscenasError": ["ES2Win", "ES2Win"]
                 }
             ]
         },
@@ -480,7 +480,7 @@
                     "respuestCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES3P5",
-                    "sigEscenasError": ["ES3PWin", "ES3PWin"]
+                    "sigEscenasError": ["ES3Win", "ES3Win"]
                 },
                 {
                     "id": 5,
@@ -499,8 +499,8 @@
                     ],
                     "respuestCorrecta": 3,
                     "puntos": 100,
-                    "sigEscenaCorrecto": "ES3PWin",
-                    "sigEscenasError": ["ES3PWin", "ES3PWin"]
+                    "sigEscenaCorrecto": "ES3Win",
+                    "sigEscenasError": ["ES3Win", "ES3Win"]
                 },
                 {
                     "id": 6,
@@ -520,7 +520,7 @@
                     "respuestCorrecta": 2,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES3P5",
-                    "sigEscenasError": ["ES3PWin", "ES3PWin"]
+                    "sigEscenasError": ["ES3Win", "ES3Win"]
                 }
             ]
         },
@@ -635,7 +635,7 @@
                     "respuestCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES4P7",
-                    "sigEscenasError": ["ES4PWin", "ES4PWin"]
+                    "sigEscenasError": ["ES4Win", "ES4Win"]
                 },
                 {
                     "id": 7,
@@ -655,7 +655,7 @@
                     "respuestCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES4P8",
-                    "sigEscenasError": ["ES4PWin", "ES4PWin"]
+                    "sigEscenasError": ["ES4Win", "ES4Win"]
                 },
                 {
                     "id": 8,
@@ -675,7 +675,7 @@
                     "respuestCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES4P9",
-                    "sigEscenasError": ["ES4PWin", "ES4PWin"]
+                    "sigEscenasError": ["ES4Win", "ES4Win"]
                 },
                 {
                     "id": 9,
@@ -694,8 +694,8 @@
                     ],
                     "respuestCorrecta": 3,
                     "puntos": 100,
-                    "sigEscenaCorrecto": "ES4PWin",
-                    "sigEscenasError": ["ES4PWin", "ES4PWin"]
+                    "sigEscenaCorrecto": "ES4Win",
+                    "sigEscenasError": ["ES4Win", "ES4Win"]
                 }
             ]
         },
@@ -803,7 +803,7 @@
                     "respuestCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES5P6",
-                    "sigEscenasError": ["ES5PWin", "ES5PWin"]
+                    "sigEscenasError": ["ES5Win", "ES5Win"]
                 },
                 {
                     "id": 6,
@@ -842,8 +842,8 @@
                     ],
                     "respuestCorrecta": 3,
                     "puntos": 100,
-                    "sigEscenaCorrecto": "ES5PWin",
-                    "sigEscenasError": ["ES5PWin", "ES5PWin"]
+                    "sigEscenaCorrecto": "ES5Win",
+                    "sigEscenasError": ["ES5Win", "ES5Win"]
                 }
             ]
         },
@@ -1010,8 +1010,8 @@
                     ],
                     "respuestCorrecta": 3,
                     "puntos": 100,
-                    "sigEscenaCorrecto": "ES6PWin",
-                    "sigEscenasError": ["ES6PWin", "ES6PWin"]
+                    "sigEscenaCorrecto": "ES6Win",
+                    "sigEscenasError": ["ES6Win", "ES6Win"]
                 }
             ]
         },
@@ -1099,7 +1099,7 @@
                     "respuestCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES7P5",
-                    "sigEscenasError": ["ES7PWin", "ES7PWin"]
+                    "sigEscenasError": ["ES7Win", "ES7Win"]
                 },
                 {
                     "id": 5,
@@ -1178,8 +1178,8 @@
                     ],
                     "respuestCorrecta": 3,
                     "puntos": 100,
-                    "sigEscenaCorrecto": "ES7PWin",
-                    "sigEscenasError": ["ES7PWin", "ES7PWin"]
+                    "sigEscenaCorrecto": "ES7Win",
+                    "sigEscenasError": ["ES7Win", "ESPWin"]
                 }
             ]
         },
@@ -1286,8 +1286,8 @@
                     ],
                     "respuestCorrecta": 3,
                     "puntos": 100,
-                    "sigEscenaCorrecto": "ES8PWin",
-                    "sigEscenasError": ["ES8PWin", "ES8PWin"]
+                    "sigEscenaCorrecto": "ES8Win",
+                    "sigEscenasError": ["ES8Win", "ES8Win"]
                 }
             ]
         },
@@ -1315,7 +1315,7 @@
                     "respuestCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES9P2",
-                    "sigEscenasError": ["ES9PWin", "ES9PWin"]
+                    "sigEscenasError": ["ES9Win", "ES9Win"]
                 },
                 {
                     "id": 2,
@@ -1335,7 +1335,7 @@
                     "respuestCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES9P3",
-                    "sigEscenasError": ["ES9PWin", "ES9PWin"]
+                    "sigEscenasError": ["ES9Win", "ES9Win"]
                 },
                 {
                     "id": 3,
@@ -1354,8 +1354,8 @@
                     ],
                     "respuestCorrecta": 3,
                     "puntos": 100,
-                    "sigEscenaCorrecto": "ES9PWin",
-                    "sigEscenasError": ["ES9PWin", "ES9PWin"]
+                    "sigEscenaCorrecto": "ES9Win",
+                    "sigEscenasError": ["ES9Win", "ES9Win"]
                 }
             ]
         },
@@ -1462,8 +1462,8 @@
                     ],
                     "respuestCorrecta": 3,
                     "puntos": 100,
-                    "sigEscenaCorrecto": "ES10PWin",
-                    "sigEscenasError": ["ES10PWin", "ES10PWin"]
+                    "sigEscenaCorrecto": "ES10Win",
+                    "sigEscenasError": ["ES10Win", "ES10Win"]
                 }
             ]
         }

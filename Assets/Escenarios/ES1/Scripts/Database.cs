@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 
 [System.Serializable]
-public class ListaMisiones
+public struct ListaMisiones
 {
     public List<Misiones> misiones;
 }
@@ -23,7 +23,7 @@ public struct Preguntas {
     public double id;
     public string tipo;
     public string pregunta;
-    public string opciones;
+    public string[] opciones;
     public int[] vidasPerdidas;
     public string correctoTexto;
     public string[] falloTexto;
@@ -75,7 +75,7 @@ public class Database : MonoBehaviour
     public TextAsset jsonFile;
     public TextAsset jsonMisiones;
     public static Users userBase;
-    public static ListaMisiones listaDeMisiones;
+    public static ListaMisiones missionList;
     public static string path;
 
     // Start is called before the first frame update
@@ -104,8 +104,74 @@ public class Database : MonoBehaviour
             saveData();
         }
 
-        listaDeMisiones = JsonUtility.FromJson<ListaMisiones>(jsonMisiones.text);
+        missionList = JsonUtility.FromJson<ListaMisiones>(jsonMisiones.text);
 
+    }
+
+    public static string getTextoCorrecto(int missionIndex, int questionIndex) {
+        return missionList.misiones[missionIndex].preguntas[questionIndex].correctoTexto;
+    }
+
+    public static string[] getSigEscenasError(int missionIndex, int questionIndex) {
+        return missionList.misiones[missionIndex].preguntas[questionIndex].sigEscenasError;
+    }
+
+    public static string getSigEscenaCorrecto(int missionIndex, int questionIndex) {
+        return missionList.misiones[missionIndex].preguntas[questionIndex].sigEscenaCorrecto;
+    }
+
+    public static int getPuntosPregunta(int missionIndex, int questionIndex) {
+        return missionList.misiones[missionIndex].preguntas[questionIndex].puntos;
+    }
+
+    public static int getOpcionCorrecta(int missionIndex, int questionIndex) {
+        return missionList.misiones[missionIndex].preguntas[questionIndex].respuestaCorrecta;
+    }
+
+    public static string[] getFalloTexto(int missionIndex, int questionIndex) {
+        return missionList.misiones[missionIndex].preguntas[questionIndex].falloTexto;
+    }
+
+    public static int[] getVidasPerdidas(int missionIndex, int questionIndex) {
+        return missionList.misiones[missionIndex].preguntas[questionIndex].vidasPerdidas;
+    }
+
+    public static string getPregunta(int missionIndex, int questionIndex) {
+        return missionList.misiones[missionIndex].preguntas[questionIndex].pregunta;
+    }
+
+    public static string[] getOpcionesPregunta(int missionIndex, int questionIndex) {
+        return missionList.misiones[missionIndex].preguntas[questionIndex].opciones;
+    }
+
+    public static string[] getAllMissionNames() {
+        int n = missionList.misiones.Count;
+        string[] namesList = new string[n];
+
+        for (int i = 0; i < n; i++) {
+            namesList[i] = missionList.misiones[i].nombre;
+        }
+
+        return namesList;
+    }
+
+    public static string[] getAllMissionDescriptions() {
+        int n = missionList.misiones.Count;
+        string[] descriptionsList = new string[n];
+
+        for (int i = 0; i < n; i++) {
+            descriptionsList[i] = missionList.misiones[i].descripcion;
+        }
+
+        return descriptionsList;
+    }
+
+    public static string getMissionName(int index) {
+        return missionList.misiones[index].nombre;
+    }
+
+    public static int getAmountOfMissions() {
+        return missionList.misiones.Count;
     }
 
     public static int login(string username, string pass) {
