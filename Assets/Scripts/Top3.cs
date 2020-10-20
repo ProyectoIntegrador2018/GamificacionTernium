@@ -85,7 +85,13 @@ public class Top3 : MonoBehaviour
             }
         }
 
-        showTurn();
+        if (!Database.isAdmin(GlobalVariables.usernameId)) {
+            showTurn();
+        }
+        else {
+            turnImage.enabled = false;
+            turnText.enabled = false;
+        }
             
     }
 

@@ -37,6 +37,7 @@ public struct Preguntas {
 public class User
 {
     public int id;
+    public string tipo;
     public string username;
     public string password;
     public bool tutorial;
@@ -108,6 +109,12 @@ public class Database : MonoBehaviour
 
     }
 
+    public static bool isAdmin(int userId) {
+        if (userBase.users[userId].tipo == "admin") {
+            return true;
+        }
+        return false;
+    }
     public static string getTextoCorrecto(int missionIndex, int questionIndex) {
         return missionList.misiones[missionIndex].preguntas[questionIndex].correctoTexto;
     }
