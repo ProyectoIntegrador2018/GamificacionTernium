@@ -980,7 +980,7 @@ public class QuestionManager : MonoBehaviour {
         GameObject castedBtn3 = Btn3.gameObject;
         castedBtn3.SetActive(false);
         canvasPosition = GetComponentInParent<Canvas>().transform;
-        Button newButton = Instantiate(continueButton, new Vector3(805, -111, 0), transform.rotation);
+        Button newButton = Instantiate(continueButton, new Vector3(805, -370, 0), transform.rotation);
         newButton.transform.SetParent(canvasPosition, false);
         newButton.onClick.AddListener(ChangeCurrentScene);
     }
