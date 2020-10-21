@@ -166,25 +166,25 @@ public class Database : MonoBehaviour
         userBase.users[GlobalVariables.usernameId].tutorial = false;
     }
     
-    public static void makeUser(string name, string password) {
+    public static void makeUser(string name, string password,string turn) {
         foreach (User user in userBase.users) {
             if(user.username == name) {
                 Debug.Log("Este usuario ya existe en la base de datos");
                 return;
             }
         }
-        createUser(name, password);
+        createUser(name, password,turn);
         Debug.Log("Usuario creado y guardado correctamente");
 
     }
 
-    public static void createUser(string name, string password) {
+    public static void createUser(string name, string password, string turn) {
         User nUser = new User();
         nUser.id = userBase.users[userBase.users.Length - 1].id + 1;
         nUser.username = name;
         nUser.password = password;
         nUser.tutorial = true;
-        nUser.turno = "Matutino";
+        nUser.turno = turn;
         nUser.expMax = 500;
         nUser.expMin = 0;
         nUser.avatarImg = "Default";

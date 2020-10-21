@@ -356,4 +356,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Overlay/OV1/Scenes/News.unity
     guid: 6d8401cfc3edef44982da147d19ffbdd
+  - enabled: 1
+    path: Assets/Scenes/UserCreation.unity
+    guid: 75b9a856984a7ac47bfbfba650152b79
   m_configObjects: {}
