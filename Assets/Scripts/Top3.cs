@@ -105,7 +105,7 @@ public class Top3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        users = Database.GetUsers();
+        users = Database.GetNonAdminUsers();
         showScores();
     }
     
