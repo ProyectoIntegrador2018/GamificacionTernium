@@ -392,15 +392,12 @@ public class BtnMangment : MonoBehaviour
 
     // Funcion para hacer visible el boton para cambiar a la siguiente pregunta
     void showContinueButton(){
-        BotonRevisar.GetComponent<Button>().interactable = false;
-        canvasPosition = GetComponent<Canvas>().transform;
-        Button newButton = Instantiate(continueButton, new Vector3(120,200,0), transform.rotation);
-        newButton.transform.SetParent(canvasPosition);
-        newButton.onClick.AddListener(ChangeCurrentScene);
+        GameObject castedBtn = BotonRevisar.gameObject;
+        castedBtn.SetActive(false);
+        continueButton.onClick.AddListener(ChangeCurrentScene);
     }
     
     void ChangeCurrentScene() {
-
         // Si las vidas es 0 o menos se cargara la escena de perder, sino la siguiente escena
         if (GlobalVariables.lives <= 0) {
             string Escena = SceneManager.GetActiveScene().name;

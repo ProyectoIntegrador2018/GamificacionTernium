@@ -192,7 +192,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000053406, y: -208.5}
+  m_AnchoredPosition: {x: -0.000038147, y: -477}
   m_SizeDelta: {x: 1919.6, y: 1898.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477978849
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: b73362024646c4345b83d56587e41865, type: 3}
+  m_Texture: {fileID: 2800000, guid: f966bfb872a75b34ea1091603c85f581, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1572,8 +1572,8 @@ MonoBehaviour:
   Btn1: {fileID: 1430829679}
   Btn2: {fileID: 1003781892}
   Btn3: {fileID: 1168130337}
-  continueButton: {fileID: 8587021709101804682, guid: ff9d2a51d3c693a4f8ee850488f306ae,
-    type: 3}
+  correctAnwser: {fileID: 0}
+  wrongAnswer: {fileID: 0}
   Escena: 
   vidasFallo1: 4
   vidasFallo2: 1

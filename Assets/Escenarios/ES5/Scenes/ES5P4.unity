@@ -889,7 +889,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 5abc46cc2ee82e7458b1bc2a9f03c99b, type: 3}
+  m_Texture: {fileID: 2800000, guid: 98909b14caa43564d9c4ec8627c673fa, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1216,8 +1216,8 @@ MonoBehaviour:
   Btn1: {fileID: 1644090357}
   Btn2: {fileID: 1706433823}
   Btn3: {fileID: 849485519}
-  continueButton: {fileID: 8587021709101804682, guid: ff9d2a51d3c693a4f8ee850488f306ae,
-    type: 3}
+  correctAnwser: {fileID: 0}
+  wrongAnswer: {fileID: 0}
   Escena: 
   vidasFallo1: 4
   vidasFallo2: 1

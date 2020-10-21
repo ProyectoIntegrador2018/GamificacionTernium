@@ -16,7 +16,7 @@ public class QuestionManager : MonoBehaviour {
     public Button Btn2;
     public Button Btn3;
     Transform canvasPosition;
-    public Button continueButton;
+    Button continueButton;
     private AudioSource soundEffect;
     public AudioClip correctAnwser;
     public AudioClip wrongAnswer;
@@ -115,6 +115,9 @@ public class QuestionManager : MonoBehaviour {
   
     // Start is called before the first frame update
     void Start() {
+        // Cargar prefab de ContinueButton
+        continueButton = Resources.Load<Button>("Prefabs/ContinueButton");
+
         // Cargar el estado principal
 
         myState = States.Questions;
@@ -262,12 +265,15 @@ public class QuestionManager : MonoBehaviour {
 
     // Funcion para hacer visible el boton para cambiar a la siguiente pregunta
     void showContinueButton(){
-        Btn1.interactable = false;
-        Btn2.interactable = false;
-        Btn3.interactable = false;
+        GameObject castedBtn1 = Btn1.gameObject;
+        castedBtn1.SetActive(false);
+        GameObject castedBtn2 = Btn2.gameObject;
+        castedBtn2.SetActive(false);
+        GameObject castedBtn3 = Btn3.gameObject;
+        castedBtn3.SetActive(false);
         canvasPosition = GetComponentInParent<Canvas>().transform;
-        Button newButton = Instantiate(continueButton, new Vector3(375,300,0), transform.rotation);
-        newButton.transform.SetParent(canvasPosition);
+        Button newButton = Instantiate(continueButton, new Vector3(805, -370, 0), transform.rotation);
+        newButton.transform.SetParent(canvasPosition, false);
         newButton.onClick.AddListener(ChangeCurrentScene);
     }
 

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - newsList
   - newsData
+  - 2
+  - 3
+  - 1
+  - spawnContinue
   layers:
   - Default
   - TransparentFX
