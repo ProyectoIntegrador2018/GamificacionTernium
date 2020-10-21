@@ -192,6 +192,19 @@ public class Database : MonoBehaviour
         return -1;
     }
 
+    public static User[] GetNonAdminUsers() {
+
+        List<User> aux = new List<User>();
+
+        for(int i = 0; i < userBase.users.Length; i++) {
+            if (!isAdmin(i)) {
+                aux.Add(userBase.users[i]);
+            }
+        }
+
+        return aux.ToArray();
+    }
+
     public static User[] GetUsers() {
         return userBase.users;
     }
