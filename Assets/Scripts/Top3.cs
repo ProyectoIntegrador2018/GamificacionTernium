@@ -96,14 +96,6 @@ public class Top3 : MonoBehaviour
                 turnImage.sprite = nightImg;
             }
         }
-
-        if (!Database.isAdmin(GlobalVariables.usernameId)) {
-            showTurn();
-        }
-        else {
-            turnImage.enabled = false;
-            turnText.enabled = false;
-        }
             
     }
 

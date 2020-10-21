@@ -26,13 +26,20 @@ public class MenuManager : MonoBehaviour
     //public GameObject turno;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+
         //Jugar.enabled = true;
         FirstClick = true;
         mensajeBienvenida = GetComponent<Text>();
         //GlobalVariables.Caso = 0;
-        showTurn();
+        
+        if (!Database.isAdmin(GlobalVariables.usernameId)) {
+            showTurn();
+        }
+        else {
+            turnImage.enabled = false;
+        }
+    
     }
     // Update is called once per frame
     void Update(){
