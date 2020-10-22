@@ -1378,8 +1378,8 @@ RectTransform:
   - {fileID: 1942694770}
   - {fileID: 357264592}
   - {fileID: 157061474}
-  - {fileID: 1371651543}
   - {fileID: 1938746001}
+  - {fileID: 1371651543}
   - {fileID: 2088549807}
   m_Father: {fileID: 763882985}
   m_RootOrder: 0
@@ -1916,6 +1916,11 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1371651549}
+    - target: {fileID: 114231292669224094, guid: 52d7bd8fffc05ca42b4093976e4896ff,
+        type: 3}
+      propertyPath: toastText
+      value: 
+      objectReference: {fileID: 1371651548}
     - target: {fileID: 114644073630326732, guid: 52d7bd8fffc05ca42b4093976e4896ff,
         type: 3}
       propertyPath: m_FontData.m_Font
@@ -2162,8 +2167,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3218,7 +3223,7 @@ RectTransform:
   m_Children:
   - {fileID: 15929689}
   m_Father: {fileID: 829778159}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -3515,7 +3520,7 @@ PrefabInstance:
     - target: {fileID: 281378590177293818, guid: 40a9331d702fa9d4185c8daeedbedf2a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 281378590177293818, guid: 40a9331d702fa9d4185c8daeedbedf2a,
         type: 3}
