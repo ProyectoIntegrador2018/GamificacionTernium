@@ -65,8 +65,9 @@ public class Top10UserScores : MonoBehaviour
     void displayMissionTopScores(string missionName, int missionIndex) {
 
         Userscore[] aux;
-
-        userscores[missionIndex] = loadMissionScores(missionIndex);
+        if (userscores[missionIndex] == null) {
+            userscores[missionIndex] = loadMissionScores(missionIndex);
+        }
 
         clearScoreboard();
 
@@ -108,7 +109,7 @@ public class Top10UserScores : MonoBehaviour
     {
         Top10EventSystem.current.onMissionClick += OnMissionClick;
         Top10EventSystem.current.onTotalClick += OnTotalClick;
-        users = Database.GetUsers();
+        users = Database.GetNonAdminUsers();
         //El numero de niveles es igual al numero de misiones
         numberOfMissions = users[0].niveles.Length;
         userscores = new Userscore[numberOfMissions][];
