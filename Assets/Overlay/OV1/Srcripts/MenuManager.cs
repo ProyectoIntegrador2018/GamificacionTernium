@@ -26,13 +26,20 @@ public class MenuManager : MonoBehaviour
     //public GameObject turno;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
+
         //Jugar.enabled = true;
         FirstClick = true;
         mensajeBienvenida = GetComponent<Text>();
         //GlobalVariables.Caso = 0;
-        showTurn();
+        
+        if (!Database.isAdmin(GlobalVariables.usernameId)) {
+            showTurn();
+        }
+        else {
+            turnImage.enabled = false;
+        }
+    
     }
     // Update is called once per frame
     void Update(){
@@ -74,7 +81,9 @@ public class MenuManager : MonoBehaviour
                     SiguentePregunta.text = "Mision 1: Reparar el rodillo dañado";
                     ProximaMission.SetActive(true);
                     StartCoroutine(EsperarMin(0));
-                    GameMind.setStarted(i);
+                    if (!Database.isAdmin(GlobalVariables.usernameId)) {
+                        GameMind.setStarted(i);
+                    }
                     //GameMind.saveData();
                     HelpManager.ExisteAyuda(i.ToString());
                     GlobalVariables.Caso = i;
@@ -113,18 +122,20 @@ public class MenuManager : MonoBehaviour
 
         //-------------------------------------------------------------------------------
         //Aqui pueden modificarle para llegar a un Caso especial 
-        
+
         //Rand = 9;
 
         //-------------------------------------------------------------------------------
         //Ok, estas listo leecto?, porque nos pidieron que hicieramos un fix, que tomaria mucho rework a la hora de conectar
         //asi que estoy a punto de aventarme lo mas clandestino del mundo
 
-        
- 	
+
+
         //Set mision as Started
-        GameMind.setStarted(Rand);
-        GameMind.saveData();
+        if (!Database.isAdmin(GlobalVariables.usernameId)) {
+            GameMind.setStarted(Rand);
+            GameMind.saveData();
+        }
         HelpManager.ExisteAyuda(Rand.ToString());
         GlobalVariables.Caso = Rand;
 

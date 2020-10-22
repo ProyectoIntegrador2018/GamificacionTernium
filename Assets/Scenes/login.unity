@@ -461,6 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: 30837d73b79f9f143922719e9847a02a, type: 3}
+  jsonMisiones: {fileID: 4900000, guid: 274e92f816b696f47aae26dfe56bc66a, type: 3}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
