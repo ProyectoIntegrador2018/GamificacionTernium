@@ -39,34 +39,19 @@ public class BtnMangment : MonoBehaviour
 
 
     public bool giveAnswer()
-    {  if (SceneManager.GetActiveScene().name == "P2")
-        {
-            if ((item_1.transform.localPosition.y == 67.7f) &&
-                (item_2.transform.localPosition.y == 187.7f) &&
-                (item_3.transform.localPosition.y == -172.3f))
-
-                return true;
+    { 
+        if ((item_1.transform.localPosition.y == 111f) &&
+            (item_2.transform.localPosition.y == 211f) &&
+            (item_3.transform.localPosition.y == -371f))
+             return true;
 
             else
-
-                return false;
-        }
-        else
-        {
-            if ((item_1.transform.localPosition.y == 31f) &&
-                (item_2.transform.localPosition.y == 151f) &&
-                (item_3.transform.localPosition.y == -209f))
-
-                return true;
-
-            else
-
-                return false;
-        }
-
-
+                return false;         
     }
+        
+       
 
+       
     
     private void OnEnable()
     {
