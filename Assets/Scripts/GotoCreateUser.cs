@@ -10,7 +10,6 @@ public class GotoCreateUser : MonoBehaviour
     void Start()
     {
 
-
         if(GlobalVariables.username != "Master")
         {
             userButton.SetActive(false);
