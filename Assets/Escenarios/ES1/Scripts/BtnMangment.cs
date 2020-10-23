@@ -37,7 +37,6 @@ public class BtnMangment : MonoBehaviour
         Shuffle();
     }
 
-
     public bool giveAnswer()
     { 
         if ((item_1.transform.localPosition.y == 111f) &&
@@ -92,11 +91,11 @@ public class BtnMangment : MonoBehaviour
             {
                 if (giveAnswer())
                 {
-                    DialogueText.text = "Correcto! El guardia ahora tiene su equipo de seguridad puesto.";
+                    DialogueText.text = Database.getTextoCorrecto(0, 1);
                     Debug.Log("correcto");
                  
                     // Suma puntos
-                    GameMind.addPoints(100);
+                    GameMind.addPoints(Database.getPuntosPregunta(0, 1));
                     //StartCoroutine(WaitSeconds(5));
                     //ChangeCurrentScene();
 
@@ -108,12 +107,12 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (!giveAnswer())
                 {
-              
-                    DialogueText.text = "Incorrecto! El guardia debe tener puesto su casco de seguridad con barbiquejo, lentes de seguridad, guantes combinados de carnaza y botines de seguridad con casquillo.";
+
+                    DialogueText.text = Database.getFalloTexto(0, 1)[0];
                     Debug.Log("incorrecto");
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
-                    GameMind.addPoints(-100);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 1)[0]);
+                    //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
                     //StartCoroutine(WaitSeconds(10));
@@ -128,57 +127,56 @@ public class BtnMangment : MonoBehaviour
             // Si la escena en juego es la P6
             if (SceneManager.GetActiveScene().name == "P6") {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 7) {
-                DialogueText.text = "Correcto! El guardia siguió el orden adecuado y el rodillo será arreglado.";
-                // Suma puntos
-                GameMind.addPoints(100);
+                DialogueText.text = Database.getTextoCorrecto(0, 5);
+                    // Suma puntos
+                    GameMind.addPoints(Database.getPuntosPregunta(0, 5));
                 showContinueButton();
 
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 7) {
-                    DialogueText.text = "Incorrecto! Te faltaron pasos, el orden correcto sería ...";
+                    DialogueText.text = Database.getFalloTexto(0, 1)[0];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 1)[0]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
 
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 7) {
-                    DialogueText.text = "Incorrecto! El orden correcto sería ...";
+                    DialogueText.text = Database.getFalloTexto(0, 1)[1];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 1)[1]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
 
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 7) {
-                    DialogueText.text = "Incorrecto! Te faltaron pasos y el orden correcto sería ...";
+                    DialogueText.text = Database.getFalloTexto(0, 1)[2];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 1)[2]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
                 }
-
             }
             // Si la escena en juego es la ES2P3
             if (SceneManager.GetActiveScene().name == "ES2P3")
             {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
-                    DialogueText.text = "Correcto! Usaste tus sentidos de manera correcta.";
+                    DialogueText.text = Database.getTextoCorrecto(1, 2);
                     // Suma puntos
-                    GameMind.addPoints(100);
+                    GameMind.addPoints(Database.getPuntosPregunta(1, 2));
                     showContinueButton();
 
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
-                    DialogueText.text = "Incorrecto! Te faltaron pasos, lo correcto sería ...";
+                    DialogueText.text = DialogueText.text = Database.getFalloTexto(1, 2)[0];
                     Debug.Log(GlobalVariables.pairAnswerSlot.Count);
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(1, 2)[0]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -186,9 +184,9 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
-                    DialogueText.text = "Incorrecto! lo correcto sería ...";
+                    DialogueText.text = DialogueText.text = Database.getFalloTexto(1, 2)[1];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(1, 2)[1]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -196,9 +194,9 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
-                    DialogueText.text = "Incorrecto! Te faltaron pasos y lo correcto sería ...";
+                    DialogueText.text = DialogueText.text = Database.getFalloTexto(1, 2)[2];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(1, 2)[2]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -211,17 +209,17 @@ public class BtnMangment : MonoBehaviour
             {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 3)
                 {
-                    DialogueText.text = "Correcto! Seguiste el orden óptimo para el bloqueo";
+                    DialogueText.text = Database.getTextoCorrecto(1, 4);
                     // Suma puntos
-                    GameMind.addPoints(100);
+                    GameMind.addPoints(Database.getPuntosPregunta(1, 4));
                     showContinueButton();
 
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
-                    DialogueText.text = "Incorrecto! Te faltaron pasos, lo correcto sería ...";
+                    DialogueText.text = Database.getFalloTexto(1, 4)[0];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(1, 4)[0]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -229,9 +227,9 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 3)
                 {
-                    DialogueText.text = "Incorrecto! el orden correcto sería ...";
+                    DialogueText.text = Database.getFalloTexto(1, 4)[1];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(1, 4)[1]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -239,9 +237,9 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
-                    DialogueText.text = "Incorrecto! Te faltaron pasos y el orden correcto sería ...";
+                    DialogueText.text = Database.getFalloTexto(1, 4)[2];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(1, 4)[2]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -254,18 +252,18 @@ public class BtnMangment : MonoBehaviour
             {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
-                    DialogueText.text = "Correcto!";
+                    DialogueText.text = Database.getTextoCorrecto(2, 2);
                     // Suma puntos
-                    GameMind.addPoints(100);
+                    GameMind.addPoints(Database.getPuntosPregunta(2, 2));
 
                     showContinueButton();
 
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect")
                 {
-                    DialogueText.text = "Incorrecto! Posible daño permanente en el equipo.";
+                    DialogueText.text = Database.getFalloTexto(2, 2)[0];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(2, 2)[0]);
                    // GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -273,9 +271,9 @@ public class BtnMangment : MonoBehaviour
                 }
                 else
                 {
-                    DialogueText.text = "Incorrecto! Posible daño permanente en el equipo.";
+                    DialogueText.text = Database.getFalloTexto(2, 2)[1];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(2, 2)[1]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -289,18 +287,18 @@ public class BtnMangment : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "ES4P4") {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
-                    DialogueText.text = "Correcto! Esos son los tipos de daño que podrían estar ocurriendo.";
+                    DialogueText.text = Database.getTextoCorrecto(3, 3);
                     // Suma puntos
-                    GameMind.addPoints(100);
+                    GameMind.addPoints(Database.getPuntosPregunta(3, 3));
                     showContinueButton();
 
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
-                    DialogueText.text = "Incorrecto! Te faltaron pasos, lo correcto sería ...";
+                    DialogueText.text = Database.getFalloTexto(3, 3)[0];
                     Debug.Log(GlobalVariables.pairAnswerSlot.Count);
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(3, 3)[0]);
                    // GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -309,9 +307,9 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
-                    DialogueText.text = "Incorrecto! lo correcto sería B...";
+                    DialogueText.text = Database.getFalloTexto(3, 3)[1];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(3, 3)[1]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -319,9 +317,9 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
-                    DialogueText.text = "Incorrecto! Te faltaron pasos y lo correcto sería C...";
+                    DialogueText.text = Database.getFalloTexto(3, 3)[2];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(3, 3)[2]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -334,18 +332,18 @@ public class BtnMangment : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "ES4P5") {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 3)
                 {
-                    DialogueText.text = "Correcto! Relacionaste de manera perfecta.";
+                    DialogueText.text = Database.getTextoCorrecto(3, 4);
                     // Suma puntos
-                    GameMind.addPoints(100);
+                    GameMind.addPoints(Database.getPuntosPregunta(3, 4));
                     showContinueButton();
 
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
-                    DialogueText.text = "Incorrecto! Te faltaron pasos, lo correcto sería ...";
+                    DialogueText.text = Database.getFalloTexto(3, 4)[0];
                     Debug.Log(GlobalVariables.pairAnswerSlot.Count);
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(3, 4)[0]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -353,9 +351,9 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 3)
                 {
-                    DialogueText.text = "Incorrecto! lo correcto sería ...";
+                    DialogueText.text = Database.getFalloTexto(3, 4)[1];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(3, 4)[1]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -363,9 +361,9 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
-                    DialogueText.text = "Incorrecto! Te faltaron pasos y lo correcto sería ...";
+                    DialogueText.text = Database.getFalloTexto(3, 4)[2];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(1);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(3, 4)[2]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -379,15 +377,12 @@ public class BtnMangment : MonoBehaviour
 
     // Funcion para hacer visible el boton para cambiar a la siguiente pregunta
     void showContinueButton(){
-        BotonRevisar.GetComponent<Button>().interactable = false;
-        canvasPosition = GetComponent<Canvas>().transform;
-        Button newButton = Instantiate(continueButton, new Vector3(120,200,0), transform.rotation);
-        newButton.transform.SetParent(canvasPosition);
-        newButton.onClick.AddListener(ChangeCurrentScene);
+        GameObject castedBtn = BotonRevisar.gameObject;
+        castedBtn.SetActive(false);
+        continueButton.onClick.AddListener(ChangeCurrentScene);
     }
     
     void ChangeCurrentScene() {
-
         // Si las vidas es 0 o menos se cargara la escena de perder, sino la siguiente escena
         if (GlobalVariables.lives <= 0) {
             string Escena = SceneManager.GetActiveScene().name;

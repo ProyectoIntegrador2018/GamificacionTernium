@@ -30,6 +30,7 @@ public class Instruction3 : MonoBehaviour {
         //Debug.Log("Que pedo Aqui");
         //Debug.Log(GlobalVariables.usernameId);
         Database.setTutorial();
+        Database.saveData();
         //Debug.Log(Database.getTutorial());
         button.GetComponent<Button>().enabled = false;
     	indicatorText1.canvasRenderer.SetAlpha(0f);

@@ -3,19 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
+using System.Linq;
+
+public class Turn{
+
+    public string name {get; set;}
+    public int score {get; set;}
+}
 
 public class Top3 : MonoBehaviour
 {
     static private User[] users;
     int morningTurn, noonTurn, nightTurn;
-    public Text firstText;
-    public Text secondText;
-    public Text thirdText;
     public Image turnImage;
     public Sprite morningImg;
     public Sprite noonImg;
     public Sprite nightImg;
-    public Text turnText;
+    public TMP_Text turnText;
 
     /*
     // Update is called once per frame
@@ -67,48 +72,40 @@ public class Top3 : MonoBehaviour
         int noonScore =  getNoonScore();
         int nightScore = getNightScore();
 
-        SortedList<int,string> turnScores = new SortedList<int,string>()
-                                    {
-                                        {morningScore, "Matutino"},
-                                        {noonScore, "Vespertino"},
-                                        {nightScore, "Nocturno"}
-                                    };
-        foreach(KeyValuePair<int, string> kvp in turnScores){
-            if(thirdText.text == "Turno"){
-                thirdText.text = kvp.Value;
+        var scoreList = new List<Turn>(){
+            new Turn(){name = "Matutino", score = morningScore},
+            new Turn(){name= "Vespertino", score = noonScore},
+            new Turn(){name = "Nocturno", score = nightScore}
+        };
+
+        int maxScore = scoreList.Max(s => s.score);
+
+        var best = from s in scoreList
+            where s.score == maxScore
+            select s;
+
+        foreach(var scr in best){
+            turnText.text = scr.name;
+            if(scr.name == "Matutino"){
+                turnImage.sprite = morningImg;
             }
-            else if(secondText.text == "Turno"){
-                secondText.text = kvp.Value;
+            else if(scr.name == "Vespertino"){
+                turnImage.sprite = noonImg;
             }
-            else if(firstText.text == "Turno"){
-                firstText.text = kvp.Value;
+            else if(scr.name == "Nocturno"){
+                turnImage.sprite = nightImg;
             }
         }
-
-        showTurn();
             
     }
 
-    public void showTurn(){
-        if(GlobalVariables.turno == "Matutino"){
-            turnImage.sprite = morningImg;
-            turnText.text = "Matutino";
-        }
-        else if(GlobalVariables.turno == "Vespertino"){
-            turnImage.sprite = noonImg;
-            turnText.text = "Vespertino";
-        }
-        else if(GlobalVariables.turno == "Nocturno"){
-            turnImage.sprite = nightImg;
-            turnText.text = "Nocturno";
-        }
-    }
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        users = Database.GetUsers();
+        users = Database.GetNonAdminUsers();
         showScores();
     }
     

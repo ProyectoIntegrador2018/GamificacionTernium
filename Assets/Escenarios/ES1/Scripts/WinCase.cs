@@ -39,16 +39,21 @@ public class WinCase : MonoBehaviour {
         //Debug.Log("llegue a script");
         Trofeo = GameObject.Find("Trophy");
 
-        //El arreglo de auxExpData tiene los datos de max, min y previous en ese orden
-        int[] auxExpData = Database.getExpBarData();
-        ExpBar auxExpBar;
-        playerInfo = (GameObject)Instantiate(Resources.Load("Prefabs/PlayerLvl&Exp"), new Vector2(253.6f, -434.06f), Quaternion.identity);
-        playerInfo.transform.SetParent(GameObject.Find("Canvas").transform, false);
-        auxExpBar = playerInfo.transform.GetChild(1).GetChild(0).GetComponent<ExpBar>();
-        auxExpBar.max = auxExpData[0];
-        auxExpBar.min = auxExpData[1];
-        auxExpBar.previousCurrent = auxExpData[2];
-        auxExpBar.current = auxExpData[2] + GlobalVariables.accumulatedExp;
+        if (!Database.isAdmin(GlobalVariables.usernameId)) {
+            //El arreglo de auxExpData tiene los datos de max, min y previous en ese orden
+            int[] auxExpData = Database.getExpBarData();
+            ExpBar auxExpBar;
+            playerInfo = (GameObject)Instantiate(Resources.Load("Prefabs/PlayerLvl&Exp"), new Vector2(253.6f, -434.06f), Quaternion.identity);
+            playerInfo.transform.SetParent(GameObject.Find("Canvas").transform, false);
+            auxExpBar = playerInfo.transform.GetChild(1).GetChild(0).GetComponent<ExpBar>();
+            auxExpBar.max = auxExpData[0];
+            auxExpBar.min = auxExpData[1];
+            auxExpBar.previousCurrent = auxExpData[2];
+            auxExpBar.current = auxExpData[2] + GlobalVariables.accumulatedExp;
+        }
+        else {
+            enableButtons();
+        }
 
 
         PM = Resources.Load<GameObject>("Prefabs/LoadingQuestion");
@@ -75,13 +80,14 @@ public class WinCase : MonoBehaviour {
         //Debug.Log("Caso: "+Caso);
         //Debug.Log("Caso2: " + (Caso-1));
 
-
-        if (GlobalVariables.score >= Database.getScore(GlobalVariables.Caso - 1)) {
-            //Debug.Log("Entre");
-            //Debug.Log("Entre");
-            Database.setScore(GlobalVariables.Caso, GlobalVariables.score);
-            Database.saveData();
-            //PlayerPrefs.SetInt(highscore, GlobalVariables.score);
+        if (!Database.isAdmin(GlobalVariables.usernameId)) {
+            if (GlobalVariables.score >= Database.getScore(GlobalVariables.Caso - 1)) {
+                //Debug.Log("Entre");
+                //Debug.Log("Entre");
+                Database.setScore(GlobalVariables.Caso, GlobalVariables.score);
+                Database.saveData();
+                //PlayerPrefs.SetInt(highscore, GlobalVariables.score);
+            }
         }
 
         textOption = StarNumber(GlobalVariables.score, 1);
@@ -325,7 +331,13 @@ public class WinCase : MonoBehaviour {
         }
 
         Stars1UI.sprite = StarSprites[textOption];
-        Stars2UI.sprite = StarSprites[StarNumber(Database.getScore(GlobalVariables.Caso - 1), 0)];
+        if (!Database.isAdmin(GlobalVariables.usernameId)) {
+            Stars2UI.sprite = StarSprites[StarNumber(Database.getScore(GlobalVariables.Caso - 1), 0)];
+        }
+        else {
+            HighScore.enabled = false;
+            Stars2UI.enabled = false;
+        }
     }
 
     public static void enableButtons(){
@@ -385,8 +397,10 @@ public class WinCase : MonoBehaviour {
             if(newPoints == 1 && PV ==1)
             {
                 Trofeo.SetActive(true);
-                Database.setAchivement(GlobalVariables.Caso);
-                Database.saveData();
+                if (!Database.isAdmin(GlobalVariables.usernameId)) {
+                    Database.setAchivement(GlobalVariables.Caso);
+                    Database.saveData();
+                }
 
 
                 //Aqui hay que agregar a este wey
