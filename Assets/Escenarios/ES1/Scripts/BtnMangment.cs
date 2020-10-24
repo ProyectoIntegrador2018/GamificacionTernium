@@ -38,14 +38,16 @@ public class BtnMangment : MonoBehaviour
     }
 
     public bool giveAnswer()
-    { 
+    {
         if ((item_1.transform.localPosition.y == 111f) &&
             (item_2.transform.localPosition.y == 211f) &&
             (item_3.transform.localPosition.y == -371f))
-             return true;
+            return true;
 
-            else
-                return false;         
+        else
+            Debug.Log("Nel");
+                return false;
+        
     }
         
        
@@ -465,6 +467,7 @@ public class BtnMangment : MonoBehaviour
 
     public void Solution()
     {
+
         string Escena = SceneManager.GetActiveScene().name;
 
         if (Escena == "P2" || Escena == "ES4P2")
@@ -479,10 +482,10 @@ public class BtnMangment : MonoBehaviour
             //Guantes
             GameObject Item4 = GameObject.Find("Item4");
 
-            Item1.transform.localPosition = new Vector2(Slot.transform.localPosition.x, 94);
+           /* Item1.transform.localPosition = new Vector2(Slot.transform.localPosition.x, 94);
             Item2.transform.localPosition = new Vector2(Slot.transform.localPosition.x, 214);
             Item3.transform.localPosition = new Vector2(Slot.transform.localPosition.x, -146);
-            Item4.transform.localPosition = new Vector2(Slot.transform.localPosition.x, -26);
+            Item4.transform.localPosition = new Vector2(Slot.transform.localPosition.x, -26);*/
 
         }
         else
