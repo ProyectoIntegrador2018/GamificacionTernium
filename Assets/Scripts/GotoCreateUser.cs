@@ -10,7 +10,7 @@ public class GotoCreateUser : MonoBehaviour
     void Start()
     {
 
-        if(GlobalVariables.username != "Master")
+        if(!Database.isAdmin(GlobalVariables.usernameId))
         {
             userButton.SetActive(false);
         }

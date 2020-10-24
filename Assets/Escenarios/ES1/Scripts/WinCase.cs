@@ -461,21 +461,28 @@ public class WinCase : MonoBehaviour {
 
         ProximaMission.SetActive(true);
 
-        switch (Rand)
+        if (!MenuManager.quickMode)
         {
-            case 1: SiguentePregunta.text = "Mision 1: Reparar el rodillo dañado"; break;
-            case 2: SiguentePregunta.text = "Mision 2: Inspeccionar avería de Acoplamiento"; break;
-            case 3: SiguentePregunta.text = "Mision 3: Prevenir el sobrecalentamiento"; break;
-            case 4: SiguentePregunta.text = "Mision 4: Inspeccionar los sensores de proximidad"; break;
-            case 5: SiguentePregunta.text = "Mision 5: Inspeccionar sobrecarga de motor"; break;
-            case 6: SiguentePregunta.text = "Mision 6: Inspeccionar niveles de aceite"; break;
-            case 7: SiguentePregunta.text = "Mision 7: La emergencia PM10 "; break;
-            case 8: SiguentePregunta.text = "Mision 8: El PM11 programado PM11"; break;
-            case 9: SiguentePregunta.text = "Mision 9: Contestar aviso M3"; break;
-            case 10: SiguentePregunta.text = "Mision 10:Contestar aviso M6"; break;
+            switch (Rand)
+            {
+                case 1: SiguentePregunta.text = "Mision 1: Reparar el rodillo dañado"; break;
+                case 2: SiguentePregunta.text = "Mision 2: Inspeccionar avería de Acoplamiento"; break;
+                case 3: SiguentePregunta.text = "Mision 3: Prevenir el sobrecalentamiento"; break;
+                case 4: SiguentePregunta.text = "Mision 4: Inspeccionar los sensores de proximidad"; break;
+                case 5: SiguentePregunta.text = "Mision 5: Inspeccionar sobrecarga de motor"; break;
+                case 6: SiguentePregunta.text = "Mision 6: Inspeccionar niveles de aceite"; break;
+                case 7: SiguentePregunta.text = "Mision 7: La emergencia PM10 "; break;
+                case 8: SiguentePregunta.text = "Mision 8: El PM11 programado PM11"; break;
+                case 9: SiguentePregunta.text = "Mision 9: Contestar aviso M3"; break;
+                case 10: SiguentePregunta.text = "Mision 10:Contestar aviso M6"; break;
 
-            default:
-                break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            SiguentePregunta.text = "Modo rapido: Juega hasta agotar tus intentos!!";
         }
 
         StartCoroutine(EsperarMin(Rand));

@@ -87,7 +87,7 @@ public class Database : MonoBehaviour
         //Asumire que es este
         path = Application.persistentDataPath + "/database.json";
         //Debug.Log("Fabi Aqui");
-        //Debug.Log(path);
+        Debug.Log(path);
 
         //Este estara mal
 
@@ -296,6 +296,7 @@ public class Database : MonoBehaviour
     public static void createUser(string name, string password, string turn) {
         User nUser = new User();
         nUser.id = userBase.users[userBase.users.Length - 1].id + 1;
+        nUser.tipo = "usuario";
         nUser.username = name;
         nUser.password = password;
         nUser.tutorial = true;
