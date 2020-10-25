@@ -7,18 +7,18 @@ public class newsManager : MonoBehaviour
 {
     public GameObject newsPrefab;
     private Text[] textArray;   
-    private NewsItem[] news;
+    private static List<News> newsList;
 
     // Start is called before the first frame update
     void Start()
     {
-        news = ToastManager.getNews();
+        newsList = ToastManager.getNews();
         createNewsList();
     }
 
     void createNewsList(){
-        foreach(NewsItem newsItem in news){
-            createNews(newsItem.titulo, newsItem.descripcion, newsItem.fecha);
+        foreach(News item in newsList){
+            createNews(item.titulo, item.descripcion, item.fecha);
         }
     }
 
