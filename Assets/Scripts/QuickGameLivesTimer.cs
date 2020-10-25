@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,8 +8,9 @@ public class QuickGameLivesTimer : MonoBehaviour
 {
 
     Text timer;
-    float timerAmount = 15;
-    float timeRegenerateLive = 5;//1800;
+    float timerAmount = 5400;
+    // cuanto tiempo se tarda en regenerar una vida en segundos
+    float timeRegenerateLive = 1800;
     float hours;
     float minutes;
     float seconds;
@@ -38,20 +40,28 @@ public class QuickGameLivesTimer : MonoBehaviour
         }
     }
 
+    private void Awake() {
+        //obtenido de la base de datos
+        DateTime lastDate = new DateTime(2020, 10, 25, 11, 41, 0);
+        TimeSpan difference;
+
+        difference = System.DateTime.Now - lastDate;
+        //diferencia en segundos
+        print(difference.TotalSeconds);
+        //las cantidad de vidas a regenerar 
+        print(Mathf.FloorToInt((float)difference.TotalSeconds / timeRegenerateLive));
+        //el tiempo actual del reloj
+        timerAmount -= (float)difference.TotalSeconds;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         timer = GetComponent<Text>();
-        //timerAmount += 1;
-        if (timerAmount > 1) {
+        if (timerAmount > 0) {
             isRunning = true;
         }
         displayCurrentTime();
-    }
-
-    IEnumerator waitBeforeDisappearing() {
-        yield return new WaitForSeconds(0f);
-        this.transform.parent.gameObject.SetActive(false);
     }
 
     void canRegenerateLive() {
@@ -72,7 +82,6 @@ public class QuickGameLivesTimer : MonoBehaviour
                 displayCurrentTime();
             }
             else {
-                //StartCoroutine(waitBeforeDisappearing());
                 this.transform.parent.gameObject.SetActive(false);
                 isRunning = false;
             }
