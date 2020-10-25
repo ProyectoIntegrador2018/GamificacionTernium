@@ -87,7 +87,7 @@ public class Database : MonoBehaviour
         //Asumire que es este
         path = Application.persistentDataPath + "/database.json";
         //Debug.Log("Fabi Aqui");
-        Debug.Log(path);
+       // Debug.Log(path);
 
         //Este estara mal
 
@@ -281,22 +281,22 @@ public class Database : MonoBehaviour
         userBase.users[GlobalVariables.usernameId].tutorial = false;
     }
     
-    public static void makeUser(string name, string password,string turn) {
+    public static void makeUser(string name, string password,string turn,string isAdmin) {
         foreach (User user in userBase.users) {
             if(user.username == name) {
                 Debug.Log("Este usuario ya existe en la base de datos");
                 return;
             }
         }
-        createUser(name, password,turn);
+        createUser(name, password,turn,isAdmin);
         Debug.Log("Usuario creado y guardado correctamente");
 
     }
 
-    public static void createUser(string name, string password, string turn) {
+    public static void createUser(string name, string password, string turn, string isAdmin) {
         User nUser = new User();
         nUser.id = userBase.users[userBase.users.Length - 1].id + 1;
-        nUser.tipo = "usuario";
+        nUser.tipo = isAdmin;
         nUser.username = name;
         nUser.password = password;
         nUser.tutorial = true;
