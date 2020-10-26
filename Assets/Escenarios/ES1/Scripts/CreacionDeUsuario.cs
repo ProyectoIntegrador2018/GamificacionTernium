@@ -13,8 +13,10 @@ public class CreacionDeUsuario : MonoBehaviour
     public InputField PasswordText;
     public Dropdown turnDropDown;
     public GameObject popUp;
+    public GameObject popUp_2;
     public Toggle adminToggle;
     public string adminString;
+    public static bool available;
 
     void Start() {
         Login.onClick.AddListener(delegate {createUser();});
@@ -26,16 +28,30 @@ public class CreacionDeUsuario : MonoBehaviour
     public void createUser() {
         if (adminToggle.isOn == true)
         {
-            Database.makeUser(UsernameText.text, PasswordText.text, turnDropDown.options[turnDropDown.value].text,"admin");
-            Database.saveData();
-            popUp.SetActive(true);
+            Database.makeUser(UsernameText.text, PasswordText.text, turnDropDown.options[turnDropDown.value].text, "admin");
+            if (available)
+            {              
+                Database.saveData();
+                popUp.SetActive(true);
+            }
+            else
+            {
+                popUp_2.SetActive(true);
+            }
 
         }
         else
         {
             Database.makeUser(UsernameText.text, PasswordText.text, turnDropDown.options[turnDropDown.value].text, "usuario");
-            Database.saveData();
-            popUp.SetActive(true);
+            if (available)
+            {    
+                Database.saveData();
+                popUp.SetActive(true);
+            }
+            else
+            {
+                popUp_2.SetActive(true);
+            }
 
         }
     

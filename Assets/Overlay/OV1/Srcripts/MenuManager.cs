@@ -121,8 +121,10 @@ public class MenuManager : MonoBehaviour
             //Jugar.enabled = false;
             toast.SetActive(false);
             quickMode = true;
+            GlobalVariables.lives = 5;
             JugarMision();
-        
+
+
         });
 
 

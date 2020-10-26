@@ -284,10 +284,12 @@ public class Database : MonoBehaviour
     public static void makeUser(string name, string password,string turn,string isAdmin) {
         foreach (User user in userBase.users) {
             if(user.username == name) {
+                CreacionDeUsuario.available = false;
                 Debug.Log("Este usuario ya existe en la base de datos");
                 return;
             }
         }
+        CreacionDeUsuario.available = true;
         createUser(name, password,turn,isAdmin);
         Debug.Log("Usuario creado y guardado correctamente");
 

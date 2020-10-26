@@ -359,4 +359,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UserCreation.unity
     guid: 75b9a856984a7ac47bfbfba650152b79
+  - enabled: 1
+    path: Assets/Scenes/LoseQuickMode.unity
+    guid: eaeb3c31b1f1c894d82673c192d29a40
   m_configObjects: {}
