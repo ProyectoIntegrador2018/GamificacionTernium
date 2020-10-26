@@ -1,7 +1,13 @@
-﻿using System.Collections;
+﻿using FirebaseWebGL.Examples.Utils;
+using FirebaseWebGL.Scripts.FirebaseBridge;
+using FirebaseWebGL.Scripts.Objects;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Text;  
+using System.Text.RegularExpressions;  
+using Newtonsoft.Json;
 
 [System.Serializable]
 public struct ListaMisiones
@@ -33,41 +39,37 @@ public struct Preguntas {
     public string[] sigEscenasError;
 }
 
-[System.Serializable]
-public class User
-{
-    public int id;
-    public string tipo;
-    public string username;
-    public string password;
-    public bool tutorial;
-    public string turno;
-    public int expMax;
-    public int expMin;
-    public int expCurrent;
-    public string avatarImg;
-    public int nivelJugador;
-    public int[] niveles;
-    public bool[] achivements;
-    public bool[] started;
+public class User    {
+        public int id { get; set; } 
+        public string tipo { get; set; } 
+        public string username { get; set; } 
+        public string password { get; set; } 
+        public bool tutorial { get; set; } 
+        public string turno { get; set; } 
+        public int? expMax { get; set; } 
+        public int? expMin { get; set; } 
+        public int? expCurrent { get; set; } 
+        public string avatarImg { get; set; } 
+        public int? nivelJugador { get; set; } 
+        public List<int> niveles { get; set; } 
+        public List<bool> achivements { get; set; } 
+        public List<bool> started { get; set; } 
+    }
 
-}
-
-[System.Serializable]
 public class Users
 {
     //employees is case sensitive and must match the string "employees" in the JSON.
-    public User[] users;
+    public List<User> users {get; set; }
     
-    public void Push(User x) {
-        int len = users.Length;
+    /*public void Push(User x) {
+        int len = users.Count;
         User[] newUsers = new User[len+1];
         for(int i=0; i<len;i++){
             newUsers[i] = users[i];
         }
         newUsers[len] = x;
         users = newUsers;
-    }
+    }*/
 }
 
 
@@ -75,38 +77,82 @@ public class Database : MonoBehaviour
 {
     public TextAsset jsonFile;
     public TextAsset jsonMisiones;
-    public static Users userBase;
+    static Users userBase;
     public static ListaMisiones missionList;
     public static string path;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        // userBase = JsonUtility.FromJson<Users>(jsonFile.text);
-
-        //Asumire que es este
-        path = Application.persistentDataPath + "/database.json";
-        //Debug.Log("Fabi Aqui");
-        //Debug.Log(path);
-
-        //Este estara mal
-
-
-        //Debug.Log(path);
-        if (File.Exists(path)) {
-            var myTextAsset = File.ReadAllText(Application.persistentDataPath + "/database.json"); 
-            //Debug.Log("hola" + myTextAsset);
-            userBase = JsonUtility.FromJson<Users>(myTextAsset);
-        }
-        else
+        if (Application.isEditor)
         {
-            userBase = JsonUtility.FromJson<Users>(jsonFile.text);
-            //Si no existe se crea en local para siempre accesar desde el path 
-            saveData();
-        }
+            string jsonContents = jsonFile.ToString();
+            //Debug.Log(jsonContents);
+            userBase = JsonConvert.DeserializeObject<Users>(jsonContents);
 
+            /*
+            //Asumire que es este
+            path = Application.persistentDataPath + "/database.json";
+            //Debug.Log("Fabi Aqui");
+            //Debug.Log(path);
+
+            //Este estara mal
+
+
+            //Debug.Log(path);
+            if (File.Exists(path)) {
+                var myTextAsset = File.ReadAllText(Application.persistentDataPath + "/database.json"); 
+                //Debug.Log("hola" + myTextAsset);
+                userBase = JsonConvert.DeserializeObject<Users>(myTextAsset);
+                //userBase = JsonUtility.FromJson<Users>(myTextAsset);
+            }
+            else
+            {
+                userBase = JsonConvert.DeserializeObject<Users>(jsonContents);
+                //userBase = JsonUtility.FromJson<Users>(jsonFile.text);
+                //Si no existe se crea en local para siempre accesar desde el path 
+                saveData();
+            }*/
+
+            //foreach(User user in userBase.users){
+            //    print(user.id);
+            //}  
+        }
+        else{
+            GetUsers();
+        }
+        
         missionList = JsonUtility.FromJson<ListaMisiones>(jsonMisiones.text);
 
+    }
+
+    public void GetUsers() =>
+            FirebaseDatabase.GetUsers(gameObject.name, "UseData", "DisplayErrorObject");
+
+    public void UseData(string data)
+    {
+        // Create a pattern for a word that starts with letter "M"  
+            string pattern = @"\{([^\}]+)\}";  
+            // Create a Regex  
+            Regex rg = new Regex(pattern);
+
+            data = "[" + data.Substring(1, data.Length - 2) + "]";
+            // Get all matches  
+            MatchCollection matchedChunks = rg.Matches(data);  
+            // Print all matched authors  
+            string formateada = "{ \"news\" : [";
+            for (int count = 0; count < matchedChunks.Count; count++){
+                formateada += matchedChunks[count].Value;
+                if (!(count + 1 >= matchedChunks.Count)){
+                    formateada += ",";
+                }
+            }
+            formateada += "]}";
+            
+            //Debug.Log(formateada);
+            
+            userBase = JsonConvert.DeserializeObject<Users>(formateada);
     }
 
     public static bool isAdmin(int userId) {
@@ -192,26 +238,33 @@ public class Database : MonoBehaviour
         return -1;
     }
 
-    public static User[] GetNonAdminUsers() {
+    public static List<User> GetNonAdminUsers() {
 
         List<User> aux = new List<User>();
 
-        for(int i = 0; i < userBase.users.Length; i++) {
+        for(int i = 0; i < userBase.users.Count; i++) {
             if (!isAdmin(i)) {
                 aux.Add(userBase.users[i]);
             }
         }
 
-        return aux.ToArray();
+        return aux;
     }
 
-    public static User[] GetUsers() {
+    public static List<User> ObtainUsers() {
         return userBase.users;
     }
 
     public static int[] getExpBarData() {
-        int[] aux = {userBase.users[GlobalVariables.usernameId].expMax, userBase.users[GlobalVariables.usernameId].expMin, userBase.users[GlobalVariables.usernameId].expCurrent};
-        return aux;
+        if(userBase.users[GlobalVariables.usernameId].expMax.HasValue && userBase.users[GlobalVariables.usernameId].expMin.HasValue && userBase.users[GlobalVariables.usernameId].expCurrent.HasValue){
+            int[] aux = {userBase.users[GlobalVariables.usernameId].expMax.Value, userBase.users[GlobalVariables.usernameId].expMin.Value, userBase.users[GlobalVariables.usernameId].expCurrent.Value};
+            return aux;
+        }
+        else{
+            int[] aux = {-1, -1, -1};
+            return aux;
+        }
+        
     }
 
     public static void setExpBarData(int expMax, int expMin, int expCurrent) {
@@ -226,7 +279,14 @@ public class Database : MonoBehaviour
     }
 
     public static int getNivelJugador() {
-        return userBase.users[GlobalVariables.usernameId].nivelJugador;
+        int level;
+        if(userBase.users[GlobalVariables.usernameId].nivelJugador.HasValue){
+            level = userBase.users[GlobalVariables.usernameId].nivelJugador.Value;
+            return level;
+        }
+        else{
+            return -1;
+        }
     }
 
     public static void setNivelJugador(int nivelJugador) {
@@ -281,6 +341,7 @@ public class Database : MonoBehaviour
         userBase.users[GlobalVariables.usernameId].tutorial = false;
     }
     
+    /*
     public static void makeUser(string name, string password) {
         foreach (User user in userBase.users) {
             if(user.username == name) {
@@ -291,11 +352,11 @@ public class Database : MonoBehaviour
         createUser(name, password);
         Debug.Log("Usuario creado y guardado correctamente");
 
-    }
+    }*/
 
-    public static void createUser(string name, string password) {
+    /*public static void createUser(string name, string password) {
         User nUser = new User();
-        nUser.id = userBase.users[userBase.users.Length - 1].id + 1;
+        nUser.id = userBase.users[userBase.users.Count - 1].id + 1;
         nUser.username = name;
         nUser.password = password;
         nUser.tutorial = true;
@@ -310,8 +371,8 @@ public class Database : MonoBehaviour
         bool[] ach = {false, false, false, false, false, false, false, false, false, false, false };
         nUser.achivements = ach;
         nUser.started = ach;
-        userBase.Push(nUser);
-    }
+        //userBase.Push(nUser);
+    }*/
 
     public static string getAvatar()
     {
@@ -320,7 +381,7 @@ public class Database : MonoBehaviour
 
     public static int getCurrentAchivements(){
         int current=0;
-        for (int ach=0; ach<userBase.users[GlobalVariables.usernameId].achivements.Length; ach++) {
+        for (int ach=0; ach<userBase.users[GlobalVariables.usernameId].achivements.Count; ach++) {
             if(userBase.users[GlobalVariables.usernameId].achivements[ach]){
                 current++;
             }
@@ -328,8 +389,19 @@ public class Database : MonoBehaviour
         return current;
     }
 
+    public void DisplayErrorObject(string error)
+        {
+            var parsedError = StringSerializationAPI.Deserialize(typeof(FirebaseError), error) as FirebaseError;
+            DisplayError(parsedError.message);
+        }
+    
+    public void DisplayError(string error)
+        {
+            Debug.LogError(error);
+        }
+
     public static void saveData(){
-        string jsonData = JsonUtility.ToJson (userBase, true);
+        string jsonData = JsonConvert.SerializeObject(userBase);
         File.WriteAllText(path, jsonData);
         //File.WriteAllText(path2, jsonData);
     }

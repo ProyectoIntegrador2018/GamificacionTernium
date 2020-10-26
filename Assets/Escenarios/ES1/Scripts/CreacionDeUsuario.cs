@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CreacionDeUsuario : MonoBehaviour
 {
-    // Start is called before the first frame update
+   /* // Start is called before the first frame update
     public Button Login;
     public Button Cancel;
     public Text UsernameText;
@@ -25,6 +25,6 @@ public class CreacionDeUsuario : MonoBehaviour
 
     public void returnLogin(){
         SceneManager.LoadScene("Login");
-    }
+    }*/
 
 }

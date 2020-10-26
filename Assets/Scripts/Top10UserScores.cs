@@ -9,7 +9,7 @@ public class Top10UserScores : MonoBehaviour
 {
 
     public Text userscoreTextPrefab;
-    private User[] users;
+    private List<User> users;
     private Userscore[][] userscores;
     private Userscore[] totalScores;
     private int numberOfMissions;
@@ -28,7 +28,7 @@ public class Top10UserScores : MonoBehaviour
     }
 
     Userscore[] loadMissionScores(int missionIndex) {
-        Userscore[] aux = new Userscore[users.Length];
+        Userscore[] aux = new Userscore[users.Count];
         int i = 0;
         foreach (User user in users) {
             aux[i] = new Userscore(user.username, user.niveles[missionIndex]);
@@ -89,7 +89,7 @@ public class Top10UserScores : MonoBehaviour
 
         if (!totalScoresLoaded) {
 
-            for (int i = 0; i < users.Length; i++) {
+            for (int i = 0; i < users.Count; i++) {
                 totalScores[i].score = 0;
                 totalScores[i].username = users[i].username;
                 for (int j = 0; j < numberOfMissions; j++) {
@@ -111,9 +111,9 @@ public class Top10UserScores : MonoBehaviour
         Top10EventSystem.current.onTotalClick += OnTotalClick;
         users = Database.GetNonAdminUsers();
         //El numero de niveles es igual al numero de misiones
-        numberOfMissions = users[0].niveles.Length;
+        numberOfMissions = users[0].niveles.Count;
         userscores = new Userscore[numberOfMissions][];
-        totalScores = new Userscore[users.Length];
+        totalScores = new Userscore[users.Count];
     }
 
     private void OnMissionClick(string missionName, int missionIndex) {

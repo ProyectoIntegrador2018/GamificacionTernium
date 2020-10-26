@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-
-    public Button Jugar;
-    public Button Historial;
-    public Button Trofeos;
-    public Button Salir;
+    public GameObject jugarBtn;
+    public GameObject historialBtn;
+    public GameObject trofeosBtn;
+    public GameObject salirBtn;
     public GameObject ProximaMission;
     public GameObject toast;
+    public GameObject eventsBtn;
+    public GameObject avatarBtn;
     public Image turnImage;
     public Sprite morningImg;
     public Sprite noonImg;
@@ -34,10 +35,16 @@ public class MenuManager : MonoBehaviour
         //GlobalVariables.Caso = 0;
         
         if (!Database.isAdmin(GlobalVariables.usernameId)) {
+            
             showTurn();
         }
         else {
             turnImage.enabled = false;
+            trofeosBtn.SetActive(false);
+            historialBtn.SetActive(false);
+            avatarBtn.SetActive(false);
+            toast.SetActive(false);
+            eventsBtn.SetActive(true);
         }
     
     }
@@ -67,8 +74,10 @@ public class MenuManager : MonoBehaviour
         // mensajeBienvenida.text = "Bonito día, " + GlobalVariables.username + "! Te faltan ganar" + GlobalVariables.getTrophies().ToString() + " de 10 trofeos";
 
         // El checar que los botones sean presionados, y que pasa si lo son
-        Jugar.onClick.AddListener(delegate {
-            //Jugar.enabled = false;
+    }
+
+    public void jugarClicked(){
+        //Jugar.enabled = false;
             toast.SetActive(false);
             if(FirstClick)
             {
@@ -94,13 +103,22 @@ public class MenuManager : MonoBehaviour
                     JugarMision();
                 }
             }
+    }
 
-            
-        });
-        //Historial.onClick.AddListener(delegate { CambiarScene(""); });
-        Trofeos.onClick.AddListener(delegate { CambiarScene("Achivements"); });
-        Historial.onClick.AddListener(delegate {CambiarScene("Historial");});
-        Salir.onClick.AddListener(delegate { CambiarScene("No"); });
+    public void trofeosClicked(){
+        CambiarScene("Achivements");
+    }
+
+    public void historialClicked(){
+        CambiarScene("Historial");
+    }
+
+    public void salirClicked(){
+        CambiarScene("No");
+    }
+
+    public void eventsClicked(){
+        CambiarScene("CreateNews");
     }
 
     void CambiarScene(string Cambio)

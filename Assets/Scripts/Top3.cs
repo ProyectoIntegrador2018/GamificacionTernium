@@ -14,7 +14,7 @@ public class Turn{
 
 public class Top3 : MonoBehaviour
 {
-    static private User[] users;
+    static private List<User> users;
     int morningTurn, noonTurn, nightTurn;
     public Image turnImage;
     public Sprite morningImg;
@@ -34,7 +34,7 @@ public class Top3 : MonoBehaviour
         int morningTurn = 0;
         foreach (User user in users) {
             if(user.turno == "Matutino"){
-                for(int i = 0; i < user.niveles.Length; i++){
+                for(int i = 0; i < user.niveles.Count; i++){
                     //Debug.Log(user.niveles[i]);
                     morningTurn += user.niveles[i];
                 }
@@ -47,7 +47,7 @@ public class Top3 : MonoBehaviour
         int noonTurn = 0;
         foreach (User user in users) {
             if(user.turno == "Vespertino"){
-                for(int i = 0; i < user.niveles.Length; i++){
+                for(int i = 0; i < user.niveles.Count; i++){
                     noonTurn += user.niveles[i];
                 }
             }
@@ -59,7 +59,7 @@ public class Top3 : MonoBehaviour
         int nightTurn = 0;
         foreach (User user in users) {
             if(user.turno == "Nocturno"){
-                for(int i = 0; i < user.niveles.Length; i++){
+                for(int i = 0; i < user.niveles.Count; i++){
                     nightTurn += user.niveles[i];
                 }
             }
