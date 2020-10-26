@@ -166,9 +166,9 @@ public class GameMind : MonoBehaviour {
     public static void logOn(string u, string p) {
         // Debug.Log("a ver " + Database.login(u,p));
         int id=Database.login(u,p);
-        if(u=="TERGAMI" && p=="TERNIUM20") {
+        /*if(u=="TERGAMI" && p=="TERNIUM20") {
             SceneManager.LoadScene("createUser");
-        }
+        }*/
         if(id!=-1) {
             GlobalVariables.username = u;
             GlobalVariables.usernameId = id;

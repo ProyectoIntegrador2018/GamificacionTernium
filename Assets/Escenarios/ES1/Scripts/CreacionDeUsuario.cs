@@ -10,21 +10,62 @@ public class CreacionDeUsuario : MonoBehaviour
     public Button Login;
     public Button Cancel;
     public Text UsernameText;
-    public Text PasswordText;
+    public InputField PasswordText;
+    public Dropdown turnDropDown;
+    public GameObject popUp;
+    public GameObject popUp_2;
+    public Toggle adminToggle;
+    public string adminString;
+    public static bool available;
 
     void Start() {
         Login.onClick.AddListener(delegate {createUser();});
         Cancel.onClick.AddListener(delegate {returnLogin();});
+        
     }
 
     // Función para agregar al usuario
     public void createUser() {
-        Database.makeUser(UsernameText.text,PasswordText.text);
-        Database.saveData();
+        if (adminToggle.isOn == true)
+        {
+            Database.makeUser(UsernameText.text, PasswordText.text, turnDropDown.options[turnDropDown.value].text, "admin");
+            if (available)
+            {              
+                Database.saveData();
+                popUp.SetActive(true);
+            }
+            else
+            {
+                popUp_2.SetActive(true);
+            }
+
+        }
+        else
+        {
+            Database.makeUser(UsernameText.text, PasswordText.text, turnDropDown.options[turnDropDown.value].text, "usuario");
+            if (available)
+            {    
+                Database.saveData();
+                popUp.SetActive(true);
+            }
+            else
+            {
+                popUp_2.SetActive(true);
+            }
+
+        }
+    
     }
 
     public void returnLogin(){
         SceneManager.LoadScene("Login");
     }
 
+
+    /*
+    public void testText()
+    {
+        Debug.Log("Username: " + UsernameText.text + " Password: " + PasswordText.text + " Turno: " + turnDropDown.options[turnDropDown.value].text);
+    }
+    */
 }
