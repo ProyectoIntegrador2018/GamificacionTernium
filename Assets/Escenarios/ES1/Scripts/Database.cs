@@ -141,7 +141,7 @@ public class Database : MonoBehaviour
             // Get all matches  
             MatchCollection matchedChunks = rg.Matches(data);  
             // Print all matched authors  
-            string formateada = "{ \"news\" : [";
+            string formateada = "{ \"users\" : [";
             for (int count = 0; count < matchedChunks.Count; count++){
                 formateada += matchedChunks[count].Value;
                 if (!(count + 1 >= matchedChunks.Count)){
