@@ -22,6 +22,11 @@ public class MenuManager : MonoBehaviour
     public static Users userBase;
     public int cont = 0;
     bool FirstClick = true;
+
+    public GameObject GameModesMenu;
+    public Button JugarMisiones;
+    public Button JugarModoRapido;
+    public static bool quickMode = false;
     //public GameObject podium;
     //public GameObject turno;
 
@@ -67,12 +72,22 @@ public class MenuManager : MonoBehaviour
         // mensajeBienvenida.text = "Bonito día, " + GlobalVariables.username + "! Te faltan ganar" + GlobalVariables.getTrophies().ToString() + " de 10 trofeos";
 
         // El checar que los botones sean presionados, y que pasa si lo son
+
+        //Presionar boton de jugar para abrir menu de modos de juego
         Jugar.onClick.AddListener(delegate {
             //Jugar.enabled = false;
+
+            GameModesMenu.SetActive(true);
+            });
+
+        //Modo de juego de misiones
+        JugarMisiones.onClick.AddListener(delegate {
+            //Jugar.enabled = false;
             toast.SetActive(false);
-            if(FirstClick)
+            if (FirstClick)
             {
                 FirstClick = false;
+           
                 if (GameMind.getTutorial() == true)
                 {
                     //podium.SetActive = false;
@@ -81,22 +96,39 @@ public class MenuManager : MonoBehaviour
                     SiguentePregunta.text = "Mision 1: Reparar el rodillo dañado";
                     ProximaMission.SetActive(true);
                     StartCoroutine(EsperarMin(0));
-                    if (!Database.isAdmin(GlobalVariables.usernameId)) {
+                    if (!Database.isAdmin(GlobalVariables.usernameId))
+                    {
                         GameMind.setStarted(i);
                     }
                     //GameMind.saveData();
                     HelpManager.ExisteAyuda(i.ToString());
                     GlobalVariables.Caso = i;
-                    
+
                 }
                 else
                 {
+                    quickMode = false;
                     JugarMision();
+
                 }
             }
-
-            
         });
+
+
+
+        //Modo de juego de misiones
+        JugarModoRapido.onClick.AddListener(delegate {
+            //Jugar.enabled = false;
+            toast.SetActive(false);
+            quickMode = true;
+            GlobalVariables.lives = 5;
+            JugarMision();
+
+
+        });
+
+
+
         //Historial.onClick.AddListener(delegate { CambiarScene(""); });
         Trofeos.onClick.AddListener(delegate { CambiarScene("Achivements"); });
         Historial.onClick.AddListener(delegate {CambiarScene("Historial");});
@@ -139,21 +171,28 @@ public class MenuManager : MonoBehaviour
         HelpManager.ExisteAyuda(Rand.ToString());
         GlobalVariables.Caso = Rand;
 
-        switch (Rand)
+        if (!quickMode)
         {
-            case 1: SiguentePregunta.text = "Mision 1: Reparar el rodillo dañado"; break;
-            case 2: SiguentePregunta.text = "Mision 2: Inspeccionar avería de Acoplamiento"; break;
-            case 3: SiguentePregunta.text = "Mision 3: Prevenir el sobrecalentamiento"; break;
-            case 4: SiguentePregunta.text = "Mision 4: Inspeccionar los sensores de proximidad"; break;
-            case 5: SiguentePregunta.text = "Mision 5: Inspeccionar sobrecarga de motor"; break;
-            case 6: SiguentePregunta.text = "Mision 6: Inspeccionar niveles de aceite"; break;
-            case 7: SiguentePregunta.text = "Mision 7: La emergencia PM10 "; break;
-            case 8: SiguentePregunta.text = "Mision 8: El PM11 programado PM11"; break;
-            case 9: SiguentePregunta.text = "Mision 9: Contestar aviso M3"; break;
-            case 10: SiguentePregunta.text= "Mision 10:Contestar aviso M6"; break;
+            switch (Rand)
+            {
+                case 1: SiguentePregunta.text = "Mision 1: Reparar el rodillo dañado"; break;
+                case 2: SiguentePregunta.text = "Mision 2: Inspeccionar avería de Acoplamiento"; break;
+                case 3: SiguentePregunta.text = "Mision 3: Prevenir el sobrecalentamiento"; break;
+                case 4: SiguentePregunta.text = "Mision 4: Inspeccionar los sensores de proximidad"; break;
+                case 5: SiguentePregunta.text = "Mision 5: Inspeccionar sobrecarga de motor"; break;
+                case 6: SiguentePregunta.text = "Mision 6: Inspeccionar niveles de aceite"; break;
+                case 7: SiguentePregunta.text = "Mision 7: La emergencia PM10 "; break;
+                case 8: SiguentePregunta.text = "Mision 8: El PM11 programado PM11"; break;
+                case 9: SiguentePregunta.text = "Mision 9: Contestar aviso M3"; break;
+                case 10: SiguentePregunta.text = "Mision 10:Contestar aviso M6"; break;
 
-            default:
-                break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            SiguentePregunta.text = "Modo rapido: Juega hasta agotar tus intentos!!";
         }
         StartCoroutine(EsperarMin(Rand));
         ProximaMission.SetActive(true);
