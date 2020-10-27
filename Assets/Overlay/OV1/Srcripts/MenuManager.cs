@@ -173,7 +173,7 @@ public class MenuManager : MonoBehaviour
         //Set mision as Started
         if (!Database.isAdmin(GlobalVariables.usernameId)) {
             GameMind.setStarted(Rand);
-            if (Application.isEditor){
+            if (Application.platform != RuntimePlatform.WebGLPlayer){
             GameMind.saveData();
             }
         }

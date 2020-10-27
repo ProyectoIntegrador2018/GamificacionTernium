@@ -28,16 +28,16 @@ public class ToastManager : MonoBehaviour
     int i = 0;
 
     void Start(){
-        if (Application.isEditor){
+        if (Application.platform == RuntimePlatform.WebGLPlayer){
+            GetEvents();
+        }  
+        else{
             string fileContents = newsFile.ToString();
             myDeserializedClass = JsonConvert.DeserializeObject<Root>(fileContents);
             foreach(News item in myDeserializedClass.news){
                 print(item.titulo);
             }  
             InvokeRepeating("makeToast", 2.0f, 4.0f);
-        }  
-        else{
-            GetEvents();
         }
         
         

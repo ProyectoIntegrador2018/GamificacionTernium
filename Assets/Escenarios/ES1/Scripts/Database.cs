@@ -54,6 +54,9 @@ public class User    {
         public int quickGameLives;
         public List<string> timeOfLastLiveLost; 
         public string avatarImg { get; set; } 
+        public bool customAvatar;
+        public string avatarHelmet;
+        public string avatarGlasses;
         public int? nivelJugador { get; set; } 
         public List<int> niveles { get; set; } 
         public List<bool> achivements { get; set; } 
@@ -89,8 +92,10 @@ public class Database : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Application.isEditor)
-        {
+        if(Application.platform == RuntimePlatform.WebGLPlayer){
+            GetUsers();
+        }
+        else{
             string jsonContents = jsonFile.ToString();
             //Debug.Log(jsonContents);
             userBase = JsonConvert.DeserializeObject<Users>(jsonContents);
@@ -98,7 +103,7 @@ public class Database : MonoBehaviour
             
             //Asumire que es este
             path = Application.persistentDataPath + "/database.json";
-            /*
+            
             //Debug.Log("Fabi Aqui");
             //Debug.Log(path);
 
@@ -109,23 +114,21 @@ public class Database : MonoBehaviour
             if (File.Exists(path)) {
                 var myTextAsset = File.ReadAllText(Application.persistentDataPath + "/database.json"); 
                 //Debug.Log("hola" + myTextAsset);
-                //userBase = JsonConvert.DeserializeObject<Users>(myTextAsset);
-                userBase = JsonUtility.FromJson<Users>(myTextAsset);
+                string textAssetContent = myTextAsset.ToString();
+                userBase = JsonConvert.DeserializeObject<Users>(textAssetContent);
+                //userBase = JsonUtility.FromJson<Users>(myTextAsset);
             }
             else
             {
-                //userBase = JsonConvert.DeserializeObject<Users>(jsonContents);
-                userBase = JsonUtility.FromJson<Users>(jsonFile.text);
+                userBase = JsonConvert.DeserializeObject<Users>(jsonContents);
+                //userBase = JsonUtility.FromJson<Users>(jsonFile.text);
                 //Si no existe se crea en local para siempre accesar desde el path 
                 saveData();
-            }*/
+            }
 
             //foreach(User user in userBase.users){
             //    print(user.id);
             //}  
-        }
-        else{
-            GetUsers();
         }
         
         missionList = JsonUtility.FromJson<ListaMisiones>(jsonMisiones.text);
@@ -410,6 +413,35 @@ public class Database : MonoBehaviour
     public static string getAvatar()
     {
         return userBase.users[GlobalVariables.usernameId].avatarImg;
+    }
+
+    public static void setHelmet(string helmet)
+    {
+        userBase.users[GlobalVariables.usernameId].avatarHelmet = helmet;
+    }
+
+    public static string getHelmet()
+    {
+        return userBase.users[GlobalVariables.usernameId].avatarHelmet;
+    }
+
+    public static void setGlasses(string glasses)
+    {
+        userBase.users[GlobalVariables.usernameId].avatarGlasses = glasses;
+    }
+
+    public static string getGlasses()
+    {
+        return userBase.users[GlobalVariables.usernameId].avatarGlasses;
+    }
+    public static bool getCustomAvatar()
+    {
+        return userBase.users[GlobalVariables.usernameId].customAvatar;
+    }
+
+    public static void setCustomAvatar(bool customAvatar)
+    {
+        userBase.users[GlobalVariables.usernameId].customAvatar = customAvatar;
     }
 
     public static int getCurrentAchivements(){

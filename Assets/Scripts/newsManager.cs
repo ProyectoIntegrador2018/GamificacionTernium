@@ -20,20 +20,20 @@ public class newsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Application.isEditor){
-            newsList = ToastManager.getNews();
-            createNewsList();
-        }  
-        else{
-            GetEvents();
+        if (Application.platform == RuntimePlatform.WebGLPlayer){
+           GetEvents();
             // Long string, like the one when calling Firebase 
             //string content = "{\"new0\" : {\"titulo\": \"¡Evento de bienvenida!\",\"descripcion\": \"Ven al edificio A el 25/Ago/2020 y da inicio a un excelente semestre\",\"fecha\": \"20/08/2020 12:00 am\"},\"new1\" : {\"titulo\": \"¡Evento de doble experiencia!\",\"descripcion\": \"Gana el doble de experiencia del 20/08/2020 al 22/08/2020\",\"fecha\": \"19/08/2020 12:00 am\"},\"new2\" : {\"titulo\": \"Sesión de mantenimiento\",\"descripcion\": \"Esta es una descripcion, tal vez\",\"fecha\": \"21/08/2020 12:00 am\"},\"new3\" : {\"titulo\": \"Aviso de actualización\",\"descripcion\": \"Probablemente esta es una descripcion\",\"fecha\": \"26/08/2020 12:00 am\"},\"new4\": {\"titulo\": \"Aviso para turno matutino\",\"descripcion\": \"Podría ser una descripción\",\"fecha\": \"27/08/2020 12:00 am\"}}";
+        }  
+        else{
+            newsList = ToastManager.getNews();
+            createNewsList();
         }
         
     }
 
     public void GetEvents() =>
-            FirebaseDatabase.GetEvents(gameObject.name, "UseData", "DisplayErrorObject");
+            FirebaseDatabase.GetEvents(gameObject.name, "UpdateEventList", "DisplayErrorObject");
 
     public void UpdateEventList(string data)
         {
