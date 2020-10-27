@@ -213,6 +213,10 @@ public class QuestionManager : MonoBehaviour {
 
         if(GlobalVariables.lives <= 0 && MenuManager.quickMode)
         {
+            GlobalVariables.currentQuickGameLives--;
+            Database.setCurrentLives(GlobalVariables.usernameId, GlobalVariables.currentQuickGameLives);
+            Database.addTimeLastLiveLost(GlobalVariables.usernameId);
+            GameMind.saveData();
             SceneManager.LoadScene("LoseQuickMode");
         }
 

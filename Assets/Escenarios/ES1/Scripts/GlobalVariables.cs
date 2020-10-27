@@ -16,6 +16,7 @@ public class GlobalVariables : MonoBehaviour {
     public static string avatarImg = "Default";
     public static int usernameId;
     public static bool instructions = false;
+    public static int currentQuickGameLives = 0;
     //Estos son para lo colaborativo
     public static string Escenario = "0";
     public static int Caso = 0;
