@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System;
+using System.Linq;
 
 [System.Serializable]
 public struct ListaMisiones
@@ -45,6 +47,8 @@ public class User
     public int expMax;
     public int expMin;
     public int expCurrent;
+    public int quickGameLives;
+    public List<string> timeOfLastLiveLost;
     public string avatarImg;
     public bool customAvatar;
     public string avatarHelmet;
@@ -112,6 +116,30 @@ public class Database : MonoBehaviour
 
     }
 
+    public static void setFirstTime(int userId) {
+        userBase.users[userId].timeOfLastLiveLost[0] = DateTime.Now.ToString();
+    }
+    public static void setCurrentLives(int userId, int lives) {
+        userBase.users[userId].quickGameLives = lives;
+    }
+    public static void clearTimeLastLiveLost(int userId) {
+        userBase.users[userId].timeOfLastLiveLost.Clear();
+        
+    }
+    public static void removeTimeLastLiveLost(int userId, int howMany) {
+        for (int i = 0; i < howMany; i++) {
+            userBase.users[userId].timeOfLastLiveLost.RemoveAt(0);
+        }
+    }
+    public static void addTimeLastLiveLost(int userId) {
+        userBase.users[userId].timeOfLastLiveLost.Add(DateTime.Now.ToString());
+    }
+    public static int getCurrentLives(int userId) {
+        return userBase.users[userId].quickGameLives;
+    }
+    public static List<string> getTimeOfLastLiveLost(int userId) {
+        return userBase.users[userId].timeOfLastLiveLost;
+    }
     public static bool isAdmin(int userId) {
         if (userBase.users[userId].tipo == "admin") {
             return true;
@@ -313,6 +341,8 @@ public class Database : MonoBehaviour
         nUser.avatarHelmet = "None";
         nUser.avatarGlasses = "None";
         nUser.expCurrent = 0;
+        nUser.quickGameLives = 3;
+        nUser.timeOfLastLiveLost = new List<string>();
         nUser.nivelJugador = 1;
         int[] niv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         nUser.niveles = niv;
