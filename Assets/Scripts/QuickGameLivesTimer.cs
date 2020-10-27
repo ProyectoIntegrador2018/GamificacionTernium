@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,13 +9,13 @@ public class QuickGameLivesTimer : MonoBehaviour
 {
 
     Text timer;
-    float timerAmount = 5400;
+    float timerAmount;
     // cuanto tiempo se tarda en regenerar una vida en segundos
-    float timeRegenerateLive = 1800;
+    float timeRegenerateLive = 120; //1800;
     float hours;
     float minutes;
     float seconds;
-    int lastWhole;
+    int lastWhole = -1;
     bool isRunning;
 
     string formatTime(float time) {
@@ -40,18 +41,55 @@ public class QuickGameLivesTimer : MonoBehaviour
         }
     }
 
-    private void Awake() {
-        //obtenido de la base de datos
-        DateTime lastDate = new DateTime(2020, 10, 25, 11, 41, 0);
-        TimeSpan difference;
+    void clearSavedTime() {
+        Database.clearTimeLastLiveLost(GlobalVariables.usernameId);
+        GameMind.saveData();
+    }
 
-        difference = System.DateTime.Now - lastDate;
-        //diferencia en segundos
-        print(difference.TotalSeconds);
-        //las cantidad de vidas a regenerar 
-        print(Mathf.FloorToInt((float)difference.TotalSeconds / timeRegenerateLive));
-        //el tiempo actual del reloj
-        timerAmount -= (float)difference.TotalSeconds;
+    private void Awake() {
+
+        List<string> savedDate = Database.getTimeOfLastLiveLost(GlobalVariables.usernameId);
+        int maxLives = QuickGameLives.maxLives;
+        int livesToRegen;
+
+        if (savedDate.Count != 0) {
+
+            //obtenido de la base de datos
+            DateTime lastDate = DateTime.Parse(savedDate.First());
+            TimeSpan difference;
+
+            timerAmount = (maxLives - GlobalVariables.currentQuickGameLives) * timeRegenerateLive;
+            difference = System.DateTime.Now - lastDate;
+
+            //el tiempo actual del reloj
+            timerAmount -= (float)difference.TotalSeconds;
+
+            if (timerAmount <= 0) {
+                Database.setCurrentLives(GlobalVariables.usernameId, maxLives);
+                clearSavedTime();
+                this.transform.parent.gameObject.SetActive(false);
+                GlobalVariables.currentQuickGameLives = maxLives;
+            }
+            else {
+                //las cantidad de vidas a regenerar 
+                livesToRegen = Database.getCurrentLives(GlobalVariables.usernameId) + Mathf.FloorToInt((float)difference.TotalSeconds / timeRegenerateLive);
+                Database.setCurrentLives(GlobalVariables.usernameId, livesToRegen);
+                if (livesToRegen != Database.getCurrentLives(GlobalVariables.usernameId)) {
+                    Database.removeTimeLastLiveLost(GlobalVariables.usernameId, livesToRegen);
+                    if(Database.getTimeOfLastLiveLost(GlobalVariables.usernameId).Count != 0) {
+                        Database.setFirstTime(GlobalVariables.usernameId);
+                    }
+                }
+                //GlobalVariables.currentQuickGameLives = livesToRegen;
+
+            }
+
+            
+        }
+        else {
+            this.transform.parent.gameObject.SetActive(false);
+        }
+
     }
 
     // Start is called before the first frame update
@@ -82,6 +120,7 @@ public class QuickGameLivesTimer : MonoBehaviour
                 displayCurrentTime();
             }
             else {
+                clearSavedTime();
                 this.transform.parent.gameObject.SetActive(false);
                 isRunning = false;
             }

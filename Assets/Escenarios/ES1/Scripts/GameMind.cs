@@ -173,7 +173,7 @@ public class GameMind : MonoBehaviour {
             GlobalVariables.username = u;
             GlobalVariables.usernameId = id;
             GlobalVariables.turno = getTurno();
-    	    //Debug.Log("usuario " + GlobalVariables.username);
+            GlobalVariables.currentQuickGameLives = Database.getCurrentLives(id);
             SceneManager.LoadScene("Menu");
         }
         // Debug.Log("this user has " + Database.getCurrentAchivements() + "achivmenets");

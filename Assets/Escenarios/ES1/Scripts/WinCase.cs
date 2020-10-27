@@ -451,7 +451,9 @@ public class WinCase : MonoBehaviour {
         //
         //Rand = 1;
         //
-        GameMind.setStarted(Rand);
+        if (!Database.isAdmin(GlobalVariables.usernameId)) {
+            GameMind.setStarted(Rand);
+        }
         GameMind.saveData();
         GlobalVariables.Caso = Rand;
         HelpManager.ExisteAyuda(Rand.ToString());
