@@ -80,7 +80,7 @@ public class QuickGameLivesTimer : MonoBehaviour
                         Database.setFirstTime(GlobalVariables.usernameId);
                     }
                 }
-                //GlobalVariables.currentQuickGameLives = livesToRegen;
+                GlobalVariables.currentQuickGameLives = livesToRegen;
 
             }
 
