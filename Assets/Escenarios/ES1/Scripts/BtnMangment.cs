@@ -38,34 +38,21 @@ public class BtnMangment : MonoBehaviour
     }
 
     public bool giveAnswer()
-    {  if (SceneManager.GetActiveScene().name == "P2")
-        {
-            if ((item_1.transform.localPosition.y == 67.7f) &&
-                (item_2.transform.localPosition.y == 187.7f) &&
-                (item_3.transform.localPosition.y == -172.3f))
+    {
+        if ((item_1.transform.localPosition.y == 111f) &&
+            (item_2.transform.localPosition.y == 211f) &&
+            (item_3.transform.localPosition.y == -371f))
+            return true;
 
-                return true;
-
-            else
-
-                return false;
-        }
         else
-        {
-            if ((item_1.transform.localPosition.y == 31f) &&
-                (item_2.transform.localPosition.y == 151f) &&
-                (item_3.transform.localPosition.y == -209f))
-
-                return true;
-
-            else
-
+            Debug.Log("Nel");
                 return false;
-        }
-
-
+        
     }
+        
+       
 
+       
     
     private void OnEnable()
     {
@@ -480,6 +467,7 @@ public class BtnMangment : MonoBehaviour
 
     public void Solution()
     {
+
         string Escena = SceneManager.GetActiveScene().name;
 
         if (Escena == "P2" || Escena == "ES4P2")
@@ -494,10 +482,10 @@ public class BtnMangment : MonoBehaviour
             //Guantes
             GameObject Item4 = GameObject.Find("Item4");
 
-            Item1.transform.localPosition = new Vector2(Slot.transform.localPosition.x, 94);
+           /* Item1.transform.localPosition = new Vector2(Slot.transform.localPosition.x, 94);
             Item2.transform.localPosition = new Vector2(Slot.transform.localPosition.x, 214);
             Item3.transform.localPosition = new Vector2(Slot.transform.localPosition.x, -146);
-            Item4.transform.localPosition = new Vector2(Slot.transform.localPosition.x, -26);
+            Item4.transform.localPosition = new Vector2(Slot.transform.localPosition.x, -26);*/
 
         }
         else

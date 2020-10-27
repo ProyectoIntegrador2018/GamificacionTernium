@@ -359,4 +359,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Overlay/OV1/Scenes/CreateNews.unity
     guid: a7306784e6702e14da664e581d6ec1b8
+    path: Assets/Scenes/UserCreation.unity
+    guid: 75b9a856984a7ac47bfbfba650152b79
+  - enabled: 1
+    path: Assets/Scenes/LoseQuickMode.unity
+    guid: eaeb3c31b1f1c894d82673c192d29a40
   m_configObjects: {}

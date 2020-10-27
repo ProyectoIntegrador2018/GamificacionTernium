@@ -8,6 +8,8 @@ using System.IO;
 using System.Text;  
 using System.Text.RegularExpressions;  
 using Newtonsoft.Json;
+using System;
+using System.Linq;
 
 [System.Serializable]
 public struct ListaMisiones
@@ -48,7 +50,9 @@ public class User    {
         public string turno { get; set; } 
         public int? expMax { get; set; } 
         public int? expMin { get; set; } 
-        public int? expCurrent { get; set; } 
+        public int? expCurrent { get; set; }
+        public int quickGameLives;
+        public List<string> timeOfLastLiveLost; 
         public string avatarImg { get; set; } 
         public int? nivelJugador { get; set; } 
         public List<int> niveles { get; set; } 
@@ -91,9 +95,10 @@ public class Database : MonoBehaviour
             //Debug.Log(jsonContents);
             userBase = JsonConvert.DeserializeObject<Users>(jsonContents);
 
-            /*
+            
             //Asumire que es este
             path = Application.persistentDataPath + "/database.json";
+            /*
             //Debug.Log("Fabi Aqui");
             //Debug.Log(path);
 
@@ -104,13 +109,13 @@ public class Database : MonoBehaviour
             if (File.Exists(path)) {
                 var myTextAsset = File.ReadAllText(Application.persistentDataPath + "/database.json"); 
                 //Debug.Log("hola" + myTextAsset);
-                userBase = JsonConvert.DeserializeObject<Users>(myTextAsset);
-                //userBase = JsonUtility.FromJson<Users>(myTextAsset);
+                //userBase = JsonConvert.DeserializeObject<Users>(myTextAsset);
+                userBase = JsonUtility.FromJson<Users>(myTextAsset);
             }
             else
             {
-                userBase = JsonConvert.DeserializeObject<Users>(jsonContents);
-                //userBase = JsonUtility.FromJson<Users>(jsonFile.text);
+                //userBase = JsonConvert.DeserializeObject<Users>(jsonContents);
+                userBase = JsonUtility.FromJson<Users>(jsonFile.text);
                 //Si no existe se crea en local para siempre accesar desde el path 
                 saveData();
             }*/
@@ -155,6 +160,30 @@ public class Database : MonoBehaviour
             userBase = JsonConvert.DeserializeObject<Users>(formateada);
     }
 
+    public static void setFirstTime(int userId) {
+        userBase.users[userId].timeOfLastLiveLost[0] = DateTime.Now.ToString();
+    }
+    public static void setCurrentLives(int userId, int lives) {
+        userBase.users[userId].quickGameLives = lives;
+    }
+    public static void clearTimeLastLiveLost(int userId) {
+        userBase.users[userId].timeOfLastLiveLost.Clear();
+        
+    }
+    public static void removeTimeLastLiveLost(int userId, int howMany) {
+        for (int i = 0; i < howMany; i++) {
+            userBase.users[userId].timeOfLastLiveLost.RemoveAt(0);
+        }
+    }
+    public static void addTimeLastLiveLost(int userId) {
+        userBase.users[userId].timeOfLastLiveLost.Add(DateTime.Now.ToString());
+    }
+    public static int getCurrentLives(int userId) {
+        return userBase.users[userId].quickGameLives;
+    }
+    public static List<string> getTimeOfLastLiveLost(int userId) {
+        return userBase.users[userId].timeOfLastLiveLost;
+    }
     public static bool isAdmin(int userId) {
         if (userBase.users[userId].tipo == "admin") {
             return true;
@@ -341,38 +370,42 @@ public class Database : MonoBehaviour
         userBase.users[GlobalVariables.usernameId].tutorial = false;
     }
     
-    /*
-    public static void makeUser(string name, string password) {
+    public static void makeUser(string name, string password,string turn,string isAdmin) {
         foreach (User user in userBase.users) {
             if(user.username == name) {
+                CreacionDeUsuario.available = false;
                 Debug.Log("Este usuario ya existe en la base de datos");
                 return;
             }
         }
-        createUser(name, password);
+        CreacionDeUsuario.available = true;
+        createUser(name, password,turn,isAdmin);
         Debug.Log("Usuario creado y guardado correctamente");
 
-    }*/
+    }
 
-    /*public static void createUser(string name, string password) {
+    public static void createUser(string name, string password, string turn, string isAdmin) {
         User nUser = new User();
         nUser.id = userBase.users[userBase.users.Count - 1].id + 1;
+        nUser.tipo = isAdmin;
         nUser.username = name;
         nUser.password = password;
         nUser.tutorial = true;
-        nUser.turno = "Matutino";
+        nUser.turno = turn;
         nUser.expMax = 500;
         nUser.expMin = 0;
         nUser.avatarImg = "Default";
         nUser.expCurrent = 0;
+        nUser.quickGameLives = 3;
+        nUser.timeOfLastLiveLost = new List<string>();
         nUser.nivelJugador = 1;
-        int[] niv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        List<int> niv = new List<int> {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         nUser.niveles = niv;
-        bool[] ach = {false, false, false, false, false, false, false, false, false, false, false };
+        List<bool> ach = new List<bool> {false, false, false, false, false, false, false, false, false, false, false };
         nUser.achivements = ach;
         nUser.started = ach;
         //userBase.Push(nUser);
-    }*/
+    }
 
     public static string getAvatar()
     {

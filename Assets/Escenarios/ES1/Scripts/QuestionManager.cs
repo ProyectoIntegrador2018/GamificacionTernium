@@ -156,9 +156,16 @@ public class QuestionManager : MonoBehaviour {
         }
 
         escenasError = Database.getSigEscenasError(missionIndex, questionIndex);
-        SigEscenaCorrecto = Database.getSigEscenaCorrecto(missionIndex, questionIndex);
-        SigEscenaError1 = escenasError[0];
-        SigEscenaError2 = escenasError[1];
+        //Mission Mode
+        
+        
+            SigEscenaCorrecto = Database.getSigEscenaCorrecto(missionIndex, questionIndex);
+            SigEscenaError1 = escenasError[0];
+            SigEscenaError2 = escenasError[1];
+        
+        
+   
+
 
         string[] opciones = Database.getOpcionesPregunta(missionIndex, questionIndex);
         int[] vidas = Database.getVidasPerdidas(missionIndex, questionIndex);
@@ -203,6 +210,16 @@ public class QuestionManager : MonoBehaviour {
         else if (myState == States.falseState){ falseState(); }
         else if (myState == States.falseState2) { falseState2(); }
         */
+
+        if(GlobalVariables.lives <= 0 && MenuManager.quickMode)
+        {
+            GlobalVariables.currentQuickGameLives--;
+            Database.setCurrentLives(GlobalVariables.usernameId, GlobalVariables.currentQuickGameLives);
+            Database.addTimeLastLiveLost(GlobalVariables.usernameId);
+            GameMind.saveData();
+            SceneManager.LoadScene("LoseQuickMode");
+        }
+
     }
 
     // Cuando el objeto donde esta el script, es "enabled" comienza a checar esto
@@ -251,8 +268,9 @@ public class QuestionManager : MonoBehaviour {
     // El estado de error 1
     void falseState() {
         CanvasText.text = "Incorrecto! " +'\n'+ QA.Fail1;
-        displayWrongAnswerAudio();
+        displayWrongAnswerAudio();    
         SigEscena = SigEscenaError1;
+    
     }
 
     // El estado de error 2
@@ -260,21 +278,44 @@ public class QuestionManager : MonoBehaviour {
         CanvasText.text = "Incorrecto! " + '\n' + QA.Fail2;
         displayWrongAnswerAudio();
         SigEscena = SigEscenaError2;
+        
+   
+        
     }
 
 
     // Funcion para hacer visible el boton para cambiar a la siguiente pregunta
     void showContinueButton(){
-        GameObject castedBtn1 = Btn1.gameObject;
-        castedBtn1.SetActive(false);
-        GameObject castedBtn2 = Btn2.gameObject;
-        castedBtn2.SetActive(false);
-        GameObject castedBtn3 = Btn3.gameObject;
-        castedBtn3.SetActive(false);
-        canvasPosition = GetComponentInParent<Canvas>().transform;
-        Button newButton = Instantiate(continueButton, new Vector3(805, -370, 0), transform.rotation);
-        newButton.transform.SetParent(canvasPosition, false);
-        newButton.onClick.AddListener(ChangeCurrentScene);
+        if (!MenuManager.quickMode)
+        {
+            GameObject castedBtn1 = Btn1.gameObject;
+            castedBtn1.SetActive(false);
+            GameObject castedBtn2 = Btn2.gameObject;
+            castedBtn2.SetActive(false);
+            GameObject castedBtn3 = Btn3.gameObject;
+            castedBtn3.SetActive(false);
+            canvasPosition = GetComponentInParent<Canvas>().transform;
+            Button newButton = Instantiate(continueButton, new Vector3(805, -370, 0), transform.rotation);
+            newButton.transform.SetParent(canvasPosition, false);
+            newButton.onClick.AddListener(ChangeCurrentScene);
+        }
+
+        else
+        {
+            GameObject castedBtn1 = Btn1.gameObject;
+            castedBtn1.SetActive(false);
+            GameObject castedBtn2 = Btn2.gameObject;
+            castedBtn2.SetActive(false);
+            GameObject castedBtn3 = Btn3.gameObject;
+            castedBtn3.SetActive(false);
+            canvasPosition = GetComponentInParent<Canvas>().transform;
+            Button newButton = Instantiate(continueButton, new Vector3(805, -370, 0), transform.rotation);
+            newButton.transform.SetParent(canvasPosition, false);
+            newButton.onClick.AddListener(QuickMode);
+        }
+
+       
+
     }
 
     //Funcion para sonar audio de respuestas correctas
@@ -317,7 +358,9 @@ public class QuestionManager : MonoBehaviour {
             //SceneManager.LoadScene("Lose");
         }
         else {
-            SceneManager.LoadScene(SigEscena);
+           
+               SceneManager.LoadScene(SigEscena);
+                 
         }
     }
 
@@ -384,5 +427,39 @@ public class QuestionManager : MonoBehaviour {
     public static void Help()
     {
         GameObject.Find("Button-2").SetActive(false);//Button-2
+    }
+
+    
+    public void QuickMode()
+    {
+        int Rand = UnityEngine.Random.Range(1, 21);
+
+        switch (Rand)
+        {
+            case 1: SceneManager.LoadScene("P1"); break;
+            case 2: SceneManager.LoadScene("ES2P1"); break;
+            case 3: SceneManager.LoadScene("ES3P1"); break;
+            case 4: SceneManager.LoadScene("ES4P1"); break;
+            case 5: SceneManager.LoadScene("ES5P1"); break;
+            case 6: SceneManager.LoadScene("ES6P1"); break;
+            case 7: SceneManager.LoadScene("ES7P1"); break;
+            case 8: SceneManager.LoadScene("ES8P1"); break;
+            case 9: SceneManager.LoadScene("ES9P1"); break;
+            case 10: SceneManager.LoadScene("ES10P1"); break;
+            case 11: SceneManager.LoadScene("P2"); break;
+            case 12: SceneManager.LoadScene("ES2P2"); break;
+            case 13: SceneManager.LoadScene("ES3P4"); break;
+            case 14: SceneManager.LoadScene("ES4P6"); break;
+            case 15: SceneManager.LoadScene("ES5P2"); break;
+            case 16: SceneManager.LoadScene("ES6P7"); break;
+            case 17: SceneManager.LoadScene("ES7P6"); break;
+            case 18: SceneManager.LoadScene("ES8P3"); break;
+            case 19: SceneManager.LoadScene("ES9P3"); break;
+            case 20: SceneManager.LoadScene("ES10P2"); break;
+
+            default:
+                break;
+        }
+
     }
 }

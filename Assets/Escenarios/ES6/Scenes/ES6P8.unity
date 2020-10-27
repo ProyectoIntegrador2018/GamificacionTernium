@@ -1176,9 +1176,6 @@ MonoBehaviour:
   Escena: ES6P8
   vidasFallo1: 4
   vidasFallo2: 1
-  SigEscenaCorrecto: ES6Win
-  SigEscenaError1: ES6Win
-  SigEscenaError2: ES6Win
 --- !u!114 &1565794268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1377,6 +1374,7 @@ GameObject:
   - component: {fileID: 1893132131}
   - component: {fileID: 1893132130}
   - component: {fileID: 1893132129}
+  - component: {fileID: 1893132132}
   m_Layer: 0
   m_Name: mascot
   m_TagString: Untagged
@@ -1483,6 +1481,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893132127}
   m_CullTransparentMesh: 0
+--- !u!114 &1893132132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1893132127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaaca1a5928830c4aab216111a46f0b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stand: {fileID: 1893132130}
+  stdr_av: {fileID: 21300000, guid: 5899514654b082947847a6b7ef03a6cb, type: 3}
+  female_av: {fileID: 21300000, guid: 39bb9a7c10eaef94786cc18bbc57a380, type: 3}
+  glass_av: {fileID: 21300000, guid: 798190c810067bc488910c98a18a382e, type: 3}
 --- !u!1 &1954232777
 GameObject:
   m_ObjectHideFlags: 0
