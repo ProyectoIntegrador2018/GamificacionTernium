@@ -31,12 +31,13 @@ public class ToastManager : MonoBehaviour
         if (Application.isEditor){
             string fileContents = newsFile.ToString();
             myDeserializedClass = JsonConvert.DeserializeObject<Root>(fileContents);
+            foreach(News item in myDeserializedClass.news){
+                print(item.titulo);
+            }  
             InvokeRepeating("makeToast", 2.0f, 4.0f);
         }  
         else{
             GetEvents();
-            // Long string, like the one when calling Firebase 
-            //string content = "{\"new0\" : {\"titulo\": \"¡Evento de bienvenida!\",\"descripcion\": \"Ven al edificio A el 25/Ago/2020 y da inicio a un excelente semestre\",\"fecha\": \"20/08/2020 12:00 am\"},\"new1\" : {\"titulo\": \"¡Evento de doble experiencia!\",\"descripcion\": \"Gana el doble de experiencia del 20/08/2020 al 22/08/2020\",\"fecha\": \"19/08/2020 12:00 am\"},\"new2\" : {\"titulo\": \"Sesión de mantenimiento\",\"descripcion\": \"Esta es una descripcion, tal vez\",\"fecha\": \"21/08/2020 12:00 am\"},\"new3\" : {\"titulo\": \"Aviso de actualización\",\"descripcion\": \"Probablemente esta es una descripcion\",\"fecha\": \"26/08/2020 12:00 am\"},\"new4\": {\"titulo\": \"Aviso para turno matutino\",\"descripcion\": \"Podría ser una descripción\",\"fecha\": \"27/08/2020 12:00 am\"}}";
         }
         
         
@@ -48,9 +49,12 @@ public class ToastManager : MonoBehaviour
     
     public void UseData(string data)
         {
+            // Long string, like the one when calling Firebase 
+            //string content = "{\"new0\" : {\"titulo\": \"¡Evento de bienvenida!\",\"descripcion\": \"Ven al edificio A el 25/Ago/2020 y da inicio a un excelente semestre\",\"fecha\": \"20/08/2020 12:00 am\"},\"new1\" : {\"titulo\": \"¡Evento de doble experiencia!\",\"descripcion\": \"Gana el doble de experiencia del 20/08/2020 al 22/08/2020\",\"fecha\": \"19/08/2020 12:00 am\"},\"new2\" : {\"titulo\": \"Sesión de mantenimiento\",\"descripcion\": \"Esta es una descripcion, tal vez\",\"fecha\": \"21/08/2020 12:00 am\"},\"new3\" : {\"titulo\": \"Aviso de actualización\",\"descripcion\": \"Probablemente esta es una descripcion\",\"fecha\": \"26/08/2020 12:00 am\"},\"new4\": {\"titulo\": \"Aviso para turno matutino\",\"descripcion\": \"Podría ser una descripción\",\"fecha\": \"27/08/2020 12:00 am\"}}";
+        
             //outputText.color = outputText.color == Color.green ? Color.blue : Color.green;
             //outputText.text = data;
-            //Debug.Log(data);
+            Debug.Log("Raw data" + data);
 
             // Create a pattern for a word that starts with letter "M"  
             string pattern = @"\{([^\}]+)\}";  
@@ -70,7 +74,7 @@ public class ToastManager : MonoBehaviour
             }
             formateada += "]}";
             
-            //Debug.Log(formateada);
+            Debug.Log("Formateada" + formateada);
             
             myDeserializedClass = JsonConvert.DeserializeObject<Root>(formateada);
             
