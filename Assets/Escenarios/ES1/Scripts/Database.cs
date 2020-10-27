@@ -335,6 +335,8 @@ public class Database : MonoBehaviour
         nUser.expMin = 0;
         nUser.avatarImg = "Default";
         nUser.expCurrent = 0;
+        nUser.quickGameLives = 3;
+        nUser.timeOfLastLiveLost = [];
         nUser.nivelJugador = 1;
         int[] niv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         nUser.niveles = niv;
