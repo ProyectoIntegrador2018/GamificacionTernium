@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class AvatarController : MonoBehaviour
 {
     public static string avatarName = "Default";
+    public static string avatarHelmet = "None";
+    public static string avatarGlasses = "None";
 
     public Image avatarImage;
     public Image avatarAnimation;
@@ -24,6 +26,8 @@ public class AvatarController : MonoBehaviour
             avatarAnimation.enabled = true;
             avatarImage.enabled = false;
             Database.setAvatar(avatarName);
+            Database.setHelmet(avatarHelmet);
+            Database.setGlasses(avatarGlasses);
             
             if (Database.getAvatar() == "Default")
             {           
@@ -37,6 +41,10 @@ public class AvatarController : MonoBehaviour
             else if (Database.getAvatar() == "Glass_av")
             {          
                 GlassAvatarAnim();
+            }
+            else
+            {
+                return;
             }
 
             Database.saveData();

@@ -46,6 +46,9 @@ public class User
     public int expMin;
     public int expCurrent;
     public string avatarImg;
+    public bool customAvatar;
+    public string avatarHelmet;
+    public string avatarGlasses;
     public int nivelJugador;
     public int[] niveles;
     public bool[] achivements;
@@ -87,7 +90,7 @@ public class Database : MonoBehaviour
         //Asumire que es este
         path = Application.persistentDataPath + "/database.json";
         //Debug.Log("Fabi Aqui");
-       // Debug.Log(path);
+        //Debug.Log(path);
 
         //Este estara mal
 
@@ -306,6 +309,9 @@ public class Database : MonoBehaviour
         nUser.expMax = 500;
         nUser.expMin = 0;
         nUser.avatarImg = "Default";
+        nUser.customAvatar = false;
+        nUser.avatarHelmet = "None";
+        nUser.avatarGlasses = "None";
         nUser.expCurrent = 0;
         nUser.nivelJugador = 1;
         int[] niv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -319,6 +325,35 @@ public class Database : MonoBehaviour
     public static string getAvatar()
     {
         return userBase.users[GlobalVariables.usernameId].avatarImg;
+    }
+
+    public static void setHelmet(string helmet)
+    {
+        userBase.users[GlobalVariables.usernameId].avatarHelmet = helmet;
+    }
+
+    public static string getHelmet()
+    {
+        return userBase.users[GlobalVariables.usernameId].avatarHelmet;
+    }
+
+    public static void setGlasses(string glasses)
+    {
+        userBase.users[GlobalVariables.usernameId].avatarGlasses = glasses;
+    }
+
+    public static string getGlasses()
+    {
+        return userBase.users[GlobalVariables.usernameId].avatarGlasses;
+    }
+    public static bool getCustomAvatar()
+    {
+        return userBase.users[GlobalVariables.usernameId].customAvatar;
+    }
+
+    public static void setCustomAvatar(bool customAvatar)
+    {
+        userBase.users[GlobalVariables.usernameId].customAvatar = customAvatar;
     }
 
     public static int getCurrentAchivements(){

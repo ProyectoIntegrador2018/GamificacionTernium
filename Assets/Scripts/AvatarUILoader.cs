@@ -10,6 +10,16 @@ public class AvatarUILoader : MonoBehaviour
     public Sprite female_av;
     public Sprite glass_av;
 
+    public Image customAvatarStand_hat;
+    public Image customAvatarStand_Glasses;
+    public Sprite CustomAvatar;
+    public Sprite CustomGlasses;
+    public Sprite YellowCustomHelmet;
+    public Sprite RedCustomHelmet;
+    public Sprite GreenCustomHelmet;
+    public Sprite Empty;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,24 +30,66 @@ public class AvatarUILoader : MonoBehaviour
     void Update()
     {
         DisplayAvatarImage();
+
     }
 
 
     void DisplayAvatarImage()
     {
-        if(Database.getAvatar() == "Default")
+        if (!Database.getCustomAvatar())
         {
-            stand.sprite = stdr_av;
-        }
-        else if (Database.getAvatar() == "Female_av")
-        {
-            stand.sprite = female_av;
-        }
-        else if (Database.getAvatar() == "Glass_av")
-        {
-            stand.sprite = glass_av;
-        }
+            if (Database.getAvatar() == "Default")
+            {
+                stand.sprite = stdr_av;
+                customAvatarStand_hat.sprite = Empty;
+                customAvatarStand_Glasses.sprite = Empty;
 
+            }
+            else if (Database.getAvatar() == "Female_av")
+            {
+                stand.sprite = female_av;
+                customAvatarStand_hat.sprite = Empty;
+                customAvatarStand_Glasses.sprite = Empty;
+            }
+            else if (Database.getAvatar() == "Glass_av")
+            {
+                stand.sprite = glass_av;
+                customAvatarStand_hat.sprite = Empty;
+                customAvatarStand_Glasses.sprite = Empty;
+            }
+        }
+        else
+        {
+            stand.sprite = CustomAvatar;
+            if(Database.getGlasses() == "SunGlasses")
+            {
+                customAvatarStand_Glasses.sprite = CustomGlasses;
+            }
+            else
+            {
+                customAvatarStand_Glasses.sprite = Empty;
+            }
+
+            if (Database.getHelmet() == "Yellow")
+            {
+                customAvatarStand_hat.sprite = YellowCustomHelmet;
+            }
+            else if (Database.getHelmet() == "Red")
+            {
+                customAvatarStand_hat.sprite = RedCustomHelmet;
+            }
+            else if (Database.getHelmet() == "Green")
+            {
+                customAvatarStand_hat.sprite = GreenCustomHelmet;
+            }
+            else
+            {
+                customAvatarStand_hat.sprite = Empty;
+            }
+
+            //Database.getHelmet();
+
+        }
     }
 
 }
