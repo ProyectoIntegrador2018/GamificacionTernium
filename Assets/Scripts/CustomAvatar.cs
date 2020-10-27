@@ -17,12 +17,12 @@ public class CustomAvatar : MonoBehaviour
      
 
         });
-
+        /*
         closeAvatarCustom.onClick.AddListener(delegate {
             avatarCanvas.SetActive(false);
 
 
-        });
+        });*/
     }
 
     // Update is called once per frame

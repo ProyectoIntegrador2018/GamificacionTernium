@@ -18,9 +18,11 @@ public class ChangeAvatar : MonoBehaviour
     public Sprite customAvatarHat_red;
     public Sprite customAvatarHat_green;
     public Sprite glasses;
+    public Sprite empty;
 
     public Image avatarAnimation;
     public Image avatar;
+    public static bool flag;
 
 
 
@@ -28,7 +30,7 @@ public class ChangeAvatar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        flag = false;
 
         GetComponent<Button>().onClick.AddListener(() => {
          // 
@@ -39,27 +41,31 @@ public class ChangeAvatar : MonoBehaviour
           {
               stand.sprite = stdr_av;       
               AvatarController.avatarName = "Default";
-                Database.setCustomAvatar(false);
+              flag = true;
+              Database.setCustomAvatar(false);
            
             }
           else if (this.name == "Avatar2_Stand ")
           {
               stand.sprite = female_av;       
               AvatarController.avatarName = "Female_av";
-                Database.setCustomAvatar(false);
+              flag = true;
+              Database.setCustomAvatar(false);
                 
             }
           else if (this.name == "Avatar3_Stand ")
           {
               stand.sprite = glass_av;
               AvatarController.avatarName = "Glass_av";
-                Database.setCustomAvatar(false);
+              flag = true;
+              Database.setCustomAvatar(false);
                
             }
 
           else if (this.name == "ItemStand_1")
           {
-                customAvatarStand_hat.sprite = customAvatarHat_yellow;
+                flag = true;
+                customAvatarStand_hat.sprite = customAvatarHat_yellow;         
                 AvatarController.avatarHelmet = "Yellow";
 
 
@@ -67,6 +73,7 @@ public class ChangeAvatar : MonoBehaviour
           else if (this.name == "ItemStand_2")
             {
                 customAvatarStand_hat.sprite = customAvatarHat_red;
+                flag = true;
                 AvatarController.avatarHelmet = "Red";
 
 
@@ -74,6 +81,7 @@ public class ChangeAvatar : MonoBehaviour
             else if (this.name == "ItemStand_3")
             {
                 customAvatarStand_hat.sprite = customAvatarHat_green;
+                flag = true;
                 AvatarController.avatarHelmet = "Green";
 
 
@@ -81,11 +89,20 @@ public class ChangeAvatar : MonoBehaviour
             else if (this.name == "ItemStand_4")
             {
              
-                   customAvatarStand_Glasses.sprite = glasses;
-                   AvatarController.avatarGlasses = "SunGlasses";
+                customAvatarStand_Glasses.sprite = glasses;
+                flag = true;
+                AvatarController.avatarGlasses = "SunGlasses";
                 
 
 
+            }
+            else if(this.name == "ItemStand_Reset")
+            {
+                customAvatarStand_hat.sprite = empty;
+                customAvatarStand_Glasses.sprite = empty;
+                flag = true;
+                AvatarController.avatarGlasses = "None";
+                AvatarController.avatarHelmet = "None";
             }
 
 
@@ -114,7 +131,30 @@ public class ChangeAvatar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Database.getCustomAvatar())
+        {
+            if (Database.getHelmet() == "Yellow" && !flag)
+            {
+                customAvatarStand_hat.sprite = customAvatarHat_yellow;
+            }
+            else if (Database.getHelmet() == "Red" && !flag)
+            {
+                customAvatarStand_hat.sprite = customAvatarHat_red;
+            }
+            else if (Database.getHelmet() == "Green" && !flag)
+            {
+                customAvatarStand_hat.sprite = customAvatarHat_green;
+            }
+
+
+            if (Database.getGlasses() == "SunGlasses" && !flag)
+            {
+                customAvatarStand_Glasses.sprite = glasses;
+            }
+        }
+      
+
+
     }
 
 

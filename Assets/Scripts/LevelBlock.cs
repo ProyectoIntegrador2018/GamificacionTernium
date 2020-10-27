@@ -30,6 +30,6 @@ public class LevelBlock : MonoBehaviour
             item.interactable = true;
             itemHolder.sprite = itemDesbloqueable;
         }
-        Debug.Log(Database.getNivelJugador());
+       // Debug.Log(Database.getNivelJugador());
     }
 }

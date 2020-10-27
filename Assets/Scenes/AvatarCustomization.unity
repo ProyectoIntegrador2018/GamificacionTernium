@@ -977,12 +977,16 @@ MonoBehaviour:
   stdr_av: {fileID: 21300000, guid: 283fca4d382d6fe4dab93ffb7527a03a, type: 3}
   female_av: {fileID: 21300000, guid: a480852449df2e84cb6bc0b7a1e4df71, type: 3}
   glass_av: {fileID: 21300000, guid: 3251e4e3f3c9aa84e8116044a8a542ec, type: 3}
-  customAvatarStand_hat: {fileID: 0}
-  customAvatarStand_Glasses: {fileID: 0}
-  customAvatarHat_yellow: {fileID: 0}
-  customAvatarHat_red: {fileID: 0}
-  customAvatarHat_green: {fileID: 0}
-  glasses: {fileID: 0}
+  customAvatarStand_hat: {fileID: 1214747136}
+  customAvatarStand_Glasses: {fileID: 42265497}
+  customAvatarHat_yellow: {fileID: 21300000, guid: c508718319d4bc342b09ff4bbee3c41c,
+    type: 3}
+  customAvatarHat_red: {fileID: 21300000, guid: 1eb68027900ca9043b57603fec8aa3b2,
+    type: 3}
+  customAvatarHat_green: {fileID: 21300000, guid: 7c77b2a0dce54ca43ac3d68b9bb7a983,
+    type: 3}
+  glasses: {fileID: 21300000, guid: 0845c6b4ad8066742a58ac7798ba97b5, type: 3}
+  empty: {fileID: 21300000, guid: 4ec8d370e66e1da4dad2b5de330c5eed, type: 3}
   avatarAnimation: {fileID: 1873615663}
   avatar: {fileID: 103191108}
 --- !u!1 &366264906
@@ -1366,6 +1370,7 @@ MonoBehaviour:
   customAvatarHat_green: {fileID: 21300000, guid: 4b869689f12790c4b9a52ee9b72f7ae1,
     type: 3}
   glasses: {fileID: 21300000, guid: 0845c6b4ad8066742a58ac7798ba97b5, type: 3}
+  empty: {fileID: 21300000, guid: 4ec8d370e66e1da4dad2b5de330c5eed, type: 3}
   avatarAnimation: {fileID: 1873615663}
   avatar: {fileID: 103191108}
 --- !u!114 &652643122
@@ -2274,6 +2279,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102331425}
   m_CullTransparentMesh: 0
+--- !u!1 &1110807435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1110807436}
+  - component: {fileID: 1110807438}
+  - component: {fileID: 1110807437}
+  m_Layer: 5
+  m_Name: Item
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1110807436
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110807435}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1232658282}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 70, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1110807437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110807435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: aa9b0bb576c12dc4dbf6edb48913a8de, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1110807438
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110807435}
+  m_CullTransparentMesh: 0
 --- !u!1 &1117674809
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,6 +2821,153 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214747134}
+  m_CullTransparentMesh: 0
+--- !u!1 &1232658281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1232658282}
+  - component: {fileID: 1232658286}
+  - component: {fileID: 1232658285}
+  - component: {fileID: 1232658284}
+  - component: {fileID: 1232658283}
+  m_Layer: 5
+  m_Name: ItemStand_Reset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1232658282
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232658281}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1110807436}
+  m_Father: {fileID: 1706189436}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -578, y: -239}
+  m_SizeDelta: {x: 210, y: 210}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1232658283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232658281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f2187ce6da4b44a98ef79a84fe9aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stand: {fileID: 103191108}
+  stdr_av: {fileID: 21300000, guid: 283fca4d382d6fe4dab93ffb7527a03a, type: 3}
+  female_av: {fileID: 21300000, guid: a480852449df2e84cb6bc0b7a1e4df71, type: 3}
+  glass_av: {fileID: 21300000, guid: 3251e4e3f3c9aa84e8116044a8a542ec, type: 3}
+  customAvatarStand_hat: {fileID: 1214747136}
+  customAvatarStand_Glasses: {fileID: 42265497}
+  customAvatarHat_yellow: {fileID: 21300000, guid: c508718319d4bc342b09ff4bbee3c41c,
+    type: 3}
+  customAvatarHat_red: {fileID: 21300000, guid: 1eb68027900ca9043b57603fec8aa3b2,
+    type: 3}
+  customAvatarHat_green: {fileID: 21300000, guid: 4b869689f12790c4b9a52ee9b72f7ae1,
+    type: 3}
+  glasses: {fileID: 21300000, guid: 0845c6b4ad8066742a58ac7798ba97b5, type: 3}
+  empty: {fileID: 21300000, guid: 4ec8d370e66e1da4dad2b5de330c5eed, type: 3}
+  avatarAnimation: {fileID: 1873615663}
+  avatar: {fileID: 103191108}
+--- !u!114 &1232658284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232658281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1232658285}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1232658285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232658281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a59e22465841f494c8be65a1e5884795, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1232658286
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232658281}
   m_CullTransparentMesh: 0
 --- !u!1 &1250501570
 GameObject:
@@ -3346,12 +3571,16 @@ MonoBehaviour:
   stdr_av: {fileID: 21300000, guid: 283fca4d382d6fe4dab93ffb7527a03a, type: 3}
   female_av: {fileID: 21300000, guid: a480852449df2e84cb6bc0b7a1e4df71, type: 3}
   glass_av: {fileID: 21300000, guid: 3251e4e3f3c9aa84e8116044a8a542ec, type: 3}
-  customAvatarStand_hat: {fileID: 0}
-  customAvatarStand_Glasses: {fileID: 0}
-  customAvatarHat_yellow: {fileID: 0}
-  customAvatarHat_red: {fileID: 0}
-  customAvatarHat_green: {fileID: 0}
-  glasses: {fileID: 0}
+  customAvatarStand_hat: {fileID: 1214747136}
+  customAvatarStand_Glasses: {fileID: 42265497}
+  customAvatarHat_yellow: {fileID: 21300000, guid: c508718319d4bc342b09ff4bbee3c41c,
+    type: 3}
+  customAvatarHat_red: {fileID: 21300000, guid: 1eb68027900ca9043b57603fec8aa3b2,
+    type: 3}
+  customAvatarHat_green: {fileID: 21300000, guid: 7c77b2a0dce54ca43ac3d68b9bb7a983,
+    type: 3}
+  glasses: {fileID: 21300000, guid: 0845c6b4ad8066742a58ac7798ba97b5, type: 3}
+  empty: {fileID: 21300000, guid: 4ec8d370e66e1da4dad2b5de330c5eed, type: 3}
   avatarAnimation: {fileID: 1873615663}
   avatar: {fileID: 103191108}
 --- !u!1 &1616819671
@@ -3512,6 +3741,7 @@ RectTransform:
   - {fileID: 2079440390}
   - {fileID: 935630027}
   - {fileID: 228256393}
+  - {fileID: 1232658282}
   m_Father: {fileID: 1616819676}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3533,7 +3763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1981132, g: 0.13176396, b: 0.13176396, a: 1}
+  m_Color: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3943,6 +4173,7 @@ MonoBehaviour:
   customAvatarHat_green: {fileID: 21300000, guid: 4b869689f12790c4b9a52ee9b72f7ae1,
     type: 3}
   glasses: {fileID: 21300000, guid: 0845c6b4ad8066742a58ac7798ba97b5, type: 3}
+  empty: {fileID: 21300000, guid: 4ec8d370e66e1da4dad2b5de330c5eed, type: 3}
   avatarAnimation: {fileID: 1873615663}
   avatar: {fileID: 103191108}
 --- !u!114 &1759493940
@@ -4255,6 +4486,7 @@ MonoBehaviour:
   customAvatarHat_green: {fileID: 21300000, guid: 4b869689f12790c4b9a52ee9b72f7ae1,
     type: 3}
   glasses: {fileID: 21300000, guid: 0845c6b4ad8066742a58ac7798ba97b5, type: 3}
+  empty: {fileID: 21300000, guid: 4ec8d370e66e1da4dad2b5de330c5eed, type: 3}
   avatarAnimation: {fileID: 1873615663}
   avatar: {fileID: 103191108}
 --- !u!114 &1959520227
@@ -4475,6 +4707,7 @@ MonoBehaviour:
   customAvatarHat_green: {fileID: 21300000, guid: 4b869689f12790c4b9a52ee9b72f7ae1,
     type: 3}
   glasses: {fileID: 21300000, guid: 0845c6b4ad8066742a58ac7798ba97b5, type: 3}
+  empty: {fileID: 21300000, guid: 4ec8d370e66e1da4dad2b5de330c5eed, type: 3}
   avatarAnimation: {fileID: 1873615663}
   avatar: {fileID: 103191108}
 --- !u!114 &2079440392
@@ -4742,12 +4975,16 @@ MonoBehaviour:
   stdr_av: {fileID: 21300000, guid: 283fca4d382d6fe4dab93ffb7527a03a, type: 3}
   female_av: {fileID: 21300000, guid: a480852449df2e84cb6bc0b7a1e4df71, type: 3}
   glass_av: {fileID: 21300000, guid: 3251e4e3f3c9aa84e8116044a8a542ec, type: 3}
-  customAvatarStand_hat: {fileID: 0}
-  customAvatarStand_Glasses: {fileID: 0}
-  customAvatarHat_yellow: {fileID: 0}
-  customAvatarHat_red: {fileID: 0}
-  customAvatarHat_green: {fileID: 0}
-  glasses: {fileID: 0}
+  customAvatarStand_hat: {fileID: 1214747136}
+  customAvatarStand_Glasses: {fileID: 42265497}
+  customAvatarHat_yellow: {fileID: 21300000, guid: c508718319d4bc342b09ff4bbee3c41c,
+    type: 3}
+  customAvatarHat_red: {fileID: 21300000, guid: 1eb68027900ca9043b57603fec8aa3b2,
+    type: 3}
+  customAvatarHat_green: {fileID: 21300000, guid: 7c77b2a0dce54ca43ac3d68b9bb7a983,
+    type: 3}
+  glasses: {fileID: 21300000, guid: 0845c6b4ad8066742a58ac7798ba97b5, type: 3}
+  empty: {fileID: 21300000, guid: 4ec8d370e66e1da4dad2b5de330c5eed, type: 3}
   avatarAnimation: {fileID: 1873615663}
   avatar: {fileID: 103191108}
 --- !u!114 &2119991755
