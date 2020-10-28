@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 // Created by: Hamza Herbou        (mobile games developer)
 // email     : hamza95herbou@gmail.com
@@ -15,7 +16,7 @@ public class Toast : MonoBehaviour {
 
 	//public GameObject toastObject;
 	public static Toast Instance;
-	[SerializeField] Text toastText = null;
+	public TextMeshProUGUI toastText;
 	[SerializeField] Animator anim = null;
 
 	public enum ToastColor{Dark,Red,Green,Blue,Magenta,Pink}
