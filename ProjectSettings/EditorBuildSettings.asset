@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/login.unity
     guid: d6227ea42640b64459d5bfdbaf423a5f
   - enabled: 1
-    path: Assets/Overlay/OV3/Scenes/createUser.unity
-    guid: ca8893ab73bd9464d9897bd9e05e4af1
-  - enabled: 1
     path: Assets/Scenes/Historial.unity
     guid: f70925e095a731341913c00e728ab680
   - enabled: 1
@@ -26,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Overlay/OV2/Scenes/Instrucciones-4.unity
     guid: e44c4f080c25c41988cd5b9e72e087b9
-  - enabled: 1
-    path: Assets/Overlay/OV1/Scenes/createUser.unity
-    guid: db74dd7cd6832de48803a8c9cfbc896e
   - enabled: 1
     path: Assets/Overlay/OV1/Scenes/login.unity
     guid: f05aef2c7a11ead4da2cadef0de0421f
