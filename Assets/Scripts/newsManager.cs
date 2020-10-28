@@ -2,18 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
+using UnityEngine.SceneManagement;
 
 public class newsManager : MonoBehaviour
 {
     public GameObject newsPrefab;
+    public GameObject crearBtn;
     private Text[] textArray;   
     private NewsItem[] news;
+    public static string path;
 
     // Start is called before the first frame update
     void Start()
     {
-        news = ToastManager.getNews();
+        path = Application.persistentDataPath + "/events.json";
+        //news = ToastManager.getNews();
+        var myTextAsset = File.ReadAllText(Application.persistentDataPath + "/events.json"); 
+            
+        News deserealized = JsonUtility.FromJson<News>(myTextAsset);
+        news = deserealized.newsList;
+        
         createNewsList();
+
+        if (!Database.isAdmin(GlobalVariables.usernameId)) {
+            crearBtn.SetActive(false);
+        }
+        else {
+            crearBtn.SetActive(true);
+        }
     }
 
     void createNewsList(){
@@ -31,6 +48,14 @@ public class newsManager : MonoBehaviour
         textArray[0].text = title;
         textArray[1].text = descr;
         textArray[2].text = date;
+    }
+
+    public void returnToMainMenu(){
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void goToCreateNews(){
+        SceneManager.LoadScene("createNews");
     }
 
     // Update is called once per frame
