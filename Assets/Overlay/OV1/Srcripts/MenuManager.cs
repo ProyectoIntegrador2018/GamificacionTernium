@@ -83,6 +83,10 @@ public class MenuManager : MonoBehaviour
             GameModesMenu.SetActive(true);
     }
 
+    public void hideGameMode(){
+        GameModesMenu.SetActive(false);
+    }
+
     public void jugarClasico(){
         //Jugar.enabled = false;
             toast.SetActive(false);

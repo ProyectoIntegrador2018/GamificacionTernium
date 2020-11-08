@@ -25,6 +25,16 @@ public class News{
         auxList[len] = x;
         newsList = auxList;
     }
+
+    public void Delete(int index){
+        var copiedList = new List<NewsItem>(newsList);
+        copiedList.RemoveAt(index);
+        newsList = copiedList.ToArray();
+    }
+
+    public void Patch(int index, NewsItem y){
+        newsList[index] = y;
+    }
 }
 
 public class ToastManager : MonoBehaviour
