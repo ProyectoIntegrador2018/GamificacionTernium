@@ -136,18 +136,18 @@ public class BtnMangment : MonoBehaviour
 
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 7) {
-                    DialogueText.text = Database.getFalloTexto(0, 1)[0];
+                    DialogueText.text = Database.getFalloTexto(0, 5)[0];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 1)[0]);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 5)[0]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
 
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 7) {
-                    DialogueText.text = Database.getFalloTexto(0, 1)[1];
+                    DialogueText.text = Database.getFalloTexto(0, 5)[1];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 1)[1]);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 5)[1]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -156,7 +156,7 @@ public class BtnMangment : MonoBehaviour
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 7) {
                     DialogueText.text = Database.getFalloTexto(0, 1)[2];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 1)[2]);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 5)[2]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
