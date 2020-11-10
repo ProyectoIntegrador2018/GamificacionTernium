@@ -2,9 +2,9 @@
 
 Here lies the source code for the game “Misiones de mantenimiento” for Ternium, its purpose is to educate employees in Ternium's most common and complicated situations in a fun and addictive way.
 
-The game will consist in real life situations where the user will have to select the correct answer to the problem the game will present, fostering self-learning and retaining the information learned. The game has a simple high score and achievement system to encourage the players to do well in the game. The system will be accessed by using the username and password that the administrator provides.
+The game will consist in real life situations where the user will have to select the correct answer to the problem the game will present, fostering self-learning and retaining the information learned. The game has a simple high score and achievement system to encourage the players to do well in the game. The system will be accessed by using the username and password that the administrator provides. Among other features, in-game and in-company events will be displayed through a news board and the players can identify themselves with a unique avatar. 
 
- The first version was elaborated during February-June 2020 semester by the Ol' team and picked up by the Da Team to improve some features and add new functionality proposed by the new team.
+ The first version was elaborated during February-June 2020 semester by the Ol' team and picked up by the Da Team to improve some features and add new functionality.
 
 
 ## Table of contents
@@ -53,8 +53,6 @@ The game will consist in real life situations where the user will have to select
 | Unity | 2019.3.6f1     |
 
 ### Management tools
-
-You should ask for access to this tools if you don't have it already:
 
 * [Github for version control](https://github.com/)
 * [Trello for product backlog](https://trello.com/)

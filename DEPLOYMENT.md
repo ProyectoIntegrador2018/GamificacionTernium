@@ -4,6 +4,7 @@ Misiones de mantenimiento
 - [Deployment](#deployment)
   - [Windows](#windows)
   - [Unity](#unity)
+  - [HTML5](#html5)
 
 
 Windows
@@ -38,3 +39,7 @@ If you cloned the repository:
 4. The project will be added to Unity Hub list of projects, click on it, this will launch Unity and start loading the project.
 5. Type "login" on the search bar of the "Project" window, select the one located at Assets/Overlay/OV3/Scenes/login.unity, open it
 6. Click "▶" and start playing.
+
+HTML5
+-------
+1. A HTML5 prototype (still in development, several bugs should be expected) is available at: https://xaaniyaro.itch.io/misionesdemantenimiento

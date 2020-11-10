@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-
-    public Button Jugar;
-    public Button Historial;
-    public Button Trofeos;
-    public Button Salir;
+    public GameObject jugarBtn;
+    public GameObject historialBtn;
+    public GameObject trofeosBtn;
+    public GameObject salirBtn;
+    public GameObject eventsBtn;
     public GameObject ProximaMission;
     public GameObject toast;
+    public GameObject avatarBtn;
     public Image turnImage;
     public Sprite morningImg;
     public Sprite noonImg;
@@ -43,6 +44,11 @@ public class MenuManager : MonoBehaviour
         }
         else {
             turnImage.enabled = false;
+            trofeosBtn.SetActive(false);
+            historialBtn.SetActive(false);
+            avatarBtn.SetActive(false);
+            toast.SetActive(false);
+            eventsBtn.SetActive(true);
         }
     
     }
@@ -70,19 +76,15 @@ public class MenuManager : MonoBehaviour
         }
         
         // mensajeBienvenida.text = "Bonito día, " + GlobalVariables.username + "! Te faltan ganar" + GlobalVariables.getTrophies().ToString() + " de 10 trofeos";
+    }
 
-        // El checar que los botones sean presionados, y que pasa si lo son
-
+    public void jugarClicked(){
         //Presionar boton de jugar para abrir menu de modos de juego
-        Jugar.onClick.AddListener(delegate {
-            //Jugar.enabled = false;
-
             GameModesMenu.SetActive(true);
-            });
+    }
 
-        //Modo de juego de misiones
-        JugarMisiones.onClick.AddListener(delegate {
-            //Jugar.enabled = false;
+    public void jugarClasico(){
+        //Jugar.enabled = false;
             toast.SetActive(false);
             if (FirstClick)
             {
@@ -112,27 +114,30 @@ public class MenuManager : MonoBehaviour
 
                 }
             }
-        });
+    }
 
-
-
-        //Modo de juego de misiones
-        JugarModoRapido.onClick.AddListener(delegate {
+    public void jugarRapido(){
             //Jugar.enabled = false;
             toast.SetActive(false);
             quickMode = true;
             GlobalVariables.lives = 5;
             JugarMision();
+    }
 
+    public void trofeosClicked(){
+        CambiarScene("Achivements");
+    }
 
-        });
+    public void historialClicked(){
+        CambiarScene("Historial");
+    }
 
+    public void salirClicked(){
+        CambiarScene("No");
+    }
 
-
-        //Historial.onClick.AddListener(delegate { CambiarScene(""); });
-        Trofeos.onClick.AddListener(delegate { CambiarScene("Achivements"); });
-        Historial.onClick.AddListener(delegate {CambiarScene("Historial");});
-        Salir.onClick.AddListener(delegate { CambiarScene("No"); });
+    public void eventsClicked(){
+        CambiarScene("News");
     }
 
     void CambiarScene(string Cambio)
