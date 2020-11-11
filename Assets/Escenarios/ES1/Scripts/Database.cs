@@ -217,9 +217,11 @@ public class Database : MonoBehaviour
         foreach (User user in userBase.users) {
             if(user.username == username && user.password == pass) {
                 // Debug.Log("aver si encontramos algo ");
+                Login.flag = true;
                 return user.id;
             }
         }
+        Login.flag = false;
         return -1;
     }
 

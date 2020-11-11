@@ -8,7 +8,7 @@ public class CreacionDeUsuario : MonoBehaviour
 {
     // Start is called before the first frame update
     public Button Login;
-    public Button Cancel;
+   
     public Text UsernameText;
     public InputField PasswordText;
     public Dropdown turnDropDown;
@@ -20,7 +20,7 @@ public class CreacionDeUsuario : MonoBehaviour
 
     void Start() {
         Login.onClick.AddListener(delegate {createUser();});
-        Cancel.onClick.AddListener(delegate {returnLogin();});
+      
         
     }
 
