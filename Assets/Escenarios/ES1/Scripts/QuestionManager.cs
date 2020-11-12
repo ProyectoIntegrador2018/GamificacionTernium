@@ -123,6 +123,7 @@ public class QuestionManager : MonoBehaviour {
         //Debug.Log(GlobalVariables.Caso);
 
         soundEffect = GetComponent<AudioSource>();
+        soundEffect.volume = Database.getVolumenSonidos(GlobalVariables.usernameId);
 
         int questionIndex;
         int missionIndex = 0;

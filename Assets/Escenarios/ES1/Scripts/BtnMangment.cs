@@ -40,8 +40,8 @@ public class BtnMangment : MonoBehaviour
 
     private void Start()
     {
-
         soundEffect = GetComponent<AudioSource>();
+        soundEffect.volume = Database.getVolumenSonidos(GlobalVariables.usernameId);
     }
     public bool giveAnswer()
     {
@@ -166,7 +166,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 7) {
                     displayWrongAnswerAudio();
-                    DialogueText.text = Database.getFalloTexto(0, 1)[2];
+                    DialogueText.text = Database.getFalloTexto(0, 5)[2];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(0, 5)[1]);
                     //GameMind.addPoints(-100);
