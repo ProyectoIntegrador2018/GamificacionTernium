@@ -27,6 +27,7 @@ public class BackgroundMusic : MonoBehaviour
     private void Start()
     {
         soundEffect = GetComponent<AudioSource>();
+        soundEffect.volume = Database.getVolumenMusica(GlobalVariables.usernameId);
     }
 
     private void Update()

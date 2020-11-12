@@ -54,6 +54,9 @@ public class User
     public string avatarHelmet;
     public string avatarGlasses;
     public int nivelJugador;
+    public float volumenMusica;
+    public float volumenSonidos;
+    public bool eventosActivos;
     public int[] niveles;
     public bool[] achivements;
     public bool[] started;
@@ -116,6 +119,24 @@ public class Database : MonoBehaviour
 
     }
 
+    public static float getVolumenMusica(int userId) {
+        return userBase.users[userId].volumenMusica;
+    }
+    public static void setVolumenMusica(int userId, float value) {
+        userBase.users[userId].volumenMusica = value;
+    }
+    public static float getVolumenSonidos(int userId) {
+        return userBase.users[userId].volumenSonidos;
+    }
+    public static void setVolumenSonidos(int userId, float value) {
+        userBase.users[userId].volumenSonidos = value;
+    }
+    public static bool getEventosActivos(int userId) {
+        return userBase.users[userId].eventosActivos;
+    }
+    public static void setEventosActivos(int userId, bool value) {
+        userBase.users[userId].eventosActivos = value;
+    }
     public static void setFirstTime(int userId) {
         userBase.users[userId].timeOfLastLiveLost[0] = DateTime.Now.ToString();
     }
@@ -313,6 +334,9 @@ public class Database : MonoBehaviour
     public static void setTutorial() {
         userBase.users[GlobalVariables.usernameId].tutorial = false;
     }
+    public static void setTutorial(bool value) {
+        userBase.users[GlobalVariables.usernameId].tutorial = value;
+    }
     
     public static void makeUser(string name, string password,string turn,string isAdmin) {
         foreach (User user in userBase.users) {
@@ -346,6 +370,9 @@ public class Database : MonoBehaviour
         nUser.quickGameLives = 3;
         nUser.timeOfLastLiveLost = new List<string>();
         nUser.nivelJugador = 1;
+        nUser.volumenMusica = 1.0f;
+        nUser.volumenSonidos = 1.0f;
+        nUser.eventosActivos = true;
         int[] niv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         nUser.niveles = niv;
         bool[] ach = {false, false, false, false, false, false, false, false, false, false, false };

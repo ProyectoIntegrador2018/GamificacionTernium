@@ -24,7 +24,7 @@ public class Toast : MonoBehaviour {
 	void Awake () {Instance = this;}
 
 	void Start () {
-		
+		this.enabled = Database.getEventosActivos(GlobalVariables.usernameId);
 	}
 
 	void Update(){
