@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System.IO;
 using UnityEngine;
+using System.Linq;
 
 [System.Serializable]
 public class NewsItem{
@@ -26,9 +27,10 @@ public class News{
         newsList = auxList;
     }
 
-    public void Delete(int index){
+    public void Delete(int id){
         var copiedList = new List<NewsItem>(newsList);
-        copiedList.RemoveAt(index);
+        //copiedList.RemoveAt(index);
+        copiedList.RemoveAll(s => s.id == id);
         newsList = copiedList.ToArray();
     }
 
@@ -62,18 +64,25 @@ public class ToastManager : MonoBehaviour
         }
         // Repetir un procedimiento
         // Params: Nombre de la funcion, iniciar a los x segundos, repetir cada x segundos 
+        
         InvokeRepeating("makeToast", 2.0f, 4.0f);
     }
 
-    void makeToast(){
-        if(i >= news.newsList.Length){
-            i = 0;
-            Toast.Instance.Show(news.newsList[i].titulo, 3.0f);
+    void makeToast(){ 
+        //Debug.Log(news.newsList.Length);
+        if (news.newsList == null || news.newsList.Length == 0){
+            CancelInvoke("makeToast");
         }
         else{
-            Toast.Instance.Show(news.newsList[i].titulo, 3.0f);
+            if(i >= news.newsList.Length){
+                i = 0;
+                Toast.Instance.Show(news.newsList[i].titulo, 3.0f);
+            }
+            else{
+                Toast.Instance.Show(news.newsList[i].titulo, 3.0f);
+            }
+            i++; 
         }
-        i++;        
     }
 
     public static void updateNews(News param){
