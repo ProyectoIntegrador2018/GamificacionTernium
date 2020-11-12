@@ -176,6 +176,7 @@ public class GameMind : MonoBehaviour {
             GlobalVariables.currentQuickGameLives = Database.getCurrentLives(id);
             SceneManager.LoadScene("Menu");
         }
+      
         // Debug.Log("this user has " + Database.getCurrentAchivements() + "achivmenets");
         // Database.makeUser("test11","test11");
     }
