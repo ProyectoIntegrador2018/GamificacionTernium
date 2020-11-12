@@ -40,8 +40,8 @@ public class BtnMangment : MonoBehaviour
 
     private void Start()
     {
-
         soundEffect = GetComponent<AudioSource>();
+        soundEffect.volume = Database.getVolumenSonidos(GlobalVariables.usernameId);
     }
     public bool giveAnswer()
     {

@@ -22,12 +22,13 @@ public class SettingsController : MonoBehaviour
         apagarEventos.isOn = Database.getEventosActivos(id);
         apagarTutorial.isOn = Database.getTutorial();
 
-        guardarCambios.onClick.AddListener( () => {
+        guardarCambios.onClick.AddListener(() => {
             Database.setVolumenMusica(id, Mathf.Round(volumenMusica.value * 100.0f) / 100.0f);
             Database.setVolumenSonidos(id, Mathf.Round(volumenSonidos.value * 100.0f) / 100.0f);
             Database.setEventosActivos(id, apagarEventos.isOn);
             Database.setTutorial(apagarTutorial.isOn);
             Database.saveData();
+            BackgroundMusic.instance.GetComponent<AudioSource>().volume = Mathf.Round(volumenMusica.value * 100.0f) / 100.0f;
         });
 
     }
