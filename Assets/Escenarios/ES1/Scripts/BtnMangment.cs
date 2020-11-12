@@ -154,7 +154,7 @@ public class BtnMangment : MonoBehaviour
 
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 7) {
-                    DialogueText.text = Database.getFalloTexto(0, 1)[2];
+                    DialogueText.text = Database.getFalloTexto(0, 5)[2];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(0, 5)[2]);
                     //GameMind.addPoints(-100);
