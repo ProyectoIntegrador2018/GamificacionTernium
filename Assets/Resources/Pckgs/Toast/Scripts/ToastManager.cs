@@ -37,6 +37,10 @@ public class News{
     public void Patch(int index, NewsItem y){
         newsList[index] = y;
     }
+
+    public int Size(){
+        return newsList.Length;
+    }
 }
 
 public class ToastManager : MonoBehaviour

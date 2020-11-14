@@ -1947,6 +1947,7 @@ MonoBehaviour:
   titleInput: {fileID: 1680034466}
   descrInput: {fileID: 352943040}
   succMess: {fileID: 69917168}
+  createButton: {fileID: 584454595}
 --- !u!4 &1162900775
 Transform:
   m_ObjectHideFlags: 0
