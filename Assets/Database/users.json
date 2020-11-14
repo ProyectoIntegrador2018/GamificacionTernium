@@ -14,6 +14,9 @@
             "timeOfLastLiveLost": [],
             "avatarImg": "Default",
             "nivelJugador": 1,
+            "volumenMusica": 1.0,
+            "volumenSonidos": 1.0,
+            "eventosActivos": true,
             "niveles": [
                 800,
                 900,
@@ -66,6 +69,9 @@
             "timeOfLastLiveLost": [],
             "avatarImg": "Female_av",
             "nivelJugador": 1,
+            "volumenMusica": 1.0,
+            "volumenSonidos": 1.0,
+            "eventosActivos": true,
             "niveles": [
                 300,
                 500,
@@ -118,6 +124,9 @@
             "timeOfLastLiveLost": [],
             "avatarImg": "Default",
             "nivelJugador": 1,
+            "volumenMusica": 1.0,
+            "volumenSonidos": 1.0,
+            "eventosActivos": true,
             "niveles": [
                 100,
                 100,
@@ -170,6 +179,9 @@
             "timeOfLastLiveLost": [],
             "avatarImg": "Default",
             "nivelJugador": 1,
+            "volumenMusica": 1.0,
+            "volumenSonidos": 1.0,
+            "eventosActivos": true,
             "niveles": [
                 0,
                 0,
@@ -222,6 +234,9 @@
             "timeOfLastLiveLost": [],
             "avatarImg": "Default",
             "nivelJugador": 1,
+            "volumenMusica": 1.0,
+            "volumenSonidos": 1.0,
+            "eventosActivos": true,
             "niveles": [
                 0,
                 0,
@@ -274,6 +289,9 @@
             "timeOfLastLiveLost": [],
             "avatarImg": "Default",
             "nivelJugador": 1,
+            "volumenMusica": 1.0,
+            "volumenSonidos": 1.0,
+            "eventosActivos": true,
             "niveles": [
                 0,
                 0,
@@ -326,6 +344,9 @@
             "timeOfLastLiveLost": [],
             "avatarImg": "Default",
             "nivelJugador": 1,
+            "volumenMusica": 1.0,
+            "volumenSonidos": 1.0,
+            "eventosActivos": true,
             "niveles": [
                 0,
                 0,
@@ -378,6 +399,9 @@
             "timeOfLastLiveLost": [],
             "avatarImg": "Default",
             "nivelJugador": 1,
+            "volumenMusica": 1.0,
+            "volumenSonidos": 1.0,
+            "eventosActivos": true,
             "niveles": [
                 0,
                 0,
@@ -430,6 +454,9 @@
             "timeOfLastLiveLost": [],
             "avatarImg": "Default",
             "nivelJugador": null,
+            "volumenMusica": 1.0,
+            "volumenSonidos": 1.0,
+            "eventosActivos": true,
             "niveles": null,
             "achivements": null,
             "started": null
@@ -448,6 +475,9 @@
             "timeOfLastLiveLost": [],
             "avatarImg": "Default",
             "nivelJugador": 2,
+            "volumenMusica": 1.0,
+            "volumenSonidos": 1.0,
+            "eventosActivos": true,
             "niveles": [
                 200,
                 0,
@@ -500,6 +530,9 @@
             "timeOfLastLiveLost": [],
             "avatarImg": "Default",
             "nivelJugador": 1,
+            "volumenMusica": 1.0,
+            "volumenSonidos": 1.0,
+            "eventosActivos": true,
             "niveles": [
                 0,
                 0,

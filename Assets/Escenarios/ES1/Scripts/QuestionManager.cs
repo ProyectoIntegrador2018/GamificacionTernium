@@ -29,10 +29,6 @@ public class QuestionManager : MonoBehaviour {
     bool Opt2;
     bool Opt3;
 
-    // Vidas que se van a quitar dependiendo del error
-    public int vidasFallo1;
-    public int vidasFallo2;
-
     // Esto es para que podamos definir a que pregunta brincamos, gracias al index, solo tenemos que ponerlas en el orden correcto
     // Esta es la escena que sigue, mas abajo se define cual sera
     string SigEscena;
@@ -127,6 +123,7 @@ public class QuestionManager : MonoBehaviour {
         //Debug.Log(GlobalVariables.Caso);
 
         soundEffect = GetComponent<AudioSource>();
+        soundEffect.volume = Database.getVolumenSonidos(GlobalVariables.usernameId);
 
         int questionIndex;
         int missionIndex = 0;
@@ -385,27 +382,27 @@ public class QuestionManager : MonoBehaviour {
         
         switch (Rand) {
             case 1:
-                Btn1.transform.localPosition = new Vector2(805, 112);
-                Btn2.transform.localPosition = new Vector2(805, -111);
-                Btn3.transform.localPosition = new Vector2(805, -335);
+                Btn1.transform.localPosition = new Vector2(0.8501587f, 223.5f);
+                Btn2.transform.localPosition = new Vector2(0.8501587f, -0.4999619f);
+                Btn3.transform.localPosition = new Vector2(0.8501587f, -223.5f);
                 break;
 
             case 3:
-                Btn2.transform.localPosition = new Vector2(805, 112);
-                Btn1.transform.localPosition = new Vector2(805, -111);
-                Btn3.transform.localPosition = new Vector2(805, -335);
+                Btn2.transform.localPosition = new Vector2(0.8501587f, 223.5f);
+                Btn1.transform.localPosition = new Vector2(0.8501587f, -0.4999619f);
+                Btn3.transform.localPosition = new Vector2(0.8501587f, -223.5f);
                 break;
 
             case 4:
-                Btn2.transform.localPosition = new Vector2(805, 112);
-                Btn3.transform.localPosition = new Vector2(805, -111);
-                Btn1.transform.localPosition = new Vector2(805, -335);
+                Btn2.transform.localPosition = new Vector2(0.8501587f, 223.5f);
+                Btn3.transform.localPosition = new Vector2(0.8501587f, -0.4999619f);
+                Btn1.transform.localPosition = new Vector2(0.8501587f, -223.5f);
                 break;
 
             case 5:
-                Btn3.transform.localPosition = new Vector2(805, 112);
-                Btn1.transform.localPosition = new Vector2(805, -111);
-                Btn2.transform.localPosition = new Vector2(805, -335);
+                Btn3.transform.localPosition = new Vector2(0.8501587f, 223.5f);
+                Btn1.transform.localPosition = new Vector2(0.8501587f, -0.4999619f);
+                Btn2.transform.localPosition = new Vector2(0.8501587f, -223.5f);
                 break;
 
             // Estos son para cuando solo hay 2 respuestas

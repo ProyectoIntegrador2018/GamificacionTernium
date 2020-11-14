@@ -27,8 +27,9 @@ public class BtnMangment : MonoBehaviour
     public GameObject item_3;
     public GameObject item_4;
 
-  
-
+    private AudioSource soundEffect;
+    public AudioClip correctAnwser;
+    public AudioClip wrongAnswer;
 
     private void Awake()
     {
@@ -37,6 +38,11 @@ public class BtnMangment : MonoBehaviour
         Shuffle();
     }
 
+    private void Start()
+    {
+        soundEffect = GetComponent<AudioSource>();
+        soundEffect.volume = Database.getVolumenSonidos(GlobalVariables.usernameId);
+    }
     public bool giveAnswer()
     {
         if ((item_1.transform.localPosition.y == 111f) &&
@@ -93,6 +99,7 @@ public class BtnMangment : MonoBehaviour
             {
                 if (giveAnswer())
                 {
+                    displayCorrectAnswerAudio();
                     DialogueText.text = Database.getTextoCorrecto(0, 1);
                     Debug.Log("correcto");
                  
@@ -109,7 +116,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (!giveAnswer())
                 {
-
+                    displayWrongAnswerAudio();
                     DialogueText.text = Database.getFalloTexto(0, 1)[0];
                     Debug.Log("incorrecto");
                     // Quita vida y suma puntos
@@ -129,6 +136,7 @@ public class BtnMangment : MonoBehaviour
             // Si la escena en juego es la P6
             if (SceneManager.GetActiveScene().name == "P6") {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 7) {
+                    displayCorrectAnswerAudio();
                 DialogueText.text = Database.getTextoCorrecto(0, 5);
                     // Suma puntos
                     GameMind.addPoints(Database.getPuntosPregunta(0, 5));
@@ -136,27 +144,31 @@ public class BtnMangment : MonoBehaviour
 
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 7) {
-                    DialogueText.text = Database.getFalloTexto(0, 1)[0];
+                    displayWrongAnswerAudio();
+                    DialogueText.text = Database.getFalloTexto(0, 5)[0];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 1)[0]);
+                   
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 5)[0]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
 
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 7) {
-                    DialogueText.text = Database.getFalloTexto(0, 1)[1];
+                    displayWrongAnswerAudio();
+                    DialogueText.text = Database.getFalloTexto(0, 5)[1];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 1)[1]);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 5)[1]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
 
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 7) {
-                    DialogueText.text = Database.getFalloTexto(0, 1)[2];
+                    displayWrongAnswerAudio();
+                    DialogueText.text = Database.getFalloTexto(0, 5)[2];
                     // Quita vida y suma puntos
-                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 1)[2]);
+                    GameMind.takeAwayLive(Database.getVidasPerdidas(0, 5)[1]);
                     //GameMind.addPoints(-100);
                     Solution();
                     showContinueButton();
@@ -167,6 +179,7 @@ public class BtnMangment : MonoBehaviour
             {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
+                    displayCorrectAnswerAudio();
                     DialogueText.text = Database.getTextoCorrecto(1, 2);
                     // Suma puntos
                     GameMind.addPoints(Database.getPuntosPregunta(1, 2));
@@ -175,6 +188,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = DialogueText.text = Database.getFalloTexto(1, 2)[0];
                     Debug.Log(GlobalVariables.pairAnswerSlot.Count);
                     // Quita vida y suma puntos
@@ -186,6 +200,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = DialogueText.text = Database.getFalloTexto(1, 2)[1];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(1, 2)[1]);
@@ -196,6 +211,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = DialogueText.text = Database.getFalloTexto(1, 2)[2];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(1, 2)[2]);
@@ -211,6 +227,7 @@ public class BtnMangment : MonoBehaviour
             {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 3)
                 {
+                    displayCorrectAnswerAudio();
                     DialogueText.text = Database.getTextoCorrecto(1, 4);
                     // Suma puntos
                     GameMind.addPoints(Database.getPuntosPregunta(1, 4));
@@ -219,6 +236,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = Database.getFalloTexto(1, 4)[0];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(1, 4)[0]);
@@ -229,6 +247,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 3)
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = Database.getFalloTexto(1, 4)[1];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(1, 4)[1]);
@@ -239,6 +258,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = Database.getFalloTexto(1, 4)[2];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(1, 4)[2]);
@@ -254,6 +274,7 @@ public class BtnMangment : MonoBehaviour
             {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
+                    displayCorrectAnswerAudio();
                     DialogueText.text = Database.getTextoCorrecto(2, 2);
                     // Suma puntos
                     GameMind.addPoints(Database.getPuntosPregunta(2, 2));
@@ -263,6 +284,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect")
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = Database.getFalloTexto(2, 2)[0];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(2, 2)[0]);
@@ -273,6 +295,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = Database.getFalloTexto(2, 2)[1];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(2, 2)[1]);
@@ -289,6 +312,7 @@ public class BtnMangment : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "ES4P4") {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
+                    displayCorrectAnswerAudio();
                     DialogueText.text = Database.getTextoCorrecto(3, 3);
                     // Suma puntos
                     GameMind.addPoints(Database.getPuntosPregunta(3, 3));
@@ -297,6 +321,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = Database.getFalloTexto(3, 3)[0];
                     Debug.Log(GlobalVariables.pairAnswerSlot.Count);
                     // Quita vida y suma puntos
@@ -309,6 +334,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 1)
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = Database.getFalloTexto(3, 3)[1];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(3, 3)[1]);
@@ -319,6 +345,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 1)
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = Database.getFalloTexto(3, 3)[2];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(3, 3)[2]);
@@ -334,6 +361,7 @@ public class BtnMangment : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "ES4P5") {
                 if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count == 3)
                 {
+                    displayCorrectAnswerAudio();
                     DialogueText.text = Database.getTextoCorrecto(3, 4);
                     // Suma puntos
                     GameMind.addPoints(Database.getPuntosPregunta(3, 4));
@@ -342,6 +370,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Correct" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = Database.getFalloTexto(3, 4)[0];
                     Debug.Log(GlobalVariables.pairAnswerSlot.Count);
                     // Quita vida y suma puntos
@@ -353,6 +382,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count == 3)
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = Database.getFalloTexto(3, 4)[1];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(3, 4)[1]);
@@ -363,6 +393,7 @@ public class BtnMangment : MonoBehaviour
                 }
                 else if (DragDrops.statusAnswer() == "Incorrect" && GlobalVariables.pairAnswerSlot.Count != 3)
                 {
+                    displayWrongAnswerAudio();
                     DialogueText.text = Database.getFalloTexto(3, 4)[2];
                     // Quita vida y suma puntos
                     GameMind.takeAwayLive(Database.getVidasPerdidas(3, 4)[2]);
@@ -464,6 +495,19 @@ public class BtnMangment : MonoBehaviour
             PosY[i] = Dummy.transform.localPosition.y;
         }
     }
+
+    //Funcion para sonar audio de respuestas correctas
+    void displayCorrectAnswerAudio()
+    {
+        soundEffect.PlayOneShot(correctAnwser);
+    }
+
+    //Funcion para sonar audio de respuestas correctas
+    void displayWrongAnswerAudio()
+    {
+        soundEffect.PlayOneShot(wrongAnswer);
+    }
+
 
     public void Solution()
     {

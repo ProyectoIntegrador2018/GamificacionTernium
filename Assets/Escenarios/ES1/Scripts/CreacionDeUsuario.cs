@@ -20,7 +20,7 @@ public class CreacionDeUsuario : MonoBehaviour
 
     void Start() {
         Login.onClick.AddListener(delegate {createUser();});
-        Cancel.onClick.AddListener(delegate {returnLogin();});
+      
         
     }
 
