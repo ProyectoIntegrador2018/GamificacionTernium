@@ -28,7 +28,7 @@ public class newsCreator : MonoBehaviour
 
         NewsItem newsObject = new NewsItem();
         news = ToastManager.getNews();
-        newsObject.id = UnityEngine.Random.Range(0, 50);
+        newsObject.id = UnityEngine.Random.Range(0, 1000);
         newsObject.titulo = titleInput.text;
         newsObject.descripcion = descrInput.text;
         newsObject.fecha = dateString;
