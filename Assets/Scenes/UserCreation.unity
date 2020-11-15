@@ -534,7 +534,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Login: {fileID: 94984103}
-  Cancel: {fileID: 2002166582}
   UsernameText: {fileID: 1239745865}
   PasswordText: {fileID: 1848358411}
   teamDropdown: {fileID: 1886352589}
