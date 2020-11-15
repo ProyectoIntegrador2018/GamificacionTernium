@@ -8,10 +8,10 @@ public class CreacionDeUsuario : MonoBehaviour
 {
     // Start is called before the first frame update
     public Button Login;
-   
-    public Text UsernameText;
+    public Button Cancel;
+    public InputField UsernameText;
     public InputField PasswordText;
-    public Dropdown turnDropDown;
+    public Dropdown teamDropdown;
     public GameObject popUp;
     public GameObject popUp_2;
     public Toggle adminToggle;
@@ -28,11 +28,13 @@ public class CreacionDeUsuario : MonoBehaviour
     public void createUser() {
         if (adminToggle.isOn == true)
         {
-            Database.makeUser(UsernameText.text, PasswordText.text, turnDropDown.options[turnDropDown.value].text, "admin");
+            Database.makeUser(UsernameText.text, PasswordText.text, teamDropdown.options[teamDropdown.value].text, "admin");
             if (available)
             {              
                 Database.saveData();
                 popUp.SetActive(true);
+                cleanInputs();
+                adminToggle.isOn = false;
             }
             else
             {
@@ -42,11 +44,12 @@ public class CreacionDeUsuario : MonoBehaviour
         }
         else
         {
-            Database.makeUser(UsernameText.text, PasswordText.text, turnDropDown.options[turnDropDown.value].text, "usuario");
+            Database.makeUser(UsernameText.text, PasswordText.text, teamDropdown.options[teamDropdown.value].text, "usuario");
             if (available)
             {    
                 Database.saveData();
                 popUp.SetActive(true);
+                cleanInputs();
             }
             else
             {
@@ -61,11 +64,16 @@ public class CreacionDeUsuario : MonoBehaviour
         SceneManager.LoadScene("Login");
     }
 
+    void cleanInputs(){
+        UsernameText.text = "";
+        PasswordText.text = "";
+    }
+
 
     /*
     public void testText()
     {
-        Debug.Log("Username: " + UsernameText.text + " Password: " + PasswordText.text + " Turno: " + turnDropDown.options[turnDropDown.value].text);
+        Debug.Log("Username: " + UsernameText.text + " Password: " + PasswordText.text + " Turno: " + teamDropdown.options[teamDropdown.value].text);
     }
     */
 }

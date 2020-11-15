@@ -43,7 +43,7 @@ public class User
     public string username;
     public string password;
     public bool tutorial;
-    public string turno;
+    public string equipo;
     public int expMax;
     public int expMin;
     public int expCurrent;
@@ -323,8 +323,8 @@ public class Database : MonoBehaviour
         //Debug.Log(userBase.users[GlobalVariables.usernameId].niveles[i - 1]);
     }
 
-    public static string getTurno(){
-        return userBase.users[GlobalVariables.usernameId].turno; 
+    public static string getEquipo(){
+        return userBase.users[GlobalVariables.usernameId].equipo; 
     }
 
     public static bool getTutorial() {
@@ -338,7 +338,7 @@ public class Database : MonoBehaviour
         userBase.users[GlobalVariables.usernameId].tutorial = value;
     }
     
-    public static void makeUser(string name, string password,string turn,string isAdmin) {
+    public static void makeUser(string name, string password,string team,string isAdmin) {
         foreach (User user in userBase.users) {
             if(user.username == name) {
                 CreacionDeUsuario.available = false;
@@ -347,19 +347,19 @@ public class Database : MonoBehaviour
             }
         }
         CreacionDeUsuario.available = true;
-        createUser(name, password,turn,isAdmin);
+        createUser(name, password,team,isAdmin);
         Debug.Log("Usuario creado y guardado correctamente");
 
     }
 
-    public static void createUser(string name, string password, string turn, string isAdmin) {
+    public static void createUser(string name, string password, string team, string isAdmin) {
         User nUser = new User();
         nUser.id = userBase.users[userBase.users.Length - 1].id + 1;
         nUser.tipo = isAdmin;
         nUser.username = name;
         nUser.password = password;
         nUser.tutorial = true;
-        nUser.turno = turn;
+        nUser.equipo = team;
         nUser.expMax = 500;
         nUser.expMin = 0;
         nUser.avatarImg = "Default";

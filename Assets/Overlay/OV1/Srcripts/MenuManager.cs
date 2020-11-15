@@ -14,10 +14,10 @@ public class MenuManager : MonoBehaviour
     public GameObject ProximaMission;
     public GameObject toast;
     public GameObject avatarBtn;
-    public Image turnImage;
-    public Sprite morningImg;
-    public Sprite noonImg;
-    public Sprite nightImg;
+    public Image teamImage;
+    public Sprite pinkImg;
+    public Sprite greenImg;
+    public Sprite blueImg;
     public Text SiguentePregunta;
     public Text mensajeBienvenida;
     public static Users userBase;
@@ -40,10 +40,10 @@ public class MenuManager : MonoBehaviour
         //GlobalVariables.Caso = 0;
         
         if (!Database.isAdmin(GlobalVariables.usernameId)) {
-            showTurn();
+            showTeam();
         }
         else {
-            turnImage.enabled = false;
+            teamImage.enabled = false;
             trofeosBtn.SetActive(false);
             historialBtn.SetActive(false);
             avatarBtn.SetActive(false);
@@ -81,6 +81,10 @@ public class MenuManager : MonoBehaviour
     public void jugarClicked(){
         //Presionar boton de jugar para abrir menu de modos de juego
             GameModesMenu.SetActive(true);
+    }
+
+    public void hideGameMode(){
+        GameModesMenu.SetActive(false);
     }
 
     public void jugarClasico(){
@@ -249,15 +253,15 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(caso);
     }
 
-    public void showTurn(){
-        if(GlobalVariables.turno == "Matutino"){
-            turnImage.sprite = morningImg;
+    public void showTeam(){
+        if(GlobalVariables.equipo == "Rosa"){
+            teamImage.sprite = pinkImg;
         }
-        else if(GlobalVariables.turno == "Vespertino"){
-            turnImage.sprite = noonImg;
+        else if(GlobalVariables.equipo == "Verde"){
+            teamImage.sprite = greenImg;
         }
-        else if(GlobalVariables.turno == "Nocturno"){
-            turnImage.sprite = nightImg;
+        else if(GlobalVariables.equipo == "Azul"){
+            teamImage.sprite = blueImg;
         }
     }
 
