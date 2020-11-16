@@ -18,6 +18,7 @@ public class PlayerLevel : MonoBehaviour
         PlayerInfoEventSystem.current.onFinishExpGain += OnFinishExpGain;
         playerLevelTxt = transform.GetChild(0).GetComponent<Text>();
         levelUpSfx = GetComponent<AudioSource>();
+        levelUpSfx.volume = Database.getVolumenSonidos(GlobalVariables.usernameId);
         playerLevelTxt.text = Database.getNivelJugador().ToString();
         aux = Int32.Parse(playerLevelTxt.text);
     }
