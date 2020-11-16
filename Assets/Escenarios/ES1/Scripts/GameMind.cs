@@ -18,6 +18,7 @@ public class GameMind : MonoBehaviour {
     Button BtnID;
     public bool Pausado = false;
     Text Label;
+    Image backImg;
     string Escena;
 
     MonoBehaviour[] comps;
@@ -32,29 +33,57 @@ public class GameMind : MonoBehaviour {
         //(GameObject)Resources.Load("Assets/Menu/Prefabs/Menu", typeof(GameObject)); ;
         comps = GetComponents<MonoBehaviour>();
 
-        BA = Instantiate(BtnAyuda, new Vector2(-830, 240), Quaternion.identity) as GameObject;//280 -450
-        BA.transform.SetParent(GameObject.Find("Canvas").transform, false);
-        BtnID = BA.GetComponent<Button>();
-        //Debug.Log(Escena);
-        bool ExisteAyuda = GlobalVariables.ExisteAyuda;
-        bool Aparezco = true;
+        if(Escena == "Achivements" ||
+            Escena == "AvatarCustomization" ||
+                Escena == "createNews" ||
+                    Escena == "Historial" ||
+                        Escena == "Instrucciones-1" ||
+                            Escena == "Instrucciones-2" ||
+                                Escena == "Instrucciones-3" ||
+                                    Escena == "Instrucciones-4" ||
+                                        Escena == "login" ||
+                                            Escena == "LoseQuickMode" ||
+                                                Escena == "Menu" ||
+                                                    Escena == "News" ||
+                                                        Escena == "Settings" ||
+                                                            Escena == "Top10" ||
+                                                                Escena == "UserCreation" ||
+                                                                    Escena == "Ayudar" ||
+                                                                        Escena == "Lose" ||
+                                                                            Escena == "Win" ||
+                                                                                Escena == "Instrucciones-1" ||
+                                                                                    Escena.Contains("Win") ||
+                                                                                        Escena.Contains("Lose")){
+        Debug.Log("Nada que mostrar");
+        }
+        else{
+            BA = Instantiate(BtnAyuda, new Vector2(-830, 240), Quaternion.identity) as GameObject;//280 -450
+            BA.transform.SetParent(GameObject.Find("Canvas").transform, false);
+            //BtnID = BA.GetComponent<Button>();
+            Debug.Log(Escena);
+        //bool ExisteAyuda = GlobalVariables.ExisteAyuda;
+        //bool Aparezco = true;
 
-        if(GlobalVariables.Caso == 0 || GlobalVariables.ElFinal == true)
+        /*if(GlobalVariables.Caso == 0 || GlobalVariables.ElFinal == true)
         {
             Aparezco = false;
         }
 
         if (ExisteAyuda && GlobalVariables.VecesAyuda == 1 && Aparezco)
         {
-            string ayuda = HelpManager.Ask4Help();
-            Label = BA.GetComponentInChildren<Text>();
-            Label.text = "¡" + ayuda + " te ayudó!";
-            Label.enabled = false;
+            //string ayuda = HelpManager.Ask4Help();
+            //Debug.Log(ayuda);
+            
         }
         else
         {
             BA.SetActive(false);
+        }*/
+
+        
         }
+
+        
     }
 
     // Update is called once per frame
@@ -65,7 +94,7 @@ public class GameMind : MonoBehaviour {
 
         if ( Input.GetKeyDown(KeyCode.Escape)){ Pausar(); }
 
-        BtnID.onClick.AddListener(delegate {
+        /*BtnID.onClick.AddListener(delegate {
 
             //int ExisteBTN = ;
             //Debug.Log(GameObject.Find("Canvas").GetComponent("BtnMangment") as BtnMangment);
@@ -79,7 +108,7 @@ public class GameMind : MonoBehaviour {
                 QuestionManager.Help();
             }
             StartCoroutine(DisplayMessage());
-            GlobalVariables.VecesAyuda = 0; });
+            GlobalVariables.VecesAyuda = 0; });*/
 
     }
 
@@ -124,20 +153,23 @@ public class GameMind : MonoBehaviour {
 
     }
 
-    IEnumerator DisplayMessage()
+    /*IEnumerator DisplayMessage()
     {
+        backImg.enabled = true;
         Label.enabled = true;
         Color Og = Label.color;
+        Color Oi = backImg.color;
 
-        for (float t = 0.01f; t < 4; t += Time.deltaTime)
+        for (float t = 0.01f; t < 16; t += Time.deltaTime)
         {
             Label.color = Color.Lerp(Og, Color.clear, Mathf.Min(1, t / 4));
+            backImg.color = Color.Lerp(Oi, Color.clear, Mathf.Min(1, t / 4));
             yield return null;
         }
 
         BA.SetActive(false);
 
-    }
+    }*/
 
     // Función para quitar vidas
     public static void takeAwayLive(int l) {
