@@ -268,7 +268,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Animate! Puedes mejorar !
+  m_Text: "\xA1Estoy seguro que puedes mejorar!"
 --- !u!222 &162938714
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1531,7 +1531,7 @@ RectTransform:
   m_LocalScale: {x: 38.362858, y: 38.362858, z: 38.362858}
   m_Children: []
   m_Father: {fileID: 1561292759}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1617,6 +1617,8 @@ RectTransform:
   - {fileID: 1852327904}
   - {fileID: 1320065364}
   - {fileID: 682043968}
+  - {fileID: 1500821244}
+  - {fileID: 1679731927}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1715,7 +1717,7 @@ RectTransform:
   m_LocalScale: {x: 38.362858, y: 38.362858, z: 38.362858}
   m_Children: []
   m_Father: {fileID: 1561292759}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

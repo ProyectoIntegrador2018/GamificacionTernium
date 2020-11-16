@@ -65,9 +65,9 @@ public class WinCase : MonoBehaviour {
 
         GlobalVariables.ElFinal = true;
 
-        if (Trofeo != null) {
-            Trofeo.SetActive(false);
-        }
+        //if (Trofeo != null) {
+        //    Trofeo.SetActive(false);
+        //}
         //Toma el score guardado hasta el momento y lo archiva dependiendo de la escena win or lose que se encuentre
         string Escena = SceneManager.GetActiveScene().name;
         //Debug.Log(Escena);
