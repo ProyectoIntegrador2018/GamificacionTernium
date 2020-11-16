@@ -407,13 +407,13 @@ public class QuestionManager : MonoBehaviour {
 
             // Estos son para cuando solo hay 2 respuestas
             case 20:
-                Btn3.transform.localPosition = new Vector2(805, 50);
-                Btn2.transform.localPosition = new Vector2(805, -170);
+                Btn3.transform.localPosition = new Vector2(0.8501587f, 50);
+                Btn2.transform.localPosition = new Vector2(800.8501587f, -170);
                 break;
 
             case 21:
-                Btn2.transform.localPosition = new Vector2(805, 50);
-                Btn3.transform.localPosition = new Vector2(805, -170);
+                Btn2.transform.localPosition = new Vector2(0.8501587f, 50);
+                Btn3.transform.localPosition = new Vector2(0.8501587f, -170);
                 break;
 
             default:

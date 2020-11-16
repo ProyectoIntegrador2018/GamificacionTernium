@@ -21,7 +21,7 @@
                         "Incorrecta interpretación del problema y provocar preparación inadecuada",
                         "Minimizar el problema y provocar mayor afectación"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "P2",
                     "sigEscenasError": ["P6", "P4"]
@@ -34,7 +34,7 @@
                     "vidasPerdidas": [1],
                     "correctoTexto": "Correcto! El guardia ahora tiene su equipo de seguridad puesto.",
                     "falloTexto": ["Incorrecto! El guardia debe tener puesto su casco de seguridad con barbiquejo, lentes de seguridad, guantes combinados de carnaza y botines de seguridad con casquillo."],
-                    "respuestCorrecta": -1,
+                    "respuestaCorrecta": -1,
                     "puntos": 100,
                     "SigEscenaCorrecta": "P3",
                     "sigEscenasError": ["P3"]
@@ -54,7 +54,7 @@
                         "Posible daño permanente al equipo al no estar identificando el problema. Se debería revisar detalladamente.",
                         "El tiempo de demora puede extenderse más de lo estrictamente necesario. Se debería revisar detalladamente."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "P5",
                     "sigEscenasError": ["P6.5", "P6"]
@@ -74,7 +74,7 @@
                         "None",
                         "El guardia debe evaluar el area y llenar el APR."
                     ],
-                    "respuestCorrecta": 2,
+                    "respuestaCorrecta": 2,
                     "puntos": 100,
                     "sigEscenaCorrecto": "P3",
                     "sigEscenasError": ["P6", "P6"]
@@ -94,7 +94,7 @@
                         "Debe de llenar el APR antes de continuar.",
                         "Minimiza el problema y provoca mayor afectación. Debe llenar el APR y después solucioanr el problema antes de generar el aviso."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "P6",
                     "sigEscenasError": ["P6", "P6.5"]
@@ -111,7 +111,7 @@
                         "Incorrecto! El orden correcto sería ...",
                         "Incorrecto! Te faltaron pasos y el orden correcto sería ..."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "P6.5",
                     "sigEscenasError": ["P6.5", "P6.5", "P6.5"]
@@ -131,7 +131,7 @@
                         "Calidad no es responsable de esta parte del proceso. Se debe generar un aviso.",
                         "Se generaría una orden de mantenimiento sin información completa del problema. Se debe generar un aviso."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "P7",
                     "sigEscenasError": ["Win", "Win"]
@@ -151,7 +151,7 @@
                         "Este aviso surge sólo de inspecciones, se debe generar el M2.",
                         "Este aviso se utiliza sólo para guardar información de actividad en el equipo, se debe generar el M2."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "P8",
                     "sigEscenasError": ["Win", "Win"]
@@ -171,7 +171,7 @@
                         "Esta palabra no informa el detalle de lo ocurrido. Debe llenar: equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte, objeto, sintoma, avería, causa y sus textos.",
                         "Es opcional agregar alguna foto al aviso. Es obligatorio llenar: equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte, objeto, sintoma, avería, causa y sus textos."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "Win",
                     "sigEscenasError": ["Win", "Win"]
@@ -199,7 +199,7 @@
                         "Minimiza el problema y provoca mayor afectación.", 
                         "Incorrecta interpretación del posible problema."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P2",
                     "sigEscenasError": ["ES2P10", "ES2P11"]
@@ -219,7 +219,7 @@
                         "Riesgo de accidente al tocar equipo en movimiento.", 
                         "Minimizo el problema y provoco mayor afectación."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P3",
                     "sigEscenasError": ["ES2P3", "ES2P11"]
@@ -236,7 +236,7 @@
                         "Incorrecto! lo correcto sería ...",
                         "Incorrecto! Te faltaron pasos y lo correcto sería ..."
                     ],
-                    "respuestCorrecta": -1,
+                    "respuestaCorrecta": -1,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P4",
                     "sigEscenasError": ["ES2P4", "ES2P4", "ES2P4"]
@@ -256,7 +256,7 @@
                         "Riesgo de accidente al no realizar el bloqueo efectivo.", 
                         "Minimizo el problema y provoco mayor afectación."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P5",
                     "sigEscenasError": ["ES2P5", "ES2P11"]
@@ -273,7 +273,7 @@
                         "Incorrecto! lo correcto sería ...",
                         "Incorrecto! Te faltaron pasos y lo correcto sería ..."
                     ],
-                    "respuestCorrecta": -1,
+                    "respuestaCorrecta": -1,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P6",
                     "sigEscenasError": ["ES2P6", "ES2P6", "ES2P6"]
@@ -293,7 +293,7 @@
                         "Orden de mantenimiento sin información completa del problema.", 
                         "Programación no es responsable de esta parte del proceso."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P7",
                     "sigEscenasError": ["ES2Win", "ES2Win"]
@@ -313,7 +313,7 @@
                         "Este aviso se utiliza para solicitar actividades a un sector diferente al propio.", 
                         "Este aviso lo genera el inspector."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P8",
                     "sigEscenasError": ["ES2Win", "ES2Win"]
@@ -333,7 +333,7 @@
                         "Esta palabra no informa el detalle de lo ocurrido.", 
                         "Es opcional agregar alguna foto al aviso."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P9",
                     "sigEscenasError": ["ES2Win", "ES2Win"]
@@ -353,7 +353,7 @@
                         "No todas las personas reconocen el significado de nuestras abreviaciones. Hay que agregar el texto con el detalle del problema.", 
                         "Puede ser un dato no rastreable en el sistema. Hay que agregar el texto con el detalle del problema."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2Win",
                     "sigEscenasError": ["ES2Win", "ES2Win"]
@@ -373,7 +373,7 @@
                         "None", 
                         "Negligencia de mis actividades como guardia."
                     ],
-                    "respuestCorrecta": 2,
+                    "respuestaCorrecta": 2,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P3",
                     "sigEscenasError": ["ES2Win", "ES2Win"]
@@ -393,7 +393,7 @@
                         "None", 
                         "Incorrecta interpretación del posible problema y riesgo de accidente al no realizar el bloqueo efectivo."
                     ],
-                    "respuestCorrecta": 2,
+                    "respuestaCorrecta": 2,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES2P5",
                     "sigEscenasError": ["ES2Win", "ES2Win"]
@@ -421,7 +421,7 @@
                         "Posible daño por sobrecalentamiento, el valor del punto de medida ya considera la temperatura ambiente.", 
                         "Minimizo el problema y posible daño irreparable en la bomba."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES3P2",
                     "sigEscenasError": ["ES3P6", "ES3P6"]
@@ -441,7 +441,7 @@
                         "Riesgo de accidente al tocar equipo en funcionamiento.", 
                         "Minimizo el problema y provoco mayor afectación."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES3P3.1",
                     "sigEscenasError": ["ES3P3.1", "ES3P4"]
@@ -457,7 +457,7 @@
                         "Incorrecto! Posible daño permanente en el equipo.",
                         "Incorrecto! Posible daño permanente en el equipo."
                     ],
-                    "respuestCorrecta": -1,
+                    "respuestaCorrecta": -1,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES3P4",
                     "sigEscenasError": ["ES3P4", "ES3P4"]
@@ -477,7 +477,7 @@
                         "Este aviso es para Ingeniería de Mantenimiento para mejora en equipo o proceso.", 
                         "Se utiliza para enviar a reparar a talleres."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES3P5",
                     "sigEscenasError": ["ES3Win", "ES3Win"]
@@ -497,7 +497,7 @@
                         "Esta orden es para reparación de emergencia.", 
                         "Esta orden es para reparación por parte de talleres."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES3Win",
                     "sigEscenasError": ["ES3Win", "ES3Win"]
@@ -517,7 +517,7 @@
                         "None", 
                         "Minimizo el problema y posible daño irreparable en la bombas."
                     ],
-                    "respuestCorrecta": 2,
+                    "respuestaCorrecta": 2,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES3P5",
                     "sigEscenasError": ["ES3Win", "ES3Win"]
@@ -545,7 +545,7 @@
                         "Posible daño permanente al equipo al no estar identificando el problema. Se debe tomar medidas de seguridad y luego revisar el área.", 
                         "Es Mantenimiento el responsable del equipo, puede solicitar apoyo a Operaciones para la solución. Se debe tomar medidas de seguridad y luego revisar el área."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES4P2",
                     "sigEscenasError": ["ES4P2", "ES4P2"]
@@ -558,7 +558,7 @@
                     "vidasPerdidas": [1],
                     "correctoTexto": "Correcto! El guardia ahora tiene su equipo de seguridad puesto.",
                     "falloTexto": ["Incorrecto! El guardia debe tener puesto su casco de seguridad con barbiquejo, lentes de seguridad, guantes combinados de carnaza y botines de seguridad con casquillo."],
-                    "respuestCorrecta": -1,
+                    "respuestaCorrecta": -1,
                     "puntos": 100,
                     "SigEscenaCorrecta": "ES4P3",
                     "sigEscenasError": ["ES4P3"]
@@ -578,7 +578,7 @@
                         "Posible daño permanente al equipo al no estar identificando el problema. Se debería revisar detalladamente.", 
                         "El tiempo de demora puede extenderse más de lo estrictamente necesario. Se debería revisar detalladamente."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES4P4",
                     "sigEscenasError": ["ES4P6", "ES4P4"]
@@ -595,7 +595,7 @@
                         "Incorrecto! lo correcto sería ...",
                         "Incorrecto! Te faltaron pasos y lo correcto sería ..."
                     ],
-                    "respuestCorrecta": -1,
+                    "respuestaCorrecta": -1,
                     "puntos": 100,
                     "SigEscenaCorrecta": "ES4P5",
                     "sigEscenasError": ["ES4P5", "ES4P5", "ES4P5"]
@@ -612,7 +612,7 @@
                         "Incorrecto! lo correcto sería ...",
                         "Incorrecto! Te faltaron pasos y lo correcto sería ..."
                     ],
-                    "respuestCorrecta": -1,
+                    "respuestaCorrecta": -1,
                     "puntos": 100,
                     "SigEscenaCorrecta": "ES4P6",
                     "sigEscenasError": ["ES4P6", "ES4P6", "ES4P6"]
@@ -632,7 +632,7 @@
                         "Orden de mantenimiento sin información completa del problema. Se debe generar un aviso.", 
                         "Programación no es responsable de esta parte del proceso. Se debe generar un aviso."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES4P7",
                     "sigEscenasError": ["ES4Win", "ES4Win"]
@@ -652,7 +652,7 @@
                         "Este aviso se utiliza para solicitar actividades a un sector diferente al propio. Debería ser un aviso M2.", 
                         "Este aviso lo genera el inspector. Debería ser un aviso M2."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES4P8",
                     "sigEscenasError": ["ES4Win", "ES4Win"]
@@ -672,7 +672,7 @@
                         "Esta palabra no informa el detalle de lo ocurrido. Se debe llenar los campos: Equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte del objeto, síntoma de avería y causa.", 
                         "Es opcional agregar alguna foto al aviso. Se debe llenar los campos: Equipo, ¿qué pasó?, ¿por qué pasó?, ¿qué se hizo?, parte del objeto, síntoma de avería y causa."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES4P9",
                     "sigEscenasError": ["ES4Win", "ES4Win"]
@@ -692,7 +692,7 @@
                         "No todas las personas reconocen el significado de nuestras abreviaciones. Hay que gregar el texto con el detalle del problema.", 
                         "Puede ser un dato no rastreable en el sistema. Hay que gregar el texto con el detalle del problema."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES4Win",
                     "sigEscenasError": ["ES4Win", "ES4Win"]
@@ -720,7 +720,7 @@
                         "Mantenimiento debe revisar la causa y solicitar apoyo a producción en caso de ser necesario.", 
                         "Se debe revisar la causa de la falla antes de restablecer el equipo."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES5P2",
                     "sigEscenasError": ["ES5P3", "ES5P2"]
@@ -740,7 +740,7 @@
                         "Puedes causar posible daño permanente al equipo al no estar identificado el problema.", 
                         "El tiempo de la demora puede extenderse más de lo estrictamente necesario."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES5P4",
                     "sigEscenasError": ["ES5P3", "ES5P4"]
@@ -760,7 +760,7 @@
                         "Puedes causar más daño en el área de trabajo si tomas decisiones apresuradas.", 
                         "Sin instrucciones claras, podrías dañar el equipo o gastar mucho tiempo en su reparo."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES5P5",
                     "sigEscenasError": ["ES5P5", "ES5P5"]
@@ -780,7 +780,7 @@
                         "Orden de mantenimiento sin información completa del problema.", 
                         "Programación no es responsable de esta parte del proceso."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES5P5",
                     "sigEscenasError": ["ES5P5", "ES5P5"]
@@ -800,7 +800,7 @@
                         "Este aviso se utiliza para solicitar actividades a un sector diferente al propio.", 
                         "Este aviso lo genera el inspector."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES5P6",
                     "sigEscenasError": ["ES5Win", "ES5Win"]
@@ -820,7 +820,7 @@
                         "Esta palabra no informa el detalle de lo ocurrido.", 
                         "Es opcional agregar alguna foto al aviso."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES5P7",
                     "sigEscenasError": ["ES5P7", "ES5P7"]
@@ -840,7 +840,7 @@
                         "No todas las personas reconocen el significado de nuestras abreviaciones. Hay que gregar el texto con el detalle del problema.", 
                         "Puede ser un dato no rastreable en el sistema. Hay que gregar el texto con el detalle del problema."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES5Win",
                     "sigEscenasError": ["ES5Win", "ES5Win"]
@@ -868,7 +868,7 @@
                         "El aceite podría ser inadecuado para el equipo",
                         "Se debe revisar la fuga para tomar las medidas adecuadas"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES6P2",
                     "sigEscenasError": ["ES6P2", "ES6P2"]
@@ -888,7 +888,7 @@
                         "Se debe validar esta opción con Producción",
                         "El tiempo de la demora puede extenderse más de lo estrictamente necesario"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES6P3",
                     "sigEscenasError": ["ES6P3", "ES6P3"]
@@ -908,7 +908,7 @@
                         "Se debe validar esta opción con Producción",
                         "El tiempo de la demora puede extenderse más de lo estrictamente necesario"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES6P4",
                     "sigEscenasError": ["ES6P4", "ES6P4"]
@@ -928,7 +928,7 @@
                         "Solución no adecuada",
                         "Esta manguera podría no ser la adecuada para el funcionamiento del equipo"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES6P5",
                     "sigEscenasError": ["ES6P5", "ES6P5"]
@@ -948,7 +948,7 @@
                         "Se debe verificar que ya no se presente la fuga",
                         "Incumplimiento al orden y limpieza del área"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES6P6",
                     "sigEscenasError": ["ES6P6", "ES6P6"]
@@ -968,7 +968,7 @@
                         "Este es un aviso de mantenimiento que solicita actividades a un sector diferente al propio",
                         "Este aviso se utiliza para cuando se encuentra algo fuera de condiciones en la Inspección"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES6P7",
                     "sigEscenasError": ["ES6P7", "ES6P7"]
@@ -988,7 +988,7 @@
                         "Esta palabra no informa el detalle de lo ocurrido",
                         "Es opcional, agregar alguna foto al aviso"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES6P8",
                     "sigEscenasError": ["ES6P8", "ES6P8"]
@@ -1008,7 +1008,7 @@
                         "No todas las personas reconocen el significado de nuestras abreviaciones",
                         "Puede ser un dato no rastreable en Sistema"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES6Win",
                     "sigEscenasError": ["ES6Win", "ES6Win"]
@@ -1036,7 +1036,7 @@
                         "El aceite podría ser inadecuado para el equipo", 
                         "Se debe revisar la fuga para tomar las medidas adecuadas"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES7P2",
                     "sigEscenasError": ["ES7P2", "ES7P4"]
@@ -1056,7 +1056,7 @@
                         "Se debe validar esta opción con Producción", 
                         "El tiempo de la demora puede extenderse mas de lo estrictamente necesario"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES7P3",
                     "sigEscenasError": ["ES7P3", "ES7P3"]
@@ -1076,7 +1076,7 @@
                         "Solución no adecuada", 
                         "Esta manguera podría no ser la adecuada para el funcionamiento del equipo"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES7P4",
                     "sigEscenasError": ["ES7P4", "ES7P4"]
@@ -1096,7 +1096,7 @@
                         "Este es un aviso de mantenimiento que solicita actividades a un sector diferente al propio", 
                         "Este aviso se utiliza para cuando se encuentra algo fuera de condiciones en la Inspección"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES7P5",
                     "sigEscenasError": ["ES7Win", "ES7Win"]
@@ -1116,7 +1116,7 @@
                         "Esta palabra no informa el detalle de lo ocurrido", 
                         "Es opcional, agregar alguna foto al aviso."
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES7P6",
                     "sigEscenasError": ["ES7P6", "ES7P6"]
@@ -1136,7 +1136,7 @@
                         "No todas las personas reconocen el significado de nuestras abreviaciones", 
                         "Puede ser un dato no rastreable en Sistema"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES7P7",
                     "sigEscenasError": ["ES7P7", "ES7P7"]
@@ -1156,7 +1156,7 @@
                         "Es una orden que se utiliza para mantenimiento preventivo", 
                         "Es una orden que se utiliza la reparación en Taller"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES7P8",
                     "sigEscenasError": ["ES7P8", "ES7P8"]
@@ -1176,7 +1176,7 @@
                         "Dato no requerido en la orden", 
                         "Dato no requerido en la orden"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES7Win",
                     "sigEscenasError": ["ES7Win", "ESPWin"]
@@ -1204,7 +1204,7 @@
                         "Si el aviso requiere reparación programada debe ser gestionada por el Inspector", 
                         "Es mantenimiento el área responsable del aviso"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES8P2",
                     "sigEscenasError": ["ES8P2", "ES8P2"]
@@ -1224,7 +1224,7 @@
                         "Se requiere verificar físicamente lo reportado en el aviso", 
                         "Se requiere validar si el repuesto es el adecuado antes de instalarlo"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES8P3",
                     "sigEscenasError": ["ES8P3", "ES8P3"]
@@ -1244,7 +1244,7 @@
                         "Es una orden que se utiliza para mantenimiento preventivo", 
                         "Es una orden que se utiliza la reparación en Taller"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES8P4",
                     "sigEscenasError": ["ES8P4", "ES8P4"]
@@ -1264,7 +1264,7 @@
                         "Dato no requerido en la orden", 
                         "Dato no requerido en la orden"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES8P5",
                     "sigEscenasError": ["ES8P5", "ES8P5"]
@@ -1284,7 +1284,7 @@
                         "Se debe dejar registro en Sistema del fin de la actividad, cerrando la orden", 
                         "La forma correcta de informar es cerrando la orden, se puede avisar por radio pero NO omitir el cierre de la orden"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES8Win",
                     "sigEscenasError": ["ES8Win", "ES8Win"]
@@ -1312,7 +1312,7 @@
                         "Este es un aviso de mantenimiento que solicita actividades a un sector diferente al propio",
                         "Este aviso se utiliza para cuando se encuentra algo fuera de condiciones en la Inspección"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES9P2",
                     "sigEscenasError": ["ES9Win", "ES9Win"]
@@ -1332,7 +1332,7 @@
                         "El aviso que se debe generar en las no conformidades d e Inspección es un M0",
                         "El aviso que se utiliza para solicitud a talleres es el M6"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES9P3",
                     "sigEscenasError": ["ES9Win", "ES9Win"]
@@ -1352,7 +1352,7 @@
                         "Es una orden que se utiliza para mantenimiento preventivo",
                         "Es una orden que se utiliza la reparación en Taller"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES9Win",
                     "sigEscenasError": ["ES9Win", "ES9Win"]
@@ -1380,7 +1380,7 @@
                         "Este es un aviso de mantenimiento que solicita actividades a un sector diferente al propio",
                         "Este aviso se utiliza para cuando se encuentra algo fuera de condiciones en la Inspección"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES10P2",
                     "sigEscenasError": ["ES10P2", "ES10P2"]
@@ -1400,7 +1400,7 @@
                         "El aviso que se debe generar en las no conformidades d e Inspección es un M0",
                         "El aviso que se utiliza para solicitud a talleres es el M6"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES10P3",
                     "sigEscenasError": ["ES10P3", "ES10P3"]
@@ -1420,7 +1420,7 @@
                         "Es una orden que se utiliza para correctivo de emergencia",
                         "Es una orden que se utiliza para correctivo programado por Mantenimiento"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES10P4",
                     "sigEscenasError": ["ES10P4", "ES10P4"]
@@ -1440,7 +1440,7 @@
                         "Las órdenes PM12 y PM13 son generadas y gestionadas por personal del Taller Central",
                         "Las órdenes PM12 y PM13 son generadas y gestionadas por personal del Taller Central"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES10P5",
                     "sigEscenasError": ["ES10P5", "ES10P5"]
@@ -1460,7 +1460,7 @@
                         "Se debe dejar registro en Sistema del fin de la actividad, cerrando la orden",
                         "La forma correcta de informar es cerrando la orden, se puede avisar por radio pero NO omitir el cierre de la orden"
                     ],
-                    "respuestCorrecta": 3,
+                    "respuestaCorrecta": 3,
                     "puntos": 100,
                     "sigEscenaCorrecto": "ES10Win",
                     "sigEscenasError": ["ES10Win", "ES10Win"]
