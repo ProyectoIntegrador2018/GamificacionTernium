@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class newsManager : MonoBehaviour
 {
+    public itemBehavior objScript;
     public GameObject newsPrefab;
+    public GameObject newsAdminPrefab;
     public GameObject crearBtn;
     private Text[] textArray;   
     private NewsItem[] news;
@@ -23,19 +25,19 @@ public class newsManager : MonoBehaviour
         News deserealized = JsonUtility.FromJson<News>(myTextAsset);
         news = deserealized.newsList;
         
-        createNewsList();
+        
 
         if (!Database.isAdmin(GlobalVariables.usernameId)) {
             crearBtn.SetActive(false);
+            foreach(NewsItem newsItem in news){
+            createNews(newsItem.titulo, newsItem.descripcion, newsItem.fecha);
+            }
         }
         else {
             crearBtn.SetActive(true);
-        }
-    }
-
-    void createNewsList(){
-        foreach(NewsItem newsItem in news){
-            createNews(newsItem.titulo, newsItem.descripcion, newsItem.fecha);
+            foreach(NewsItem newsItem in news){
+            createNewsAdmin(newsItem.titulo, newsItem.descripcion, newsItem.fecha, newsItem.id);
+            }
         }
     }
 
@@ -43,7 +45,20 @@ public class newsManager : MonoBehaviour
         GameObject newsObject;
         newsObject = (GameObject)Instantiate(newsPrefab);
         newsObject.transform.SetParent(GameObject.FindWithTag("newsList").transform);
+        newsObject.transform.localScale = new Vector3((float)0.82, (float)1.006147, 1);
+        textArray = newsObject.GetComponentsInChildren<Text>();
+        textArray[0].text = title;
+        textArray[1].text = descr;
+        textArray[2].text = date;
+    }
+
+    void createNewsAdmin(string title, string descr, string date, int id){
+        GameObject newsObject;
+        newsObject = (GameObject)Instantiate(newsAdminPrefab);
+        newsObject.transform.SetParent(GameObject.FindWithTag("newsList").transform);
         newsObject.transform.localScale = new Vector3((float)0.73, (float)1.006147, 1);
+        objScript = newsObject.GetComponentInChildren<itemBehavior>();
+        objScript.setID(id);
         textArray = newsObject.GetComponentsInChildren<Text>();
         textArray[0].text = title;
         textArray[1].text = descr;
