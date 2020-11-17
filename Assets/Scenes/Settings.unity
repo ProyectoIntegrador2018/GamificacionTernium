@@ -1769,7 +1769,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Apagar eventos:'
+  m_Text: 'Activar eventos:'
 --- !u!222 &1079847690
 CanvasRenderer:
   m_ObjectHideFlags: 0
