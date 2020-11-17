@@ -206,6 +206,9 @@ public class GameMind : MonoBehaviour {
             GlobalVariables.usernameId = id;
             GlobalVariables.equipo = getEquipo();
             GlobalVariables.currentQuickGameLives = Database.getCurrentLives(id);
+            if (BackgroundMusic.instance != null) {
+                BackgroundMusic.instance.soundEffect.volume = Database.getVolumenMusica(id);
+            }
             SceneManager.LoadScene("Menu");
         }
       
