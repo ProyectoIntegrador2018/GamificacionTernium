@@ -4510,7 +4510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 2079440392}
-  level: 2
+  level: 4
   itemHolder: {fileID: 756648019}
   candado: {fileID: 21300000, guid: a0f11c9f2f15efd46873f5a237b86caf, type: 3}
   itemDesbloqueable: {fileID: 21300000, guid: 256cb34cdecc3504abc038a274d108a7, type: 3}
