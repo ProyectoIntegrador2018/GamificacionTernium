@@ -16,6 +16,12 @@ public class QuickGameLives : MonoBehaviour
         }
     }
 
+    void restartLives() {
+        for (int i = 0; i < maxLives; i++) {
+            this.transform.GetChild(i).GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+        }
+    }
+
     void setCurrentLivesSprites() {
         for(int i = maxLives; i > currentLives; i--) {
             this.transform.GetChild(i - 1).GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 1f);
@@ -39,6 +45,18 @@ public class QuickGameLives : MonoBehaviour
         regenerateLive();
     }
 
+    void OnEnableCheck() {
+        restartLives();
+        currentLives = GlobalVariables.currentQuickGameLives;
+        if(currentLives == 0) {
+            btn.interactable = false;
+        }
+        else {
+            btn.interactable = true;
+        }
+        setCurrentLivesSprites();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +64,7 @@ public class QuickGameLives : MonoBehaviour
         toggleBtn(false);
         setCurrentLivesSprites();
         QuickGameEventSystem.current.onTimeframeReached += OnTimeframeReached;
+        QuickGameEventSystem.current.onEnableCheck += OnEnableCheck;
     }
 
     private void Update() {
@@ -54,5 +73,6 @@ public class QuickGameLives : MonoBehaviour
 
     private void OnDestroy() {
         QuickGameEventSystem.current.onTimeframeReached -= OnTimeframeReached;
+        QuickGameEventSystem.current.onEnableCheck -= OnEnableCheck;
     }
 }
