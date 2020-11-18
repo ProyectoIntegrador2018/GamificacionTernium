@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class BackgroundMusic : MonoBehaviour
 {
     public static BackgroundMusic instance;
-    private AudioSource soundEffect;
+    public AudioSource soundEffect;
 
 
     void Awake()

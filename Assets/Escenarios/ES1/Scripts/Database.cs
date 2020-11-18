@@ -97,7 +97,7 @@ public class Database : MonoBehaviour
         //Asumire que es este
         path = Application.persistentDataPath + "/database.json";
         //Debug.Log("Fabi Aqui");
-        //Debug.Log(path);
+        Debug.Log(path);
 
         //Este estara mal
 
