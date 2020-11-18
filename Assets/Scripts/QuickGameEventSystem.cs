@@ -13,9 +13,15 @@ public class QuickGameEventSystem : MonoBehaviour
     }
 
     public event Action onTimeframeReached;
+    public event Action onEnableCheck;
     public void OnTimeframeReached() {
         if (onTimeframeReached != null) {
             onTimeframeReached();
+        }
+    }
+    public void OnEnableCheck() {
+        if (onEnableCheck != null) {
+            onEnableCheck();
         }
     }
 
