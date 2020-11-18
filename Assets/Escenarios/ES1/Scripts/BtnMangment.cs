@@ -516,7 +516,10 @@ public class BtnMangment : MonoBehaviour
 
         if (Escena == "P2" || Escena == "ES4P2")
         {
-            GameObject Slot = GameObject.Find("ItemSlot");
+            GameObject Slot1 = GameObject.Find("ItemSlot1");
+            GameObject Slot2 = GameObject.Find("ItemSlot2");
+            GameObject Slot3 = GameObject.Find("ItemSlot3");
+            GameObject Slot4 = GameObject.Find("ItemSlot4");
             //Lentes
             GameObject Item1 = GameObject.Find("Item1");
             //Casco
@@ -526,10 +529,10 @@ public class BtnMangment : MonoBehaviour
             //Guantes
             GameObject Item4 = GameObject.Find("Item4");
 
-           /* Item1.transform.localPosition = new Vector2(Slot.transform.localPosition.x, 94);
-            Item2.transform.localPosition = new Vector2(Slot.transform.localPosition.x, 214);
-            Item3.transform.localPosition = new Vector2(Slot.transform.localPosition.x, -146);
-            Item4.transform.localPosition = new Vector2(Slot.transform.localPosition.x, -26);*/
+            Item1.transform.localPosition = new Vector2(Slot2.transform.localPosition.x, Slot2.transform.localPosition.y);
+            Item2.transform.localPosition = new Vector2(Slot1.transform.localPosition.x, Slot1.transform.localPosition.y);
+            Item3.transform.localPosition = new Vector2(Slot4.transform.localPosition.x, Slot4.transform.localPosition.y);
+            Item4.transform.localPosition = new Vector2(Slot3.transform.localPosition.x, Slot3.transform.localPosition.y);
 
         }
         else
