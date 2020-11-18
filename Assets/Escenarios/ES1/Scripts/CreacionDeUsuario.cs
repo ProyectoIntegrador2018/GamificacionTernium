@@ -26,6 +26,11 @@ public class CreacionDeUsuario : MonoBehaviour
 
     // Función para agregar al usuario
     public void createUser() {
+
+        if (UsernameText.text.Trim().Length == 0 || PasswordText.text.Trim().Length == 0) {
+            return;
+        }
+
         if (adminToggle.isOn == true)
         {
             Database.makeUser(UsernameText.text, PasswordText.text, teamDropdown.options[teamDropdown.value].text, "admin");
