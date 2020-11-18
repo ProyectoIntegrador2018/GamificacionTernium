@@ -26,7 +26,34 @@ public class Instruction2 : MonoBehaviour {
     public Image LivesUI;
     public Text Score;
 
-	private void Awake() {
+
+    public GameObject obj1;
+    public GameObject obj2;
+    public GameObject obj3;
+    public GameObject obj4;
+
+
+    public bool GetAnswer()
+    {
+
+        if ((obj1.transform.localPosition.y == -28f) &&
+            (obj2.transform.localPosition.y == 56f) &&
+            (obj4.transform.localPosition.y == -146f))
+        {
+            Debug.Log("Correcto");
+            return true;
+        }
+
+        else
+        {
+           
+           Debug.Log(obj1.transform.localPosition.y + " " + obj2.transform.localPosition.y + " " + obj4.transform.localPosition.y);
+        }
+
+        return false;
+    }
+
+    private void Awake() {
 		button.GetComponent<Button>().enabled = false;
     	indicatorText1.canvasRenderer.SetAlpha(0f);
     	indicatorText2.canvasRenderer.SetAlpha(0f);
@@ -48,13 +75,13 @@ public class Instruction2 : MonoBehaviour {
 
     	buttonDone.onClick.AddListener(delegate {
 	    	if (SceneManager.GetActiveScene().name == "Instrucciones-3") {
-	    		if (InstructionDragDrop.statusAnswer() == "Correct") {
+	    		if (GetAnswer()) {
 	                dialogueText.text = "¡Correcto!";
 	                buttonDone.GetComponent<Button>().enabled = false;
 		    		button.GetComponent<Button>().enabled = true;
 		    		Score.text = "100";
 		    		
-	            } else if (InstructionDragDrop.statusAnswer() == "Incorrect") {
+	            } else if (!GetAnswer()) {
 	            	dialogueText.text = "¡Incorrecto!";
 	            	buttonDone.GetComponent<Button>().enabled = false;
 		    		button.GetComponent<Button>().enabled = true;
