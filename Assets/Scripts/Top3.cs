@@ -15,11 +15,13 @@ public class Team{
 public class Top3 : MonoBehaviour
 {
     static private User[] users;
-    public Image teamImage;
-    public Sprite greenTeam;
-    public Sprite pinkTeam;
-    public Sprite blueTeam;
+    //Necesita refactor
+    //public Image teamImage;
+    //public Sprite greenTeam;
+    //public Sprite pinkTeam;
+    //public Sprite blueTeam;
     public TMP_Text teamText;
+    List<Team> teamList = new List<Team>();
 
     /*
     // Update is called once per frame
@@ -29,65 +31,39 @@ public class Top3 : MonoBehaviour
     }*/
 
     
-    public static List<int> getScores(){
-        int greenScore = 0;
-        int pinkScore = 0;
-        int blueScore = 0;
-        foreach (User user in users) {
-            if(user.equipo == "verde"){
-                for(int i = 0; i < user.niveles.Length; i++){
-                    //Debug.Log(user.niveles[i]);
-                    greenScore += user.niveles[i];
-                }
+    public void getScores(){
+        List<User> aux = users.ToList();
+        var groupedResult = from s in aux
+                            group s by s.equipo;
+
+        foreach (var teamGroup in groupedResult)
+        {
+            var currGroup = teamGroup.Key; //Each group has a key 
+            var currSum = 0;
+            foreach(User u in teamGroup){ // Each group has inner collection
+                currSum += u.niveles.Sum();
             }
-            if(user.equipo == "rosa"){
-                for(int i = 0; i < user.niveles.Length; i++){
-                    //Debug.Log(user.niveles[i]);
-                    pinkScore += user.niveles[i];
-                }
-            }
-            if(user.equipo == "azul"){
-                for(int i = 0; i < user.niveles.Length; i++){
-                    //Debug.Log(user.niveles[i]);
-                    blueScore += user.niveles[i];
-                }
-            }
+            teamList.Add(new Team {name = currGroup, score= currSum});
         }
-        List<int> colorList = new List<int>();
-        colorList.Add(greenScore);
-        colorList.Add(pinkScore);
-        colorList.Add(blueScore);
-        return colorList;
+        /*foreach(Team t in teamList){
+            Debug.Log(t.name + " : " + t.score);
+        }*/
     }
 
     public void showScores(){
-        List<int> sreList = getScores();
 
-        var scoreList = new List<Team>(){
-            new Team(){name = "Verde", score = sreList[0]},
-            new Team(){name= "Rosa", score = sreList[1]},
-            new Team(){name = "Azul", score = sreList[2]}
-        };
+        getScores();
 
-        int maxScore = scoreList.Max(s => s.score);
+        int maxScore = teamList.Max(s => s.score);
 
-        var best = from s in scoreList
+        var best = from s in teamList
             where s.score == maxScore
             select s;
-
+        
         foreach(var scr in best){
             teamText.text = scr.name;
-            if(scr.name == "Rosa"){
-                teamImage.sprite = pinkTeam;
-            }
-            else if(scr.name == "Verde"){
-                teamImage.sprite = greenTeam;
-            }
-            else if(scr.name == "Azul"){
-                teamImage.sprite = blueTeam;
-            }
         }
-            
+          
     }
 
     

@@ -534,6 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Login: {fileID: 94984103}
+  Cancel: {fileID: 0}
   UsernameText: {fileID: 1239745865}
   PasswordText: {fileID: 1848358411}
   teamDropdown: {fileID: 1886352589}
@@ -3767,12 +3768,12 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Rosa
-      m_Image: {fileID: 21300000, guid: 8ffd4a6939bd63b4abd8a3763d6d98f4, type: 3}
-    - m_Text: Verde
-      m_Image: {fileID: 21300000, guid: 38adc7242fb23f34ab07fce575c7ad18, type: 3}
-    - m_Text: Azul
-      m_Image: {fileID: 21300000, guid: 1d01a9d72c8408b428ede2c57df69f47, type: 3}
+    - m_Text: Cuadrilla 1
+      m_Image: {fileID: 0}
+    - m_Text: Cuadrilla 2
+      m_Image: {fileID: 0}
+    - m_Text: Cuadrilla 3
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4276,7 +4277,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Rosa
+  m_Text: Cuadrilla 1
 --- !u!222 &2098994524
 CanvasRenderer:
   m_ObjectHideFlags: 0
