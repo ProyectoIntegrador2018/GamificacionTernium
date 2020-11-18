@@ -63,6 +63,7 @@ public class QuickGameLivesTimer : MonoBehaviour
 
             //el tiempo actual del reloj
             timerAmount -= (float)difference.TotalSeconds;
+            //print("Test: " + TimeSpan.FromSeconds(timerAmount));
 
             if (timerAmount <= 0) {
                 Database.setCurrentLives(GlobalVariables.usernameId, maxLives);
@@ -71,17 +72,22 @@ public class QuickGameLivesTimer : MonoBehaviour
                 GlobalVariables.currentQuickGameLives = maxLives;
             }
             else {
-                //las cantidad de vidas a regenerar 
-                livesToRegen = Database.getCurrentLives(GlobalVariables.usernameId) + Mathf.FloorToInt((float)difference.TotalSeconds / timeRegenerateLive);
-                Database.setCurrentLives(GlobalVariables.usernameId, livesToRegen);
+                int aux = Mathf.FloorToInt((float)difference.TotalSeconds / timeRegenerateLive);
+                //las cantidad de vidas a regenerar
+                //print("Vidas a recuperar: " + aux);
+                livesToRegen = Database.getCurrentLives(GlobalVariables.usernameId) + aux;
+                //print("Vidas totales deben ser: " + livesToRegen);
+                
                 if (livesToRegen != Database.getCurrentLives(GlobalVariables.usernameId)) {
-                    Database.removeTimeLastLiveLost(GlobalVariables.usernameId, livesToRegen);
-                    if(Database.getTimeOfLastLiveLost(GlobalVariables.usernameId).Count != 0) {
-                        Database.setFirstTime(GlobalVariables.usernameId);
-                    }
+                    Database.removeTimeLastLiveLost(GlobalVariables.usernameId, aux);
+                    //if(Database.getTimeOfLastLiveLost(GlobalVariables.usernameId).Count != 0) {
+                        Database.setFirstTime(GlobalVariables.usernameId, difference.TotalSeconds);
+                    //print(DateTime.Parse(Database.getTimeOfLastLiveLost(GlobalVariables.usernameId).First()).Subtract(TimeSpan.FromSeconds(timerAmount)));
+                    //}
                 }
+                Database.setCurrentLives(GlobalVariables.usernameId, livesToRegen);
                 GlobalVariables.currentQuickGameLives = livesToRegen;
-
+                Database.saveData();
             }
 
             

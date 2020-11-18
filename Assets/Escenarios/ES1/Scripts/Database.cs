@@ -140,6 +140,14 @@ public class Database : MonoBehaviour
     public static void setFirstTime(int userId) {
         userBase.users[userId].timeOfLastLiveLost[0] = DateTime.Now.ToString();
     }
+    public static void setFirstTime(int userId, double offset) {
+
+        if(offset > 120) {
+            offset -= 120;
+        }
+
+        userBase.users[userId].timeOfLastLiveLost[0] = DateTime.Now.Subtract(TimeSpan.FromSeconds(offset)).ToString();
+    }
     public static void setCurrentLives(int userId, int lives) {
         userBase.users[userId].quickGameLives = lives;
     }

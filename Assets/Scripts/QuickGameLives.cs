@@ -28,7 +28,9 @@ public class QuickGameLives : MonoBehaviour
         currentLives++;
         Database.setCurrentLives(GlobalVariables.usernameId, currentLives);
         Database.removeTimeLastLiveLost(GlobalVariables.usernameId, 1);
-        Database.setFirstTime(GlobalVariables.usernameId);
+        if (currentLives != maxLives) {
+            Database.setFirstTime(GlobalVariables.usernameId);
+        }
         GameMind.saveData();
         GlobalVariables.currentQuickGameLives = currentLives;
     }
