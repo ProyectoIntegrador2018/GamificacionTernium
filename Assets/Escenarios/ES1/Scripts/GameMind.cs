@@ -13,12 +13,12 @@ public class GameMind : MonoBehaviour {
     GameObject MenuPausa;
     GameObject MPausa;
     public Button pause;
-    GameObject BtnAyuda;
-    GameObject BA;
-    Button BtnID;
+    //GameObject BtnAyuda;
+    //GameObject BA;
+    //Button BtnID;
     public bool Pausado = false;
-    Text Label;
-    Image backImg;
+    //Text Label;
+    //Image backImg;
     string Escena;
 
     MonoBehaviour[] comps;
@@ -26,14 +26,19 @@ public class GameMind : MonoBehaviour {
 
     void Start()
     {
-        Escena = SceneManager.GetActiveScene().name;
+        //*****Todo este codigo comentado es para hacer el boton de pedir ayuda funcionar,
+        //*****como no funciona consistentemente se decidio comentarlo
+        //*****Necesita reimplementarse todo este codigo
 
-        BtnAyuda = Resources.Load<GameObject>("Prefabs/BtnPAyuda");
+        //-----Empieza aqui------
+        //Escena = SceneManager.GetActiveScene().name;
+
+        //BtnAyuda = Resources.Load<GameObject>("Prefabs/BtnPAyuda");
         MenuPausa = Resources.Load<GameObject>("Prefabs/Menu");
         //(GameObject)Resources.Load("Assets/Menu/Prefabs/Menu", typeof(GameObject)); ;
         comps = GetComponents<MonoBehaviour>();
 
-        if(Escena == "Achivements" ||
+        /*if(Escena == "Achivements" ||
             Escena == "AvatarCustomization" ||
                 Escena == "createNews" ||
                     Escena == "Historial" ||
@@ -64,7 +69,7 @@ public class GameMind : MonoBehaviour {
         //bool ExisteAyuda = GlobalVariables.ExisteAyuda;
         //bool Aparezco = true;
 
-        /*if(GlobalVariables.Caso == 0 || GlobalVariables.ElFinal == true)
+        if(GlobalVariables.Caso == 0 || GlobalVariables.ElFinal == true)
         {
             Aparezco = false;
         }
@@ -79,9 +84,6 @@ public class GameMind : MonoBehaviour {
         {
             BA.SetActive(false);
         }*/
-
-        
-        }
 
         
     }

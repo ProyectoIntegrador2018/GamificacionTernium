@@ -580,7 +580,9 @@ public class BtnMangment : MonoBehaviour
         //Debug.Log(cuantosItems);
     }
 
-    public static void Help()
+    // Se supone que esta funcion sea para el boton de "Pedir ayuda" en el modo drag and drop
+    // No funciona en todos los casos porque esta hardcodeada
+    /*public static void Help()
     {
         string Escena2 = SceneManager.GetActiveScene().name;
 
@@ -654,7 +656,7 @@ public class BtnMangment : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
 }
 

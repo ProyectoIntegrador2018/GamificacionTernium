@@ -283,31 +283,28 @@ public class QuestionManager : MonoBehaviour {
 
     // Funcion para hacer visible el boton para cambiar a la siguiente pregunta
     void showContinueButton(){
+        //Desactivar todos los botones de opcion
+        GameObject castedBtn1 = Btn1.gameObject;
+        castedBtn1.SetActive(false);
+        GameObject castedBtn2 = Btn2.gameObject;
+        castedBtn2.SetActive(false);
+        GameObject castedBtn3 = Btn3.gameObject;
+        castedBtn3.SetActive(false);
+        //Tomar referencia Rect del Canvas
+        canvasPosition = GetComponentInParent<Canvas>().transform;
+        //Instanciar el prefab del boton de continuar con unas cordenadas especificas y ubicarlo
+        Button newButton = Instantiate(continueButton, new Vector3(805, -370, 0), transform.rotation);
+        //Agregar el nuevo boton a la jerarquia del Canvas principal
+        newButton.transform.SetParent(canvasPosition, false);
+       
         if (!MenuManager.quickMode)
-        {
-            GameObject castedBtn1 = Btn1.gameObject;
-            castedBtn1.SetActive(false);
-            GameObject castedBtn2 = Btn2.gameObject;
-            castedBtn2.SetActive(false);
-            GameObject castedBtn3 = Btn3.gameObject;
-            castedBtn3.SetActive(false);
-            canvasPosition = GetComponentInParent<Canvas>().transform;
-            Button newButton = Instantiate(continueButton, new Vector3(805, -370, 0), transform.rotation);
-            newButton.transform.SetParent(canvasPosition, false);
+        {   //Cuando el modo de juego es clasico
             newButton.onClick.AddListener(ChangeCurrentScene);
         }
 
         else
         {
-            GameObject castedBtn1 = Btn1.gameObject;
-            castedBtn1.SetActive(false);
-            GameObject castedBtn2 = Btn2.gameObject;
-            castedBtn2.SetActive(false);
-            GameObject castedBtn3 = Btn3.gameObject;
-            castedBtn3.SetActive(false);
-            canvasPosition = GetComponentInParent<Canvas>().transform;
-            Button newButton = Instantiate(continueButton, new Vector3(805, -370, 0), transform.rotation);
-            newButton.transform.SetParent(canvasPosition, false);
+            //Cuando el modo de juego es rapido
             newButton.onClick.AddListener(QuickMode);
         }
 
@@ -421,10 +418,11 @@ public class QuestionManager : MonoBehaviour {
         }
     }
 
-    public static void Help()
+    //Funcion para pedir ayuda, se comento porque no funciona consistentemente
+    /*public static void Help()
     {
         GameObject.Find("Button-2").SetActive(false);//Button-2
-    }
+    }*/
 
     
     public void QuickMode()
