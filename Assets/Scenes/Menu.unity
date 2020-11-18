@@ -2002,10 +2002,6 @@ MonoBehaviour:
   ProximaMission: {fileID: 2088549806}
   toast: {fileID: 1371651545}
   avatarBtn: {fileID: 1942694769}
-  teamImage: {fileID: 1938746002}
-  pinkImg: {fileID: 21300000, guid: 8ffd4a6939bd63b4abd8a3763d6d98f4, type: 3}
-  greenImg: {fileID: 21300000, guid: 38adc7242fb23f34ab07fce575c7ad18, type: 3}
-  blueImg: {fileID: 21300000, guid: 1d01a9d72c8408b428ede2c57df69f47, type: 3}
   SiguentePregunta: {fileID: 2088549805}
   mensajeBienvenida: {fileID: 1662681846}
   cont: 0
@@ -4499,6 +4495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe42749393ae3b2409b0bcf937f7db93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffect: {fileID: 0}
 --- !u!1 &1918619947
 GameObject:
   m_ObjectHideFlags: 0
@@ -4636,7 +4633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1938746001
 RectTransform:
   m_ObjectHideFlags: 0

@@ -14,15 +14,17 @@ public class MenuManager : MonoBehaviour
     public GameObject ProximaMission;
     public GameObject toast;
     public GameObject avatarBtn;
-    public Image teamImage;
-    public Sprite pinkImg;
-    public Sprite greenImg;
-    public Sprite blueImg;
+    //Necesita refactor
+    //public Image teamImage;
+    //public Sprite pinkImg;
+    //public Sprite greenImg;
+    //public Sprite blueImg;
     public Text SiguentePregunta;
     public Text mensajeBienvenida;
     public static Users userBase;
     public int cont = 0;
     bool FirstClick = true;
+    bool adminCheck = false;
 
     public GameObject GameModesMenu;
     public Button JugarMisiones;
@@ -39,18 +41,15 @@ public class MenuManager : MonoBehaviour
         mensajeBienvenida = GetComponent<Text>();
         //GlobalVariables.Caso = 0;
         
-        if (!Database.isAdmin(GlobalVariables.usernameId)) {
-            showTeam();
-        }
-        else {
-            teamImage.enabled = false;
+        //Si el usuario es admin
+        if (adminCheck) {
             trofeosBtn.SetActive(false);
             historialBtn.SetActive(false);
             avatarBtn.SetActive(false);
             toast.SetActive(false);
             eventsBtn.SetActive(true);
+            adminCheck = true;
         }
-    
     }
     // Update is called once per frame
     void Update(){
@@ -59,19 +58,24 @@ public class MenuManager : MonoBehaviour
 
     private void OnEnable()
     {
-
+        if (Database.isAdmin(GlobalVariables.usernameId)) {
+            adminCheck = true;
+        }
         if (mensajeBienvenida != null) {
-            if (Database.getCurrentAchivements() == 0) {
-            mensajeBienvenida.text = "¡Bonito día, " + GlobalVariables.username + "! Aún no has completado misiones a la perfección, ¡Intentalo, son 10 en total!";
+            if(adminCheck){
+                mensajeBienvenida.text = "¡Bonito día, " + GlobalVariables.username + "!";
+            }
+            else if(Database.getCurrentAchivements() == 0) {
+            mensajeBienvenida.text = "¡Bonito día, " + GlobalVariables.username + " de la " + GlobalVariables.equipo + "! Aún no has completado misiones a la perfección, ¡Intentalo, son 10 en total!";
             }
             else if (Database.getCurrentAchivements() == 1) {
-                mensajeBienvenida.text = "¡Bonito día, " + GlobalVariables.username + "! Has completado a la perfección " + Database.getCurrentAchivements().ToString() + " misión de 10";
+                mensajeBienvenida.text = "¡Bonito día, " + GlobalVariables.username + " de la " + GlobalVariables.equipo + "! Has completado a la perfección " + Database.getCurrentAchivements().ToString() + " misión de 10";
             }
             else if (Database.getCurrentAchivements() < 11 && Database.getCurrentAchivements() > 1) {
-                mensajeBienvenida.text = "¡Bonito día, " + GlobalVariables.username + "! Has completado a la perfección " + Database.getCurrentAchivements().ToString() + " misiones de 10";
+                mensajeBienvenida.text = "¡Bonito día, " + GlobalVariables.username + " de la " + GlobalVariables.equipo + "! Has completado a la perfección " + Database.getCurrentAchivements().ToString() + " misiones de 10";
             } 
             else {
-                mensajeBienvenida.text = "¡Bonito día, " + GlobalVariables.username + "!";
+                mensajeBienvenida.text = "¡Bonito día, " + GlobalVariables.username + " de la " + GlobalVariables.equipo + "!";
             }
         }
         
@@ -253,6 +257,8 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(caso);
     }
 
+    //Necesita refactor
+    /*
     public void showTeam(){
         if(GlobalVariables.equipo == "Rosa"){
             teamImage.sprite = pinkImg;
@@ -263,7 +269,7 @@ public class MenuManager : MonoBehaviour
         else if(GlobalVariables.equipo == "Azul"){
             teamImage.sprite = blueImg;
         }
-    }
+    }*/
 
 }
 

@@ -98,6 +98,11 @@ public class QuickGameLivesTimer : MonoBehaviour
 
     }
 
+    private void OnEnable() {
+        Awake();
+        QuickGameEventSystem.current.OnEnableCheck();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
