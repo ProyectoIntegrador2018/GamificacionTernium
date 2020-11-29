@@ -60,6 +60,7 @@ public class ExpBar : MonoBehaviour
         
     }
 
+    //corutina para esperar un poco antes de iniciar la animacion de llenar la barra de experiencia
     IEnumerator WaitBeforeExpGain() {
         if (current != previousCurrent) {
             yield return new WaitForSeconds(1);
@@ -71,12 +72,14 @@ public class ExpBar : MonoBehaviour
         
     }
 
+    //para la animacion para darle tiempo a la animacion de subir de nivel de que se complete
     private void OnStartLevelUpAnimation() {
         shouldAnimate = false;
         pauseAnimate = true;
         particles.GetComponent<ParticleSystem>().Stop();
     }
 
+    //reanuda la animacion despues de que se termian la animacion de subir de nivel
     private void OnFinishLevelUpAnimation() {
         shouldAnimate = true;
         pauseAnimate = false;
@@ -85,6 +88,7 @@ public class ExpBar : MonoBehaviour
         }
     }
 
+    //consigue el valor actual de la barra de experiencia
     void getCurrentFill() {
         float currentOffset = previousCurrent - min;
         float maximumOffset = max - min;
@@ -93,6 +97,7 @@ public class ExpBar : MonoBehaviour
         bar.fillAmount = fillAmount;
     }
 
+    //se encarga de la animacion del llenadao de la barra de experiencia
     void animateFill() {
 
         if (!pauseAnimate) {

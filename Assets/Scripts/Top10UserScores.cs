@@ -16,6 +16,7 @@ public class Top10UserScores : MonoBehaviour
     private bool totalScoresLoaded = false;
     
 
+    //struct para esctructurar las puntuaciones de los jugadores
     private struct Userscore {
         public string username;
         public int score;
@@ -27,6 +28,7 @@ public class Top10UserScores : MonoBehaviour
 
     }
 
+    //la funcion carga las puntuaciones de los jugadores por mision
     Userscore[] loadMissionScores(int missionIndex) {
         Userscore[] aux = new Userscore[users.Length];
         int i = 0;
@@ -38,12 +40,14 @@ public class Top10UserScores : MonoBehaviour
         return aux;
     }
 
+    //la funcion limpia el tablero de las puntuaciones
     void clearScoreboard() {
         foreach (Transform topscore in GameObject.Find("TopPlayers").transform) {
             Destroy(topscore.gameObject);
         }
     }
 
+    //la funcion despliega en la tabla las puntuaciones de los jugadores junto con un titulo para la tabla actual
     void listTopScores(string missionName, Userscore[] userscores) {
 
         Text userscoreText = Instantiate(userscoreTextPrefab);
@@ -62,6 +66,7 @@ public class Top10UserScores : MonoBehaviour
         }
     }
 
+    //la funcion manda a cargar las puntuaciones de los jugadores de una mision y despues los despliega en la tabla
     void displayMissionTopScores(string missionName, int missionIndex) {
 
         Userscore[] aux;
@@ -75,6 +80,7 @@ public class Top10UserScores : MonoBehaviour
         listTopScores(missionName, aux);
     }
 
+    //la funcion manda a cargar las puntuaciones de los jugadores por el total y despues los despliega en la tabla
     void displayTotalTopScores() {
 
         Userscore[] aux;

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ReturnToMainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // En inicio se crea un listener para el boton al que esta asociado el listener para que mande al usuario a la pantalla del menu principal
     void Start(){
         GetComponent<Button>().onClick.AddListener( () => {
             SceneManager.LoadScene("Menu");

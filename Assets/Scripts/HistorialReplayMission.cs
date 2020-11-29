@@ -10,14 +10,17 @@ public class HistorialReplayMission : MonoBehaviour
     public Text SiguentePregunta;
     public GameObject ProximaMission;
 
+    //se suscribe a los eventos de la clase singleton
     private void Start() {
         HistorialEventSystem.current.onReplayClick += JugarMisionIndex;
     }
 
+    //se des-suscribe a los eventos de la clase singleton
     private void OnDestroy() {
         HistorialEventSystem.current.onReplayClick -= JugarMisionIndex;
     }
 
+    //corutina para inicar la mision deseada despues del tiempo que se desea esperar
     IEnumerator EsperarMin(int Escenario) {
         //Print the time of when the function is first called.
         //Debug.Log("Started Coroutine at timestamp : " + Time.time);
@@ -50,6 +53,7 @@ public class HistorialReplayMission : MonoBehaviour
     }
 
 
+    //funcion para iniciar la mision deseada
     public void JugarMisionIndex(int index) {
 
         StartCoroutine(EsperarMin(index));
