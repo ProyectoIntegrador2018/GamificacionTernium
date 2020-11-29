@@ -18,6 +18,7 @@ public class QuickGameLivesTimer : MonoBehaviour
     int lastWhole = -1;
     bool isRunning;
 
+    //la funcion se encarga de darle formato a un valor de tiempo
     string formatTime(float time) {
 
         string aux = time.ToString();
@@ -29,6 +30,7 @@ public class QuickGameLivesTimer : MonoBehaviour
         return aux;
     }
 
+    //la funcion se encarga de desplegar el tiempo faltante en el contador
     void displayCurrentTime() {
         hours = Mathf.FloorToInt(timerAmount / 3600);
         minutes = Mathf.FloorToInt(timerAmount % 3600) / 60;
@@ -41,6 +43,7 @@ public class QuickGameLivesTimer : MonoBehaviour
         }
     }
 
+    //la funcion se encarga de eliminar el ultimo valor de tiempo guardado en la database
     void clearSavedTime() {
         Database.clearTimeLastLiveLost(GlobalVariables.usernameId);
         GameMind.saveData();
@@ -113,6 +116,7 @@ public class QuickGameLivesTimer : MonoBehaviour
         displayCurrentTime();
     }
 
+    //revisa si se puede regenerar una vida en el momento actual
     void canRegenerateLive() {
         if (Mathf.FloorToInt(timerAmount) % timeRegenerateLive == 0 && lastWhole != Mathf.FloorToInt(timerAmount)) {
             QuickGameEventSystem.current.OnTimeframeReached();

@@ -16,14 +16,18 @@ public class HistorialCurrentMission : MonoBehaviour
 
     public Button btnReplay;
 
+    //se suscribe a los eventos de la clase singleton
     void Start()
     {
         HistorialEventSystem.current.onMissionClick += OnMissionClick;
     }
+
+    //se des-suscribe a los eventos de la clase singleton
     private void OnDestroy() {
         HistorialEventSystem.current.onMissionClick -= OnMissionClick;
     }
 
+    //la funcion se encarga de desplegar la puntuacion del jugdador de la mision seleccionada
     private void OnMissionClick(string description, int score, int escenario) {
         MisionDescription.transform.GetComponent<Text>().text = description;
         MisionScore.transform.GetComponent<Text>().text = score.ToString();
@@ -34,6 +38,7 @@ public class HistorialCurrentMission : MonoBehaviour
         }
     }
 
+    //la funcion crea un listner para el boton de repetir la mision
     public void SetReplayBtn(int index) {
         btnReplay.gameObject.SetActive(true);
         btnReplay.onClick.AddListener(() => {
@@ -41,6 +46,7 @@ public class HistorialCurrentMission : MonoBehaviour
         });
     }
 
+    //la funcion se encarga de desplegar la cantidad de estrellas actuales del jugador en la mision seleccionada actualmente
     public int StarNumber(int points, int escenario) {
 
         int n = 0;

@@ -23,6 +23,7 @@ public class PlayerLevel : MonoBehaviour
         aux = Int32.Parse(playerLevelTxt.text);
     }
 
+    //la funcion se encarga de incrmentar el nivel del usuario en la interfaz
     private void IncreaseLevel() {
         aux++;
         playerLevelTxt.text = aux.ToString();
@@ -34,6 +35,7 @@ public class PlayerLevel : MonoBehaviour
         });
     }
 
+    //la funcion se encarga de llamar la funcion de subir de nivel al llenarse la barra de exp
     private void OnExpBarFill() {
         PlayerInfoEventSystem.current.StartLevelUpAnimation();
         levelUpSfx.Play();
@@ -44,6 +46,7 @@ public class PlayerLevel : MonoBehaviour
 
     }
 
+    //al termianr de actualizar la barra de experiencia se guardan los valores nuevos y se habilitan los botones
     private void OnFinishExpGain() {
         Database.setNivelJugador(aux);
         Database.saveData();

@@ -8,6 +8,7 @@ public class Top10ButtonList : MonoBehaviour
     public GameObject missionPrefab;
     private string[] missions; 
 
+    //la funcion crea una boton nuevo para la lista
     GameObject createButtonForList(string buttonText) {
 
         GameObject mission;
@@ -20,6 +21,7 @@ public class Top10ButtonList : MonoBehaviour
         return mission;
     }
 
+    //la funcion se encarga de crear un boton para los totales y un boton para todas las misiones
     void instantiateMissionList() {
         GameObject mission;
         int i = 0;
@@ -43,10 +45,8 @@ public class Top10ButtonList : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-
         missions = Database.getAllMissionNames();
         instantiateMissionList();
     }

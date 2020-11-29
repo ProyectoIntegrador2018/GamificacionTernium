@@ -8,6 +8,7 @@ public class PlayerInfoEventSystem : MonoBehaviour
 
     public static PlayerInfoEventSystem current;
 
+    //clase singleton para manejar las llamadas de eventos de los scripts de la barra de experiencia y el nivel del usuario
     private void Awake() {
         current = this;
     }

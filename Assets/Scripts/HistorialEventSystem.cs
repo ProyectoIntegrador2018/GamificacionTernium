@@ -7,6 +7,7 @@ public class HistorialEventSystem : MonoBehaviour
 {
     public static HistorialEventSystem current;
 
+    //clase singleton para manejar las llamadas de eventos de los scripts del historial de misiones
     private void Awake() {
         current = this;
     }

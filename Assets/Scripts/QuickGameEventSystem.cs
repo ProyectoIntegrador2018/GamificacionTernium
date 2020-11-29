@@ -8,6 +8,7 @@ public class QuickGameEventSystem : MonoBehaviour
 
     public static QuickGameEventSystem current;
 
+    //clase singleton para manejar las llamadas de eventos de los scripts de las vidas y el timer del juego rapido
     private void Awake() {
         current = this;
     }
