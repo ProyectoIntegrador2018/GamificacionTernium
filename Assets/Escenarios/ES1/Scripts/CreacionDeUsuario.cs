@@ -4,6 +4,10 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Clase para recibir la info de los inputs para crear usuario
+// Solo accesible para el admin
+// Creada por el equipo 2
+
 public class CreacionDeUsuario : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -65,10 +69,12 @@ public class CreacionDeUsuario : MonoBehaviour
     
     }
 
+    //Regresar a login
     public void returnLogin(){
         SceneManager.LoadScene("Login");
     }
 
+    // Limpiar inputs
     void cleanInputs(){
         UsernameText.text = "";
         PasswordText.text = "";

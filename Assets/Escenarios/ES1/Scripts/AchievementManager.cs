@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
+// Clase para manejar los logros del usuario
+// Creada por el equipo 1
+
 public class AchievementManager : MonoBehaviour
 {
     public const int NUMCASES = 10;

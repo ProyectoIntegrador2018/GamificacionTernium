@@ -80,6 +80,8 @@ public class Users
     }
 }
 
+// Clase para manejar toda la info de la base de datos local
+// Creada por el equipo 1, modificada por el equipo 2
 
 public class Database : MonoBehaviour
 {
@@ -103,13 +105,21 @@ public class Database : MonoBehaviour
 
 
         //Debug.Log(path);
+        // Si el archivo existe, crear la estructura de datos desde sus contents
         if (File.Exists(path)) {
             var myTextAsset = File.ReadAllText(Application.persistentDataPath + "/database.json"); 
             //Debug.Log("hola" + myTextAsset);
+            // Deserializando el archivo anterior con la libreria que ya trae Unity
+            // Consulta https://docs.unity3d.com/ScriptReference/JsonUtility.html para mas detalles
+            // Esta pagina tambien me ayudo bastante https://json2csharp.com/    
             userBase = JsonUtility.FromJson<Users>(myTextAsset);
         }
+        // Si el archivo no existe, mandar llamar la funcion saveData para crearlo
         else
         {
+            // Deserializando el archivo anterior con la libreria que ya trae Unity
+            // Consulta https://docs.unity3d.com/ScriptReference/JsonUtility.html para mas detalles
+            // Esta pagina tambien me ayudo bastante https://json2csharp.com/   
             userBase = JsonUtility.FromJson<Users>(jsonFile.text);
             //Si no existe se crea en local para siempre accesar desde el path 
             saveData();
@@ -118,6 +128,8 @@ public class Database : MonoBehaviour
         missionList = JsonUtility.FromJson<ListaMisiones>(jsonMisiones.text);
 
     }
+
+    // GETTERS y demas funciones para manipular la info de la DB local
 
     public static float getVolumenMusica(int userId) {
         return userBase.users[userId].volumenMusica;
@@ -433,6 +445,7 @@ public class Database : MonoBehaviour
         return current;
     }
 
+    // Serializa la estructura de datos y la convierte en un archivo json
     public static void saveData(){
         string jsonData = JsonUtility.ToJson (userBase, true);
         File.WriteAllText(path, jsonData);

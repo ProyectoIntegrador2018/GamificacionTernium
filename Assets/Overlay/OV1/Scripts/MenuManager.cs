@@ -4,6 +4,9 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Clase para manejar todo lo que tenga que ver con la escena de "Menu"
+// Creada por el equipo 1, modificada por el equipo 2
+
 public class MenuManager : MonoBehaviour
 {
     public GameObject jugarBtn;
@@ -58,6 +61,7 @@ public class MenuManager : MonoBehaviour
 
     private void OnEnable()
     {
+        // Condicion para mostrar el mensaje de bienvenida
         if (Database.isAdmin(GlobalVariables.usernameId)) {
             adminCheck = true;
         }
@@ -173,8 +177,7 @@ public class MenuManager : MonoBehaviour
         //-------------------------------------------------------------------------------
         //Ok, estas listo leecto?, porque nos pidieron que hicieramos un fix, que tomaria mucho rework a la hora de conectar
         //asi que estoy a punto de aventarme lo mas clandestino del mundo
-
-
+        //Atte. Equipo 1
 
         //Set mision as Started
         if (!Database.isAdmin(GlobalVariables.usernameId)) {

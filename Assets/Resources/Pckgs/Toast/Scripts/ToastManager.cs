@@ -43,6 +43,10 @@ public class News{
     }
 }
 
+// Clase para manejar los pop ups de noticias de la pantalla de menu
+// Creada por el equipo 2
+// Basada en el paquete de Toast, documentacion en la carpeta de Resources/Pckgs/Toast
+
 public class ToastManager : MonoBehaviour
 {
     public TextAsset newsText;
@@ -51,6 +55,7 @@ public class ToastManager : MonoBehaviour
     public static string path;
 
     void Start(){
+        // Para obtener la info de eventos de la DB
         path = Application.persistentDataPath + "/events.json";
         if (File.Exists(path)) {
             var myTextAsset = File.ReadAllText(Application.persistentDataPath + "/events.json"); 
@@ -72,6 +77,7 @@ public class ToastManager : MonoBehaviour
         InvokeRepeating("makeToast", 2.0f, 4.0f);
     }
 
+    // Funcion para mostrar el pop up
     void makeToast(){ 
         //Debug.Log(news.newsList.Length);
         if (news.newsList == null || news.newsList.Length == 0){
@@ -88,6 +94,8 @@ public class ToastManager : MonoBehaviour
             i++; 
         }
     }
+
+    // Funcion para guardar un nuevo text file de los eventos, hacer persistentes los cambios
 
     public static void updateNews(News param){
         string jsonData = JsonUtility.ToJson (param, true);

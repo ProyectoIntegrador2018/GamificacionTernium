@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 using System.IO;
 using UnityEngine.UI;
 
+// Esta clase requiere muchisimo trabajo, el equipo 2 por ordenes del Product Owner, decidio quitarla
+// Creada por el equipo 1
+
 public class HelpManager : MonoBehaviour
 {
     static string[] LosQueAyudaron = new string[100];

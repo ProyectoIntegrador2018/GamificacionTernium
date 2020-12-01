@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Este script esta incluido en el prefab de adminNewsItem
+// Contiene el codigo que debe ejecutarse cuando se le click al boton de borrar
+// El toast manager es el que carga los eventos existentes o los crea de un json file
+// Destruye el objeto cuando se le click al boton de borrar
+// Tambien se encarga de manejar el id para cada objeto
+
 public class itemBehavior : MonoBehaviour
 {
     public int id;

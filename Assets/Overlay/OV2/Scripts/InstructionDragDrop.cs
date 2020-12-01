@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 using System.IO;
 
+// Script creado por el Equipo 1
+// Sirve para la parte de drag and drop 1 del tutorial
+
 // Clase para los objetos que son arrastrables
 public class InstructionDragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler {
 

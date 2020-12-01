@@ -4,6 +4,9 @@ using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Clase para manejar la pantalla de pausa
+// Creada por el equipo 1
+
 public class PauseMenu : MonoBehaviour
 {
     // Variables publicas
