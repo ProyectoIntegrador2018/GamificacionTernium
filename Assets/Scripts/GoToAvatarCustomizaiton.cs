@@ -10,6 +10,7 @@ public class GoToAvatarCustomizaiton : MonoBehaviour
 
     void Start()
     {
+        // se crea un listener para el boton asociado para ir a la escena de avatares
         GetComponent<Button>().onClick.AddListener(() => {
             SceneManager.LoadScene("AvatarCustomization");
         });

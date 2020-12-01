@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class CustomAvatar : MonoBehaviour
 {
-    public Button customAvatarButtom;
-    public GameObject avatarCanvas;
-    public Button closeAvatarCustom;
+    public Button customAvatarButtom; // boton para seleccionar un avatar personalizado
+    public GameObject avatarCanvas; // canvas que contiene el menu de un avatar personalizado
+    public Button closeAvatarCustom; // boton para cerrar el menu del avatar personalizado
     // Start is called before the first frame update
     void Start()
     {
