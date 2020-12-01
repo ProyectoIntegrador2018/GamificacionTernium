@@ -8,6 +8,7 @@ public class Top10EventSystem : MonoBehaviour
 
     public static Top10EventSystem current;
 
+    //clase singleton para manejar las llamadas de eventos de los scripts de top 10
     private void Awake() {
         current = this;
     }

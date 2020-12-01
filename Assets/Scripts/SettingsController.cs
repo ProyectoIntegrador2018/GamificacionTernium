@@ -12,7 +12,6 @@ public class SettingsController : MonoBehaviour
     public Toggle apagarTutorial;
     public Button guardarCambios;
 
-    // Start is called before the first frame update
     void Start(){
 
         int id = GlobalVariables.usernameId;
@@ -22,6 +21,7 @@ public class SettingsController : MonoBehaviour
         apagarEventos.isOn = Database.getEventosActivos(id);
         apagarTutorial.isOn = Database.getTutorial();
 
+        //listener para el boton de guardar cambios, al presionarlo guarda los valores actuales dentro de la base de datos
         guardarCambios.onClick.AddListener(() => {
             Database.setVolumenMusica(id, Mathf.Round(volumenMusica.value * 100.0f) / 100.0f);
             Database.setVolumenSonidos(id, Mathf.Round(volumenSonidos.value * 100.0f) / 100.0f);

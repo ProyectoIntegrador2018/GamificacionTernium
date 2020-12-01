@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
+// Script creado por el Equipo 1
+// Sirve para la parte 2 del tutorial
+
 public class Instruction2 : MonoBehaviour {
     public Button button;
     public Button buttonDone;

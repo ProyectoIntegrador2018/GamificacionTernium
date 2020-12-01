@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Clase para obtener la info de inicio de sesion y validarla con la DB local
+// Creada por el equipo 1
+
 public class Login : MonoBehaviour
 {
     public Button LgBtn;
