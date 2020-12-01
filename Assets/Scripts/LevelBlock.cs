@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class LevelBlock : MonoBehaviour
 {
-    public Button item;
-    public int level;
-    public Image itemHolder;
+    public Button item; // item que se va a bloquear
+    public int level; // numero de nivel en el que el item se va a desbloquear
+    public Image itemHolder; // imagen del item
 
-    public Sprite candado;
-    public Sprite itemDesbloqueable;
+    public Sprite candado; // sprite del item bloqueado
+    public Sprite itemDesbloqueable; // sprite del item desbloqueado
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,7 @@ public class LevelBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // si el nivel del usuario es menor al nivel el item permanece bloqueado
         if(Database.getNivelJugador()< level)
         {
             item.interactable = false;

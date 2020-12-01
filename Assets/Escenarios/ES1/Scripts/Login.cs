@@ -8,10 +8,10 @@ using UnityEngine.UI;
 
 public class Login : MonoBehaviour
 {
-    public Button LgBtn;
-    public Text UsernameText;
-    public InputField PasswordText;
-    public static bool flag;
+    public Button LgBtn; // boton para hacer login
+    public Text UsernameText; // text field para ingresar el nombre de usuario
+    public InputField PasswordText; // input del password
+    public static bool flag; // variable booleana usada para desplegar un mensaje si el usuairo no existe (se usa en la Database.cs)
     public Text adviseText;
 
     void Start() {

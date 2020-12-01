@@ -7,21 +7,21 @@ using UnityEngine.UI;
 
 public class ChangeAvatar : MonoBehaviour
 {
-    public Image stand;
-    public Sprite stdr_av;
-    public Sprite female_av;
-    public Sprite glass_av;
+    public Image stand; // estand donde aparecera la imagen del avatar seleccionado en el menu
+    public Sprite stdr_av; // sprite del avatar estandard
+    public Sprite female_av; // sprite del avatar femenino
+    public Sprite glass_av; // sprite del avatar con lentes
 
-    public Image customAvatarStand_hat;
-    public Image customAvatarStand_Glasses;
-    public Sprite customAvatarHat_yellow;
-    public Sprite customAvatarHat_red;
-    public Sprite customAvatarHat_green;
-    public Sprite glasses;
-    public Sprite empty;
+    public Image customAvatarStand_hat; // ubicacion en donde apareceran los cascos en caso de tener un avatar personalizado
+    public Image customAvatarStand_Glasses; // ubicacon donde se tendran los lentes en caso de tener un avatar personalizado
+    public Sprite customAvatarHat_yellow; // sprite del casco amarillo
+    public Sprite customAvatarHat_red; // sprite del casco rojo
+    public Sprite customAvatarHat_green; // sprite del casco verde
+    public Sprite glasses; // sprite de lentes
+    public Sprite empty; // sprite vacio
 
-    public Image avatarAnimation;
-    public Image avatar;
+    public Image avatarAnimation; // animacion que realizara el avatar
+    public Image avatar; // imagen del avatar para aparecer
     public static bool flag;
 
 
@@ -30,12 +30,14 @@ public class ChangeAvatar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        flag = false;
+        flag = false; // flag usada para detectar un avatar estandar
 
         GetComponent<Button>().onClick.AddListener(() => {
          // 
           avatar.enabled = true;
           avatarAnimation.enabled = false;
+
+            //Escribe en la base de datos la seleccion del usuario
 
           if (this.name == "Avatar1_Stand")
           {
@@ -131,6 +133,7 @@ public class ChangeAvatar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // adquiere de la base de datos la seleccion del usuario y en el estand aparece el avatar seleccionado
         if (Database.getCustomAvatar())
         {
             if (Database.getHelmet() == "Yellow" && !flag)
