@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// Clase para manejar el log out
+// Creada por el equipo 1
+
 public class Logof : MonoBehaviour
 {
     public Button LgBtn;

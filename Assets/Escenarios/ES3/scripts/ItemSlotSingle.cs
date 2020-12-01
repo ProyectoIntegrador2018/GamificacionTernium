@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+
+// Clase para identificar los slots de los juegos de drag and drop
+// Creada por el equipo 1
+
 public class ItemSlotSingle : MonoBehaviour, IDropHandler
 {
   public void OnDrop(PointerEventData eventData) {

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Clase para cambiar el texto de los logros
+// Creada por el equipo 1
+
 public class AchivementFunction : MonoBehaviour
 {
     public static string Description = "Se muestra aquí la descripción del un trofeo seleccionado, \n ¡Adelante, presiona uno!";
