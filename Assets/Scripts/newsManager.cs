@@ -22,10 +22,18 @@ public class newsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Obteniendo la ubicacion de la lista de eventos
-        newsStruct = ToastManager.getNews();
-        // Obteniendo la lista de eventos de la estructura de datos
-        news = newsStruct.newsList;
+        // Direccion para guardar el archivo json de los eventos
+        path = Application.persistentDataPath + "/events.json";
+        //news = ToastManager.getNews(); -----> Este no se puede usar porque no esta actualizado
+        // Tal vez convendria usar una funcion que cargue los eventos, y llamarla en el mismo ToastManager, aqui y en el newsCreator
+        // Queda pendiente lo de arriba
+        // Funciona asi, pero sería una optimizacion
+        var myTextAsset = File.ReadAllText(Application.persistentDataPath + "/events.json"); 
+
+        // Deserializando, investigar sobre JsonUtility, viene por Default con Unity    
+        News deserealized = JsonUtility.FromJson<News>(myTextAsset);
+        // Extrayendo la lista de acuerdo a la estructura de datos
+        news = deserealized.newsList;
 
         // Haciendo cambios a la UI si usuario es admin o no
         // No admin
